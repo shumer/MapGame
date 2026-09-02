@@ -78,7 +78,7 @@
       "regions": [
         "asia"
       ],
-      "subregion": "south",
+      "subregion": "south-asia",
       "fame": 1,
       "micro": false,
       "landlocked": true,
@@ -166,6 +166,32 @@
       "capitalCoords": [
         44.5144,
         40.1814
+      ]
+    },
+    {
+      "iso": "AO",
+      "un": "024",
+      "regions": [
+        "africa"
+      ],
+      "subregion": "central-africa",
+      "fame": 2,
+      "micro": false,
+      "landlocked": false,
+      "island": false,
+      "name": {
+        "ru": "Ангола",
+        "pl": "Angola",
+        "en": "Angola"
+      },
+      "capital": {
+        "ru": "Луанда",
+        "pl": "Luanda",
+        "en": "Luanda"
+      },
+      "capitalCoords": [
+        13.2344,
+        -8.8383
       ]
     },
     {
@@ -292,7 +318,7 @@
       "regions": [
         "asia"
       ],
-      "subregion": "south",
+      "subregion": "south-asia",
       "fame": 2,
       "micro": false,
       "landlocked": false,
@@ -372,6 +398,32 @@
       "island": false
     },
     {
+      "iso": "BF",
+      "un": "854",
+      "regions": [
+        "africa"
+      ],
+      "subregion": "west-africa",
+      "fame": 2,
+      "micro": false,
+      "landlocked": true,
+      "island": false,
+      "name": {
+        "ru": "Буркина-Фасо",
+        "pl": "Burkina Faso",
+        "en": "Burkina Faso"
+      },
+      "capital": {
+        "ru": "Уагадугу",
+        "pl": "Wagadugu",
+        "en": "Ouagadougou"
+      },
+      "capitalCoords": [
+        -1.5275,
+        12.3686
+      ]
+    },
+    {
       "iso": "BG",
       "un": "100",
       "subregion": "balkans",
@@ -430,12 +482,64 @@
       ]
     },
     {
+      "iso": "BI",
+      "un": "108",
+      "regions": [
+        "africa"
+      ],
+      "subregion": "east-africa",
+      "fame": 3,
+      "micro": false,
+      "landlocked": true,
+      "island": false,
+      "name": {
+        "ru": "Бурунди",
+        "pl": "Burundi",
+        "en": "Burundi"
+      },
+      "capital": {
+        "ru": "Гитега",
+        "pl": "Gitega",
+        "en": "Gitega"
+      },
+      "capitalCoords": [
+        29.925,
+        -3.4283
+      ]
+    },
+    {
+      "iso": "BJ",
+      "un": "204",
+      "regions": [
+        "africa"
+      ],
+      "subregion": "west-africa",
+      "fame": 3,
+      "micro": false,
+      "landlocked": false,
+      "island": false,
+      "name": {
+        "ru": "Бенин",
+        "pl": "Benin",
+        "en": "Benin"
+      },
+      "capital": {
+        "ru": "Порто-Ново",
+        "pl": "Porto-Novo",
+        "en": "Porto-Novo"
+      },
+      "capitalCoords": [
+        2.6289,
+        6.4969
+      ]
+    },
+    {
       "iso": "BN",
       "un": "096",
       "regions": [
         "asia"
       ],
-      "subregion": "southeast",
+      "subregion": "southeast-asia",
       "fame": 3,
       "micro": false,
       "landlocked": false,
@@ -461,7 +565,7 @@
       "regions": [
         "asia"
       ],
-      "subregion": "south",
+      "subregion": "south-asia",
       "fame": 3,
       "micro": false,
       "landlocked": true,
@@ -479,6 +583,40 @@
       "capitalCoords": [
         89.6337,
         27.4714
+      ]
+    },
+    {
+      "iso": "BW",
+      "un": "072",
+      "regions": [
+        "africa"
+      ],
+      "subregion": "southern-africa",
+      "fame": 2,
+      "micro": false,
+      "landlocked": true,
+      "island": false,
+      "name": {
+        "ru": "Ботсвана",
+        "pl": "Botswana",
+        "en": "Botswana"
+      },
+      "capital": {
+        "ru": "Габороне",
+        "pl": "Gaborone",
+        "en": "Gaborone"
+      },
+      "capitalCoords": [
+        25.9086,
+        -24.6569
+      ],
+      "symbol": "hippo",
+      "stories": [
+        {
+          "ru": "Река Окаванго не доходит до моря: она разливается посреди суши и там кончается.",
+          "pl": "Rzeka Okawango nie dociera do morza: rozlewa się pośrodku lądu i tam się kończy.",
+          "en": "The Okavango never reaches the sea: it spreads out in the middle of the land and ends there."
+        }
       ]
     },
     {
@@ -541,6 +679,92 @@
       "island": false
     },
     {
+      "iso": "CD",
+      "un": "180",
+      "regions": [
+        "africa"
+      ],
+      "subregion": "central-africa",
+      "fame": 1,
+      "micro": false,
+      "landlocked": false,
+      "island": false,
+      "name": {
+        "ru": "ДР Конго",
+        "pl": "Demokratyczna Republika Konga",
+        "en": "DR Congo"
+      },
+      "capital": {
+        "ru": "Киншаса",
+        "pl": "Kinszasa",
+        "en": "Kinshasa"
+      },
+      "capitalCoords": [
+        15.3119,
+        -4.3219
+      ],
+      "symbol": "gorilla",
+      "stories": [
+        {
+          "ru": "Река Конго самая глубокая река в мире, местами до двухсот метров.",
+          "pl": "Kongo to najgłębsza rzeka świata, miejscami ma dwieście metrów.",
+          "en": "The Congo is the deepest river in the world, two hundred metres in places."
+        }
+      ]
+    },
+    {
+      "iso": "CF",
+      "un": "140",
+      "regions": [
+        "africa"
+      ],
+      "subregion": "central-africa",
+      "fame": 3,
+      "micro": false,
+      "landlocked": true,
+      "island": false,
+      "name": {
+        "ru": "Центральноафриканская Республика",
+        "pl": "Republika Środkowoafrykańska",
+        "en": "Central African Republic"
+      },
+      "capital": {
+        "ru": "Банги",
+        "pl": "Bangi",
+        "en": "Bangui"
+      },
+      "capitalCoords": [
+        18.5628,
+        4.3732
+      ]
+    },
+    {
+      "iso": "CG",
+      "un": "178",
+      "regions": [
+        "africa"
+      ],
+      "subregion": "central-africa",
+      "fame": 3,
+      "micro": false,
+      "landlocked": false,
+      "island": false,
+      "name": {
+        "ru": "Республика Конго",
+        "pl": "Republika Konga",
+        "en": "Republic of the Congo"
+      },
+      "capital": {
+        "ru": "Браззавиль",
+        "pl": "Brazzaville",
+        "en": "Brazzaville"
+      },
+      "capitalCoords": [
+        15.2711,
+        -4.2694
+      ]
+    },
+    {
       "iso": "CH",
       "un": "756",
       "subregion": "central",
@@ -600,12 +824,72 @@
       "island": false
     },
     {
+      "iso": "CI",
+      "un": "384",
+      "regions": [
+        "africa"
+      ],
+      "subregion": "west-africa",
+      "fame": 2,
+      "micro": false,
+      "landlocked": false,
+      "island": false,
+      "name": {
+        "ru": "Кот-д’Ивуар",
+        "pl": "Wybrzeże Kości Słoniowej",
+        "en": "Ivory Coast"
+      },
+      "capital": {
+        "ru": "Ямусукро",
+        "pl": "Jamusukro",
+        "en": "Yamoussoukro"
+      },
+      "capitalCoords": [
+        -5.2742,
+        6.8161
+      ],
+      "symbol": "cocoa",
+      "stories": [
+        {
+          "ru": "Отсюда приходит больше какао, чем из любой другой страны, а из какао делают шоколад.",
+          "pl": "Stąd pochodzi więcej kakao niż z jakiegokolwiek innego kraju, a z kakao robi się czekoladę.",
+          "en": "More cocoa comes from here than from any other country, and cocoa is what chocolate is made of."
+        }
+      ]
+    },
+    {
+      "iso": "CM",
+      "un": "120",
+      "regions": [
+        "africa"
+      ],
+      "subregion": "central-africa",
+      "fame": 2,
+      "micro": false,
+      "landlocked": false,
+      "island": false,
+      "name": {
+        "ru": "Камерун",
+        "pl": "Kamerun",
+        "en": "Cameroon"
+      },
+      "capital": {
+        "ru": "Яунде",
+        "pl": "Jaunde",
+        "en": "Yaoundé"
+      },
+      "capitalCoords": [
+        11.5181,
+        3.8578
+      ]
+    },
+    {
       "iso": "CN",
       "un": "156",
       "regions": [
         "asia"
       ],
-      "subregion": "east",
+      "subregion": "east-asia",
       "fame": 1,
       "micro": false,
       "landlocked": false,
@@ -641,6 +925,32 @@
           "pl": "Panda je bambus niemal cały dzień, bo bambus jest bardzo mało pożywny.",
           "en": "A panda eats bamboo almost all day, because bamboo is barely nourishing."
         }
+      ]
+    },
+    {
+      "iso": "CV",
+      "un": "132",
+      "regions": [
+        "africa"
+      ],
+      "subregion": "west-africa",
+      "fame": 3,
+      "micro": true,
+      "landlocked": false,
+      "island": true,
+      "name": {
+        "ru": "Кабо-Верде",
+        "pl": "Republika Zielonego Przylądka",
+        "en": "Cape Verde"
+      },
+      "capital": {
+        "ru": "Прая",
+        "pl": "Praia",
+        "en": "Praia"
+      },
+      "capitalCoords": [
+        -23.5092,
+        14.9177
       ]
     },
     {
@@ -795,6 +1105,32 @@
       "island": false
     },
     {
+      "iso": "DJ",
+      "un": "262",
+      "regions": [
+        "africa"
+      ],
+      "subregion": "east-africa",
+      "fame": 3,
+      "micro": false,
+      "landlocked": false,
+      "island": false,
+      "name": {
+        "ru": "Джибути",
+        "pl": "Dżibuti",
+        "en": "Djibouti"
+      },
+      "capital": {
+        "ru": "Джибути",
+        "pl": "Dżibuti",
+        "en": "Djibouti"
+      },
+      "capitalCoords": [
+        43.1481,
+        11.595
+      ]
+    },
+    {
       "iso": "DK",
       "un": "208",
       "subregion": "nordic",
@@ -854,6 +1190,40 @@
       "island": false
     },
     {
+      "iso": "DZ",
+      "un": "012",
+      "regions": [
+        "africa"
+      ],
+      "subregion": "north-africa",
+      "fame": 1,
+      "micro": false,
+      "landlocked": false,
+      "island": false,
+      "name": {
+        "ru": "Алжир",
+        "pl": "Algieria",
+        "en": "Algeria"
+      },
+      "capital": {
+        "ru": "Алжир",
+        "pl": "Algier",
+        "en": "Algiers"
+      },
+      "capitalCoords": [
+        3.0586,
+        36.7764
+      ],
+      "symbol": "cactus",
+      "stories": [
+        {
+          "ru": "Алжир самая большая страна Африки, и почти вся она это Сахара.",
+          "pl": "Algieria to największy kraj Afryki i prawie cała jest Saharą.",
+          "en": "Algeria is the largest country in Africa, and nearly all of it is the Sahara."
+        }
+      ]
+    },
+    {
       "iso": "EE",
       "un": "233",
       "subregion": "baltic",
@@ -884,6 +1254,71 @@
       ],
       "landlocked": false,
       "island": false
+    },
+    {
+      "iso": "EG",
+      "un": "818",
+      "regions": [
+        "africa"
+      ],
+      "subregion": "north-africa",
+      "fame": 1,
+      "micro": false,
+      "landlocked": false,
+      "island": false,
+      "name": {
+        "ru": "Египет",
+        "pl": "Egipt",
+        "en": "Egypt"
+      },
+      "capital": {
+        "ru": "Каир",
+        "pl": "Kair",
+        "en": "Cairo"
+      },
+      "capitalCoords": [
+        31.2358,
+        30.0444
+      ],
+      "symbol": "pyramid",
+      "stories": [
+        {
+          "ru": "Пирамиды в Гизе единственное из семи чудес древнего мира, которое дожило до наших дней.",
+          "pl": "Piramidy w Gizie to jedyny z siedmiu cudów starożytnego świata, który dotrwał do dziś.",
+          "en": "The pyramids at Giza are the only one of the seven wonders of the ancient world still standing."
+        },
+        {
+          "ru": "Почти все египтяне живут вдоль Нила, а вокруг пустыня.",
+          "pl": "Prawie wszyscy Egipcjanie mieszkają wzdłuż Nilu, a dookoła jest pustynia.",
+          "en": "Almost all Egyptians live along the Nile, and around it is desert."
+        }
+      ]
+    },
+    {
+      "iso": "ER",
+      "un": "232",
+      "regions": [
+        "africa"
+      ],
+      "subregion": "east-africa",
+      "fame": 3,
+      "micro": false,
+      "landlocked": false,
+      "island": false,
+      "name": {
+        "ru": "Эритрея",
+        "pl": "Erytrea",
+        "en": "Eritrea"
+      },
+      "capital": {
+        "ru": "Асмэра",
+        "pl": "Asmara",
+        "en": "Asmara"
+      },
+      "capitalCoords": [
+        38.9167,
+        15.3333
+      ]
     },
     {
       "iso": "ES",
@@ -943,6 +1378,50 @@
       ],
       "landlocked": false,
       "island": false
+    },
+    {
+      "iso": "ET",
+      "un": "231",
+      "regions": [
+        "africa"
+      ],
+      "subregion": "east-africa",
+      "fame": 1,
+      "micro": false,
+      "landlocked": true,
+      "island": false,
+      "name": {
+        "ru": "Эфиопия",
+        "pl": "Etiopia",
+        "en": "Ethiopia"
+      },
+      "capital": {
+        "ru": "Аддис-Абеба",
+        "pl": "Addis Abeba",
+        "en": "Addis Ababa"
+      },
+      "capitalCoords": [
+        38.7525,
+        9.0358
+      ],
+      "symbol": "coffee",
+      "stories": [
+        {
+          "ru": "Кофе впервые начали пить в Эфиопии, оттуда он разошёлся по всему свету.",
+          "pl": "Kawę zaczęto pić najpierw w Etiopii, stamtąd trafiła na cały świat.",
+          "en": "Coffee was first drunk in Ethiopia, and from there it went everywhere."
+        },
+        {
+          "ru": "У эфиопов свой календарь: в нём тринадцать месяцев, и год отстаёт от нашего на семь лет.",
+          "pl": "Etiopczycy mają własny kalendarz: ma trzynaście miesięcy, a rok jest o siedem lat do tyłu.",
+          "en": "Ethiopia keeps its own calendar: thirteen months, and the year runs seven behind ours."
+        },
+        {
+          "ru": "Эфиопия единственная страна Африки, которую так и не превратили в колонию.",
+          "pl": "Etiopia to jedyny kraj Afryki, którego nie zamieniono w kolonię.",
+          "en": "Ethiopia is the only country in Africa that was never turned into a colony."
+        }
+      ]
     },
     {
       "iso": "FI",
@@ -1063,6 +1542,32 @@
       "island": false
     },
     {
+      "iso": "GA",
+      "un": "266",
+      "regions": [
+        "africa"
+      ],
+      "subregion": "central-africa",
+      "fame": 3,
+      "micro": false,
+      "landlocked": false,
+      "island": false,
+      "name": {
+        "ru": "Габон",
+        "pl": "Gabon",
+        "en": "Gabon"
+      },
+      "capital": {
+        "ru": "Либревиль",
+        "pl": "Libreville",
+        "en": "Libreville"
+      },
+      "capitalCoords": [
+        9.4403,
+        0.4078
+      ]
+    },
+    {
       "iso": "GB",
       "un": "826",
       "subregion": "west",
@@ -1149,6 +1654,117 @@
       "symbol": "grapes"
     },
     {
+      "iso": "GH",
+      "un": "288",
+      "regions": [
+        "africa"
+      ],
+      "subregion": "west-africa",
+      "fame": 1,
+      "micro": false,
+      "landlocked": false,
+      "island": false,
+      "name": {
+        "ru": "Гана",
+        "pl": "Ghana",
+        "en": "Ghana"
+      },
+      "capital": {
+        "ru": "Аккра",
+        "pl": "Akra",
+        "en": "Accra"
+      },
+      "capitalCoords": [
+        -0.1969,
+        5.556
+      ],
+      "stories": [
+        {
+          "ru": "Гана первой из африканских колоний стала независимой страной, это случилось в 1957 году.",
+          "pl": "Ghana jako pierwsza z afrykańskich kolonii stała się niepodległym krajem, w 1957 roku.",
+          "en": "Ghana was the first African colony to become an independent country, in 1957."
+        }
+      ]
+    },
+    {
+      "iso": "GM",
+      "un": "270",
+      "regions": [
+        "africa"
+      ],
+      "subregion": "west-africa",
+      "fame": 3,
+      "micro": false,
+      "landlocked": false,
+      "island": false,
+      "name": {
+        "ru": "Гамбия",
+        "pl": "Gambia",
+        "en": "Gambia"
+      },
+      "capital": {
+        "ru": "Банжул",
+        "pl": "Bandżul",
+        "en": "Banjul"
+      },
+      "capitalCoords": [
+        -16.5775,
+        13.4531
+      ]
+    },
+    {
+      "iso": "GN",
+      "un": "324",
+      "regions": [
+        "africa"
+      ],
+      "subregion": "west-africa",
+      "fame": 2,
+      "micro": false,
+      "landlocked": false,
+      "island": false,
+      "name": {
+        "ru": "Гвинея",
+        "pl": "Gwinea",
+        "en": "Guinea"
+      },
+      "capital": {
+        "ru": "Конакри",
+        "pl": "Konakry",
+        "en": "Conakry"
+      },
+      "capitalCoords": [
+        -13.7122,
+        9.5092
+      ]
+    },
+    {
+      "iso": "GQ",
+      "un": "226",
+      "regions": [
+        "africa"
+      ],
+      "subregion": "central-africa",
+      "fame": 3,
+      "micro": false,
+      "landlocked": false,
+      "island": false,
+      "name": {
+        "ru": "Экваториальная Гвинея",
+        "pl": "Gwinea Równikowa",
+        "en": "Equatorial Guinea"
+      },
+      "capital": {
+        "ru": "Малабо",
+        "pl": "Malabo",
+        "en": "Malabo"
+      },
+      "capitalCoords": [
+        8.7833,
+        3.75
+      ]
+    },
+    {
       "iso": "GR",
       "un": "300",
       "subregion": "south",
@@ -1206,6 +1822,32 @@
       ],
       "landlocked": false,
       "island": false
+    },
+    {
+      "iso": "GW",
+      "un": "624",
+      "regions": [
+        "africa"
+      ],
+      "subregion": "west-africa",
+      "fame": 3,
+      "micro": false,
+      "landlocked": false,
+      "island": false,
+      "name": {
+        "ru": "Гвинея-Бисау",
+        "pl": "Gwinea Bissau",
+        "en": "Guinea-Bissau"
+      },
+      "capital": {
+        "ru": "Бисау",
+        "pl": "Bissau",
+        "en": "Bissau"
+      },
+      "capitalCoords": [
+        -15.5833,
+        11.86
+      ]
     },
     {
       "iso": "HR",
@@ -1304,7 +1946,7 @@
       "regions": [
         "asia"
       ],
-      "subregion": "southeast",
+      "subregion": "southeast-asia",
       "fame": 1,
       "micro": false,
       "landlocked": false,
@@ -1445,7 +2087,7 @@
       "regions": [
         "asia"
       ],
-      "subregion": "south",
+      "subregion": "south-asia",
       "fame": 1,
       "micro": false,
       "landlocked": false,
@@ -1704,7 +2346,7 @@
       "regions": [
         "asia"
       ],
-      "subregion": "east",
+      "subregion": "east-asia",
       "fame": 1,
       "micro": false,
       "landlocked": false,
@@ -1743,12 +2385,46 @@
       ]
     },
     {
+      "iso": "KE",
+      "un": "404",
+      "regions": [
+        "africa"
+      ],
+      "subregion": "east-africa",
+      "fame": 1,
+      "micro": false,
+      "landlocked": false,
+      "island": false,
+      "name": {
+        "ru": "Кения",
+        "pl": "Kenia",
+        "en": "Kenya"
+      },
+      "capital": {
+        "ru": "Найроби",
+        "pl": "Nairobi",
+        "en": "Nairobi"
+      },
+      "capitalCoords": [
+        36.8172,
+        -1.2864
+      ],
+      "symbol": "giraffe",
+      "stories": [
+        {
+          "ru": "Через Кению проходит экватор, и в один и тот же день здесь бывает и жара, и снег в горах.",
+          "pl": "Przez Kenię przechodzi równik, a tego samego dnia bywa tu upał i śnieg w górach.",
+          "en": "The equator runs through Kenya, and on the same day there is heat below and snow in the mountains."
+        }
+      ]
+    },
+    {
       "iso": "KG",
       "un": "417",
       "regions": [
         "asia"
       ],
-      "subregion": "central",
+      "subregion": "central-asia",
       "fame": 3,
       "micro": false,
       "landlocked": true,
@@ -1774,7 +2450,7 @@
       "regions": [
         "asia"
       ],
-      "subregion": "southeast",
+      "subregion": "southeast-asia",
       "fame": 2,
       "micro": false,
       "landlocked": false,
@@ -1795,12 +2471,38 @@
       ]
     },
     {
+      "iso": "KM",
+      "un": "174",
+      "regions": [
+        "africa"
+      ],
+      "subregion": "east-africa",
+      "fame": 3,
+      "micro": true,
+      "landlocked": false,
+      "island": true,
+      "name": {
+        "ru": "Коморы",
+        "pl": "Komory",
+        "en": "Comoros"
+      },
+      "capital": {
+        "ru": "Морони",
+        "pl": "Moroni",
+        "en": "Moroni"
+      },
+      "capitalCoords": [
+        43.2536,
+        -11.7036
+      ]
+    },
+    {
       "iso": "KP",
       "un": "408",
       "regions": [
         "asia"
       ],
-      "subregion": "east",
+      "subregion": "east-asia",
       "fame": 2,
       "micro": false,
       "landlocked": false,
@@ -1826,7 +2528,7 @@
       "regions": [
         "asia"
       ],
-      "subregion": "east",
+      "subregion": "east-asia",
       "fame": 1,
       "micro": false,
       "landlocked": false,
@@ -1891,7 +2593,7 @@
       "regions": [
         "asia"
       ],
-      "subregion": "central",
+      "subregion": "central-asia",
       "fame": 1,
       "micro": false,
       "landlocked": true,
@@ -1929,7 +2631,7 @@
       "regions": [
         "asia"
       ],
-      "subregion": "southeast",
+      "subregion": "southeast-asia",
       "fame": 2,
       "micro": false,
       "landlocked": true,
@@ -2013,7 +2715,7 @@
       "regions": [
         "asia"
       ],
-      "subregion": "south",
+      "subregion": "south-asia",
       "fame": 2,
       "micro": false,
       "landlocked": false,
@@ -2033,6 +2735,58 @@
         6.9
       ],
       "symbol": "tea"
+    },
+    {
+      "iso": "LR",
+      "un": "430",
+      "regions": [
+        "africa"
+      ],
+      "subregion": "west-africa",
+      "fame": 3,
+      "micro": false,
+      "landlocked": false,
+      "island": false,
+      "name": {
+        "ru": "Либерия",
+        "pl": "Liberia",
+        "en": "Liberia"
+      },
+      "capital": {
+        "ru": "Монровия",
+        "pl": "Monrovia",
+        "en": "Monrovia"
+      },
+      "capitalCoords": [
+        -10.8047,
+        6.3106
+      ]
+    },
+    {
+      "iso": "LS",
+      "un": "426",
+      "regions": [
+        "africa"
+      ],
+      "subregion": "southern-africa",
+      "fame": 3,
+      "micro": false,
+      "landlocked": true,
+      "island": false,
+      "name": {
+        "ru": "Лесото",
+        "pl": "Lesotho",
+        "en": "Lesotho"
+      },
+      "capital": {
+        "ru": "Масеру",
+        "pl": "Maseru",
+        "en": "Maseru"
+      },
+      "capitalCoords": [
+        27.48,
+        -29.31
+      ]
     },
     {
       "iso": "LT",
@@ -2131,6 +2885,66 @@
       "island": false
     },
     {
+      "iso": "LY",
+      "un": "434",
+      "regions": [
+        "africa"
+      ],
+      "subregion": "north-africa",
+      "fame": 1,
+      "micro": false,
+      "landlocked": false,
+      "island": false,
+      "name": {
+        "ru": "Ливия",
+        "pl": "Libia",
+        "en": "Libya"
+      },
+      "capital": {
+        "ru": "Триполи",
+        "pl": "Trypolis",
+        "en": "Tripoli"
+      },
+      "capitalCoords": [
+        13.1875,
+        32.8875
+      ]
+    },
+    {
+      "iso": "MA",
+      "un": "504",
+      "regions": [
+        "africa"
+      ],
+      "subregion": "north-africa",
+      "fame": 1,
+      "micro": false,
+      "landlocked": false,
+      "island": false,
+      "name": {
+        "ru": "Марокко",
+        "pl": "Maroko",
+        "en": "Morocco"
+      },
+      "capital": {
+        "ru": "Рабат",
+        "pl": "Rabat",
+        "en": "Rabat"
+      },
+      "capitalCoords": [
+        -6.8414,
+        34.0211
+      ],
+      "symbol": "desert",
+      "stories": [
+        {
+          "ru": "В Марокко можно за один день попасть с песчаных дюн в заснеженные горы.",
+          "pl": "W Maroku można w jeden dzień trafić z piaszczystych wydm w zaśnieżone góry.",
+          "en": "In Morocco you can go from sand dunes to snowy mountains in a single day."
+        }
+      ]
+    },
+    {
       "iso": "MC",
       "un": "492",
       "subregion": "west",
@@ -2227,6 +3041,45 @@
       "island": false
     },
     {
+      "iso": "MG",
+      "un": "450",
+      "regions": [
+        "africa"
+      ],
+      "subregion": "east-africa",
+      "fame": 1,
+      "micro": false,
+      "landlocked": false,
+      "island": true,
+      "name": {
+        "ru": "Мадагаскар",
+        "pl": "Madagaskar",
+        "en": "Madagascar"
+      },
+      "capital": {
+        "ru": "Антананариву",
+        "pl": "Antananarywa",
+        "en": "Antananarivo"
+      },
+      "capitalCoords": [
+        47.525,
+        -18.91
+      ],
+      "symbol": "monkey",
+      "stories": [
+        {
+          "ru": "Лемуры живут только на Мадагаскаре и больше нигде в мире.",
+          "pl": "Lemury żyją tylko na Madagaskarze i nigdzie indziej na świecie.",
+          "en": "Lemurs live only on Madagascar and nowhere else in the world."
+        },
+        {
+          "ru": "Мадагаскар четвёртый по величине остров на земле.",
+          "pl": "Madagaskar to czwarta co do wielkości wyspa na świecie.",
+          "en": "Madagascar is the fourth largest island on earth."
+        }
+      ]
+    },
+    {
       "iso": "MK",
       "un": "807",
       "subregion": "balkans",
@@ -2259,12 +3112,38 @@
       "island": false
     },
     {
+      "iso": "ML",
+      "un": "466",
+      "regions": [
+        "africa"
+      ],
+      "subregion": "west-africa",
+      "fame": 2,
+      "micro": false,
+      "landlocked": true,
+      "island": false,
+      "name": {
+        "ru": "Мали",
+        "pl": "Mali",
+        "en": "Mali"
+      },
+      "capital": {
+        "ru": "Бамако",
+        "pl": "Bamako",
+        "en": "Bamako"
+      },
+      "capitalCoords": [
+        -7.9922,
+        12.6458
+      ]
+    },
+    {
       "iso": "MM",
       "un": "104",
       "regions": [
         "asia"
       ],
-      "subregion": "southeast",
+      "subregion": "southeast-asia",
       "fame": 2,
       "micro": false,
       "landlocked": false,
@@ -2290,7 +3169,7 @@
       "regions": [
         "asia"
       ],
-      "subregion": "east",
+      "subregion": "east-asia",
       "fame": 1,
       "micro": false,
       "landlocked": true,
@@ -2329,6 +3208,32 @@
       ]
     },
     {
+      "iso": "MR",
+      "un": "478",
+      "regions": [
+        "africa"
+      ],
+      "subregion": "west-africa",
+      "fame": 2,
+      "micro": false,
+      "landlocked": false,
+      "island": false,
+      "name": {
+        "ru": "Мавритания",
+        "pl": "Mauretania",
+        "en": "Mauritania"
+      },
+      "capital": {
+        "ru": "Нуакшот",
+        "pl": "Nawakszut",
+        "en": "Nouakchott"
+      },
+      "capitalCoords": [
+        -15.9785,
+        18.0858
+      ]
+    },
+    {
       "iso": "MT",
       "un": "470",
       "subregion": "south",
@@ -2361,12 +3266,38 @@
       "island": true
     },
     {
+      "iso": "MU",
+      "un": "480",
+      "regions": [
+        "africa"
+      ],
+      "subregion": "east-africa",
+      "fame": 3,
+      "micro": true,
+      "landlocked": false,
+      "island": true,
+      "name": {
+        "ru": "Маврикий",
+        "pl": "Mauritius",
+        "en": "Mauritius"
+      },
+      "capital": {
+        "ru": "Порт-Луи",
+        "pl": "Port Louis",
+        "en": "Port Louis"
+      },
+      "capitalCoords": [
+        57.4989,
+        -20.1619
+      ]
+    },
+    {
       "iso": "MV",
       "un": "462",
       "regions": [
         "asia"
       ],
-      "subregion": "south",
+      "subregion": "south-asia",
       "fame": 3,
       "micro": true,
       "landlocked": false,
@@ -2388,12 +3319,38 @@
       "symbol": "fish"
     },
     {
+      "iso": "MW",
+      "un": "454",
+      "regions": [
+        "africa"
+      ],
+      "subregion": "east-africa",
+      "fame": 2,
+      "micro": false,
+      "landlocked": true,
+      "island": false,
+      "name": {
+        "ru": "Малави",
+        "pl": "Malawi",
+        "en": "Malawi"
+      },
+      "capital": {
+        "ru": "Лилонгве",
+        "pl": "Lilongwe",
+        "en": "Lilongwe"
+      },
+      "capitalCoords": [
+        33.7681,
+        -13.9864
+      ]
+    },
+    {
       "iso": "MY",
       "un": "458",
       "regions": [
         "asia"
       ],
-      "subregion": "southeast",
+      "subregion": "southeast-asia",
       "fame": 1,
       "micro": false,
       "landlocked": false,
@@ -2423,6 +3380,126 @@
           "ru": "Раффлезия, самый большой цветок на земле, растёт в здешних лесах и пахнет тухлым мясом.",
           "pl": "Rafflesia, największy kwiat świata, rośnie w tutejszych lasach i pachnie zepsutym mięsem.",
           "en": "Rafflesia, the biggest flower on earth, grows in these forests and smells of rotten meat."
+        }
+      ]
+    },
+    {
+      "iso": "MZ",
+      "un": "508",
+      "regions": [
+        "africa"
+      ],
+      "subregion": "east-africa",
+      "fame": 2,
+      "micro": false,
+      "landlocked": false,
+      "island": false,
+      "name": {
+        "ru": "Мозамбик",
+        "pl": "Mozambik",
+        "en": "Mozambique"
+      },
+      "capital": {
+        "ru": "Мапуту",
+        "pl": "Maputo",
+        "en": "Maputo"
+      },
+      "capitalCoords": [
+        32.5733,
+        -25.9689
+      ]
+    },
+    {
+      "iso": "NA",
+      "un": "516",
+      "regions": [
+        "africa"
+      ],
+      "subregion": "southern-africa",
+      "fame": 2,
+      "micro": false,
+      "landlocked": false,
+      "island": false,
+      "name": {
+        "ru": "Намибия",
+        "pl": "Namibia",
+        "en": "Namibia"
+      },
+      "capital": {
+        "ru": "Виндхук",
+        "pl": "Windhuk",
+        "en": "Windhoek"
+      },
+      "capitalCoords": [
+        17.0836,
+        -22.57
+      ],
+      "symbol": "rhino",
+      "stories": [
+        {
+          "ru": "В пустыне Намиб дюны выше трёхсот метров, это одни из самых высоких в мире.",
+          "pl": "Na pustyni Namib wydmy mają ponad trzysta metrów, to jedne z najwyższych na świecie.",
+          "en": "The dunes of the Namib rise over three hundred metres, among the tallest anywhere."
+        }
+      ]
+    },
+    {
+      "iso": "NE",
+      "un": "562",
+      "regions": [
+        "africa"
+      ],
+      "subregion": "west-africa",
+      "fame": 2,
+      "micro": false,
+      "landlocked": true,
+      "island": false,
+      "name": {
+        "ru": "Нигер",
+        "pl": "Niger",
+        "en": "Niger"
+      },
+      "capital": {
+        "ru": "Ниамей",
+        "pl": "Niamey",
+        "en": "Niamey"
+      },
+      "capitalCoords": [
+        2.1175,
+        13.515
+      ]
+    },
+    {
+      "iso": "NG",
+      "un": "566",
+      "regions": [
+        "africa"
+      ],
+      "subregion": "west-africa",
+      "fame": 1,
+      "micro": false,
+      "landlocked": false,
+      "island": false,
+      "name": {
+        "ru": "Нигерия",
+        "pl": "Nigeria",
+        "en": "Nigeria"
+      },
+      "capital": {
+        "ru": "Абуджа",
+        "pl": "Abudża",
+        "en": "Abuja"
+      },
+      "capitalCoords": [
+        7.4914,
+        9.0556
+      ],
+      "symbol": "drum",
+      "stories": [
+        {
+          "ru": "В Нигерии живёт больше людей, чем в любой другой стране Африки.",
+          "pl": "W Nigerii mieszka więcej ludzi niż w jakimkolwiek innym kraju Afryki.",
+          "en": "More people live in Nigeria than in any other country in Africa."
         }
       ]
     },
@@ -2550,7 +3627,7 @@
       "regions": [
         "asia"
       ],
-      "subregion": "south",
+      "subregion": "south-asia",
       "fame": 1,
       "micro": false,
       "landlocked": true,
@@ -2615,7 +3692,7 @@
       "regions": [
         "asia"
       ],
-      "subregion": "southeast",
+      "subregion": "southeast-asia",
       "fame": 1,
       "micro": false,
       "landlocked": false,
@@ -2654,7 +3731,7 @@
       "regions": [
         "asia"
       ],
-      "subregion": "south",
+      "subregion": "south-asia",
       "fame": 1,
       "micro": false,
       "landlocked": false,
@@ -2981,6 +4058,32 @@
       "island": false
     },
     {
+      "iso": "RW",
+      "un": "646",
+      "regions": [
+        "africa"
+      ],
+      "subregion": "east-africa",
+      "fame": 2,
+      "micro": false,
+      "landlocked": true,
+      "island": false,
+      "name": {
+        "ru": "Руанда",
+        "pl": "Rwanda",
+        "en": "Rwanda"
+      },
+      "capital": {
+        "ru": "Кигали",
+        "pl": "Kigali",
+        "en": "Kigali"
+      },
+      "capitalCoords": [
+        30.115,
+        -1.9525
+      ]
+    },
+    {
       "iso": "SA",
       "un": "682",
       "regions": [
@@ -3016,6 +4119,66 @@
           "ru": "Пустыня Руб-эль-Хали самое большое сплошное песчаное море на планете.",
           "pl": "Pustynia Rub al-Chali to największe zwarte morze piasku na świecie.",
           "en": "The Rub' al Khali is the largest unbroken sea of sand on the planet."
+        }
+      ]
+    },
+    {
+      "iso": "SC",
+      "un": "690",
+      "regions": [
+        "africa"
+      ],
+      "subregion": "east-africa",
+      "fame": 3,
+      "micro": true,
+      "landlocked": false,
+      "island": true,
+      "name": {
+        "ru": "Сейшельские Острова",
+        "pl": "Seszele",
+        "en": "Seychelles"
+      },
+      "capital": {
+        "ru": "Виктория",
+        "pl": "Victoria",
+        "en": "Victoria"
+      },
+      "capitalCoords": [
+        55.4544,
+        -4.6236
+      ],
+      "symbol": "turtle"
+    },
+    {
+      "iso": "SD",
+      "un": "729",
+      "regions": [
+        "africa"
+      ],
+      "subregion": "north-africa",
+      "fame": 1,
+      "micro": false,
+      "landlocked": false,
+      "island": false,
+      "name": {
+        "ru": "Судан",
+        "pl": "Sudan",
+        "en": "Sudan"
+      },
+      "capital": {
+        "ru": "Хартум",
+        "pl": "Chartum",
+        "en": "Khartoum"
+      },
+      "capitalCoords": [
+        32.5265,
+        15.6031
+      ],
+      "stories": [
+        {
+          "ru": "В Судане пирамид больше, чем в Египте, только они меньше и стоят в пустыне.",
+          "pl": "W Sudanie jest więcej piramid niż w Egipcie, tylko są mniejsze i stoją na pustyni.",
+          "en": "Sudan has more pyramids than Egypt, only smaller ones, standing out in the desert."
         }
       ]
     },
@@ -3084,7 +4247,7 @@
       "regions": [
         "asia"
       ],
-      "subregion": "southeast",
+      "subregion": "southeast-asia",
       "fame": 1,
       "micro": true,
       "landlocked": false,
@@ -3182,6 +4345,32 @@
       "island": false
     },
     {
+      "iso": "SL",
+      "un": "694",
+      "regions": [
+        "africa"
+      ],
+      "subregion": "west-africa",
+      "fame": 3,
+      "micro": false,
+      "landlocked": false,
+      "island": false,
+      "name": {
+        "ru": "Сьерра-Леоне",
+        "pl": "Sierra Leone",
+        "en": "Sierra Leone"
+      },
+      "capital": {
+        "ru": "Фритаун",
+        "pl": "Freetown",
+        "en": "Freetown"
+      },
+      "capitalCoords": [
+        -13.2356,
+        8.4872
+      ]
+    },
+    {
       "iso": "SM",
       "un": "674",
       "subregion": "south",
@@ -3214,6 +4403,117 @@
       "island": false
     },
     {
+      "iso": "SN",
+      "un": "686",
+      "regions": [
+        "africa"
+      ],
+      "subregion": "west-africa",
+      "fame": 1,
+      "micro": false,
+      "landlocked": false,
+      "island": false,
+      "name": {
+        "ru": "Сенегал",
+        "pl": "Senegal",
+        "en": "Senegal"
+      },
+      "capital": {
+        "ru": "Дакар",
+        "pl": "Dakar",
+        "en": "Dakar"
+      },
+      "capitalCoords": [
+        -17.432,
+        14.6726
+      ]
+    },
+    {
+      "iso": "SO",
+      "un": "706",
+      "regions": [
+        "africa"
+      ],
+      "subregion": "east-africa",
+      "fame": 1,
+      "micro": false,
+      "landlocked": false,
+      "island": false,
+      "name": {
+        "ru": "Сомали",
+        "pl": "Somalia",
+        "en": "Somalia"
+      },
+      "capital": {
+        "ru": "Могадишо",
+        "pl": "Mogadiszu",
+        "en": "Mogadishu"
+      },
+      "capitalCoords": [
+        45.3419,
+        2.0392
+      ],
+      "stories": [
+        {
+          "ru": "У Сомали самый длинный морской берег среди материковых стран Африки.",
+          "pl": "Somalia ma najdłuższy brzeg morski spośród lądowych krajów Afryki.",
+          "en": "Somalia has the longest coastline of any mainland country in Africa."
+        }
+      ]
+    },
+    {
+      "iso": "SS",
+      "un": "728",
+      "regions": [
+        "africa"
+      ],
+      "subregion": "east-africa",
+      "fame": 2,
+      "micro": false,
+      "landlocked": true,
+      "island": false,
+      "name": {
+        "ru": "Южный Судан",
+        "pl": "Sudan Południowy",
+        "en": "South Sudan"
+      },
+      "capital": {
+        "ru": "Джуба",
+        "pl": "Dżuba",
+        "en": "Juba"
+      },
+      "capitalCoords": [
+        31.5825,
+        4.8539
+      ]
+    },
+    {
+      "iso": "ST",
+      "un": "678",
+      "regions": [
+        "africa"
+      ],
+      "subregion": "central-africa",
+      "fame": 3,
+      "micro": true,
+      "landlocked": false,
+      "island": true,
+      "name": {
+        "ru": "Сан-Томе и Принсипи",
+        "pl": "Wyspy Świętego Tomasza i Książęca",
+        "en": "São Tomé and Príncipe"
+      },
+      "capital": {
+        "ru": "Сан-Томе",
+        "pl": "São Tomé",
+        "en": "São Tomé"
+      },
+      "capitalCoords": [
+        6.7283,
+        0.3375
+      ]
+    },
+    {
       "iso": "SY",
       "un": "760",
       "regions": [
@@ -3240,12 +4540,90 @@
       ]
     },
     {
+      "iso": "SZ",
+      "un": "748",
+      "regions": [
+        "africa"
+      ],
+      "subregion": "southern-africa",
+      "fame": 3,
+      "micro": false,
+      "landlocked": true,
+      "island": false,
+      "name": {
+        "ru": "Эсватини",
+        "pl": "Eswatini",
+        "en": "Eswatini"
+      },
+      "capital": {
+        "ru": "Мбабане",
+        "pl": "Mbabane",
+        "en": "Mbabane"
+      },
+      "capitalCoords": [
+        31.1367,
+        -26.3054
+      ]
+    },
+    {
+      "iso": "TD",
+      "un": "148",
+      "regions": [
+        "africa"
+      ],
+      "subregion": "central-africa",
+      "fame": 2,
+      "micro": false,
+      "landlocked": true,
+      "island": false,
+      "name": {
+        "ru": "Чад",
+        "pl": "Czad",
+        "en": "Chad"
+      },
+      "capital": {
+        "ru": "Нджамена",
+        "pl": "Ndżamena",
+        "en": "N'Djamena"
+      },
+      "capitalCoords": [
+        15.05,
+        12.11
+      ]
+    },
+    {
+      "iso": "TG",
+      "un": "768",
+      "regions": [
+        "africa"
+      ],
+      "subregion": "west-africa",
+      "fame": 3,
+      "micro": false,
+      "landlocked": false,
+      "island": false,
+      "name": {
+        "ru": "Того",
+        "pl": "Togo",
+        "en": "Togo"
+      },
+      "capital": {
+        "ru": "Ломе",
+        "pl": "Lomé",
+        "en": "Lomé"
+      },
+      "capitalCoords": [
+        1.2158,
+        6.13
+      ]
+    },
+    {
       "iso": "TH",
       "un": "764",
       "regions": [
         "asia"
       ],
-      "subregion": "southeast",
+      "subregion": "southeast-asia",
       "fame": 1,
       "micro": false,
       "landlocked": false,
@@ -3289,7 +4667,7 @@
       "regions": [
         "asia"
       ],
-      "subregion": "central",
+      "subregion": "central-asia",
       "fame": 3,
       "micro": false,
       "landlocked": true,
@@ -3315,7 +4693,7 @@
       "regions": [
         "asia"
       ],
-      "subregion": "southeast",
+      "subregion": "southeast-asia",
       "fame": 3,
       "micro": false,
       "landlocked": false,
@@ -3341,7 +4719,7 @@
       "regions": [
         "asia"
       ],
-      "subregion": "central",
+      "subregion": "central-asia",
       "fame": 3,
       "micro": false,
       "landlocked": true,
@@ -3359,6 +4737,40 @@
       "capitalCoords": [
         58.3833,
         37.95
+      ]
+    },
+    {
+      "iso": "TN",
+      "un": "788",
+      "regions": [
+        "africa"
+      ],
+      "subregion": "north-africa",
+      "fame": 1,
+      "micro": false,
+      "landlocked": false,
+      "island": false,
+      "name": {
+        "ru": "Тунис",
+        "pl": "Tunezja",
+        "en": "Tunisia"
+      },
+      "capital": {
+        "ru": "Тунис",
+        "pl": "Tunis",
+        "en": "Tunis"
+      },
+      "capitalCoords": [
+        10.18,
+        36.8008
+      ],
+      "symbol": "palm",
+      "stories": [
+        {
+          "ru": "Рядом с городом Тунисом стоят развалины Карфагена, который спорил с Римом за власть над морем.",
+          "pl": "Obok miasta Tunis stoją ruiny Kartaginy, która spierała się z Rzymem o władzę nad morzem.",
+          "en": "Beside the city of Tunis stand the ruins of Carthage, which fought Rome for the sea."
+        }
       ]
     },
     {
@@ -3402,6 +4814,45 @@
           "ru": "В Каппадокии люди веками жили в домах, вырубленных прямо в мягких скалах.",
           "pl": "W Kapadocji ludzie przez wieki mieszkali w domach wykutych w miękkich skałach.",
           "en": "In Cappadocia people lived for centuries in houses carved into soft rock."
+        }
+      ]
+    },
+    {
+      "iso": "TZ",
+      "un": "834",
+      "regions": [
+        "africa"
+      ],
+      "subregion": "east-africa",
+      "fame": 1,
+      "micro": false,
+      "landlocked": false,
+      "island": false,
+      "name": {
+        "ru": "Танзания",
+        "pl": "Tanzania",
+        "en": "Tanzania"
+      },
+      "capital": {
+        "ru": "Додома",
+        "pl": "Dodoma",
+        "en": "Dodoma"
+      },
+      "capitalCoords": [
+        35.746,
+        -6.1835
+      ],
+      "symbol": "zebra",
+      "stories": [
+        {
+          "ru": "Килиманджаро самая высокая гора Африки, и на её вершине лежит снег почти на экваторе.",
+          "pl": "Kilimandżaro to najwyższa góra Afryki, a na jej szczycie leży śnieg prawie na równiku.",
+          "en": "Kilimanjaro is the highest mountain in Africa, with snow on top almost at the equator."
+        },
+        {
+          "ru": "По Серенгети каждый год идут огромные стада антилоп, это самое большое переселение зверей на земле.",
+          "pl": "Przez Serengeti co roku idą ogromne stada antylop, to największa wędrówka zwierząt na świecie.",
+          "en": "Huge herds cross the Serengeti every year, the largest animal migration on earth."
         }
       ]
     },
@@ -3465,12 +4916,38 @@
       "island": false
     },
     {
+      "iso": "UG",
+      "un": "800",
+      "regions": [
+        "africa"
+      ],
+      "subregion": "east-africa",
+      "fame": 2,
+      "micro": false,
+      "landlocked": true,
+      "island": false,
+      "name": {
+        "ru": "Уганда",
+        "pl": "Uganda",
+        "en": "Uganda"
+      },
+      "capital": {
+        "ru": "Кампала",
+        "pl": "Kampala",
+        "en": "Kampala"
+      },
+      "capitalCoords": [
+        32.5811,
+        0.3136
+      ]
+    },
+    {
       "iso": "UZ",
       "un": "860",
       "regions": [
         "asia"
       ],
-      "subregion": "central",
+      "subregion": "central-asia",
       "fame": 2,
       "micro": false,
       "landlocked": true,
@@ -3528,7 +5005,7 @@
       "regions": [
         "asia"
       ],
-      "subregion": "southeast",
+      "subregion": "southeast-asia",
       "fame": 1,
       "micro": false,
       "landlocked": false,
@@ -3585,6 +5062,106 @@
       "capitalCoords": [
         44.2067,
         15.3547
+      ]
+    },
+    {
+      "iso": "ZA",
+      "un": "710",
+      "regions": [
+        "africa"
+      ],
+      "subregion": "southern-africa",
+      "fame": 1,
+      "micro": false,
+      "landlocked": false,
+      "island": false,
+      "name": {
+        "ru": "ЮАР",
+        "pl": "Południowa Afryka",
+        "en": "South Africa"
+      },
+      "capital": {
+        "ru": "Претория",
+        "pl": "Pretoria",
+        "en": "Pretoria"
+      },
+      "capitalCoords": [
+        28.1881,
+        -25.7461
+      ],
+      "symbol": "penguin",
+      "stories": [
+        {
+          "ru": "У ЮАР три столицы сразу: в одной правительство, в другой парламент, в третьей главный суд.",
+          "pl": "RPA ma naraz trzy stolice: w jednej rząd, w drugiej parlament, w trzeciej sąd najwyższy.",
+          "en": "South Africa has three capitals at once: the government in one, parliament in another, the high court in a third."
+        },
+        {
+          "ru": "Здесь больше десяти государственных языков, и все они настоящие, не для красоты.",
+          "pl": "Jest tu ponad dziesięć języków urzędowych i wszystkie są prawdziwe, nie na pokaz.",
+          "en": "It has more than ten official languages, and all of them are real, not for show."
+        }
+      ]
+    },
+    {
+      "iso": "ZM",
+      "un": "894",
+      "regions": [
+        "africa"
+      ],
+      "subregion": "east-africa",
+      "fame": 2,
+      "micro": false,
+      "landlocked": true,
+      "island": false,
+      "name": {
+        "ru": "Замбия",
+        "pl": "Zambia",
+        "en": "Zambia"
+      },
+      "capital": {
+        "ru": "Лусака",
+        "pl": "Lusaka",
+        "en": "Lusaka"
+      },
+      "capitalCoords": [
+        28.2833,
+        -15.4167
+      ],
+      "symbol": "flamingo"
+    },
+    {
+      "iso": "ZW",
+      "un": "716",
+      "regions": [
+        "africa"
+      ],
+      "subregion": "southern-africa",
+      "fame": 2,
+      "micro": false,
+      "landlocked": true,
+      "island": false,
+      "name": {
+        "ru": "Зимбабве",
+        "pl": "Zimbabwe",
+        "en": "Zimbabwe"
+      },
+      "capital": {
+        "ru": "Хараре",
+        "pl": "Harare",
+        "en": "Harare"
+      },
+      "capitalCoords": [
+        31.0522,
+        -17.8292
+      ],
+      "symbol": "crocodile",
+      "stories": [
+        {
+          "ru": "Водопад Виктория такой шумный, что местные зовут его «дым, который гремит».",
+          "pl": "Wodospad Wiktorii jest tak głośny, że miejscowi zwą go „dymem, który grzmi”.",
+          "en": "Victoria Falls is so loud that people there call it the smoke that thunders."
+        }
       ]
     }
   ]

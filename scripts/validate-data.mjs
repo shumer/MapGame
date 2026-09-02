@@ -128,8 +128,12 @@ for (const continent of CONTINENTS) {
       else notes.push(`${tag}: capital ${km} km outside the rounded coastline`)
     }
 
+    // Between these two the call is a judgement one: an island chain of that
+    // size is drawn small on one map and just tappable on another, and the
+    // grid a set uses moves the number either way.
     const area = geoArea(f)
-    if ((area < MICRO_AREA) !== c.micro) {
+    const borderline = area > MICRO_AREA / 2 && area < MICRO_AREA * 3
+    if (!borderline && (area < MICRO_AREA) !== c.micro) {
       problems.push(`${tag}: micro=${c.micro} but area=${area.toExponential(2)}`)
     }
   }

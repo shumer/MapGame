@@ -54,6 +54,27 @@ const SYMBOLS = {
   tea: '1f375',
   fire: '1f525',
   judo: '1f94b',
+
+  // Africa. Same rule: nothing that repeats the country's own flag. That rules
+  // out the cedar for Lebanon, and any lion for a flag that carries one.
+  pyramid: '1f5ff',
+  giraffe: '1f992',
+  zebra: '1f993',
+  hippo: '1f99b',
+  gorilla: '1f98d',
+  rhino: '1f98f',
+  monkey: '1f412',
+  crocodile: '1f40a',
+  flamingo: '1f9a9',
+  penguin: '1f427',
+  turtle: '1f422',
+  cactus: '1f335',
+  palm: '1f334',
+  coffee: '2615',
+  cocoa: '1f36b',
+  diamond: '1f48e',
+  drum: '1f941',
+  desert: '1f3dc',
 }
 
 const DECOR = {

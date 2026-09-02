@@ -9,6 +9,7 @@ export type Region = 'europe' | 'asia' | 'africa' | 'americas' | 'oceania' | 'wo
 /** Only ever used to tell "far away" from "next door" when picking wrong
     answers, so the divisions are rough on purpose. */
 export type Subregion =
+  // Europe
   | 'west'
   | 'central'
   | 'east'
@@ -16,9 +17,20 @@ export type Subregion =
   | 'baltic'
   | 'balkans'
   | 'south'
-  | 'southeast'
+  // Asia. Named apart from the European ones so that in the world set China is
+  // still "far away" from Ukraine.
+  | 'east-asia'
+  | 'south-asia'
+  | 'southeast-asia'
+  | 'central-asia'
   | 'middle-east'
   | 'caucasus'
+  // Africa
+  | 'north-africa'
+  | 'west-africa'
+  | 'east-africa'
+  | 'central-africa'
+  | 'southern-africa'
 
 export interface Country {
   /** ISO 3166-1 alpha-2, also the flag icon name. */
