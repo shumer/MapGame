@@ -2,9 +2,10 @@ import { useEffect, useMemo } from 'react'
 import { countryByIso, derived } from '../data'
 import { PRESETS, type GameMode, type Profile } from '../game/types'
 import { useRound } from '../game/useRound'
-import { praise, t } from '../i18n/ui'
+import { consolation, consolationKey, praise, praiseKey, t } from '../i18n/ui'
 import { WorldMap } from '../map/WorldMap'
 import { canSpeak, speak, stopSpeaking } from '../speech'
+import { say } from '../voice'
 import { sounds } from '../sound'
 import { useSound } from '../store/settings'
 import { ArrowIcon, CrossIcon, HomeIcon, SpeakerIcon, SpeakerOffIcon, TickIcon } from '../ui/icons'
@@ -40,24 +41,26 @@ export function GameScreen({ profile, mode, onExit, onDone }: Props) {
   const lastAnswer = round.answers[round.answers.length - 1]
   // Derived, not stored: the same answer always gets the same word.
   const cheer = praise(ui, round.answers.length)
+  const commiseration = consolation(ui, round.answers.length)
   useEffect(() => {
     if (phase !== 'revealed' || !lastAnswer) return
     const timers: number[] = []
 
     if (lastAnswer.correct) {
       sounds.correct()
-      if (speakable) {
-        speak(cheer, ui)
-        // Long enough for the cheer to finish before the country is named.
-        timers.push(window.setTimeout(() => speak(target.name[lang], lang), 1000))
-      }
+      say(praiseKey(round.answers.length), cheer, ui)
+      // Long enough for the cheer to finish before the country is named.
+      if (speakable) timers.push(window.setTimeout(() => speak(target.name[lang], lang), 1100))
     } else {
       sounds.reveal()
-      if (speakable) timers.push(window.setTimeout(() => speak(target.name[lang], lang), 340))
+      // A wrong answer was silent until now; it is the moment that most needs
+      // a friendly voice.
+      say(consolationKey(round.answers.length), commiseration, ui)
+      if (speakable) timers.push(window.setTimeout(() => speak(target.name[lang], lang), 1100))
     }
 
     return () => timers.forEach(clearTimeout)
-  }, [phase, lastAnswer, speakable, target, lang, ui, cheer])
+  }, [phase, lastAnswer, speakable, target, lang, ui, cheer, commiseration, round.answers.length])
 
   // Every wrong pick sounds, whether it ends the question or not.
   const missCount = misses.length

@@ -62,6 +62,22 @@ export const praise = (lang: Lang, seed: number): string => {
   return list[Math.abs(Math.floor(seed)) % list.length]
 }
 
+/** Spoken after a wrong answer. Never scolding: the mistake is already over. */
+const CONSOLE_LINES: Record<Lang, string[]> = {
+  ru: ['Ничего страшного!', 'Почти!', 'В следующий раз получится!', 'Смотри, вот она!', 'Бывает!'],
+  pl: ['Nic się nie stało!', 'Prawie!', 'Następnym razem się uda!', 'Popatrz, tutaj jest!', 'Zdarza się!'],
+  en: ["No worries!", 'So close!', "You'll get it next time!", 'Look, here it is!', 'It happens!'],
+}
+
+export const consolation = (lang: Lang, seed: number): string => {
+  const list = CONSOLE_LINES[lang]
+  return list[Math.abs(Math.floor(seed)) % list.length]
+}
+
+/** File keys for the recorded versions, in the same order as the phrase lists. */
+export const praiseKey = (seed: number) => `praise-0${(Math.abs(Math.floor(seed)) % 6) + 1}`
+export const consolationKey = (seed: number) => `miss-0${(Math.abs(Math.floor(seed)) % 5) + 1}`
+
 export const LANG_NAMES: Record<Lang, string> = {
   ru: 'Русский',
   pl: 'Polski',
