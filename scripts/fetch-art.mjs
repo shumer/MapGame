@@ -82,6 +82,14 @@ const SYMBOLS = {
   shell: '1f41a',
   jellyfish: '1fabc',
   whale: '1f40b',
+
+  // South America.
+  llama: '1f999',
+  toucan: '1f9a4',
+  sloth: '1f9a5',
+  football: '26bd',
+  frog: '1f438',
+  butterfly: '1f98b',
 }
 
 const DECOR = {

@@ -78,8 +78,7 @@ The world set is marked `collects`, which means it takes every country that
 belongs to any other set: adding Africa adds it to the world too, with nothing
 to keep in step. It also carries `backdropRest`, so the continents nobody has
 built yet are drawn as grey land rather than sea, `quant` for a coarser grid
-(the detail is invisible at that scale and doubles what the tablet caches), and
-`exclude` for Antarctica, which smears along the bottom of any world projection
+than a continent map needs, and `exclude` for Antarctica, which smears along the bottom of any world projection
 and takes a third of the screen for a place no round asks about. Its zoom
 frames are inherited from the continent sets rather than recomputed, because a
 worldwide window would frame France from French Guiana to Réunion.
@@ -155,6 +154,22 @@ Seven countries (AD, LI, LU, MT, MC, SM, VA) are too small to tap at map scale. 
 ### Do NOT fit a conic projection to a rectangle
 
 `geoConicConformal().fitSize()` on a four-corner polygon sends the projection through its own singularity and collapses the scale to about 0.001 — the map renders as a single dot. Fit to a grid of `MultiPoint` coordinates instead. See `createProjection` in `src/map/projection.ts`.
+
+### Do NOT push the quantization grid too fine
+
+`quant` is per continent (20000 for a continent, 5000 for the world). Going to
+40000 does not merely bloat the file: Australia came out as a scrap of 6e-8
+steradians, because a finer grid produces rings that the cleanup pass reads as
+collapsed. If a country's area suddenly looks absurd after a change here, this
+is why.
+
+### Do NOT assume one country is one shape in Natural Earth
+
+Australia arrives as the mainland plus an outlying scrap, both under code 036,
+and anything keyed by id then sees whichever came last -- which is how the
+validator ended up measuring Australia and finding it microscopic.
+`build-map.mjs` merges features that share an id into one MultiPolygon; keep
+that.
 
 ### Do NOT simplify the map geometry
 

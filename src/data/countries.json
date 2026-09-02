@@ -221,6 +221,45 @@
       ]
     },
     {
+      "iso": "AR",
+      "un": "032",
+      "regions": [
+        "samerica"
+      ],
+      "subregion": "south-america",
+      "fame": 1,
+      "micro": false,
+      "landlocked": false,
+      "island": false,
+      "name": {
+        "ru": "Аргентина",
+        "pl": "Argentyna",
+        "en": "Argentina"
+      },
+      "capital": {
+        "ru": "Буэнос-Айрес",
+        "pl": "Buenos Aires",
+        "en": "Buenos Aires"
+      },
+      "capitalCoords": [
+        -58.3819,
+        -34.5997
+      ],
+      "symbol": "penguin",
+      "stories": [
+        {
+          "ru": "Аргентина тянется так далеко на юг, что рядом уже Антарктида.",
+          "pl": "Argentyna ciągnie się tak daleko na południe, że blisko jest już Antarktyda.",
+          "en": "Argentina reaches so far south that Antarctica is not far away."
+        },
+        {
+          "ru": "Танго придумали в Буэнос-Айресе, в портовых кварталах.",
+          "pl": "Tango wymyślono w Buenos Aires, w dzielnicach portowych.",
+          "en": "Tango was invented in Buenos Aires, down by the docks."
+        }
+      ]
+    },
+    {
       "iso": "AT",
       "un": "040",
       "subregion": "central",
@@ -656,6 +695,89 @@
       ]
     },
     {
+      "iso": "BO",
+      "un": "068",
+      "regions": [
+        "samerica"
+      ],
+      "subregion": "south-america",
+      "fame": 2,
+      "micro": false,
+      "landlocked": true,
+      "island": false,
+      "name": {
+        "ru": "Боливия",
+        "pl": "Boliwia",
+        "en": "Bolivia"
+      },
+      "capital": {
+        "ru": "Сукре",
+        "pl": "Sucre",
+        "en": "Sucre"
+      },
+      "capitalCoords": [
+        -65.26,
+        -19.0475
+      ],
+      "symbol": "sloth",
+      "stories": [
+        {
+          "ru": "У Боливии две столицы сразу, и она одна из двух стран Южной Америки без выхода к морю.",
+          "pl": "Boliwia ma dwie stolice naraz i jest jednym z dwóch krajów Ameryki Południowej bez dostępu do morza.",
+          "en": "Bolivia has two capitals at once, and is one of the two South American countries with no sea."
+        },
+        {
+          "ru": "Солончак Уюни после дождя превращается в огромное зеркало, в котором отражается небо.",
+          "pl": "Solnisko Uyuni po deszczu zamienia się w ogromne lustro, w którym odbija się niebo.",
+          "en": "After rain the Uyuni salt flat turns into an enormous mirror that reflects the sky."
+        }
+      ]
+    },
+    {
+      "iso": "BR",
+      "un": "076",
+      "regions": [
+        "samerica"
+      ],
+      "subregion": "south-america",
+      "fame": 1,
+      "micro": false,
+      "landlocked": false,
+      "island": false,
+      "name": {
+        "ru": "Бразилия",
+        "pl": "Brazylia",
+        "en": "Brazil"
+      },
+      "capital": {
+        "ru": "Бразилиа",
+        "pl": "Brasília",
+        "en": "Brasília"
+      },
+      "capitalCoords": [
+        -47.8828,
+        -15.7939
+      ],
+      "symbol": "football",
+      "stories": [
+        {
+          "ru": "Бразилия занимает почти половину всей Южной Америки.",
+          "pl": "Brazylia zajmuje niemal połowę całej Ameryki Południowej.",
+          "en": "Brazil takes up nearly half of all South America."
+        },
+        {
+          "ru": "Через Бразилию течёт Амазонка, в ней воды больше, чем в любой другой реке мира.",
+          "pl": "Przez Brazylię płynie Amazonka, ma więcej wody niż jakakolwiek inna rzeka świata.",
+          "en": "The Amazon runs through Brazil, carrying more water than any other river on earth."
+        },
+        {
+          "ru": "Здесь говорят по-португальски, а во всех соседних странах по-испански.",
+          "pl": "Mówi się tu po portugalsku, a we wszystkich krajach dookoła po hiszpańsku.",
+          "en": "People here speak Portuguese, while every country around them speaks Spanish."
+        }
+      ]
+    },
+    {
       "iso": "BS",
       "un": "044",
       "regions": [
@@ -1046,6 +1168,45 @@
       ]
     },
     {
+      "iso": "CL",
+      "un": "152",
+      "regions": [
+        "samerica"
+      ],
+      "subregion": "south-america",
+      "fame": 1,
+      "micro": false,
+      "landlocked": false,
+      "island": false,
+      "name": {
+        "ru": "Чили",
+        "pl": "Chile",
+        "en": "Chile"
+      },
+      "capital": {
+        "ru": "Сантьяго",
+        "pl": "Santiago",
+        "en": "Santiago"
+      },
+      "capitalCoords": [
+        -70.65,
+        -33.4375
+      ],
+      "symbol": "mountains",
+      "stories": [
+        {
+          "ru": "Чили очень длинная и очень узкая: с севера на юг больше четырёх тысяч километров, а поперёк местами всего сто.",
+          "pl": "Chile jest bardzo długie i bardzo wąskie: z północy na południe ponad cztery tysiące kilometrów, a w poprzek miejscami sto.",
+          "en": "Chile is very long and very narrow: over four thousand kilometres north to south, and in places only a hundred across."
+        },
+        {
+          "ru": "Пустыня Атакама самое сухое место на земле, там годами не бывает дождя.",
+          "pl": "Pustynia Atakama to najsuchsze miejsce na ziemi, latami nie pada tam deszcz.",
+          "en": "The Atacama is the driest place on earth; years pass there without rain."
+        }
+      ]
+    },
+    {
       "iso": "CM",
       "un": "120",
       "regions": [
@@ -1112,6 +1273,40 @@
           "ru": "Панда почти весь день ест бамбук, потому что он совсем не питательный.",
           "pl": "Panda je bambus niemal cały dzień, bo bambus jest bardzo mało pożywny.",
           "en": "A panda eats bamboo almost all day, because bamboo is barely nourishing."
+        }
+      ]
+    },
+    {
+      "iso": "CO",
+      "un": "170",
+      "regions": [
+        "samerica"
+      ],
+      "subregion": "south-america",
+      "fame": 1,
+      "micro": false,
+      "landlocked": false,
+      "island": false,
+      "name": {
+        "ru": "Колумбия",
+        "pl": "Kolumbia",
+        "en": "Colombia"
+      },
+      "capital": {
+        "ru": "Богота",
+        "pl": "Bogota",
+        "en": "Bogotá"
+      },
+      "capitalCoords": [
+        -74.0817,
+        4.6097
+      ],
+      "symbol": "coffee",
+      "stories": [
+        {
+          "ru": "Колумбия единственная страна Южной Америки, у которой есть берег и Тихого океана, и Атлантического.",
+          "pl": "Kolumbia to jedyny kraj Ameryki Południowej z brzegiem i Pacyfiku, i Atlantyku.",
+          "en": "Colombia is the only country in South America with a coast on both the Pacific and the Atlantic."
         }
       ]
     },
@@ -1528,6 +1723,45 @@
           "ru": "Алжир самая большая страна Африки, и почти вся она это Сахара.",
           "pl": "Algieria to największy kraj Afryki i prawie cała jest Saharą.",
           "en": "Algeria is the largest country in Africa, and nearly all of it is the Sahara."
+        }
+      ]
+    },
+    {
+      "iso": "EC",
+      "un": "218",
+      "regions": [
+        "samerica"
+      ],
+      "subregion": "south-america",
+      "fame": 2,
+      "micro": false,
+      "landlocked": false,
+      "island": false,
+      "name": {
+        "ru": "Эквадор",
+        "pl": "Ekwador",
+        "en": "Ecuador"
+      },
+      "capital": {
+        "ru": "Кито",
+        "pl": "Quito",
+        "en": "Quito"
+      },
+      "capitalCoords": [
+        -78.5125,
+        -0.22
+      ],
+      "symbol": "turtle",
+      "stories": [
+        {
+          "ru": "Название страны значит «экватор»: он проходит прямо через неё.",
+          "pl": "Nazwa kraju znaczy „równik”: przechodzi on prosto przez niego.",
+          "en": "The country's name means equator, and the equator runs right through it."
+        },
+        {
+          "ru": "На Галапагосских островах живут черепахи, которые доживают до полутора сотен лет.",
+          "pl": "Na Galapagos żyją żółwie, które dożywają stu pięćdziesięciu lat.",
+          "en": "The Galapagos are home to tortoises that live to a hundred and fifty."
         }
       ]
     },
@@ -2268,6 +2502,33 @@
         -15.5833,
         11.86
       ]
+    },
+    {
+      "iso": "GY",
+      "un": "328",
+      "regions": [
+        "samerica"
+      ],
+      "subregion": "south-america",
+      "fame": 3,
+      "micro": false,
+      "landlocked": false,
+      "island": false,
+      "name": {
+        "ru": "Гайана",
+        "pl": "Gujana",
+        "en": "Guyana"
+      },
+      "capital": {
+        "ru": "Джорджтаун",
+        "pl": "Georgetown",
+        "en": "Georgetown"
+      },
+      "capitalCoords": [
+        -58.1508,
+        6.8058
+      ],
+      "symbol": "palm"
     },
     {
       "iso": "HN",
@@ -4476,6 +4737,45 @@
       ]
     },
     {
+      "iso": "PE",
+      "un": "604",
+      "regions": [
+        "samerica"
+      ],
+      "subregion": "south-america",
+      "fame": 1,
+      "micro": false,
+      "landlocked": false,
+      "island": false,
+      "name": {
+        "ru": "Перу",
+        "pl": "Peru",
+        "en": "Peru"
+      },
+      "capital": {
+        "ru": "Лима",
+        "pl": "Lima",
+        "en": "Lima"
+      },
+      "capitalCoords": [
+        -77.0375,
+        -12.06
+      ],
+      "symbol": "llama",
+      "stories": [
+        {
+          "ru": "Мачу-Пикчу построили инки высоко в горах, и о нём долго никто не знал за пределами Перу.",
+          "pl": "Machu Picchu zbudowali Inkowie wysoko w górach i długo nikt poza Peru o nim nie wiedział.",
+          "en": "Machu Picchu was built by the Inca high in the mountains, and outside Peru nobody knew of it for a long time."
+        },
+        {
+          "ru": "Картошка родом отсюда: в Перу её выращивают тысячи лет и знают сотни сортов.",
+          "pl": "Ziemniak pochodzi stąd: w Peru uprawia się go od tysięcy lat i zna setki odmian.",
+          "en": "The potato comes from here: Peru has grown it for thousands of years and knows hundreds of kinds."
+        }
+      ]
+    },
+    {
       "iso": "PG",
       "un": "598",
       "regions": [
@@ -4755,6 +5055,40 @@
         7.5006
       ],
       "symbol": "jellyfish"
+    },
+    {
+      "iso": "PY",
+      "un": "600",
+      "regions": [
+        "samerica"
+      ],
+      "subregion": "south-america",
+      "fame": 2,
+      "micro": false,
+      "landlocked": true,
+      "island": false,
+      "name": {
+        "ru": "Парагвай",
+        "pl": "Paragwaj",
+        "en": "Paraguay"
+      },
+      "capital": {
+        "ru": "Асунсьон",
+        "pl": "Asunción",
+        "en": "Asunción"
+      },
+      "capitalCoords": [
+        -57.6344,
+        -25.28
+      ],
+      "symbol": "butterfly",
+      "stories": [
+        {
+          "ru": "Парагвай вторая страна материка без выхода к морю, зато рек тут много.",
+          "pl": "Paragwaj to drugi kraj kontynentu bez dostępu do morza, za to rzek jest tu dużo.",
+          "en": "Paraguay is the continent's other landlocked country, but it has no shortage of rivers."
+        }
+      ]
     },
     {
       "iso": "QA",
@@ -5333,6 +5667,40 @@
           "ru": "У Сомали самый длинный морской берег среди материковых стран Африки.",
           "pl": "Somalia ma najdłuższy brzeg morski spośród lądowych krajów Afryki.",
           "en": "Somalia has the longest coastline of any mainland country in Africa."
+        }
+      ]
+    },
+    {
+      "iso": "SR",
+      "un": "740",
+      "regions": [
+        "samerica"
+      ],
+      "subregion": "south-america",
+      "fame": 3,
+      "micro": false,
+      "landlocked": false,
+      "island": false,
+      "name": {
+        "ru": "Суринам",
+        "pl": "Surinam",
+        "en": "Suriname"
+      },
+      "capital": {
+        "ru": "Парамарибо",
+        "pl": "Paramaribo",
+        "en": "Paramaribo"
+      },
+      "capitalCoords": [
+        -55.1667,
+        5.8667
+      ],
+      "symbol": "frog",
+      "stories": [
+        {
+          "ru": "Суринам самая маленькая страна Южной Америки, и почти вся она покрыта лесом.",
+          "pl": "Surinam to najmniejszy kraj Ameryki Południowej i prawie cały pokrywa go las.",
+          "en": "Suriname is the smallest country in South America, and nearly all of it is forest."
         }
       ]
     },
@@ -5976,6 +6344,40 @@
       ]
     },
     {
+      "iso": "UY",
+      "un": "858",
+      "regions": [
+        "samerica"
+      ],
+      "subregion": "south-america",
+      "fame": 2,
+      "micro": false,
+      "landlocked": false,
+      "island": false,
+      "name": {
+        "ru": "Уругвай",
+        "pl": "Urugwaj",
+        "en": "Uruguay"
+      },
+      "capital": {
+        "ru": "Монтевидео",
+        "pl": "Montevideo",
+        "en": "Montevideo"
+      },
+      "capitalCoords": [
+        -56.1913,
+        -34.9059
+      ],
+      "symbol": "bull",
+      "stories": [
+        {
+          "ru": "Уругвай выиграл самый первый чемпионат мира по футболу, он проходил у него дома в 1930 году.",
+          "pl": "Urugwaj wygrał pierwsze w historii mistrzostwa świata w piłce nożnej, u siebie w 1930 roku.",
+          "en": "Uruguay won the very first football World Cup, at home in 1930."
+        }
+      ]
+    },
+    {
       "iso": "UZ",
       "un": "860",
       "regions": [
@@ -6057,6 +6459,40 @@
       "capitalCoords": [
         -61.2274,
         13.1553
+      ]
+    },
+    {
+      "iso": "VE",
+      "un": "862",
+      "regions": [
+        "samerica"
+      ],
+      "subregion": "south-america",
+      "fame": 1,
+      "micro": false,
+      "landlocked": false,
+      "island": false,
+      "name": {
+        "ru": "Венесуэла",
+        "pl": "Wenezuela",
+        "en": "Venezuela"
+      },
+      "capital": {
+        "ru": "Каракас",
+        "pl": "Caracas",
+        "en": "Caracas"
+      },
+      "capitalCoords": [
+        -66.9144,
+        10.5061
+      ],
+      "symbol": "toucan",
+      "stories": [
+        {
+          "ru": "Анхель самый высокий водопад в мире: вода падает почти километр и внизу превращается в туман.",
+          "pl": "Salto Ángel to najwyższy wodospad świata: woda spada prawie kilometr i na dole zamienia się w mgłę.",
+          "en": "Angel Falls is the highest waterfall in the world: the water drops almost a kilometre and turns to mist on the way."
+        }
       ]
     },
     {

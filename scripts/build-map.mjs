@@ -77,6 +77,29 @@ for (const continent of CONTINENTS) {
       return { ...f, properties: { id, playable: playable.has(id) } }
     })
 
+  // Natural Earth can carry one country as several features -- Australia comes
+  // as the mainland plus an outlying scrap, both under code 036 -- and then
+  // anything keyed by id sees whichever came last. One country, one shape.
+  const merged = new Map()
+  for (const f of keep) {
+    const existing = merged.get(f.properties.id)
+    if (!existing) {
+      merged.set(f.properties.id, {
+        ...f,
+        geometry:
+          f.geometry.type === 'Polygon'
+            ? { type: 'MultiPolygon', coordinates: [f.geometry.coordinates] }
+            : f.geometry,
+      })
+      continue
+    }
+    const parts =
+      f.geometry.type === 'Polygon' ? [f.geometry.coordinates] : f.geometry.coordinates
+    existing.geometry.coordinates.push(...parts)
+  }
+  keep.length = 0
+  keep.push(...merged.values())
+
   // Quantize, then clean up what quantization flattened, then quantize again
   // from the cleaned shapes. Removing a feature shifts the bounding box and so
   // the grid, which is why this repeats until nothing else collapses.
