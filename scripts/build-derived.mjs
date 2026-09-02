@@ -73,14 +73,27 @@ function mainlandParts(f) {
 const derived = {}
 const centroids = new Map()
 
+// A set that collects the others inherits their zoom frames rather than
+// working them out again from a worldwide window, which would frame France
+// from French Guiana to Réunion.
+const inherited = (iso) => {
+  if (!continent.collects) return null
+  for (const other of CONTINENTS) {
+    if (other.id === continent.id) continue
+    const focus = out[other.id]?.[iso]?.focus
+    if (focus) return focus
+  }
+  return null
+}
+
 for (const c of members) {
   const f = byId.get(c.un)
   // A microstate with no polygon is anchored on its capital instead.
-  const focus = MANUAL_FOCUS[c.iso]
-    ? MANUAL_FOCUS[c.iso]
-    : f
+  const focus = MANUAL_FOCUS[c.iso] ??
+    inherited(c.iso) ??
+    (f
       ? geoBounds(mainlandParts(f)).flat()
-      : [c.capitalCoords[0] - 0.5, c.capitalCoords[1] - 0.4, c.capitalCoords[0] + 0.5, c.capitalCoords[1] + 0.4]
+      : [c.capitalCoords[0] - 0.5, c.capitalCoords[1] - 0.4, c.capitalCoords[0] + 0.5, c.capitalCoords[1] + 0.4])
 
   centroids.set(c.iso, f ? geoCentroid(mainlandParts(f)) : c.capitalCoords)
   derived[c.iso] = { focus: focus.map((n) => +n.toFixed(3)) }

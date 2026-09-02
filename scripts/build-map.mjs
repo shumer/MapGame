@@ -55,10 +55,20 @@ for (const continent of CONTINENTS) {
   const byName = new Map(Object.entries(continent.backdropByName ?? {}))
   const playable = new Set(membersOf(data.countries, continent.id).map((c) => c.un))
   const backdrop = new Set(continent.backdrop)
-  const idOf = (f) => byName.get(f.properties.name) ?? String(f.id).padStart(3, '0')
+  // Natural Earth leaves a few places without an ISO numeric code. Named ones
+  // are listed in the config; the rest get an id from their name, so they stay
+  // separate shapes instead of merging into one blob called "undefined".
+  const idOf = (f) =>
+    byName.get(f.properties.name) ??
+    (f.id === undefined
+      ? 'x-' + String(f.properties.name ?? 'unnamed').toLowerCase().replace(/[^a-z0-9]+/g, '-')
+      : String(f.id).padStart(3, '0'))
 
+  const excluded = new Set(continent.exclude ?? [])
   const keep = world.features
     .filter((f) => {
+      if (excluded.has(idOf(f))) return false
+      if (continent.backdropRest) return true
       const id = idOf(f)
       return playable.has(id) || backdrop.has(id) || byName.has(f.properties.name)
     })
@@ -70,11 +80,14 @@ for (const continent of CONTINENTS) {
   // Quantize, then clean up what quantization flattened, then quantize again
   // from the cleaned shapes. Removing a feature shifts the bounding box and so
   // the grid, which is why this repeats until nothing else collapses.
+  // A world map is coarser on purpose: at that scale the extra detail cannot
+  // be seen and would double what the tablet has to cache offline.
+  const quant = continent.quant ?? QUANT
   const dropped = new Set()
   let features = keep
   let out
   for (let pass = 0; pass < 5; pass++) {
-    out = topology({ countries: { type: 'FeatureCollection', features } }, QUANT)
+    out = topology({ countries: { type: 'FeatureCollection', features } }, quant)
     const expanded = feature(out, out.objects.countries).features
     const cleaned = []
     let changed = false
@@ -96,7 +109,7 @@ for (const continent of CONTINENTS) {
   fs.writeFileSync(path, JSON.stringify(out))
   const kb = (fs.statSync(path).size / 1024).toFixed(0)
   console.log(
-    `${continent.id}: ${features.length} features (playable ${playable.size}, backdrop ${keep.length - playable.size}), ${kb} KB`,
+    `${continent.id}: ${features.length} features (playable ${playable.size}, backdrop ${keep.length - playable.size}), ${kb} KB at ${quant.toExponential()}`,
   )
   if (dropped.size) {
     const all = [...dropped]

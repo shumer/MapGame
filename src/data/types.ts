@@ -81,6 +81,9 @@ export type DerivedData = Record<Region, Record<string, Derived>>
 export interface Continent {
   id: Region
   name: Localized
+  /** Takes every country that belongs to any other set, so the world set fills
+      itself as continents are added. */
+  collects?: boolean
   /** [[minLon, minLat], [maxLon, maxLat]] the map is fitted to. */
   frame: [[number, number], [number, number]]
   projection: {

@@ -12,5 +12,15 @@ export const continentById = (id) => CONTINENTS.find((c) => c.id === id)
 /** Path of the generated topology for a set. */
 export const topoPath = (id) => `src/data/${id}.topo.json`
 
-/** The countries belonging to a set, in the order they appear in the data. */
-export const membersOf = (countries, id) => countries.filter((c) => c.regions.includes(id))
+/**
+ * The countries belonging to a set, in the order they appear in the data.
+ *
+ * A set marked `collects` takes everybody who belongs to any other set, so the
+ * world set fills itself: adding Africa adds it to the world too, with nothing
+ * to remember and nothing to keep in step.
+ */
+export const membersOf = (countries, id) => {
+  const set = continentById(id)
+  if (set?.collects) return countries.filter((c) => c.regions.length > 0)
+  return countries.filter((c) => c.regions.includes(id))
+}

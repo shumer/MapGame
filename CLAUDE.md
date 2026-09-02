@@ -60,7 +60,7 @@ what a local `npm run dev` never will.
 
 ## Core Concepts
 
-### A continent is data, not code
+### A continent is data, not code, and the world set fills itself
 
 `src/data/continents.json` describes a playable set: which slice of the world it
 frames, the standard parallels its conic projection uses, where the compass and
@@ -73,6 +73,16 @@ continent is adding an entry and running `npm run data`.
 Note that `derived.json` is keyed by continent first: in another set a country
 has different neighbours and, because of the four-colour rule, a different
 colour.
+
+The world set is marked `collects`, which means it takes every country that
+belongs to any other set: adding Africa adds it to the world too, with nothing
+to keep in step. It also carries `backdropRest`, so the continents nobody has
+built yet are drawn as grey land rather than sea, `quant` for a coarser grid
+(the detail is invisible at that scale and doubles what the tablet caches), and
+`exclude` for Antarctica, which smears along the bottom of any world projection
+and takes a third of the screen for a place no round asks about. Its zoom
+frames are inherited from the continent sets rather than recomputed, because a
+worldwide window would frame France from French Guiana to Réunion.
 
 ### Data flows one way
 

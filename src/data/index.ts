@@ -2,6 +2,7 @@ import raw from './countries.json'
 import derivedRaw from './derived.json'
 import wikiRaw from './country-facts.json'
 import type { Country, CountryData, DerivedData, Lang, Region } from './types'
+import { continentById } from './continents'
 
 export * from './types'
 export * from './continents'
@@ -12,9 +13,16 @@ export * from './continents'
 export const countries = (raw as CountryData).countries
 export const derived = derivedRaw as unknown as DerivedData
 
-/** The countries of one set, in data order. */
+/**
+ * The countries of one set, in data order.
+ *
+ * A set marked `collects` takes everybody who belongs to any other set, so the
+ * world set fills itself: adding a continent adds it to the world too.
+ */
 export const countriesOf = (region: Region): Country[] =>
-  countries.filter((c) => c.regions.includes(region))
+  continentById(region).collects
+    ? countries.filter((c) => c.regions.length > 0)
+    : countries.filter((c) => c.regions.includes(region))
 
 /** Map-dependent data for one set: neighbours, zoom frames, colours, facts. */
 export const derivedOf = (region: Region) => derived[region]

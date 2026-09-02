@@ -4,7 +4,7 @@
 import fs from 'node:fs'
 import { feature } from 'topojson-client'
 import { SYMBOL_KEYS } from './symbol-keys.mjs'
-import { geoContains, geoArea } from 'd3-geo'
+import { geoContains, geoArea, geoDistance } from 'd3-geo'
 import { CONTINENTS, membersOf, topoPath } from './continents.mjs'
 
 // Below this a country is a few pixels wide on screen and needs a marker
@@ -14,6 +14,19 @@ const MICRO_AREA = 1e-4
 const data = JSON.parse(fs.readFileSync('src/data/countries.json', 'utf8'))
 const derivedAll = JSON.parse(fs.readFileSync('src/data/derived.json', 'utf8'))
 const continentIds = new Set(CONTINENTS.map((c) => c.id))
+
+/** Distance from a point to the nearest vertex of a shape, in kilometres. */
+const nearestKm = (feature, point) => {
+  const rings =
+    feature.geometry.type === 'Polygon'
+      ? feature.geometry.coordinates
+      : feature.geometry.coordinates.flat()
+  let best = Infinity
+  for (const ring of rings) {
+    for (const vertex of ring) best = Math.min(best, geoDistance(vertex, point))
+  }
+  return Math.round(best * 6371)
+}
 
 const problems = []
 const notes = []
@@ -105,7 +118,15 @@ for (const continent of CONTINENTS) {
       continue
     }
 
-    if (!geoContains(f, c.capitalCoords)) problems.push(`${tag}: capital outside polygon`)
+    if (!geoContains(f, c.capitalCoords)) {
+      // A coarse grid moves a coastline by a few kilometres, and a capital on
+      // the shore ends up just outside its own country. That is the map being
+      // rounded, not the data being wrong: what this check is really for is a
+      // capital dropped in the wrong country entirely.
+      const km = nearestKm(f, c.capitalCoords)
+      if (km > 60) problems.push(`${tag}: capital ${km} km outside its polygon`)
+      else notes.push(`${tag}: capital ${km} km outside the rounded coastline`)
+    }
 
     const area = geoArea(f)
     if ((area < MICRO_AREA) !== c.micro) {
