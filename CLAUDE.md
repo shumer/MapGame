@@ -99,7 +99,7 @@ Seven countries (AD, LI, LU, MT, MC, SM, VA) are too small to tap at map scale. 
 - **Adding a country** — add the entry to `countries.json` (all three languages, `fame`, `micro`, `symbol`, capital coordinates as `[lon, lat]`), then `npm run data`. The validator tells you what is missing.
 - **Adding a drawn symbol** — add an entry to `SYMBOLS` in `src/ui/symbols.tsx` (64×64 viewBox, flat three-or-four-colour style), reference it from `countries.json`. Check it at `#symbols`, which renders every symbol beside its country.
 - **Adding an interface string** — add the key to `STRINGS` in `src/i18n/ui.ts` with all three languages; `t(key, lang)` is typed against it.
-- **Speaking text** — `speak(text, lang)` from `src/speech.ts`; guard with `canSpeak(lang)`, because a device may have no voice for a language.
+- **Speaking text** — `say(key, text, lang)` from `src/voice.ts`. It plays a recording from `src/assets/voice/<lang>/<key>.m4a` when one exists and falls back to speech synthesis otherwise, so the game is fully playable before anything is recorded. Use `speak()` from `src/speech.ts` directly only for text with no fixed key, such as a country name. Keys and delivery notes live in `docs/voice-script.md`.
 - **Playing a sound** — `sounds.correct()` and friends from `src/sound.ts`. Sounds are synthesised, never loaded from files.
 - **Showing the map** — `<WorldMap>` takes `correct`, `wrong`, `highlight`, `spotlight`, `focus`, `capital` and `onPick`. `focus` animates the zoom; `highlight` marks the country a question is about, in a colour deliberately different from the correct-answer green.
 
