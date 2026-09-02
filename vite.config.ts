@@ -20,9 +20,9 @@ export default defineConfig({
       registerType: 'autoUpdate',
       includeAssets: ['favicon.png', 'icon-192.png', 'icon-512.png', 'icon-maskable.png'],
       manifest: {
-        name: 'Путешествие по Европе',
-        short_name: 'Европа',
-        description: 'Игра про страны, флаги и столицы Европы',
+        name: 'Путешествие по миру',
+        short_name: 'По миру',
+        description: 'Игра про страны, флаги и столицы мира',
         lang: 'ru',
         start_url: './',
         display: 'standalone',

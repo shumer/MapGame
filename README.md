@@ -1,8 +1,9 @@
-# Journey across Europe
+# Journey around the World
 
-*Путешествие по Европе — the title the game shows itself.*
+*Путешествие по миру - the title the game shows itself.*
 
-A browser game for learning the countries, flags and capitals of Europe.
+A browser game for learning the countries, flags and capitals of the world.
+The Europe set is the one that exists today; more continents follow.
 Works offline, installs on a tablet as an app, and sends nothing anywhere.
 
 ## Running it

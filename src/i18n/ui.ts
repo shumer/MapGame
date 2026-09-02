@@ -2,7 +2,7 @@ import type { Lang } from '../data'
 
 /** Every string the interface shows, in the three languages the game supports. */
 const STRINGS = {
-  appName: { ru: 'Путешествие по Европе', pl: 'Podróż po Europie', en: 'Journey across Europe' },
+  appName: { ru: 'Путешествие по миру', pl: 'Podróż po świecie', en: 'Journey around the World' },
   whoPlays: { ru: 'Кто играет?', pl: 'Kto gra?', en: 'Who is playing?' },
   addPlayer: { ru: 'Новый игрок', pl: 'Nowy gracz', en: 'New player' },
   yourName: { ru: 'Как тебя зовут?', pl: 'Jak masz na imię?', en: 'What is your name?' },
