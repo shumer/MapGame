@@ -1,4 +1,4 @@
-import { useEffect, useMemo, useState } from 'react'
+import { useCallback, useEffect, useMemo, useRef, useState } from 'react'
 import { countries, countryByUn, derived } from '../data'
 import { buildPaths, createPath, createProjection } from './projection'
 import { SeaDecor } from './SeaDecor'
@@ -28,6 +28,11 @@ export interface WorldMapProps {
 /** Screen box of a shape under the current projection, used for zooming. */
 type Boxes = Map<string, [number, number, number, number]>
 
+/** Past this zoom the sea decoration is more clutter than charm. */
+const DECOR_MAX_SCALE = 3
+/** A microstate marker gives way once its real shape is big enough to tap. */
+const MARKER_MAX_SIZE = 26
+
 export function WorldMap({
   correct = [],
   wrong = [],
@@ -56,7 +61,11 @@ export function WorldMap({
 
   const { paths, boxes, capitals } = useMemo(() => {
     if (!shapes || !projection) {
-      return { paths: new Map<string, string>(), boxes: new Map() as Boxes, capitals: new Map<string, [number, number]>() }
+      return {
+        paths: new Map<string, string>(),
+        boxes: new Map() as Boxes,
+        capitals: new Map<string, [number, number]>(),
+      }
     }
     const path = createPath(projection)
     const paths = buildPaths(shapes, path)
@@ -87,7 +96,57 @@ export function WorldMap({
   }, [shapes, projection])
 
   const map = useMapView(width, height, interactive)
-  const { focusBox, reset } = map
+  const { focusBox, reset, subscribe } = map
+
+  const landsRef = useRef<SVGGElement>(null)
+  const markersRef = useRef(new Map<string, SVGGElement>())
+  const decorRef = useRef<SVGGElement>(null)
+  const capitalRef = useRef<SVGGElement>(null)
+  const capitalIso = useRef<string | null>(capital)
+  capitalIso.current = capital
+
+  const setMarker = useCallback((iso: string, el: SVGGElement | null) => {
+    if (el) markersRef.current.set(iso, el)
+    else markersRef.current.delete(iso)
+  }, [])
+
+  /**
+   * The map moves here rather than through React: the country paths carry
+   * megabytes of geometry, and re-rendering them on every pointer move is what
+   * made panning and pinching stutter. Only the transform changes per frame.
+   */
+  useEffect(
+    () =>
+      subscribe((v) => {
+        landsRef.current?.setAttribute('transform', `translate(${v.x} ${v.y}) scale(${v.k})`)
+        decorRef.current?.style.setProperty('opacity', v.k > DECOR_MAX_SCALE ? '0' : '1')
+
+        const cap = capitalIso.current ? capitals.get(capitalIso.current) : null
+        if (cap && capitalRef.current) {
+          capitalRef.current.setAttribute(
+            'transform',
+            `translate(${cap[0] * v.k + v.x} ${cap[1] * v.k + v.y})`,
+          )
+        }
+
+        for (const [iso, el] of markersRef.current) {
+          const p = capitals.get(iso)
+          if (!p) continue
+          const x = p[0] * v.k + v.x
+          const y = p[1] * v.k + v.y
+          el.setAttribute('transform', `translate(${x} ${y})`)
+
+          const box = boxes.get(countries.find((c) => c.iso === iso)?.un ?? '')
+          const onScreen = box ? Math.max(box[2] - box[0], box[3] - box[1]) * v.k : 0
+          const offScreen = x < -20 || y < -20 || x > width + 20 || y > height + 20
+          el.style.setProperty(
+            'display',
+            offScreen || onScreen > MARKER_MAX_SIZE ? 'none' : '',
+          )
+        }
+      }),
+    [subscribe, capitals, boxes, width, height],
+  )
 
   useEffect(() => {
     if (!width || !height || !boxes.size) return
@@ -113,7 +172,6 @@ export function WorldMap({
     onPick(iso)
   }
 
-  const transform = `translate(${map.view.x} ${map.view.y}) scale(${map.view.k})`
   const capitalPoint = capital ? capitals.get(capital) : null
 
   return (
@@ -126,10 +184,14 @@ export function WorldMap({
           {...map.handlers}
         >
           <rect className="sea" width={width} height={height} />
-          <g transform={transform} className="lands">
+          <g ref={landsRef} className="lands">
             {/* Sea decoration sits under the countries, so a piece that strays
                 onto a coast is covered rather than sitting on top of it. */}
-            {projection && <SeaDecor project={(c) => projection(c) ?? null} scale={map.view.k} />}
+            {projection && (
+              <g ref={decorRef} className="sea-decor-layer">
+                <SeaDecor project={(c) => projection(c) ?? null} />
+              </g>
+            )}
 
             {shapes
               .filter((s) => !s.properties.playable)
@@ -147,7 +209,6 @@ export function WorldMap({
                     key={c.iso}
                     className={`country tone-${derived[c.iso].color} is-${state(c.iso)}`}
                     d={paths.get(s.properties.id)}
-                    style={{ strokeWidth: 1.4 / map.view.k }}
                     onPointerUp={() => pick(c.iso)}
                   />
                 )
@@ -158,39 +219,28 @@ export function WorldMap({
           <g className="markers">
             {countries
               .filter((c) => c.micro)
-              .map((c) => {
-                const p = capitals.get(c.iso)
-                if (!p) return null
-                // Once zoomed in far enough that the real shape is clickable,
-                // the marker would only cover it up.
-                const box = boxes.get(c.un)
-                const onScreen = box ? Math.max(box[2] - box[0], box[3] - box[1]) * map.view.k : 0
-                if (onScreen > 26) return null
-                const x = p[0] * map.view.k + map.view.x
-                const y = p[1] * map.view.k + map.view.y
-                if (x < -20 || y < -20 || x > width + 20 || y > height + 20) return null
-                return (
-                  <g key={c.iso} className={`micro is-${state(c.iso)}`} onPointerUp={() => pick(c.iso)}>
-                    <circle className="micro-hit" cx={x} cy={y} r={16} />
-                    <circle className={`micro-dot tone-${derived[c.iso].color}`} cx={x} cy={y} r={5.5} />
-                  </g>
-                )
-              })}
+              .map((c) => (
+                <g
+                  key={c.iso}
+                  ref={(el) => setMarker(c.iso, el)}
+                  className={`micro is-${state(c.iso)}`}
+                  onPointerUp={() => pick(c.iso)}
+                >
+                  <circle className="micro-hit" r={16} />
+                  <circle className={`micro-dot tone-${derived[c.iso].color}`} r={5.5} />
+                </g>
+              ))}
 
             {capitalPoint && (
-              <g className="capital">
-                <circle
-                  cx={capitalPoint[0] * map.view.k + map.view.x}
-                  cy={capitalPoint[1] * map.view.k + map.view.y}
-                  r={9}
-                  className="capital-halo"
-                />
-                <circle
-                  cx={capitalPoint[0] * map.view.k + map.view.x}
-                  cy={capitalPoint[1] * map.view.k + map.view.y}
-                  r={4}
-                  className="capital-dot"
-                />
+              <g
+                className="capital"
+                ref={capitalRef}
+                transform={`translate(${capitalPoint[0] * map.viewRef.current.k + map.viewRef.current.x} ${
+                  capitalPoint[1] * map.viewRef.current.k + map.viewRef.current.y
+                })`}
+              >
+                <circle r={9} className="capital-halo" />
+                <circle r={4} className="capital-dot" />
               </g>
             )}
           </g>

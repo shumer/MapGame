@@ -30,9 +30,16 @@ function clampView(v: View, width: number, height: number): View {
 const easeInOut = (t: number) => (t < 0.5 ? 4 * t * t * t : 1 - Math.pow(-2 * t + 2, 3) / 2)
 
 export interface MapView {
+  /** Read during render for the initial paint; not updated mid-gesture. */
   view: View
-  /** True while an animated move is running, so hit testing can be paused. */
-  moving: boolean
+  /** Always current, including mid-gesture. */
+  viewRef: React.RefObject<View>
+  /**
+   * Called on every view change, inside the frame that produced it. This is how
+   * the map moves: the SVG carries ~2 MB of path data, and re-rendering that
+   * through React on every pointer move is what made panning stutter.
+   */
+  subscribe: (fn: (view: View) => void) => () => void
   reset: (animated?: boolean) => void
   /** Frames a screen-space box, in the projected pixel coordinates of the map. */
   focusBox: (box: [number, number, number, number], padding?: number, maxScale?: number) => void
@@ -48,45 +55,66 @@ export interface MapView {
 
 export function useMapView(width: number, height: number, enabled = true): MapView {
   const [view, setViewState] = useState<View>(IDENTITY)
-  const [moving, setMoving] = useState(false)
 
-  // The current view is mirrored in a ref so that animate/focusBox/reset stay
-  // referentially stable. If they changed on every animation frame, an effect
-  // watching them would restart the animation it just started.
-  const viewRef = useRef(view)
-  const setView = useCallback((next: View) => {
-    viewRef.current = next
-    setViewState(next)
-  }, [])
+  const viewRef = useRef<View>(view)
+  const listeners = useRef(new Set<(v: View) => void>())
 
   const pointers = useRef(new Map<number, { x: number; y: number }>())
   const start = useRef<{ view: View; x: number; y: number; dist: number } | null>(null)
   const travelled = useRef(0)
   const frame = useRef(0)
+  const settle = useRef(0)
 
-  useEffect(() => () => cancelAnimationFrame(frame.current), [])
+  const subscribe = useCallback((fn: (v: View) => void) => {
+    listeners.current.add(fn)
+    fn(viewRef.current)
+    return () => {
+      listeners.current.delete(fn)
+    }
+  }, [])
 
-  const animate = useCallback((to: View) => {
-    cancelAnimationFrame(frame.current)
-    const from = { ...viewRef.current }
-    if (Math.abs(from.k - to.k) < 0.001 && Math.abs(from.x - to.x) < 0.5 && Math.abs(from.y - to.y) < 0.5) {
-      return
-    }
-    setMoving(true)
-    const t0 = performance.now()
-    const step = (now: number) => {
-      const t = Math.min(1, (now - t0) / 520)
-      const e = easeInOut(t)
-      setView({
-        k: from.k + (to.k - from.k) * e,
-        x: from.x + (to.x - from.x) * e,
-        y: from.y + (to.y - from.y) * e,
-      })
-      if (t < 1) frame.current = requestAnimationFrame(step)
-      else setMoving(false)
-    }
-    frame.current = requestAnimationFrame(step)
-  }, [setView])
+  /**
+   * Publishes a new view. Listeners run immediately; React state catches up on
+   * a trailing timeout, so anything that genuinely needs a re-render (hiding
+   * decoration when zoomed in, for instance) still happens, just not per frame.
+   */
+  const publish = useCallback((next: View) => {
+    viewRef.current = next
+    for (const fn of listeners.current) fn(next)
+    clearTimeout(settle.current)
+    settle.current = window.setTimeout(() => setViewState(next), 90)
+  }, [])
+
+  useEffect(
+    () => () => {
+      cancelAnimationFrame(frame.current)
+      clearTimeout(settle.current)
+    },
+    [],
+  )
+
+  const animate = useCallback(
+    (to: View) => {
+      cancelAnimationFrame(frame.current)
+      const from = { ...viewRef.current }
+      if (Math.abs(from.k - to.k) < 0.001 && Math.abs(from.x - to.x) < 0.5 && Math.abs(from.y - to.y) < 0.5) {
+        return
+      }
+      const t0 = performance.now()
+      const step = (now: number) => {
+        const t = Math.min(1, (now - t0) / 520)
+        const e = easeInOut(t)
+        publish({
+          k: from.k + (to.k - from.k) * e,
+          x: from.x + (to.x - from.x) * e,
+          y: from.y + (to.y - from.y) * e,
+        })
+        if (t < 1) frame.current = requestAnimationFrame(step)
+      }
+      frame.current = requestAnimationFrame(step)
+    },
+    [publish],
+  )
 
   const focusBox = useCallback(
     (box: [number, number, number, number], padding = 0.22, maxScale = MAX_K) => {
@@ -104,8 +132,8 @@ export function useMapView(width: number, height: number, enabled = true): MapVi
   )
 
   const reset = useCallback(
-    (animated = true) => (animated ? animate(IDENTITY) : setView(IDENTITY)),
-    [animate, setView],
+    (animated = true) => (animated ? animate(IDENTITY) : publish(IDENTITY)),
+    [animate, publish],
   )
 
   const gap = () => {
@@ -122,7 +150,6 @@ export function useMapView(width: number, height: number, enabled = true): MapVi
   const onPointerDown = (e: React.PointerEvent) => {
     if (!enabled) return
     cancelAnimationFrame(frame.current)
-    setMoving(false)
     ;(e.target as Element).setPointerCapture?.(e.pointerId)
     pointers.current.set(e.pointerId, { x: e.clientX, y: e.clientY })
     travelled.current = 0
@@ -149,13 +176,9 @@ export function useMapView(width: number, height: number, enabled = true): MapVi
     }
     // Keep the point the gesture started on under the fingers.
     const scale = k / s.view.k
-    setView(
+    publish(
       clampView(
-        {
-          k,
-          x: mid.x - (s.x - s.view.x) * scale,
-          y: mid.y - (s.y - s.view.y) * scale,
-        },
+        { k, x: mid.x - (s.x - s.view.x) * scale, y: mid.y - (s.y - s.view.y) * scale },
         width,
         height,
       ),
@@ -164,7 +187,15 @@ export function useMapView(width: number, height: number, enabled = true): MapVi
 
   const onPointerUp = (e: React.PointerEvent) => {
     pointers.current.delete(e.pointerId)
-    if (pointers.current.size === 0) start.current = null
+    if (pointers.current.size === 0) {
+      start.current = null
+      // A gesture just ended: let React see where the map came to rest.
+      setViewState(viewRef.current)
+    } else {
+      // A finger lifted out of a pinch: restart from the remaining one.
+      const mid = middle()
+      start.current = { view: viewRef.current, x: mid.x, y: mid.y, dist: 0 }
+    }
   }
 
   const onWheel = (e: React.WheelEvent) => {
@@ -176,12 +207,15 @@ export function useMapView(width: number, height: number, enabled = true): MapVi
     const current = viewRef.current
     const k = clampK(current.k * Math.exp(-e.deltaY * 0.0022))
     const scale = k / current.k
-    setView(clampView({ k, x: mx - (mx - current.x) * scale, y: my - (my - current.y) * scale }, width, height))
+    publish(
+      clampView({ k, x: mx - (mx - current.x) * scale, y: my - (my - current.y) * scale }, width, height),
+    )
   }
 
   return {
     view,
-    moving,
+    viewRef,
+    subscribe,
     reset,
     focusBox,
     handlers: { onPointerDown, onPointerMove, onPointerUp, onWheel },

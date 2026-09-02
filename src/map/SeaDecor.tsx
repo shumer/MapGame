@@ -1,3 +1,7 @@
+import compassUrl from '../assets/art/decor/compass.svg?url'
+import whaleUrl from '../assets/art/decor/whale.svg?url'
+import boatUrl from '../assets/art/decor/boat.svg?url'
+
 /**
  * Decoration for the empty water, the way a children's atlas fills it: a
  * compass rose, wave ticks, a boat and a whale. Placed in geographic
@@ -31,11 +35,7 @@ const SPOTS = {
 
 type Project = (coords: [number, number]) => [number, number] | null
 
-export function SeaDecor({ project, scale }: { project: Project; scale: number }) {
-  // Decoration is drawn at map scale, so it shrinks as the map zooms in; past a
-  // certain zoom it would be huge and in the way, so it fades out instead.
-  if (scale > 3) return null
-
+export function SeaDecor({ project }: { project: Project }) {
   const at = (coords: readonly [number, number]) => project([coords[0], coords[1]])
   const compass = at(SPOTS.compass)
   const boat = at(SPOTS.boat)
@@ -56,35 +56,9 @@ export function SeaDecor({ project, scale }: { project: Project; scale: number }
         )
       })}
 
-      {compass && (
-        <g className="compass" transform={`translate(${compass[0]} ${compass[1]})`}>
-          <circle className="compass-ring" r="17" />
-          <circle className="compass-ring-inner" r="12" />
-          <path className="compass-needle-n" d="M0-16L4.5 0 0 4-4.5 0z" />
-          <path className="compass-needle-s" d="M0 16L4.5 0 0-4-4.5 0z" />
-          <circle className="compass-pin" r="2.4" />
-          <path className="compass-tick" d="M-17 0h5M12 0h5" />
-        </g>
-      )}
-
-      {boat && (
-        <g className="boat" transform={`translate(${boat[0]} ${boat[1]})`}>
-          <path className="boat-hull" d="M-11 4h22l-4 6h-14z" />
-          <path className="boat-mast" d="M0 3V-9" />
-          <path className="boat-sail" d="M1-9l8 11H1z" />
-          <path className="boat-sail-back" d="M-1-8l-7 10h7z" />
-        </g>
-      )}
-
-      {whale && (
-        <g className="whale" transform={`translate(${whale[0]} ${whale[1]}) scale(1.5)`}>
-          <path className="whale-body" d="M-12 2q3-8 11-8t11 7q-4 5-12 5t-10-4z" />
-          <path className="whale-belly" d="M-9 3q4 3 10 3t9-2q-4 4-10 4t-9-5z" />
-          <path className="whale-tail" d="M12 0l8-6 1 10z" />
-          <path className="whale-spout" d="M-4-7q-1-6 1-8M-1-7q2-5 5-6" />
-          <circle className="whale-eye" cx="-6" cy="-2" r="1.3" />
-        </g>
-      )}
+      {compass && <image href={compassUrl} x={compass[0] - 19} y={compass[1] - 19} width={38} height={38} />}
+      {boat && <image href={boatUrl} x={boat[0] - 17} y={boat[1] - 17} width={34} height={34} />}
+      {whale && <image href={whaleUrl} x={whale[0] - 22} y={whale[1] - 22} width={44} height={44} />}
     </g>
   )
 }

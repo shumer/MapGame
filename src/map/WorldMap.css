@@ -25,8 +25,9 @@
 .backdrop {
   fill: var(--land-backdrop);
   stroke: var(--coastline);
-  stroke-width: 0.5;
+  stroke-width: 0.8;
   stroke-linejoin: round;
+  vector-effect: non-scaling-stroke;
   pointer-events: none;
 }
 
@@ -40,6 +41,14 @@
    a tap here belongs to whatever country is underneath. */
 .sea-decor {
   pointer-events: none;
+}
+/* Faded out rather than unmounted, so zooming does not re-render the map. */
+.sea-decor-layer {
+  transition: opacity 220ms ease;
+}
+.sea-decor path,
+.sea-decor circle {
+  vector-effect: non-scaling-stroke;
 }
 .sea-decor .wave {
   fill: none;
@@ -81,8 +90,12 @@
 
 .country {
   stroke: var(--coastline);
+  stroke-width: 1.4;
   stroke-linejoin: round;
   stroke-linecap: round;
+  /* The outline keeps its screen width at any zoom, which also means the paths
+     never need re-rendering when the map moves. */
+  vector-effect: non-scaling-stroke;
   transition: fill 260ms ease, opacity 260ms ease, stroke 260ms ease;
 }
 
