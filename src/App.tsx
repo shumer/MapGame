@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import { ContinentScreen } from './screens/ContinentScreen'
 import { GameScreen } from './screens/GameScreen'
 import { MenuScreen } from './screens/MenuScreen'
@@ -6,8 +6,9 @@ import { ResultScreen } from './screens/ResultScreen'
 import { StartScreen } from './screens/StartScreen'
 import { ZooScreen } from './screens/ZooScreen'
 import { SymbolGallery } from './screens/SymbolGallery'
+import { t } from './i18n/ui'
 import { useActiveProfile, useProfiles } from './store/profiles'
-import { useContinent } from './store/settings'
+import { useContinent, useLang } from './store/settings'
 import type { GameMode } from './game/types'
 
 type Screen =
@@ -19,6 +20,14 @@ type Screen =
 
 export function App() {
   const profile = useActiveProfile()
+  const startLang = useLang((s) => s.lang)
+  // The tab title and the document language follow whoever is playing: the
+  // title was baked into index.html and stayed Russian in a Polish game.
+  const lang = profile?.uiLang ?? startLang
+  useEffect(() => {
+    document.title = t('appName', lang)
+    document.documentElement.lang = lang
+  }, [lang])
   const { continent: region, setContinent } = useContinent()
   const finishRound = useProfiles((s) => s.finishRound)
   const [screen, setScreen] = useState<Screen>({ name: 'menu' })
