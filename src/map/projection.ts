@@ -1,33 +1,35 @@
 import { geoConicConformal, geoPath } from 'd3-geo'
 import type { GeoProjection, GeoPath } from 'd3-geo'
+import type { Continent } from '../data'
 import type { CountryShape } from './topology'
 
-/** The slice of the world the Europe set is framed to. */
-export const EUROPE_FRAME: [[number, number], [number, number]] = [
-  [-26, 33],
-  [46, 72],
-]
-
 /**
- * A conic projection standing in for the Lambert one used on school maps of
- * Europe: Scandinavia keeps its real size instead of ballooning as it does on
- * Mercator, and the shapes children learn here match the atlas they will see.
+ * A conic projection standing in for the Lambert one used on school maps:
+ * Scandinavia keeps its real size instead of ballooning as it does on Mercator,
+ * and the shapes children learn here match the atlas they will see. Each
+ * continent brings its own frame and standard parallels, because one pair
+ * cannot serve both the Arctic and the equator.
  */
-export function createProjection(width: number, height: number): GeoProjection {
+export function createProjection(
+  width: number,
+  height: number,
+  continent: Continent,
+): GeoProjection {
   // Fit to a grid of points rather than a rectangle: a conic projection bends
   // parallels, and fitting a four-corner polygon sends it through its own
   // singularity and collapses the scale to nothing.
+  const [[minLon, minLat], [maxLon, maxLat]] = continent.frame
   const coordinates: [number, number][] = []
-  for (let lon = EUROPE_FRAME[0][0]; lon <= EUROPE_FRAME[1][0]; lon += 2) {
-    for (let lat = EUROPE_FRAME[0][1]; lat <= EUROPE_FRAME[1][1]; lat += 2) {
+  for (let lon = minLon; lon <= maxLon; lon += 2) {
+    for (let lat = minLat; lat <= maxLat; lat += 2) {
       coordinates.push([lon, lat])
     }
   }
   const frame = { type: 'MultiPoint' as const, coordinates }
 
   return geoConicConformal()
-    .parallels([40, 65])
-    .rotate([-12, 0])
+    .parallels(continent.projection.parallels)
+    .rotate([continent.projection.rotate, 0])
     .fitSize([width, height], frame)
 }
 

@@ -1,5 +1,5 @@
 import { useEffect, useMemo } from 'react'
-import { countryByIso, derived, wikiFacts } from '../data'
+import { countryByIso, derivedOf, wikiFacts, type Region } from '../data'
 import { PRESETS, type GameMode, type Profile } from '../game/types'
 import { useRound } from '../game/useRound'
 import { consolation, consolationKey, praise, praiseKey, t } from '../i18n/ui'
@@ -26,13 +26,15 @@ import './GameScreen.css'
 interface Props {
   profile: Profile
   mode: GameMode | 'mixed'
+  region: Region
   onExit: () => void
   onDone: (score: number, total: number) => void
 }
 
-export function GameScreen({ profile, mode, onExit, onDone }: Props) {
+export function GameScreen({ profile, mode, region, onExit, onDone }: Props) {
   const preset = PRESETS[profile.level]
-  const round = useRound(profile, mode)
+  const derived = derivedOf(region)
+  const round = useRound(profile, mode, region)
   const { question, phase, misses } = round
   const { mode: soundMode, cycleSound } = useSound()
   const lang = profile.contentLang
@@ -125,7 +127,7 @@ export function GameScreen({ profile, mode, onExit, onDone }: Props) {
   const hintRegion = useMemo(() => {
     if (question.mode !== 'locate' || phase !== 'asking' || misses.length === 0) return undefined
     return [target.iso, ...derived[target.iso].near]
-  }, [question.mode, phase, misses.length, target])
+  }, [question.mode, phase, misses.length, target, derived])
 
   const revealed = phase === 'revealed'
 
@@ -155,7 +157,7 @@ export function GameScreen({ profile, mode, onExit, onDone }: Props) {
     const all = [...written, ...fromWiki, ...fromMap]
     if (!all.length) return null
     return all[(round.answers.length + target.iso.charCodeAt(0)) % all.length]
-  }, [preset.showText, target.iso, target.stories, lang, round.answers.length])
+  }, [preset.showText, target.iso, target.stories, lang, round.answers.length, derived])
 
   /** The traveller stands where the last answer was, revisit or not. */
   const travellerAt = round.answers[round.answers.length - 1]?.question.target ?? null
@@ -227,6 +229,7 @@ export function GameScreen({ profile, mode, onExit, onDone }: Props) {
 
       <div className="game-map">
         <WorldMap
+          region={region}
           correct={revealed ? [target.iso] : []}
           wrong={misses}
           // In the capitals round the country itself is not the answer, so

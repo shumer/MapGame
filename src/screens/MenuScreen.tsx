@@ -1,4 +1,4 @@
-import { countries, type Lang } from '../data'
+import { countriesOf, type Lang, type Region } from '../data'
 import { PRESETS, type GameMode, type Profile } from '../game/types'
 import { LANG_NAMES, t, type UiKey } from '../i18n/ui'
 import { useProfiles } from '../store/profiles'
@@ -20,14 +20,25 @@ const MODE_HINT: Record<GameMode, UiKey> = {
 }
 const LANGS: Lang[] = ['ru', 'pl', 'en']
 
-export function MenuScreen({ profile, onPlay }: { profile: Profile; onPlay: (mode: GameMode) => void }) {
+export function MenuScreen({
+  profile,
+  region,
+  onPlay,
+}: {
+  profile: Profile
+  region: Region
+  onPlay: (mode: GameMode) => void
+}) {
   const { select, setLangs } = useProfiles()
   const ui = profile.uiLang
   const preset = PRESETS[profile.level]
 
   // A country counts as learned once it has been answered right three times.
-  const learned = countries.filter((c) => (profile.progress[c.iso]?.streak ?? 0) >= 3).length
-  const pool = countries.filter((c) => c.fame <= preset.maxFame).length
+  // Counted within the current set: finishing Europe should read as finished,
+  // not as a fifth of the world.
+  const inSet = countriesOf(region)
+  const learned = inSet.filter((c) => (profile.progress[c.iso]?.streak ?? 0) >= 3).length
+  const pool = inSet.filter((c) => c.fame <= preset.maxFame).length
 
   return (
     <div className="menu">

@@ -1,24 +1,25 @@
-// Checks countries.json against the built map, the derived data and the flag set.
-// Run after build-map / build-derived; exits non-zero on anything that would
-// break the game at runtime.
+// Checks countries.json against the built maps, the derived data and the flag
+// set. Run after build-map / build-derived; exits non-zero on anything that
+// would break the game at runtime, or teach a child something wrong.
 import fs from 'node:fs'
 import { feature } from 'topojson-client'
 import { SYMBOL_KEYS } from './symbol-keys.mjs'
 import { geoContains, geoArea } from 'd3-geo'
+import { CONTINENTS, membersOf, topoPath } from './continents.mjs'
 
 // Below this a country is a few pixels wide on screen and needs a marker
 // with an enlarged hit area instead of a clickable polygon.
 const MICRO_AREA = 1e-4
 
 const data = JSON.parse(fs.readFileSync('src/data/countries.json', 'utf8'))
-const derived = JSON.parse(fs.readFileSync('src/data/derived.json', 'utf8'))
-const topo = JSON.parse(fs.readFileSync('src/data/europe.topo.json', 'utf8'))
-const byId = new Map(feature(topo, topo.objects.countries).features.map((f) => [f.properties.id, f]))
+const derivedAll = JSON.parse(fs.readFileSync('src/data/derived.json', 'utf8'))
+const continentIds = new Set(CONTINENTS.map((c) => c.id))
 
 const problems = []
 const notes = []
 const seen = new Set()
 
+// Checks that hold wherever a country is drawn, done once per country.
 for (const c of data.countries) {
   const tag = `${c.iso} ${c.name.en}`
 
@@ -46,41 +47,75 @@ for (const c of data.countries) {
     problems.push(`${tag}: no flag svg`)
   }
 
-  const d = derived[c.iso]
-  if (!d) {
-    problems.push(`${tag}: missing derived entry`)
-  } else {
-    if (d.near.length < 3) problems.push(`${tag}: only ${d.near.length} nearby countries`)
-    if (d.near.includes(c.iso)) problems.push(`${tag}: listed as its own neighbour`)
-    const [x0, y0, x1, y1] = d.focus
-    if (!(x1 > x0 && y1 > y0)) problems.push(`${tag}: bad focus box ${d.focus}`)
-    if (lon < x0 - 1 || lon > x1 + 1 || lat < y0 - 1 || lat > y1 + 1) {
-      problems.push(`${tag}: capital outside its own focus box`)
+  if (!c.regions?.length) problems.push(`${tag}: belongs to no continent`)
+  for (const r of c.regions ?? []) {
+    if (!continentIds.has(r)) problems.push(`${tag}: unknown continent "${r}"`)
+  }
+
+  for (const flag of ['micro', 'landlocked', 'island']) {
+    if (typeof c[flag] !== 'boolean') problems.push(`${tag}: ${flag} must be true or false`)
+  }
+  if (c.landlocked && c.island) problems.push(`${tag}: both landlocked and an island`)
+}
+
+// Everything that depends on which map the country is drawn on: a country can
+// be in two sets, with different neighbours and a different colour in each.
+for (const continent of CONTINENTS) {
+  const derived = derivedAll[continent.id] ?? {}
+  const members = membersOf(data.countries, continent.id)
+  const topo = JSON.parse(fs.readFileSync(topoPath(continent.id), 'utf8'))
+  const byId = new Map(feature(topo, topo.objects.countries).features.map((f) => [f.properties.id, f]))
+
+  if (!members.length) problems.push(`${continent.id}: no countries in the set`)
+
+  for (const c of members) {
+    const tag = `${c.iso} ${c.name.en} (${continent.id})`
+    const d = derived[c.iso]
+
+    if (!d) {
+      problems.push(`${tag}: missing derived entry`)
+    } else {
+      if (d.near.length < 3) problems.push(`${tag}: only ${d.near.length} nearby countries`)
+      if (d.near.includes(c.iso)) problems.push(`${tag}: listed as its own neighbour`)
+      const [x0, y0, x1, y1] = d.focus
+      if (!(x1 > x0 && y1 > y0)) problems.push(`${tag}: bad focus box ${d.focus}`)
+      const [lon, lat] = c.capitalCoords
+      if (lon < x0 - 1 || lon > x1 + 1 || lat < y0 - 1 || lat > y1 + 1) {
+        problems.push(`${tag}: capital outside its own focus box`)
+      }
+      for (const n of d.borders) {
+        if (derived[n]?.color === d.color) problems.push(`${tag}: same map colour as ${n}`)
+      }
+    }
+
+    const f = byId.get(c.un)
+    if (!f) {
+      // Expected only for a microstate: it gets drawn as a marker on its capital.
+      if (!c.micro) problems.push(`${tag}: no polygon and not marked micro`)
+      else notes.push(`${tag}: no polygon, drawn as marker`)
+      continue
+    }
+
+    if (!geoContains(f, c.capitalCoords)) problems.push(`${tag}: capital outside polygon`)
+
+    const area = geoArea(f)
+    if ((area < MICRO_AREA) !== c.micro) {
+      problems.push(`${tag}: micro=${c.micro} but area=${area.toExponential(2)}`)
     }
   }
 
-  const f = byId.get(c.un)
-  if (!f) {
-    // Expected only for a microstate: it gets drawn as a marker on its capital.
-    if (!c.micro) problems.push(`${tag}: no polygon and not marked micro`)
-    else notes.push(`${tag}: no polygon, drawn as marker`)
-    continue
-  }
-
-  if (!geoContains(f, c.capitalCoords)) problems.push(`${tag}: capital outside polygon`)
-
-  const area = geoArea(f)
-  if ((area < MICRO_AREA) !== c.micro) {
-    problems.push(`${tag}: micro=${c.micro} but area=${area.toExponential(2)}`)
+  const strays = Object.keys(derived).filter((iso) => !members.some((c) => c.iso === iso))
+  if (strays.length) {
+    problems.push(`${continent.id}: derived has entries for countries not in the set: ${strays.join(', ')}`)
   }
 }
-
-const orphans = Object.keys(derived).filter((iso) => !data.countries.some((c) => c.iso === iso))
-if (orphans.length) problems.push(`derived has entries for unknown countries: ${orphans.join(', ')}`)
 
 console.log(`countries: ${data.countries.length}`)
 console.log(`fame: ${[1, 2, 3].map((n) => `${n}=${data.countries.filter((c) => c.fame === n).length}`).join('  ')}`)
 console.log(`micro: ${data.countries.filter((c) => c.micro).map((c) => c.iso).join(', ')}`)
+for (const continent of CONTINENTS) {
+  console.log(`${continent.id}: ${membersOf(data.countries, continent.id).length} countries`)
+}
 if (notes.length) console.log('\n' + notes.map((n) => '  note: ' + n).join('\n'))
 if (problems.length) {
   console.log('\nFAIL\n' + problems.map((p) => '  ' + p).join('\n'))

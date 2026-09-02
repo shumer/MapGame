@@ -1,6 +1,6 @@
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react'
 import { Confetti } from '../ui/Confetti'
-import { countries, countryByUn, derived } from '../data'
+import { continentById, countriesOf, countryByUn, derivedOf, type Region } from '../data'
 import { buildPaths, createPath, createProjection } from './projection'
 import { Flybys } from './Flybys'
 import { SeaDecor } from './SeaDecor'
@@ -11,6 +11,8 @@ import { useSize } from './useSize'
 import './WorldMap.css'
 
 export interface WorldMapProps {
+  /** Which set of countries to draw. */
+  region: Region
   /** Countries painted as the right answer. */
   correct?: string[]
   /** Countries painted as a wrong pick. */
@@ -46,6 +48,7 @@ const DECOR_MAX_SCALE = 3
 const MARKER_MAX_SIZE = 26
 
 export function WorldMap({
+  region,
   correct = [],
   wrong = [],
   highlight = null,
@@ -60,18 +63,22 @@ export function WorldMap({
 }: WorldMapProps) {
   const { ref, width, height } = useSize<HTMLDivElement>()
   const [shapes, setShapes] = useState<CountryShape[] | null>(null)
+  const continent = continentById(region)
+  const countries = useMemo(() => countriesOf(region), [region])
+  const derived = derivedOf(region)
 
   useEffect(() => {
     let alive = true
-    loadShapes().then((s) => alive && setShapes(s))
+    setShapes(null)
+    loadShapes(region).then((s) => alive && setShapes(s))
     return () => {
       alive = false
     }
-  }, [])
+  }, [region])
 
   const projection = useMemo(
-    () => (width && height ? createProjection(width, height) : null),
-    [width, height],
+    () => (width && height ? createProjection(width, height, continent) : null),
+    [width, height, continent],
   )
 
   const { paths, boxes, capitals } = useMemo(() => {
@@ -108,7 +115,7 @@ export function WorldMap({
       }
     }
     return { paths, boxes, capitals }
-  }, [shapes, projection])
+  }, [shapes, projection, countries, derived])
 
   const map = useMapView(width, height, interactive)
   const { focusBox, reset, subscribe } = map
@@ -128,7 +135,7 @@ export function WorldMap({
       if (box) out.set(c.iso, box)
     }
     return out
-  }, [boxes])
+  }, [boxes, countries])
 
   // Screen box per microstate, resolved once instead of searched per frame.
   const microBoxes = useMemo(() => {
@@ -138,7 +145,7 @@ export function WorldMap({
       if (c.micro && box) out.set(c.iso, box)
     }
     return out
-  }, [boxes])
+  }, [boxes, countries])
 
   const setMarker = useCallback((iso: string, el: SVGGElement | null) => {
     if (el) markersRef.current.set(iso, el)
@@ -245,7 +252,7 @@ export function WorldMap({
     const country = countries.find((c) => c.iso === focus)
     const box = country && boxes.get(country.un)
     if (box) focusBox(box, country?.micro ? 0.72 : 0.5, country?.micro ? 12 : 8)
-  }, [focus, boxes, width, height, focusBox, reset])
+  }, [focus, boxes, width, height, focusBox, reset, countries])
 
   const state = (iso: string) => {
     if (correct.includes(iso)) return 'correct'
@@ -287,7 +294,7 @@ export function WorldMap({
                 onto a coast is covered rather than sitting on top of it. */}
             {projection && (
               <g ref={decorRef} className="sea-decor-layer">
-                <SeaDecor project={(c) => projection(c) ?? null} />
+                <SeaDecor project={(c) => projection(c) ?? null} continent={continent} />
               </g>
             )}
 
@@ -316,7 +323,7 @@ export function WorldMap({
                 and zooming carries it off the edge with them. */}
             {projection && (
               <g ref={flybysRef}>
-                <Flybys project={(c) => projection(c) ?? null} />
+                <Flybys project={(c) => projection(c) ?? null} continent={continent} />
               </g>
             )}
           </g>

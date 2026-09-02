@@ -5,6 +5,7 @@ import { ResultScreen } from './screens/ResultScreen'
 import { StartScreen } from './screens/StartScreen'
 import { SymbolGallery } from './screens/SymbolGallery'
 import { useActiveProfile, useProfiles } from './store/profiles'
+import { useContinent } from './store/settings'
 import type { GameMode } from './game/types'
 
 type Screen =
@@ -14,6 +15,7 @@ type Screen =
 
 export function App() {
   const profile = useActiveProfile()
+  const region = useContinent((s) => s.continent)
   const finishRound = useProfiles((s) => s.finishRound)
   const [screen, setScreen] = useState<Screen>({ name: 'menu' })
 
@@ -30,6 +32,7 @@ export function App() {
         key={`${screen.mode}-${profile.rounds}`}
         profile={profile}
         mode={screen.mode}
+        region={region}
         onExit={() => setScreen({ name: 'menu' })}
         onDone={(score, total) => {
           const isBest = score > (profile.best[screen.mode] ?? 0)
@@ -53,5 +56,11 @@ export function App() {
     )
   }
 
-  return <MenuScreen profile={profile} onPlay={(mode) => setScreen({ name: 'game', mode })} />
+  return (
+    <MenuScreen
+      profile={profile}
+      region={region}
+      onPlay={(mode) => setScreen({ name: 'game', mode })}
+    />
+  )
 }

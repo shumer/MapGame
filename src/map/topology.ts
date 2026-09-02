@@ -1,16 +1,30 @@
 import { feature } from 'topojson-client'
 import type { Feature, MultiPolygon, Polygon } from 'geojson'
-import topoUrl from '../data/europe.topo.json?url'
+import type { Region } from '../data'
+
+// Every generated topology, so a set can be loaded by name and only the one
+// being played is fetched.
+const topoUrls = import.meta.glob('../data/*.topo.json', {
+  query: '?url',
+  import: 'default',
+  eager: true,
+}) as Record<string, string>
 
 export interface CountryShape extends Feature<Polygon | MultiPolygon> {
   properties: { id: string; playable: boolean }
 }
 
-let cache: Promise<CountryShape[]> | null = null
+const cache = new Map<Region, Promise<CountryShape[]>>()
 
-/** Loads the map once and hands the same shapes to every caller. */
-export function loadShapes(): Promise<CountryShape[]> {
-  cache ??= fetch(topoUrl)
+/** Loads a continent's map once and hands the same shapes to every caller. */
+export function loadShapes(region: Region): Promise<CountryShape[]> {
+  const existing = cache.get(region)
+  if (existing) return existing
+
+  const url = topoUrls[`../data/${region}.topo.json`]
+  if (!url) return Promise.reject(new Error(`no map built for "${region}"`))
+
+  const loading = fetch(url)
     .then((r) => {
       if (!r.ok) throw new Error(`map failed to load: ${r.status}`)
       return r.json()
@@ -20,5 +34,6 @@ export function loadShapes(): Promise<CountryShape[]> {
       const fc = feature(topo, topo.objects.countries) as any
       return fc.features as CountryShape[]
     })
-  return cache
+  cache.set(region, loading)
+  return loading
 }

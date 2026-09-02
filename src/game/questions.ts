@@ -1,4 +1,4 @@
-import { countries, derived, type Country } from '../data'
+import { countriesOf, derivedOf, type Country, type Region } from '../data'
 import type { CountryProgress, GameMode, Preset, Question } from './types'
 
 /** How many questions later a country comes back, by how well it is known. */
@@ -19,13 +19,13 @@ const pickOne = <T>(list: T[]): T => list[Math.floor(Math.random() * list.length
 
 export const emptyProgress = (): CountryProgress => ({ streak: 0, seen: 0, missed: 0, dueAt: 0 })
 
-/** The countries a given preset is allowed to ask about. */
-export function poolFor(preset: Preset): Country[] {
-  return countries.filter((c) => c.fame <= preset.maxFame)
+/** The countries a given preset is allowed to ask about, within one set. */
+export function poolFor(preset: Preset, region: Region): Country[] {
+  return countriesOf(region).filter((c) => c.fame <= preset.maxFame)
 }
 
-export function poolForMode(preset: Preset, _mode: GameMode): Country[] {
-  return poolFor(preset)
+export function poolForMode(preset: Preset, _mode: GameMode, region: Region): Country[] {
+  return poolFor(preset, region)
 }
 
 /**
@@ -65,10 +65,17 @@ export function pickTarget(
 
 /**
  * Wrong answers. 'near' picks neighbours, which makes the question genuinely
- * hard; 'far' picks countries from other parts of Europe, so a five year old
- * is choosing between two obviously different things.
+ * hard; 'far' picks countries from the other end of the continent, so a five
+ * year old is choosing between two obviously different things.
  */
-function distractors(target: Country, pool: Country[], count: number, kind: Preset['distractors']): string[] {
+function distractors(
+  target: Country,
+  pool: Country[],
+  count: number,
+  kind: Preset['distractors'],
+  region: Region,
+): string[] {
+  const derived = derivedOf(region)
   const others = pool.filter((c) => c.iso !== target.iso)
   if (kind === 'near') {
     const near = derived[target.iso].near.filter((iso) => others.some((c) => c.iso === iso))
@@ -81,11 +88,17 @@ function distractors(target: Country, pool: Country[], count: number, kind: Pres
   return shuffle((far.length >= count ? far : others).map((c) => c.iso)).slice(0, count)
 }
 
-export function buildQuestion(mode: GameMode, target: Country, pool: Country[], preset: Preset): Question {
+export function buildQuestion(
+  mode: GameMode,
+  target: Country,
+  pool: Country[],
+  preset: Preset,
+  region: Region,
+): Question {
   if (mode === 'locate') {
     return { mode, target: target.iso, options: [] }
   }
-  const wrong = distractors(target, pool, preset.choices - 1, preset.distractors)
+  const wrong = distractors(target, pool, preset.choices - 1, preset.distractors, region)
   return { mode, target: target.iso, options: shuffle([target.iso, ...wrong]) }
 }
 

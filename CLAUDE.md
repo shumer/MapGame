@@ -43,8 +43,9 @@ what a local `npm run dev` never will.
   build-review-page.mjs / build-artifact.mjs
 /src/data/
   countries.json       # THE hand-written source of truth: names, capitals, facts, symbols
-  europe.topo.json     # Generated. Do not edit.
-  derived.json         # Generated. Do not edit.
+  continents.json      # Hand-written: what a playable set is (frame, projection, scenery)
+  <set>.topo.json      # Generated, one per continent. Do not edit.
+  derived.json         # Generated, keyed by continent. Do not edit.
   types.ts, index.ts   # Types and typed accessors
 /src/map/            # Projection, topology loading, gestures, <WorldMap>
 /src/game/           # Level presets, question picking, spaced repetition, round state
@@ -58,6 +59,20 @@ what a local `npm run dev` never will.
 ---
 
 ## Core Concepts
+
+### A continent is data, not code
+
+`src/data/continents.json` describes a playable set: which slice of the world it
+frames, the standard parallels its conic projection uses, where the compass and
+the whale sit, and the waypoints the plane flies. Every build script loops over
+that list, and the app takes the active set from `useContinent`. A country names
+the sets it belongs to in `regions`, which is an array because Russia and Turkey
+are in two of them. Nothing about Europe is written in code any more; adding a
+continent is adding an entry and running `npm run data`.
+
+Note that `derived.json` is keyed by continent first: in another set a country
+has different neighbours and, because of the four-colour rule, a different
+colour.
 
 ### Data flows one way
 

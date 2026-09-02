@@ -4,7 +4,6 @@
     {
       "iso": "AL",
       "un": "008",
-      "region": "europe",
       "subregion": "balkans",
       "fame": 2,
       "micro": false,
@@ -27,12 +26,16 @@
         "pl": "W Albanii jest ponad 170 tysięcy betonowych bunkrów, budowano je w całym kraju.",
         "en": "Albania has over 170,000 concrete bunkers built all across the country."
       },
-      "symbol": "eagle"
+      "symbol": "eagle",
+      "regions": [
+        "europe"
+      ],
+      "landlocked": false,
+      "island": false
     },
     {
       "iso": "AD",
       "un": "020",
-      "region": "europe",
       "subregion": "south",
       "fame": 3,
       "micro": true,
@@ -55,12 +58,16 @@
         "pl": "Malutki kraj w górach między Francją a Hiszpanią, nie ma własnej armii.",
         "en": "A tiny country in the mountains between France and Spain, with no army."
       },
-      "symbol": "mountains"
+      "symbol": "mountains",
+      "regions": [
+        "europe"
+      ],
+      "landlocked": true,
+      "island": false
     },
     {
       "iso": "AT",
       "un": "040",
-      "region": "europe",
       "subregion": "central",
       "fame": 1,
       "micro": false,
@@ -110,12 +117,16 @@
           "pl": "Opera Wiedeńska gra przedstawienie niemal każdego wieczoru sezonu",
           "en": "The Vienna State Opera stages a performance almost every night of the season"
         }
-      ]
+      ],
+      "regions": [
+        "europe"
+      ],
+      "landlocked": true,
+      "island": false
     },
     {
       "iso": "BY",
       "un": "112",
-      "region": "europe",
       "subregion": "east",
       "fame": 1,
       "micro": false,
@@ -165,12 +176,16 @@
           "pl": "Jest tu ponad dziesięć tysięcy jezior pozostawionych przez lodowiec",
           "en": "There are over ten thousand lakes here, left behind by a glacier"
         }
-      ]
+      ],
+      "regions": [
+        "europe"
+      ],
+      "landlocked": true,
+      "island": false
     },
     {
       "iso": "BE",
       "un": "056",
-      "region": "europe",
       "subregion": "west",
       "fame": 1,
       "micro": false,
@@ -220,12 +235,16 @@
           "pl": "Kraj ma trzy języki urzędowe: niderlandzki, francuski i niemiecki",
           "en": "The country has three official languages: Dutch, French and German"
         }
-      ]
+      ],
+      "regions": [
+        "europe"
+      ],
+      "landlocked": false,
+      "island": false
     },
     {
       "iso": "BA",
       "un": "070",
-      "region": "europe",
       "subregion": "balkans",
       "fame": 2,
       "micro": false,
@@ -248,12 +267,16 @@
         "pl": "W Mostarze jest stary most, z którego śmiałkowie skaczą do rzeki.",
         "en": "In Mostar there is an old bridge that brave divers jump from into the river."
       },
-      "symbol": "bridge"
+      "symbol": "bridge",
+      "regions": [
+        "europe"
+      ],
+      "landlocked": false,
+      "island": false
     },
     {
       "iso": "BG",
       "un": "100",
-      "region": "europe",
       "subregion": "balkans",
       "fame": 2,
       "micro": false,
@@ -276,12 +299,16 @@
         "pl": "Uprawia się tu róże i robi z nich olejek do perfum.",
         "en": "Roses are grown here and turned into oil for perfumes."
       },
-      "symbol": "rose"
+      "symbol": "rose",
+      "regions": [
+        "europe"
+      ],
+      "landlocked": false,
+      "island": false
     },
     {
       "iso": "HR",
       "un": "191",
-      "region": "europe",
       "subregion": "balkans",
       "fame": 2,
       "micro": false,
@@ -304,12 +331,16 @@
         "pl": "Chorwacja ma ponad tysiąc wysp na Morzu Adriatyckim.",
         "en": "Croatia has more than a thousand islands in the Adriatic Sea."
       },
-      "symbol": "boat"
+      "symbol": "boat",
+      "regions": [
+        "europe"
+      ],
+      "landlocked": false,
+      "island": false
     },
     {
       "iso": "CY",
       "un": "196",
-      "region": "europe",
       "subregion": "south",
       "fame": 2,
       "micro": false,
@@ -332,12 +363,16 @@
         "pl": "Wyspa na Morzu Śródziemnym, na jej fladze narysowany jest sam kraj.",
         "en": "An island in the Mediterranean whose flag shows the island itself."
       },
-      "symbol": "columns"
+      "symbol": "columns",
+      "regions": [
+        "europe"
+      ],
+      "landlocked": false,
+      "island": true
     },
     {
       "iso": "CZ",
       "un": "203",
-      "region": "europe",
       "subregion": "central",
       "fame": 1,
       "micro": false,
@@ -387,12 +422,16 @@
           "pl": "W kraju jest ponad dwa tysiące zamków i twierdz",
           "en": "The country has more than two thousand castles and fortresses"
         }
-      ]
+      ],
+      "regions": [
+        "europe"
+      ],
+      "landlocked": true,
+      "island": false
     },
     {
       "iso": "DK",
       "un": "208",
-      "region": "europe",
       "subregion": "nordic",
       "fame": 1,
       "micro": false,
@@ -442,12 +481,16 @@
           "pl": "Grenlandia, największa wyspa świata, należy do Królestwa Danii",
           "en": "Greenland, the world's largest island, is part of the Danish kingdom"
         }
-      ]
+      ],
+      "regions": [
+        "europe"
+      ],
+      "landlocked": false,
+      "island": false
     },
     {
       "iso": "EE",
       "un": "233",
-      "region": "europe",
       "subregion": "baltic",
       "fame": 2,
       "micro": false,
@@ -470,12 +513,16 @@
         "pl": "Połowę Estonii zajmują lasy, a prawie wszystko załatwia się tu przez internet.",
         "en": "Half of Estonia is forest, and almost everything here is done online."
       },
-      "symbol": "wolf"
+      "symbol": "wolf",
+      "regions": [
+        "europe"
+      ],
+      "landlocked": false,
+      "island": false
     },
     {
       "iso": "FI",
       "un": "246",
-      "region": "europe",
       "subregion": "nordic",
       "fame": 1,
       "micro": false,
@@ -525,12 +572,16 @@
           "pl": "Stąd pochodzą Angry Birds i Muminki",
           "en": "Angry Birds and the Moomins both come from here"
         }
-      ]
+      ],
+      "regions": [
+        "europe"
+      ],
+      "landlocked": false,
+      "island": false
     },
     {
       "iso": "FR",
       "un": "250",
-      "region": "europe",
       "subregion": "west",
       "fame": 1,
       "micro": false,
@@ -580,12 +631,16 @@
           "pl": "We Francji wytwarza się ponad tysiąc gatunków sera",
           "en": "France makes more than a thousand kinds of cheese"
         }
-      ]
+      ],
+      "regions": [
+        "europe"
+      ],
+      "landlocked": false,
+      "island": false
     },
     {
       "iso": "DE",
       "un": "276",
-      "region": "europe",
       "subregion": "central",
       "fame": 1,
       "micro": false,
@@ -635,12 +690,16 @@
           "pl": "Tu narodził się zwyczaj ubierania choinki w dzisiejszej formie",
           "en": "The Christmas tree as we decorate it today began here"
         }
-      ]
+      ],
+      "regions": [
+        "europe"
+      ],
+      "landlocked": false,
+      "island": false
     },
     {
       "iso": "GR",
       "un": "300",
-      "region": "europe",
       "subregion": "south",
       "fame": 1,
       "micro": false,
@@ -690,12 +749,16 @@
           "pl": "Demokracja narodziła się w Atenach: mieszkańcy sami decydowali głosowaniem",
           "en": "Democracy began in Athens, where citizens decided matters by voting"
         }
-      ]
+      ],
+      "regions": [
+        "europe"
+      ],
+      "landlocked": false,
+      "island": false
     },
     {
       "iso": "HU",
       "un": "348",
-      "region": "europe",
       "subregion": "central",
       "fame": 1,
       "micro": false,
@@ -745,12 +808,16 @@
           "pl": "Węgierski nie przypomina języków sąsiadów: jego daleka rodzina to fiński i języki Syberii",
           "en": "Hungarian is unlike its neighbours' languages: its distant relatives are Finnish and languages of Siberia"
         }
-      ]
+      ],
+      "regions": [
+        "europe"
+      ],
+      "landlocked": true,
+      "island": false
     },
     {
       "iso": "IS",
       "un": "352",
-      "region": "europe",
       "subregion": "nordic",
       "fame": 1,
       "micro": false,
@@ -800,12 +867,16 @@
           "pl": "Islandia była krajem bez komarów, aż w 2025 roku znaleziono pierwsze",
           "en": "Iceland had no mosquitoes at all until the first ones were found in 2025"
         }
-      ]
+      ],
+      "regions": [
+        "europe"
+      ],
+      "landlocked": false,
+      "island": true
     },
     {
       "iso": "IE",
       "un": "372",
-      "region": "europe",
       "subregion": "west",
       "fame": 1,
       "micro": false,
@@ -855,12 +926,16 @@
           "pl": "Na wyspie nie ma żadnych węży",
           "en": "There are no snakes on the island at all"
         }
-      ]
+      ],
+      "regions": [
+        "europe"
+      ],
+      "landlocked": false,
+      "island": true
     },
     {
       "iso": "IT",
       "un": "380",
-      "region": "europe",
       "subregion": "south",
       "fame": 1,
       "micro": false,
@@ -910,12 +985,16 @@
           "pl": "Fortepian i okulary wymyślono we Włoszech, tu też zbudowano pierwsze termometry",
           "en": "The piano and eyeglasses were invented in Italy, and Italians built the first thermometers"
         }
-      ]
+      ],
+      "regions": [
+        "europe"
+      ],
+      "landlocked": false,
+      "island": false
     },
     {
       "iso": "LV",
       "un": "428",
-      "region": "europe",
       "subregion": "baltic",
       "fame": 2,
       "micro": false,
@@ -938,12 +1017,16 @@
         "pl": "Na brzegu Bałtyku znajduje się tu bursztyn, zastygłą żywicę dawnych drzew.",
         "en": "Amber, the hardened resin of ancient trees, washes up on the Baltic shore here."
       },
-      "symbol": "amber"
+      "symbol": "amber",
+      "regions": [
+        "europe"
+      ],
+      "landlocked": false,
+      "island": false
     },
     {
       "iso": "LI",
       "un": "438",
-      "region": "europe",
       "subregion": "central",
       "fame": 3,
       "micro": true,
@@ -966,12 +1049,16 @@
         "pl": "Kraj można przejść pieszo w jeden dzień, a rządzi nim prawdziwy książę.",
         "en": "You can walk across this country in a day, and a real prince rules it."
       },
-      "symbol": "castle"
+      "symbol": "castle",
+      "regions": [
+        "europe"
+      ],
+      "landlocked": true,
+      "island": false
     },
     {
       "iso": "LT",
       "un": "440",
-      "region": "europe",
       "subregion": "baltic",
       "fame": 2,
       "micro": false,
@@ -994,12 +1081,16 @@
         "pl": "Jest tu Góra Krzyży, na którą ludzie przynieśli ponad sto tysięcy krzyży.",
         "en": "The Hill of Crosses here holds more than a hundred thousand crosses."
       },
-      "symbol": "castle"
+      "symbol": "castle",
+      "regions": [
+        "europe"
+      ],
+      "landlocked": false,
+      "island": false
     },
     {
       "iso": "LU",
       "un": "442",
-      "region": "europe",
       "subregion": "west",
       "fame": 3,
       "micro": true,
@@ -1022,12 +1113,16 @@
         "pl": "Pierwszy kraj na świecie, gdzie cały transport publiczny jest darmowy.",
         "en": "The first country in the world to make all public transport free."
       },
-      "symbol": "crown"
+      "symbol": "crown",
+      "regions": [
+        "europe"
+      ],
+      "landlocked": true,
+      "island": false
     },
     {
       "iso": "MT",
       "un": "470",
-      "region": "europe",
       "subregion": "south",
       "fame": 2,
       "micro": true,
@@ -1050,12 +1145,16 @@
         "pl": "Mała wyspa, na której stoją świątynie starsze od egipskich piramid.",
         "en": "A small island with temples older than the Egyptian pyramids."
       },
-      "symbol": "boat"
+      "symbol": "boat",
+      "regions": [
+        "europe"
+      ],
+      "landlocked": false,
+      "island": true
     },
     {
       "iso": "MD",
       "un": "498",
-      "region": "europe",
       "subregion": "east",
       "fame": 2,
       "micro": false,
@@ -1078,12 +1177,16 @@
         "pl": "Pod ziemią kryją się tu piwnice z winem długie na dwieście kilometrów.",
         "en": "Wine cellars stretching two hundred kilometres run under the ground here."
       },
-      "symbol": "grapes"
+      "symbol": "grapes",
+      "regions": [
+        "europe"
+      ],
+      "landlocked": true,
+      "island": false
     },
     {
       "iso": "MC",
       "un": "492",
-      "region": "europe",
       "subregion": "west",
       "fame": 3,
       "micro": true,
@@ -1106,12 +1209,16 @@
         "pl": "Drugi najmniejszy kraj świata, można go obejść w godzinę.",
         "en": "The second smallest country in the world, you can walk around it in an hour."
       },
-      "symbol": "racecar"
+      "symbol": "racecar",
+      "regions": [
+        "europe"
+      ],
+      "landlocked": false,
+      "island": false
     },
     {
       "iso": "ME",
       "un": "499",
-      "region": "europe",
       "subregion": "balkans",
       "fame": 2,
       "micro": false,
@@ -1134,12 +1241,16 @@
         "pl": "Nazwa znaczy czarna góra, góry schodzą tu prosto do morza.",
         "en": "The name means black mountain, and the mountains here run right down to the sea."
       },
-      "symbol": "mountains"
+      "symbol": "mountains",
+      "regions": [
+        "europe"
+      ],
+      "landlocked": false,
+      "island": false
     },
     {
       "iso": "NL",
       "un": "528",
-      "region": "europe",
       "subregion": "west",
       "fame": 1,
       "micro": false,
@@ -1189,12 +1300,16 @@
           "pl": "Wiatraki przez wieki odpompowywały wodę z ziemi odebranej morzu",
           "en": "Windmills spent centuries pumping water off land reclaimed from the sea"
         }
-      ]
+      ],
+      "regions": [
+        "europe"
+      ],
+      "landlocked": false,
+      "island": false
     },
     {
       "iso": "MK",
       "un": "807",
-      "region": "europe",
       "subregion": "balkans",
       "fame": 2,
       "micro": false,
@@ -1217,12 +1332,16 @@
         "pl": "Jezioro Ochrydzkie jest jednym z najstarszych na Ziemi, ma ponad milion lat.",
         "en": "Lake Ohrid is one of the oldest lakes on Earth, over a million years old."
       },
-      "symbol": "lake"
+      "symbol": "lake",
+      "regions": [
+        "europe"
+      ],
+      "landlocked": true,
+      "island": false
     },
     {
       "iso": "NO",
       "un": "578",
-      "region": "europe",
       "subregion": "nordic",
       "fame": 1,
       "micro": false,
@@ -1272,12 +1391,16 @@
           "pl": "Drewniane kościoły słupowe składano na drewnianych kołkach, bez żelaznych gwoździ",
           "en": "Stave churches were put together with wooden pegs, without iron nails"
         }
-      ]
+      ],
+      "regions": [
+        "europe"
+      ],
+      "landlocked": false,
+      "island": false
     },
     {
       "iso": "PL",
       "un": "616",
-      "region": "europe",
       "subregion": "central",
       "fame": 1,
       "micro": false,
@@ -1327,12 +1450,16 @@
           "pl": "Starówkę Warszawy odbudowano po wojnie według przedwojennych rysunków, zdjęć i obrazów Bellotta",
           "en": "Warsaw's old town was rebuilt after the war from pre-war drawings, photographs and Bellotto's paintings"
         }
-      ]
+      ],
+      "regions": [
+        "europe"
+      ],
+      "landlocked": false,
+      "island": false
     },
     {
       "iso": "PT",
       "un": "620",
-      "region": "europe",
       "subregion": "south",
       "fame": 1,
       "micro": false,
@@ -1382,12 +1509,16 @@
           "pl": "Portugalskie fado wpisano na listę dziedzictwa UNESCO",
           "en": "Portuguese fado music is on the UNESCO heritage list"
         }
-      ]
+      ],
+      "regions": [
+        "europe"
+      ],
+      "landlocked": false,
+      "island": false
     },
     {
       "iso": "RO",
       "un": "642",
-      "region": "europe",
       "subregion": "east",
       "fame": 2,
       "micro": false,
@@ -1410,12 +1541,16 @@
         "pl": "W górach Transylwanii stoi zamek, który nazywa się zamkiem Draculi.",
         "en": "In the mountains of Transylvania stands the castle known as Dracula's castle."
       },
-      "symbol": "castle"
+      "symbol": "castle",
+      "regions": [
+        "europe"
+      ],
+      "landlocked": false,
+      "island": false
     },
     {
       "iso": "RU",
       "un": "643",
-      "region": "europe",
       "subregion": "east",
       "fame": 1,
       "micro": false,
@@ -1465,12 +1600,16 @@
           "pl": "Sobór Wasyla Błogosławionego na Placu Czerwonym zbudowano w XVI wieku",
           "en": "Saint Basil's Cathedral on Red Square was built in the 16th century"
         }
-      ]
+      ],
+      "regions": [
+        "europe"
+      ],
+      "landlocked": false,
+      "island": false
     },
     {
       "iso": "SM",
       "un": "674",
-      "region": "europe",
       "subregion": "south",
       "fame": 3,
       "micro": true,
@@ -1493,12 +1632,16 @@
         "pl": "Najstarsza republika świata, ma ponad 1700 lat. Leży w całości wewnątrz Włoch.",
         "en": "The world's oldest republic, over 1,700 years old, sits entirely inside Italy."
       },
-      "symbol": "towers"
+      "symbol": "towers",
+      "regions": [
+        "europe"
+      ],
+      "landlocked": true,
+      "island": false
     },
     {
       "iso": "RS",
       "un": "688",
-      "region": "europe",
       "subregion": "balkans",
       "fame": 2,
       "micro": false,
@@ -1521,12 +1664,16 @@
         "pl": "Belgrad leży tam, gdzie dwie wielkie rzeki, Sawa i Dunaj, łączą się razem.",
         "en": "Belgrade stands where two great rivers, the Sava and the Danube, meet."
       },
-      "symbol": "eagle"
+      "symbol": "eagle",
+      "regions": [
+        "europe"
+      ],
+      "landlocked": true,
+      "island": false
     },
     {
       "iso": "SK",
       "un": "703",
-      "region": "europe",
       "subregion": "central",
       "fame": 2,
       "micro": false,
@@ -1549,12 +1696,16 @@
         "pl": "Jest tu ponad 6000 jaskiń i bardzo dużo starych zamków w górach.",
         "en": "There are over 6,000 caves here and a great many old castles in the mountains."
       },
-      "symbol": "mountains"
+      "symbol": "mountains",
+      "regions": [
+        "europe"
+      ],
+      "landlocked": true,
+      "island": false
     },
     {
       "iso": "SI",
       "un": "705",
-      "region": "europe",
       "subregion": "central",
       "fame": 2,
       "micro": false,
@@ -1577,12 +1728,16 @@
         "pl": "Na jeziorze Bled jest wysepka z kościołem, płynie się tam łódką.",
         "en": "Lake Bled has a tiny island with a church that you reach by boat."
       },
-      "symbol": "lake"
+      "symbol": "lake",
+      "regions": [
+        "europe"
+      ],
+      "landlocked": false,
+      "island": false
     },
     {
       "iso": "ES",
       "un": "724",
-      "region": "europe",
       "subregion": "south",
       "fame": 1,
       "micro": false,
@@ -1632,12 +1787,16 @@
           "pl": "Malarze Picasso, Dalí, Goya i Velázquez byli Hiszpanami",
           "en": "Picasso, Dali, Goya and Velazquez were all Spanish painters"
         }
-      ]
+      ],
+      "regions": [
+        "europe"
+      ],
+      "landlocked": false,
+      "island": false
     },
     {
       "iso": "SE",
       "un": "752",
-      "region": "europe",
       "subregion": "nordic",
       "fame": 1,
       "micro": false,
@@ -1687,12 +1846,16 @@
           "pl": "Trzypunktowy pas bezpieczeństwa wynaleziono tutaj i uratował miliony ludzi",
           "en": "The three-point seatbelt was invented here and has saved millions of lives"
         }
-      ]
+      ],
+      "regions": [
+        "europe"
+      ],
+      "landlocked": false,
+      "island": false
     },
     {
       "iso": "CH",
       "un": "756",
-      "region": "europe",
       "subregion": "central",
       "fame": 1,
       "micro": false,
@@ -1742,12 +1905,16 @@
           "pl": "Kraj ma cztery języki narodowe: niemiecki, francuski, włoski i retoromański",
           "en": "The country has four national languages: German, French, Italian and Romansh"
         }
-      ]
+      ],
+      "regions": [
+        "europe"
+      ],
+      "landlocked": true,
+      "island": false
     },
     {
       "iso": "UA",
       "un": "804",
-      "region": "europe",
       "subregion": "east",
       "fame": 1,
       "micro": false,
@@ -1797,12 +1964,16 @@
           "pl": "To największy kraj leżący w całości w Europie",
           "en": "It is the largest country lying entirely within Europe"
         }
-      ]
+      ],
+      "regions": [
+        "europe"
+      ],
+      "landlocked": false,
+      "island": false
     },
     {
       "iso": "GB",
       "un": "826",
-      "region": "europe",
       "subregion": "west",
       "fame": 1,
       "micro": false,
@@ -1852,12 +2023,16 @@
           "pl": "Kraj składa się z czterech części: Anglii, Szkocji, Walii i Irlandii Północnej",
           "en": "The country is made of four parts: England, Scotland, Wales and Northern Ireland"
         }
-      ]
+      ],
+      "regions": [
+        "europe"
+      ],
+      "landlocked": false,
+      "island": true
     },
     {
       "iso": "VA",
       "un": "336",
-      "region": "europe",
       "subregion": "south",
       "fame": 3,
       "micro": true,
@@ -1880,7 +2055,12 @@
         "pl": "Najmniejszy kraj świata, mieści się w całości wewnątrz Rzymu.",
         "en": "The smallest country in the world fits entirely inside the city of Rome."
       },
-      "symbol": "dome"
+      "symbol": "dome",
+      "regions": [
+        "europe"
+      ],
+      "landlocked": true,
+      "island": false
     }
   ]
 }

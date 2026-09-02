@@ -1,4 +1,5 @@
 import planeUrl from '../assets/art/plane.svg?url'
+import type { Continent } from '../data'
 import './Flybys.css'
 
 /**
@@ -6,22 +7,12 @@ import './Flybys.css'
  * delays, so what the player sees is a single plane taking a different route
  * each time: high and eastbound, low and westbound, then across the middle.
  *
- * The routes are geographic, and the plane rides inside the zoom transform, so
- * zooming carries it off the edge with the rest of the map instead of leaving
- * it hanging in the middle of the screen.
+ * The routes are geographic and come from the continent config, and the plane
+ * rides inside the zoom transform, so zooming carries it off the edge with the
+ * rest of the map instead of leaving it hanging in the middle of the screen.
+ * They zigzag on purpose: a straight line reads as a sprite sliding across the
+ * screen rather than a plane flying.
  */
-
-/** [lon, lat] waypoints. They zigzag on purpose — a straight line reads as a
-    sprite sliding across the screen rather than a plane flying. */
-const HIGH_ROUTE: [number, number][] = [
-  [-30, 62], [-19, 67], [-7, 62.5], [5, 68], [17, 63], [29, 68.5], [42, 64], [54, 67],
-]
-const LOW_ROUTE: [number, number][] = [
-  [52, 36], [40, 32.5], [27, 37], [15, 32.5], [2, 37], [-11, 33], [-24, 37.5], [-34, 34],
-]
-const MID_ROUTE: [number, number][] = [
-  [-32, 44], [-20, 52], [-7, 45], [7, 53], [20, 46], [33, 54], [46, 47], [56, 51],
-]
 
 type Project = (coords: [number, number]) => [number, number] | null
 
@@ -40,10 +31,10 @@ function routePath(points: [number, number][], project: Project): string {
   return d
 }
 
-export function Flybys({ project }: { project: Project }) {
-  const high = routePath(HIGH_ROUTE, project)
-  const low = routePath(LOW_ROUTE, project)
-  const mid = routePath(MID_ROUTE, project)
+export function Flybys({ project, continent }: { project: Project; continent: Continent }) {
+  const high = routePath(continent.flyRoutes.high, project)
+  const low = routePath(continent.flyRoutes.low, project)
+  const mid = routePath(continent.flyRoutes.mid, project)
   if (!high || !low || !mid) return null
 
   return (

@@ -1,6 +1,7 @@
 import { create } from 'zustand'
 import { persist } from 'zustand/middleware'
-import type { Lang } from '../data'
+import type { Lang, Region } from '../data'
+import { DEFAULT_CONTINENT } from '../data'
 import { setMuted } from '../sound'
 import { setVoiceMuted } from '../speech'
 import { stopSpeaking } from '../speech'
@@ -24,6 +25,24 @@ const NEXT: Record<SoundMode, SoundMode> = {
   effects: 'silent',
   silent: 'full',
 }
+
+interface ContinentState {
+  /** The set being played. Chosen on its own screen, kept between sessions so
+      a child who is working through Asia does not land back in Europe. */
+  continent: Region
+  setContinent: (continent: Region) => void
+}
+
+/** Remembered per device, like the language. */
+export const useContinent = create<ContinentState>()(
+  persist(
+    (set) => ({
+      continent: DEFAULT_CONTINENT,
+      setContinent: (continent) => set({ continent }),
+    }),
+    { name: 'mapgame-continent' },
+  ),
+)
 
 interface LangState {
   /** Language chosen on the start screen, applied to whoever plays next. */

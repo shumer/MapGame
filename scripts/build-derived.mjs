@@ -1,29 +1,38 @@
-// Derives per-country data from the map: the frame to zoom to, and the list of
-// nearby countries used to pick believable wrong answers.
+// Derives per-country data from the map, one continent at a time: the frame to
+// zoom to, and the list of nearby countries used to pick believable wrong
+// answers. Output is keyed by continent, because a country's neighbours and its
+// map colour depend on which set it is being drawn in.
 import fs from 'node:fs'
 import { feature, neighbors } from 'topojson-client'
 import { geoBounds, geoCentroid, geoDistance } from 'd3-geo'
-
-// Everything outside this window is an overseas territory as far as the Europe
-// set is concerned: it should not drag the zoom frame across the Atlantic.
-const WINDOW = { lon: [-25, 45], lat: [34, 72] }
-
-// Russia spans a third of the globe, so the window trick is not enough.
-const MANUAL_FOCUS = { RU: [19, 43, 60, 68] }
-
-// Borders that the topology cannot supply, because the country is too small to
-// have survived quantization as a polygon. Applied both ways.
-const MANUAL_BORDERS = { VA: ['IT'] }
+import { CONTINENTS, membersOf, topoPath } from './continents.mjs'
 
 const NEAR_COUNT = 6
+const PALETTE_SIZE = 6
 
 const data = JSON.parse(fs.readFileSync('src/data/countries.json', 'utf8'))
-const topo = JSON.parse(fs.readFileSync('src/data/europe.topo.json', 'utf8'))
+const out = {}
+
+for (const continent of CONTINENTS) {
+buildContinent(continent)
+}
+
+function buildContinent(continent) {
+// Everything outside this window is an overseas territory as far as this set is
+// concerned: it should not drag the zoom frame across an ocean.
+const WINDOW = continent.window
+const MANUAL_FOCUS = continent.manualFocus ?? {}
+// Borders the topology cannot supply, because the country is too small to have
+// survived quantization as a polygon. Applied both ways.
+const MANUAL_BORDERS = continent.manualBorders ?? {}
+
+const members = membersOf(data.countries, continent.id)
+const topo = JSON.parse(fs.readFileSync(topoPath(continent.id), 'utf8'))
 const geoms = topo.objects.countries.geometries
 const feats = feature(topo, topo.objects.countries).features
 
 const byId = new Map(feats.map((f) => [f.properties.id, f]))
-const isoByUn = new Map(data.countries.map((c) => [c.un, c.iso]))
+const isoByUn = new Map(members.map((c) => [c.un, c.iso]))
 
 // Land borders come straight from the shared arcs in the topology.
 const adjacency = neighbors(geoms)
@@ -39,9 +48,9 @@ geoms.forEach((g, i) => {
   )
 })
 
-// The mainland part of a country: inside the Europe window, and not a speck.
+// The mainland part of a country: inside this set's window, and not a speck.
 // Both filters exist to stop an outlying islet from stretching the zoom frame.
-function europeanParts(f) {
+function mainlandParts(f) {
   const polys = f.geometry.type === 'Polygon' ? [f.geometry.coordinates] : f.geometry.coordinates
   const box = (poly) => {
     const lons = poly[0].map((p) => p[0])
@@ -64,23 +73,23 @@ function europeanParts(f) {
 const derived = {}
 const centroids = new Map()
 
-for (const c of data.countries) {
+for (const c of members) {
   const f = byId.get(c.un)
   // A microstate with no polygon is anchored on its capital instead.
   const focus = MANUAL_FOCUS[c.iso]
     ? MANUAL_FOCUS[c.iso]
     : f
-      ? geoBounds(europeanParts(f)).flat()
+      ? geoBounds(mainlandParts(f)).flat()
       : [c.capitalCoords[0] - 0.5, c.capitalCoords[1] - 0.4, c.capitalCoords[0] + 0.5, c.capitalCoords[1] + 0.4]
 
-  centroids.set(c.iso, f ? geoCentroid(europeanParts(f)) : c.capitalCoords)
+  centroids.set(c.iso, f ? geoCentroid(mainlandParts(f)) : c.capitalCoords)
   derived[c.iso] = { focus: focus.map((n) => +n.toFixed(3)) }
 }
 
 // Nearby countries: land borders first, then the closest by centroid distance.
-for (const c of data.countries) {
+for (const c of members) {
   const here = centroids.get(c.iso)
-  const byDistance = data.countries
+  const byDistance = members
     .filter((o) => o.iso !== c.iso)
     .map((o) => [o.iso, geoDistance(here, centroids.get(o.iso))])
     .sort((a, b) => a[1] - b[1])
@@ -98,8 +107,7 @@ for (const c of data.countries) {
 // Map colouring: give every country one of a few palette slots so that no two
 // countries sharing a border get the same one. Greedy over the most-connected
 // countries first, which is what keeps it down to a handful of colours.
-const PALETTE_SIZE = 6
-const order = data.countries
+const order = members
   .map((c) => c.iso)
   .sort((a, b) => derived[b].borders.length - derived[a].borders.length)
 
@@ -110,20 +118,20 @@ for (const iso of order) {
   derived[iso].color = slot
 }
 
-const clashes = data.countries.flatMap((c) =>
+const clashes = members.flatMap((c) =>
   derived[c.iso].borders
     .filter((n) => derived[n].color === derived[c.iso].color)
     .map((n) => `${c.iso}-${n}`),
 )
 
-fs.writeFileSync('src/data/derived.json', JSON.stringify(derived, null, 2) + '\n')
+out[continent.id] = derived
 
 const wide = Object.entries(derived).filter(([, d]) => d.focus[2] - d.focus[0] > 30)
-console.log(`derived entries: ${Object.keys(derived).length}`)
-console.log(`colour slots used: ${new Set(Object.values(derived).map((d) => d.color)).size}, neighbours sharing a colour: ${clashes.length ? clashes.join(', ') : 'none'}`)
-console.log(`landlocked-by-data (no land borders): ${Object.entries(derived).filter(([, d]) => !d.borders.length).map(([iso]) => iso).join(', ')}`)
-console.log(`focus wider than 30 deg: ${wide.map(([iso, d]) => `${iso} ${d.focus.join(',')}`).join(' | ') || 'none'}`)
-console.log('samples:')
-for (const iso of ['PL', 'FR', 'RU', 'VA', 'IS', 'MT']) {
-  console.log(`  ${iso.padEnd(3)} focus ${derived[iso].focus.join(', ')}  near ${derived[iso].near.join(',')}`)
+console.log(`${continent.id}: ${Object.keys(derived).length} entries, ${new Set(Object.values(derived).map((d) => d.color)).size} colour slots`)
+if (clashes.length) console.log(`  neighbours sharing a colour: ${clashes.join(', ')}`)
+const nolands = Object.entries(derived).filter(([, d]) => !d.borders.length).map(([iso]) => iso)
+if (nolands.length) console.log(`  no land borders: ${nolands.join(', ')}`)
+if (wide.length) console.log(`  focus wider than 30 deg: ${wide.map(([iso, d]) => `${iso} ${d.focus.join(',')}`).join(' | ')}`)
 }
+
+fs.writeFileSync('src/data/derived.json', JSON.stringify(out, null, 2) + '\n')

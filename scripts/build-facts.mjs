@@ -5,16 +5,27 @@
 import fs from 'node:fs'
 import { feature } from 'topojson-client'
 import { geoArea, geoBounds, geoCentroid } from 'd3-geo'
+import { CONTINENTS, membersOf, topoPath } from './continents.mjs'
 
 const data = JSON.parse(fs.readFileSync('src/data/countries.json', 'utf8'))
-const derived = JSON.parse(fs.readFileSync('src/data/derived.json', 'utf8'))
-const topo = JSON.parse(fs.readFileSync('src/data/europe.topo.json', 'utf8'))
+const derivedAll = JSON.parse(fs.readFileSync('src/data/derived.json', 'utf8'))
+
+for (const continent of CONTINENTS) {
+buildContinent(continent)
+}
+
+fs.writeFileSync('src/data/derived.json', JSON.stringify(derivedAll, null, 2) + '\n')
+
+function buildContinent(continent) {
+const members = membersOf(data.countries, continent.id)
+const derived = derivedAll[continent.id]
+const topo = JSON.parse(fs.readFileSync(topoPath(continent.id), 'utf8'))
 const byId = new Map(feature(topo, topo.objects.countries).features.map((f) => [f.properties.id, f]))
 
 /** Steradians to square kilometres. */
 const EARTH_AREA_KM2 = 510_072_000 / (4 * Math.PI)
 
-const stats = data.countries.map((c) => {
+const stats = members.map((c) => {
   const f = byId.get(c.un)
   const area = f ? geoArea(f) * EARTH_AREA_KM2 : 0
   const bounds = f ? geoBounds(f) : null
@@ -37,11 +48,11 @@ const stats = data.countries.map((c) => {
 
 const bySize = [...stats].sort((a, b) => b.area - a.area)
 
-/** Landlocked: every neighbour touches it and no polygon edge meets open sea.
- *  Determined from the known list rather than geometry, which is far more
- *  reliable at this resolution. */
-const LANDLOCKED = new Set(['AT', 'BY', 'CZ', 'HU', 'LI', 'LU', 'MD', 'MK', 'RS', 'SK', 'CH', 'AD', 'SM', 'VA'])
-const ISLANDS = new Set(['IS', 'IE', 'CY', 'MT', 'GB'])
+/** Whether a country is landlocked or an island is stated in countries.json
+ *  rather than worked out from geometry, which is far less reliable at this
+ *  resolution: a fjord or a strait can read either way. */
+const LANDLOCKED = new Set(members.filter((c) => c.landlocked).map((c) => c.iso))
+const ISLANDS = new Set(members.filter((c) => c.island).map((c) => c.iso))
 
 const facts = {}
 for (const s of stats) {
@@ -84,9 +95,10 @@ for (const s of stats) {
 for (const [iso, list] of Object.entries(facts)) {
   derived[iso].facts = list
 }
-fs.writeFileSync('src/data/derived.json', JSON.stringify(derived, null, 2) + '\n')
 
 const counts = Object.values(facts).map((f) => f.length)
-console.log(`facts: ${counts.reduce((a, b) => a + b, 0)} across ${counts.length} countries`)
-console.log(`per country: min ${Math.min(...counts)}, max ${Math.max(...counts)}`)
-console.log('sample PL:', JSON.stringify(facts.PL))
+console.log(
+  `${continent.id}: ${counts.reduce((a, b) => a + b, 0)} facts across ${counts.length} countries, ` +
+    `${Math.min(...counts)}-${Math.max(...counts)} each`,
+)
+}

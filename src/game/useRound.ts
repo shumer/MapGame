@@ -1,5 +1,5 @@
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react'
-import { countryByIso } from '../data'
+import { countryByIso, type Region } from '../data'
 import { useProfiles } from '../store/profiles'
 import { advance, buildQuestion, nextMode, pickTarget, poolFor, poolForMode } from './questions'
 import { PRESETS, type Answer, type GameMode, type Profile, type Question } from './types'
@@ -36,11 +36,11 @@ export interface RoundState {
   next: () => void
 }
 
-export function useRound(profile: Profile, mode: GameMode | 'mixed'): RoundState {
+export function useRound(profile: Profile, mode: GameMode | 'mixed', region: Region): RoundState {
   const preset = PRESETS[profile.level]
   const saveProgress = useProfiles((s) => s.saveProgress)
 
-  const pool = useMemo(() => poolFor(preset), [preset])
+  const pool = useMemo(() => poolFor(preset, region), [preset, region])
   // A round works off its own copy of the memory so repeats inside one round
   // are scheduled even before anything is written back to the profile.
   const memory = useRef({ ...profile.progress })
@@ -52,9 +52,9 @@ export function useRound(profile: Profile, mode: GameMode | 'mixed'): RoundState
   // need to read the counter.
   const start = useCallback((): Question => {
     const chosen = mode === 'mixed' ? nextMode(preset, null) : mode
-    const target = pickTarget(poolForMode(preset, chosen), profile.progress, 0, null)
-    return buildQuestion(chosen, target, pool, preset)
-  }, [mode, pool, preset, profile.progress])
+    const target = pickTarget(poolForMode(preset, chosen, region), profile.progress, 0, null)
+    return buildQuestion(chosen, target, pool, preset, region)
+  }, [mode, pool, preset, profile.progress, region])
 
   /** The countries still allowed this round. */
   const available = useCallback(() => {
@@ -116,10 +116,10 @@ export function useRound(profile: Profile, mode: GameMode | 'mixed'): RoundState
     }
     const chosen = mode === 'mixed' ? nextMode(preset, question.mode) : mode
     const target = pickTarget(available(), memory.current, asked.current, question.target)
-    setQuestion(buildQuestion(chosen, target, pool, preset))
+    setQuestion(buildQuestion(chosen, target, pool, preset, region))
     setMisses([])
     setPhase('asking')
-  }, [mode, pool, preset, question, available])
+  }, [mode, pool, preset, question, available, region])
 
   return {
     phase,
