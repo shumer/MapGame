@@ -136,9 +136,16 @@ order.forEach((iso, i) => {
   // Islands have no borders to clash over, so the greedy pass would give every
   // one of them slot zero. They avoid their nearest neighbours instead, which
   // is what stops Australia and New Zealand coming out the same colour.
-  const avoid = derived[iso].borders.length
-    ? derived[iso].borders
-    : [...(nearBoth.get(iso) ?? [])]
+  // Neighbours are not the only countries that end up side by side. The
+  // Gambia and Guinea-Bissau do not touch -- Senegal is between them -- but
+  // they sit close enough that sharing a colour reads as one blot spilled
+  // across Senegal. So the two nearest count too.
+  const avoid = [
+    ...derived[iso].borders,
+    ...(derived[iso].borders.length
+      ? derived[iso].near.slice(0, 2)
+      : [...(nearBoth.get(iso) ?? [])]),
+  ]
   const taken = new Set(avoid.map((n) => derived[n]?.color).filter((v) => v !== undefined))
   let slot = derived[iso].borders.length ? 0 : i % PALETTE_SIZE
   let tries = 0

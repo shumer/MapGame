@@ -4,7 +4,14 @@ export type Lang = 'ru' | 'pl' | 'en'
 export type Localized = Record<Lang, string>
 
 /** A playable set of countries. Europe is the one that exists today. */
-export type Region = 'europe' | 'asia' | 'africa' | 'americas' | 'oceania' | 'world'
+export type Region =
+  | 'europe'
+  | 'asia'
+  | 'africa'
+  | 'oceania'
+  | 'namerica'
+  | 'samerica'
+  | 'world'
 
 /** Only ever used to tell "far away" from "next door" when picking wrong
     answers, so the divisions are rough on purpose. */
@@ -25,6 +32,11 @@ export type Subregion =
   | 'central-asia'
   | 'middle-east'
   | 'caucasus'
+  // The Americas
+  | 'north-america'
+  | 'central-america'
+  | 'caribbean'
+  | 'south-america'
   // Oceania
   | 'australia'
   | 'melanesia'

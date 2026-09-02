@@ -111,6 +111,32 @@
       ]
     },
     {
+      "iso": "AG",
+      "un": "028",
+      "regions": [
+        "namerica"
+      ],
+      "subregion": "caribbean",
+      "fame": 3,
+      "micro": true,
+      "landlocked": false,
+      "island": true,
+      "name": {
+        "ru": "Антигуа и Барбуда",
+        "pl": "Antigua i Barbuda",
+        "en": "Antigua and Barbuda"
+      },
+      "capital": {
+        "ru": "Сент-Джонс",
+        "pl": "Saint John’s",
+        "en": "Saint John's"
+      },
+      "capitalCoords": [
+        -61.8447,
+        17.1211
+      ]
+    },
+    {
       "iso": "AL",
       "un": "008",
       "subregion": "balkans",
@@ -355,6 +381,32 @@
       ],
       "landlocked": false,
       "island": false
+    },
+    {
+      "iso": "BB",
+      "un": "052",
+      "regions": [
+        "namerica"
+      ],
+      "subregion": "caribbean",
+      "fame": 3,
+      "micro": true,
+      "landlocked": false,
+      "island": true,
+      "name": {
+        "ru": "Барбадос",
+        "pl": "Barbados",
+        "en": "Barbados"
+      },
+      "capital": {
+        "ru": "Бриджтаун",
+        "pl": "Bridgetown",
+        "en": "Bridgetown"
+      },
+      "capitalCoords": [
+        -59.6167,
+        13.0975
+      ]
     },
     {
       "iso": "BD",
@@ -604,6 +656,33 @@
       ]
     },
     {
+      "iso": "BS",
+      "un": "044",
+      "regions": [
+        "namerica"
+      ],
+      "subregion": "caribbean",
+      "fame": 2,
+      "micro": false,
+      "landlocked": false,
+      "island": true,
+      "name": {
+        "ru": "Багамские Острова",
+        "pl": "Bahamy",
+        "en": "The Bahamas"
+      },
+      "capital": {
+        "ru": "Нассау",
+        "pl": "Nassau",
+        "en": "Nassau"
+      },
+      "capitalCoords": [
+        -77.3386,
+        25.0781
+      ],
+      "symbol": "shell"
+    },
+    {
       "iso": "BT",
       "un": "064",
       "regions": [
@@ -721,6 +800,71 @@
       ],
       "landlocked": true,
       "island": false
+    },
+    {
+      "iso": "BZ",
+      "un": "084",
+      "regions": [
+        "namerica"
+      ],
+      "subregion": "central-america",
+      "fame": 2,
+      "micro": false,
+      "landlocked": false,
+      "island": false,
+      "name": {
+        "ru": "Белиз",
+        "pl": "Belize",
+        "en": "Belize"
+      },
+      "capital": {
+        "ru": "Бельмопан",
+        "pl": "Belmopan",
+        "en": "Belmopan"
+      },
+      "capitalCoords": [
+        -88.7675,
+        17.25
+      ]
+    },
+    {
+      "iso": "CA",
+      "un": "124",
+      "regions": [
+        "namerica"
+      ],
+      "subregion": "north-america",
+      "fame": 1,
+      "micro": false,
+      "landlocked": false,
+      "island": false,
+      "name": {
+        "ru": "Канада",
+        "pl": "Kanada",
+        "en": "Canada"
+      },
+      "capital": {
+        "ru": "Оттава",
+        "pl": "Ottawa",
+        "en": "Ottawa"
+      },
+      "capitalCoords": [
+        -75.695,
+        45.4247
+      ],
+      "symbol": "deer",
+      "stories": [
+        {
+          "ru": "У Канады самая длинная береговая линия в мире, длиннее, чем у любой другой страны.",
+          "pl": "Kanada ma najdłuższą linię brzegową na świecie, dłuższą niż jakikolwiek inny kraj.",
+          "en": "Canada has the longest coastline in the world, longer than any other country."
+        },
+        {
+          "ru": "Озёр в Канаде больше, чем во всех остальных странах вместе взятых.",
+          "pl": "Jezior w Kanadzie jest więcej niż we wszystkich innych krajach razem wziętych.",
+          "en": "Canada has more lakes than all the other countries put together."
+        }
+      ]
     },
     {
       "iso": "CD",
@@ -968,6 +1112,74 @@
           "ru": "Панда почти весь день ест бамбук, потому что он совсем не питательный.",
           "pl": "Panda je bambus niemal cały dzień, bo bambus jest bardzo mało pożywny.",
           "en": "A panda eats bamboo almost all day, because bamboo is barely nourishing."
+        }
+      ]
+    },
+    {
+      "iso": "CR",
+      "un": "188",
+      "regions": [
+        "namerica"
+      ],
+      "subregion": "central-america",
+      "fame": 1,
+      "micro": false,
+      "landlocked": false,
+      "island": false,
+      "name": {
+        "ru": "Коста-Рика",
+        "pl": "Kostaryka",
+        "en": "Costa Rica"
+      },
+      "capital": {
+        "ru": "Сан-Хосе",
+        "pl": "San José",
+        "en": "San José"
+      },
+      "capitalCoords": [
+        -84.0796,
+        9.9327
+      ],
+      "symbol": "turtle",
+      "stories": [
+        {
+          "ru": "У Коста-Рики нет армии: её распустили ещё в 1948 году, а деньги отдали школам.",
+          "pl": "Kostaryka nie ma wojska: rozwiązano je w 1948 roku, a pieniądze oddano szkołom.",
+          "en": "Costa Rica has no army: it was disbanded in 1948 and the money went to schools."
+        }
+      ]
+    },
+    {
+      "iso": "CU",
+      "un": "192",
+      "regions": [
+        "namerica"
+      ],
+      "subregion": "caribbean",
+      "fame": 1,
+      "micro": false,
+      "landlocked": false,
+      "island": true,
+      "name": {
+        "ru": "Куба",
+        "pl": "Kuba",
+        "en": "Cuba"
+      },
+      "capital": {
+        "ru": "Гавана",
+        "pl": "Hawana",
+        "en": "Havana"
+      },
+      "capitalCoords": [
+        -82.3589,
+        23.1367
+      ],
+      "symbol": "racecar",
+      "stories": [
+        {
+          "ru": "Куба самый большой остров Карибского моря.",
+          "pl": "Kuba to największa wyspa Morza Karaibskiego.",
+          "en": "Cuba is the largest island in the Caribbean."
         }
       ]
     },
@@ -1232,6 +1444,58 @@
       ],
       "landlocked": false,
       "island": false
+    },
+    {
+      "iso": "DM",
+      "un": "212",
+      "regions": [
+        "namerica"
+      ],
+      "subregion": "caribbean",
+      "fame": 3,
+      "micro": true,
+      "landlocked": false,
+      "island": true,
+      "name": {
+        "ru": "Доминика",
+        "pl": "Dominika",
+        "en": "Dominica"
+      },
+      "capital": {
+        "ru": "Розо",
+        "pl": "Roseau",
+        "en": "Roseau"
+      },
+      "capitalCoords": [
+        -61.3833,
+        15.3
+      ]
+    },
+    {
+      "iso": "DO",
+      "un": "214",
+      "regions": [
+        "namerica"
+      ],
+      "subregion": "caribbean",
+      "fame": 2,
+      "micro": false,
+      "landlocked": false,
+      "island": true,
+      "name": {
+        "ru": "Доминиканская Республика",
+        "pl": "Dominikana",
+        "en": "Dominican Republic"
+      },
+      "capital": {
+        "ru": "Санто-Доминго",
+        "pl": "Santo Domingo",
+        "en": "Santo Domingo"
+      },
+      "capitalCoords": [
+        -69.9361,
+        18.4625
+      ]
     },
     {
       "iso": "DZ",
@@ -1731,6 +1995,32 @@
       "island": true
     },
     {
+      "iso": "GD",
+      "un": "308",
+      "regions": [
+        "namerica"
+      ],
+      "subregion": "caribbean",
+      "fame": 3,
+      "micro": true,
+      "landlocked": false,
+      "island": true,
+      "name": {
+        "ru": "Гренада",
+        "pl": "Grenada",
+        "en": "Grenada"
+      },
+      "capital": {
+        "ru": "Сент-Джорджес",
+        "pl": "Saint George's",
+        "en": "St. George's"
+      },
+      "capitalCoords": [
+        -61.7531,
+        12.0525
+      ]
+    },
+    {
       "iso": "GE",
       "un": "268",
       "regions": [
@@ -1928,6 +2218,32 @@
       "island": false
     },
     {
+      "iso": "GT",
+      "un": "320",
+      "regions": [
+        "namerica"
+      ],
+      "subregion": "central-america",
+      "fame": 2,
+      "micro": false,
+      "landlocked": false,
+      "island": false,
+      "name": {
+        "ru": "Гватемала",
+        "pl": "Gwatemala",
+        "en": "Guatemala"
+      },
+      "capital": {
+        "ru": "Гватемала",
+        "pl": "Gwatemala",
+        "en": "Guatemala City"
+      },
+      "capitalCoords": [
+        -90.5133,
+        14.6417
+      ]
+    },
+    {
       "iso": "GW",
       "un": "624",
       "regions": [
@@ -1951,6 +2267,32 @@
       "capitalCoords": [
         -15.5833,
         11.86
+      ]
+    },
+    {
+      "iso": "HN",
+      "un": "340",
+      "regions": [
+        "namerica"
+      ],
+      "subregion": "central-america",
+      "fame": 2,
+      "micro": false,
+      "landlocked": false,
+      "island": false,
+      "name": {
+        "ru": "Гондурас",
+        "pl": "Honduras",
+        "en": "Honduras"
+      },
+      "capital": {
+        "ru": "Тегусигальпа",
+        "pl": "Tegucigalpa",
+        "en": "Tegucigalpa"
+      },
+      "capitalCoords": [
+        -87.2047,
+        14.1058
       ]
     },
     {
@@ -1984,6 +2326,40 @@
       ],
       "landlocked": false,
       "island": false
+    },
+    {
+      "iso": "HT",
+      "un": "332",
+      "regions": [
+        "namerica"
+      ],
+      "subregion": "caribbean",
+      "fame": 2,
+      "micro": false,
+      "landlocked": false,
+      "island": true,
+      "name": {
+        "ru": "Гаити",
+        "pl": "Haiti",
+        "en": "Haiti"
+      },
+      "capital": {
+        "ru": "Порт-о-Пренс",
+        "pl": "Port-au-Prince",
+        "en": "Port-au-Prince"
+      },
+      "capitalCoords": [
+        -72.3403,
+        18.5469
+      ],
+      "symbol": "palm",
+      "stories": [
+        {
+          "ru": "Гаити и Доминиканская Республика делят один остров пополам.",
+          "pl": "Haiti i Dominikana dzielą jedną wyspę na pół.",
+          "en": "Haiti and the Dominican Republic share one island between them."
+        }
+      ]
     },
     {
       "iso": "HU",
@@ -2419,6 +2795,40 @@
       "island": false
     },
     {
+      "iso": "JM",
+      "un": "388",
+      "regions": [
+        "namerica"
+      ],
+      "subregion": "caribbean",
+      "fame": 1,
+      "micro": false,
+      "landlocked": false,
+      "island": true,
+      "name": {
+        "ru": "Ямайка",
+        "pl": "Jamajka",
+        "en": "Jamaica"
+      },
+      "capital": {
+        "ru": "Кингстон",
+        "pl": "Kingston",
+        "en": "Kingston"
+      },
+      "capitalCoords": [
+        -76.7931,
+        17.9714
+      ],
+      "symbol": "drum",
+      "stories": [
+        {
+          "ru": "Регги родилось на Ямайке и разошлось оттуда по всему миру.",
+          "pl": "Reggae narodziło się na Jamajce i stamtąd trafiło na cały świat.",
+          "en": "Reggae was born in Jamaica and went from there around the world."
+        }
+      ]
+    },
+    {
       "iso": "JO",
       "un": "400",
       "regions": [
@@ -2627,6 +3037,32 @@
       ]
     },
     {
+      "iso": "KN",
+      "un": "659",
+      "regions": [
+        "namerica"
+      ],
+      "subregion": "caribbean",
+      "fame": 3,
+      "micro": true,
+      "landlocked": false,
+      "island": true,
+      "name": {
+        "ru": "Сент-Китс и Невис",
+        "pl": "Saint Kitts i Nevis",
+        "en": "Saint Kitts and Nevis"
+      },
+      "capital": {
+        "ru": "Бастер",
+        "pl": "Basseterre",
+        "en": "Basseterre"
+      },
+      "capitalCoords": [
+        -62.7342,
+        17.2983
+      ]
+    },
+    {
       "iso": "KP",
       "un": "408",
       "regions": [
@@ -2805,6 +3241,32 @@
       "capitalCoords": [
         35.5131,
         33.8869
+      ]
+    },
+    {
+      "iso": "LC",
+      "un": "662",
+      "regions": [
+        "namerica"
+      ],
+      "subregion": "caribbean",
+      "fame": 3,
+      "micro": true,
+      "landlocked": false,
+      "island": true,
+      "name": {
+        "ru": "Сент-Люсия",
+        "pl": "Saint Lucia",
+        "en": "Saint Lucia"
+      },
+      "capital": {
+        "ru": "Кастри",
+        "pl": "Castries",
+        "en": "Castries"
+      },
+      "capitalCoords": [
+        -60.9894,
+        14.0108
       ]
     },
     {
@@ -3501,6 +3963,45 @@
       ]
     },
     {
+      "iso": "MX",
+      "un": "484",
+      "regions": [
+        "namerica"
+      ],
+      "subregion": "north-america",
+      "fame": 1,
+      "micro": false,
+      "landlocked": false,
+      "island": false,
+      "name": {
+        "ru": "Мексика",
+        "pl": "Meksyk",
+        "en": "Mexico"
+      },
+      "capital": {
+        "ru": "Мехико",
+        "pl": "Meksyk",
+        "en": "Mexico City"
+      },
+      "capitalCoords": [
+        -99.1359,
+        19.3538
+      ],
+      "symbol": "cactus",
+      "stories": [
+        {
+          "ru": "Шоколад придумали в Мексике: какао здесь пили задолго до того, как о нём узнала Европа.",
+          "pl": "Czekoladę wymyślono w Meksyku: kakao pito tu na długo przed tym, jak poznała je Europa.",
+          "en": "Chocolate began in Mexico: cocoa was drunk here long before Europe heard of it."
+        },
+        {
+          "ru": "Каждую осень миллионы бабочек монархов слетаются в мексиканские леса зимовать.",
+          "pl": "Każdej jesieni miliony motyli monarchów zlatują się do meksykańskich lasów na zimę.",
+          "en": "Every autumn millions of monarch butterflies gather in Mexican forests to spend the winter."
+        }
+      ]
+    },
+    {
       "iso": "MY",
       "un": "458",
       "regions": [
@@ -3657,6 +4158,32 @@
           "pl": "W Nigerii mieszka więcej ludzi niż w jakimkolwiek innym kraju Afryki.",
           "en": "More people live in Nigeria than in any other country in Africa."
         }
+      ]
+    },
+    {
+      "iso": "NI",
+      "un": "558",
+      "regions": [
+        "namerica"
+      ],
+      "subregion": "central-america",
+      "fame": 2,
+      "micro": false,
+      "landlocked": false,
+      "island": false,
+      "name": {
+        "ru": "Никарагуа",
+        "pl": "Nikaragua",
+        "en": "Nicaragua"
+      },
+      "capital": {
+        "ru": "Манагуа",
+        "pl": "Managua",
+        "en": "Managua"
+      },
+      "capitalCoords": [
+        -86.2737,
+        12.1547
       ]
     },
     {
@@ -3912,6 +4439,40 @@
       "capitalCoords": [
         58.5922,
         23.6139
+      ]
+    },
+    {
+      "iso": "PA",
+      "un": "591",
+      "regions": [
+        "namerica"
+      ],
+      "subregion": "central-america",
+      "fame": 1,
+      "micro": false,
+      "landlocked": false,
+      "island": false,
+      "name": {
+        "ru": "Панама",
+        "pl": "Panama",
+        "en": "Panama"
+      },
+      "capital": {
+        "ru": "Панама",
+        "pl": "Panama",
+        "en": "Panama City"
+      },
+      "capitalCoords": [
+        -79.5347,
+        8.9711
+      ],
+      "symbol": "boat",
+      "stories": [
+        {
+          "ru": "Панамский канал соединил два океана, и кораблям больше не надо огибать всю Южную Америку.",
+          "pl": "Kanał Panamski połączył dwa oceany i statki nie muszą już opływać całej Ameryki Południowej.",
+          "en": "The Panama Canal joined two oceans, so ships no longer sail around all of South America."
+        }
       ]
     },
     {
@@ -4828,6 +5389,32 @@
       ]
     },
     {
+      "iso": "SV",
+      "un": "222",
+      "regions": [
+        "namerica"
+      ],
+      "subregion": "central-america",
+      "fame": 2,
+      "micro": false,
+      "landlocked": false,
+      "island": false,
+      "name": {
+        "ru": "Сальвадор",
+        "pl": "Salwador",
+        "en": "El Salvador"
+      },
+      "capital": {
+        "ru": "Сан-Сальвадор",
+        "pl": "San Salvador",
+        "en": "San Salvador"
+      },
+      "capitalCoords": [
+        -89.1912,
+        13.6976
+      ]
+    },
+    {
       "iso": "SY",
       "un": "760",
       "regions": [
@@ -5166,6 +5753,33 @@
       ]
     },
     {
+      "iso": "TT",
+      "un": "780",
+      "regions": [
+        "namerica"
+      ],
+      "subregion": "caribbean",
+      "fame": 2,
+      "micro": false,
+      "landlocked": false,
+      "island": true,
+      "name": {
+        "ru": "Тринидад и Тобаго",
+        "pl": "Trynidad i Tobago",
+        "en": "Trinidad and Tobago"
+      },
+      "capital": {
+        "ru": "Порт-оф-Спейн",
+        "pl": "Port of Spain",
+        "en": "Port of Spain"
+      },
+      "capitalCoords": [
+        -61.5167,
+        10.6667
+      ],
+      "symbol": "flamingo"
+    },
+    {
       "iso": "TV",
       "un": "798",
       "regions": [
@@ -5323,6 +5937,45 @@
       ]
     },
     {
+      "iso": "US",
+      "un": "840",
+      "regions": [
+        "namerica"
+      ],
+      "subregion": "north-america",
+      "fame": 1,
+      "micro": false,
+      "landlocked": false,
+      "island": false,
+      "name": {
+        "ru": "США",
+        "pl": "Stany Zjednoczone",
+        "en": "United States"
+      },
+      "capital": {
+        "ru": "Вашингтон",
+        "pl": "Waszyngton",
+        "en": "Washington, D.C."
+      },
+      "capitalCoords": [
+        -77.0367,
+        38.895
+      ],
+      "symbol": "eagle",
+      "stories": [
+        {
+          "ru": "В США пятьдесят штатов, и у каждого свои законы и свой флаг.",
+          "pl": "W USA jest pięćdziesiąt stanów i każdy ma własne prawa i własną flagę.",
+          "en": "The United States has fifty states, each with its own laws and its own flag."
+        },
+        {
+          "ru": "Статую Свободы подарила Франция, её привезли через океан по частям.",
+          "pl": "Statuę Wolności podarowała Francja, przywieziono ją przez ocean w częściach.",
+          "en": "The Statue of Liberty was a gift from France, shipped across the ocean in pieces."
+        }
+      ]
+    },
+    {
       "iso": "UZ",
       "un": "860",
       "regions": [
@@ -5379,6 +6032,32 @@
       ],
       "landlocked": true,
       "island": false
+    },
+    {
+      "iso": "VC",
+      "un": "670",
+      "regions": [
+        "namerica"
+      ],
+      "subregion": "caribbean",
+      "fame": 3,
+      "micro": true,
+      "landlocked": false,
+      "island": true,
+      "name": {
+        "ru": "Сент-Винсент и Гренадины",
+        "pl": "Saint Vincent i Grenadyny",
+        "en": "Saint Vincent and the Grenadines"
+      },
+      "capital": {
+        "ru": "Кингстаун",
+        "pl": "Kingstown",
+        "en": "Kingstown"
+      },
+      "capitalCoords": [
+        -61.2274,
+        13.1553
+      ]
     },
     {
       "iso": "VN",
