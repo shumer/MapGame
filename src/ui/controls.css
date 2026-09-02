@@ -42,8 +42,11 @@
   gap: 8px;
 }
 
-/* Icon-only round buttons stay square so they read as buttons, not pills. */
-.btn-round:not(:has(span)) {
+/* Icon-only round buttons stay square so they read as buttons, not pills.
+   Stated with a class rather than guessed from the markup: the old rule keyed
+   off "has no span", which squeezed every text-only button -- Back among them
+   -- into a 44px circle its own label could not fit in. */
+.btn-icon {
   padding: 10px;
   width: 44px;
 }

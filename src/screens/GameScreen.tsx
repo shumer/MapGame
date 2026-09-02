@@ -214,7 +214,7 @@ export function GameScreen({ profile, mode, region, onExit, onDone }: Props) {
         </div>
         {/* One button, three steps: everything, effects only, silence. */}
         <button
-          className={`btn btn-ghost btn-round mute is-${soundMode}`}
+          className={`btn btn-ghost btn-round btn-icon mute is-${soundMode}`}
           onClick={cycleSound}
           aria-label={t(
             soundMode === 'full' ? 'soundFull' : soundMode === 'effects' ? 'soundEffects' : 'soundOff',
@@ -292,7 +292,9 @@ export function GameScreen({ profile, mode, region, onExit, onDone }: Props) {
                 </div>
                 {speakable && (
                   <button
-                    className={`btn btn-ghost btn-round speak ${flagsAsAnswers ? 'is-big' : ''}`}
+                    className={`btn btn-ghost btn-round speak ${
+                      preset.showText ? '' : 'btn-icon'
+                    } ${flagsAsAnswers ? 'is-big' : ''}`}
                     onClick={() => speak(target.name[lang], lang)}
                     aria-label={t('listen', ui)}
                   >
@@ -401,7 +403,7 @@ export function GameScreen({ profile, mode, region, onExit, onDone }: Props) {
             <div className="reveal-actions">
               {speakable && (
                 <button
-                  className="btn btn-ghost btn-round"
+                  className="btn btn-ghost btn-round btn-icon"
                   onClick={() => speak(`${target.name[lang]}. ${target.capital[lang]}`, lang)}
                   aria-label={t('listen', ui)}
                 >

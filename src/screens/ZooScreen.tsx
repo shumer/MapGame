@@ -91,7 +91,7 @@ export function ZooScreen({
             <Flag iso={country.iso} size="md" />
             <b>{country.name[lang]}</b>
             <button
-              className="btn btn-ghost btn-round zoo-close"
+              className="btn btn-ghost btn-round btn-icon zoo-close"
               onClick={() => setPicked(null)}
               aria-label={t('back', ui)}
             >
