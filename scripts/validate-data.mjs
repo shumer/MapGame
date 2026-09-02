@@ -35,7 +35,7 @@ for (const c of data.countries) {
 
   if (![1, 2, 3].includes(c.fame)) problems.push(`${tag}: bad fame ${c.fame}`)
 
-  if (!SYMBOL_KEYS.includes(c.symbol)) problems.push(`${tag}: no drawn symbol named "${c.symbol}"`)
+  if (!SYMBOL_KEYS.includes(c.symbol)) problems.push(`${tag}: no symbol named "${c.symbol}"`)
 
   const [lon, lat] = c.capitalCoords ?? []
   if (!(lon >= -180 && lon <= 180 && lat >= -90 && lat <= 90)) {

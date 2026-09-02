@@ -19,6 +19,10 @@ You are a senior front-end developer building a children's educational game, wit
 - `npm run data:map` / `data:derived` / `data:flags` / `data:check` — the individual steps
 - `npm run lint` — oxlint
 - `npx tsc -b` — type check
+
+Before pushing, run what CI runs: `npx tsc -b && npm run data:check && npm run build`.
+Deployment fails on any of the three, and `data:check` in particular catches
+what a local `npm run dev` never will.
 - `SINGLE_FILE=1 npx vite build` — self-contained single-file build into `dist-single/`, for sharing the game as one HTML file
 - `node scripts/build-icons.mjs` — redraw app icons from the map
 - `node scripts/build-review-page.mjs out.html` — standalone page listing every country in all three languages, for proofreading
