@@ -186,6 +186,8 @@ export function GameScreen({ profile, mode, region, onExit, onDone }: Props) {
 
   const animalById = (id: string) => animals.find((a) => a.id === id)
   const isAnimals = question.mode === 'animals'
+  /** The animal round the other way round: the creature is the question. */
+  const asked = question.askedAnimal ? animalById(question.askedAnimal) : null
 
   return (
     <div className={`game mode-${question.mode}`}>
@@ -243,9 +245,9 @@ export function GameScreen({ profile, mode, region, onExit, onDone }: Props) {
           // showing it on the map only helps: the child sees where they are.
           // The animal round asks about a named country, so it is marked from
           // the start: the question is which creature lives there.
-          highlight={!revealed && (flagsAsAnswers || isAnimals) ? target.iso : null}
+          highlight={!revealed && (flagsAsAnswers || (isAnimals && !asked)) ? target.iso : null}
           spotlight={hintRegion}
-          focus={revealed || isAnimals ? target.iso : null}
+          focus={revealed || (isAnimals && !asked) ? target.iso : null}
           capital={revealed ? target.iso : null}
           trail={trail}
           travellerAt={travellerAt}
@@ -261,7 +263,15 @@ export function GameScreen({ profile, mode, region, onExit, onDone }: Props) {
       >
         {!revealed && (
           <>
-            {showsFlag ? (
+            {asked ? (
+              <div className="ask-animal">
+                {preset.showText && <p className="ask-pill">{t('whereLives', ui)}</p>}
+                <span className="animal-card">
+                  <CountrySymbol symbol={asked.id} size={168} />
+                </span>
+                <p className="ask-text">{asked.name[lang]}</p>
+              </div>
+            ) : showsFlag ? (
               <div className="ask-flag">
                 {preset.showText && <p className="ask-pill">{prompt}</p>}
                 <span className="flag-card">
@@ -305,6 +315,7 @@ export function GameScreen({ profile, mode, region, onExit, onDone }: Props) {
                 } ${isAnimals ? 'is-animals' : ''}`}
               >
                 {isAnimals &&
+                  !asked &&
                   question.options.map((id) => {
                     const animal = animalById(id)
                     if (!animal) return null
@@ -321,7 +332,7 @@ export function GameScreen({ profile, mode, region, onExit, onDone }: Props) {
                       </button>
                     )
                   })}
-                {!isAnimals &&
+                {(!isAnimals || asked) &&
                   question.options.map((iso) => {
                   const option = countryByIso(iso)!
                   return (
@@ -368,13 +379,16 @@ export function GameScreen({ profile, mode, region, onExit, onDone }: Props) {
               <Flag iso={target.iso} size="lg" label={target.name[lang]} />
               {/* The animal that was the answer, rather than the country's own
                   symbol, which in this round would often be the same picture. */}
-              <CountrySymbol symbol={isAnimals ? question.answer : target.symbol} size={64} />
+              <CountrySymbol
+                symbol={isAnimals ? (asked?.id ?? question.answer) : target.symbol}
+                size={64}
+              />
             </div>
             <div className="reveal-text">
               <b className="reveal-name">{target.name[lang]}</b>
-              {isAnimals && question.answer && (
+              {isAnimals && (question.answer || asked) && (
                 <span className="reveal-capital">
-                  {animalById(question.answer)?.name[lang]} {t('livesIn', ui)}
+                  {(asked ?? animalById(question.answer!))?.name[lang]} {t('livesIn', ui)}
                 </span>
               )}
               {!isAnimals && (

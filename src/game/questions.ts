@@ -43,6 +43,35 @@ const continentsOf = (animal: (typeof animals)[number]): Set<Region> => {
   return out
 }
 
+/**
+ * "Where does the orangutan live?" Picks an animal of this country and then
+ * countries that it does not live in, so exactly one option on the list is
+ * right. Returns null when no such set can be built.
+ */
+function reverseAnimalQuestion(
+  target: Country,
+  pool: Country[],
+  count: number,
+  region: Region,
+): { options: string[]; askedAnimal: string } | null {
+  const derived = derivedOf(region)
+  const candidates = shuffle(animalsOf(target.iso).map((a) => a.id))
+  for (const id of candidates) {
+    const animal = animals.find((a) => a.id === id)
+    if (!animal) continue
+    const lives = new Set(animal.livesIn)
+    // Neighbours first: "where does the lion live" is a real question when the
+    // other options are African too.
+    const near = derived[target.iso].near.filter((iso) => !lives.has(iso))
+    const rest = pool.map((c) => c.iso).filter((iso) => !lives.has(iso) && !near.includes(iso))
+    const wrong = [...shuffle(near), ...shuffle(rest)].slice(0, count)
+    if (wrong.length === count) {
+      return { options: shuffle([target.iso, ...wrong]), askedAnimal: id }
+    }
+  }
+  return null
+}
+
 /** How few countries make the animal round repetitive rather than a round. */
 export const ANIMAL_MIN_POOL = 6
 
@@ -156,6 +185,14 @@ export function buildQuestion(
     return { mode, target: target.iso, options: [] }
   }
   if (mode === 'animals') {
+    // Two directions, mixed inside a round. The reverse one does not need an
+    // animal that lives in one country only: it needs a set of options where
+    // exactly one country is a place this animal lives. The lion can be asked
+    // about as long as Kenya is the only lion country on the list.
+    if (preset.showText && Math.random() < 0.4) {
+      const reverse = reverseAnimalQuestion(target, pool, preset.choices - 1, region)
+      if (reverse) return { mode, target: target.iso, ...reverse }
+    }
     const options = animalOptions(target, preset.choices - 1, preset.distractors)
     const answer = options.find((id) => animalsOf(target.iso).some((a) => a.id === id))
     return { mode, target: target.iso, options, answer }

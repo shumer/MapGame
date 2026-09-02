@@ -50,8 +50,12 @@ export interface Question {
       In the animal round these are animal ids instead, and `answer` says
       which one is right. */
   options: string[]
-  /** The right option when it is not the country itself: the animal round. */
+  /** The right option when it is not the country itself: the animal round
+      asking which creature lives in a country. */
   answer?: string
+  /** The animal round the other way round: this creature is shown, and the
+      options are countries. Only used for animals tied to one country. */
+  askedAnimal?: string
 }
 
 export interface Answer {

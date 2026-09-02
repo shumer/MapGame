@@ -39,6 +39,7 @@ const STRINGS = {
   back: { ru: 'Назад', pl: 'Wróć', en: 'Back' },
   modeAnimals: { ru: 'Животные', pl: 'Zwierzęta', en: 'Animals' },
   modeAnimalsHint: { ru: 'Кто здесь живёт?', pl: 'Kto tu mieszka?', en: 'Who lives here?' },
+  whereLives: { ru: 'Где он живёт?', pl: 'Gdzie on mieszka?', en: 'Where does it live?' },
   whoLivesHere: { ru: 'Кто здесь живёт?', pl: 'Kto tu mieszka?', en: 'Who lives here?' },
   livesIn: { ru: 'живёт здесь', pl: 'mieszka tutaj', en: 'lives here' },
   whereTo: { ru: 'Куда поедем?', pl: 'Dokąd jedziemy?', en: 'Where to?' },
