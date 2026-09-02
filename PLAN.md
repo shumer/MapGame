@@ -5,10 +5,31 @@ Europe. Static, offline-capable, no backend.
 
 ## Status
 
-Done: stages 0-5 and 7, plus most of the polish in stage 6. The game is
-playable end to end in all three rounds, works offline and installs as an app.
+Stages 0-7 are done. The game is playable end to end in all three rounds, works
+offline, installs as an app, and is deployed: every push to `main` publishes to
+https://shumer.github.io/MapGame/
 
-Remaining: deployment, and the extensions in stage 8.
+Added since the original plan:
+
+- **Recorded voice.** 63 lines across three languages, played in place of the
+  synthesiser wherever a recording exists (`docs/voice-lines.md` is the list).
+- **Facts about the country**, shown to the older child while answering.
+  Computed from the map and from Wikidata rather than written by hand.
+- **The journey on the map.** A winding dotted trail through the countries
+  answered this round, a flag at each stop, a traveller at the head.
+- **Sea decoration and a paper-sticker shadow** under the land.
+- **Three-step sound button**: everything, effects only, silence.
+
+Remaining: the extensions in stage 8, and the loose ends below.
+
+## Loose ends
+
+- Hand-written country facts (five each for the 23 best-known) are drafted and
+  being fact-checked; not yet in the game.
+- Interface sound effects are synthesised; free recorded ones are picked out but
+  not chosen yet.
+- Seven symbols have no free equivalent and are still hand-drawn: lake, bridge,
+  viking ship, amber, lego, dome, towers.
 
 ## Players
 
