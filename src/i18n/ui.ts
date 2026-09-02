@@ -52,9 +52,14 @@ const PRAISE: Record<Lang, string[]> = {
   en: ['Hooray!', 'Well done!', 'Great!', 'Nice one!', "That's it!", 'Keep going!'],
 }
 
-export const praise = (lang: Lang): string => {
+/**
+ * Deterministic on `seed` so the same answer always yields the same word: a
+ * re-render must not swap the praise on screen mid-celebration. Pass the
+ * question index.
+ */
+export const praise = (lang: Lang, seed: number): string => {
   const list = PRAISE[lang]
-  return list[Math.floor(Math.random() * list.length)]
+  return list[Math.abs(Math.floor(seed)) % list.length]
 }
 
 export const LANG_NAMES: Record<Lang, string> = {

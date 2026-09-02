@@ -20,6 +20,10 @@ export interface WorldMapProps {
   focus?: string | null
   /** Draws a dot on this country's capital. */
   capital?: string | null
+  /** Countries already answered this round, in order. Drawn as a dotted route
+      with a flag on each stop and the plane at the head — the journey the game
+      is named after, which the map was otherwise not showing at all. */
+  trail?: string[]
   /** Called with an ISO code when a playable country is tapped. */
   onPick?: (iso: string) => void
   interactive?: boolean
@@ -40,6 +44,7 @@ export function WorldMap({
   spotlight,
   focus = null,
   capital = null,
+  trail = [],
   onPick,
   interactive = true,
 }: WorldMapProps) {
@@ -102,6 +107,17 @@ export function WorldMap({
   const markersRef = useRef(new Map<string, SVGGElement>())
   const decorRef = useRef<SVGGElement>(null)
   const capitalRef = useRef<SVGGElement>(null)
+  const trailRef = useRef<SVGGElement>(null)
+
+  // Screen box per country, for placing the route without searching an array.
+  const trailBoxes = useMemo(() => {
+    const out = new Map<string, [number, number, number, number]>()
+    for (const c of countries) {
+      const box = boxes.get(c.un)
+      if (box) out.set(c.iso, box)
+    }
+    return out
+  }, [boxes])
 
   // Screen box per microstate, resolved once instead of searched per frame.
   const microBoxes = useMemo(() => {
@@ -129,6 +145,35 @@ export function WorldMap({
         landsRef.current?.setAttribute('transform', `translate(${v.x} ${v.y}) scale(${v.k})`)
         decorRef.current?.style.setProperty('opacity', v.k > DECOR_MAX_SCALE ? '0' : '1')
 
+        // The route is redrawn per frame rather than re-rendered: it is a
+        // dozen points, and this keeps React out of the gesture loop.
+        const route = trailRef.current
+        if (route) {
+          const pts = trail
+            .map((iso) => {
+              const b = trailBoxes.get(iso)
+              return b ? [((b[0] + b[2]) / 2) * v.k + v.x, ((b[1] + b[3]) / 2) * v.k + v.y] : null
+            })
+            .filter((p): p is number[] => p !== null)
+
+          const d = pts.map((p, i) => `${i ? 'L' : 'M'}${p[0]} ${p[1]}`).join(' ')
+          route.querySelectorAll('.trail-line').forEach((el) => el.setAttribute('d', d))
+
+          const stops = route.querySelectorAll('.trail-stop')
+          stops.forEach((el, i) => {
+            const p = pts[i]
+            if (p) el.setAttribute('transform', `translate(${p[0]} ${p[1]})`)
+          })
+
+          const plane = route.querySelector('.trail-plane') as SVGGElement | null
+          const head = pts[pts.length - 1]
+          if (plane && head) {
+            const prev = pts[pts.length - 2] ?? [head[0] - 40, head[1]]
+            const angle = (Math.atan2(head[1] - prev[1], head[0] - prev[0]) * 180) / Math.PI
+            plane.setAttribute('transform', `translate(${head[0]} ${head[1]}) rotate(${angle})`)
+          }
+        }
+
         const cap = capital ? capitals.get(capital) : null
         if (cap && capitalRef.current) {
           capitalRef.current.setAttribute(
@@ -153,7 +198,7 @@ export function WorldMap({
           )
         }
       }),
-    [subscribe, capitals, microBoxes, capital, width, height],
+    [subscribe, capitals, microBoxes, trailBoxes, trail, capital, width, height],
   )
 
   useEffect(() => {
@@ -222,6 +267,28 @@ export function WorldMap({
                 )
               })}
           </g>
+
+          {/* The route travelled so far, outside the zoom transform so the
+              flags and the plane keep their size. */}
+          {trail.length > 0 && (
+            <g className="trail" ref={trailRef} aria-hidden="true">
+              {/* Two strokes: a wide pale one so the route survives the pastel
+                  countries underneath, and the dotted line on top. */}
+              <path className="trail-line trail-line-under" />
+              <path className="trail-line trail-line-over" />
+              {trail.map((iso, i) => (
+                <g className="trail-stop" key={`${iso}-${i}`}>
+                  <circle className="trail-base" r="3.4" />
+                  <path className="trail-pole" d="M0 1v-17" />
+                  <path className="trail-flag" d="M1-16h11l-3 4.2L12-7.6H1z" />
+                </g>
+              ))}
+              <g className="trail-plane">
+                <circle className="trail-plane-halo" r="11" />
+                <path d="M15 0l-15-6 2.5 6-2.5 6z" />
+              </g>
+            </g>
+          )}
 
           {/* Markers sit outside the zoom transform so they keep their size. */}
           <g className="markers">

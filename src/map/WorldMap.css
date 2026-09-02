@@ -14,7 +14,71 @@
   user-select: none;
 }
 .worldmap-svg.is-interactive .country,
-.worldmap-svg.is-interactive .micro-hit {
+.worldmap-svg.is-interactive /* The route travelled this round. Same dotted language as the flight path on
+   the start screen, so the two read as the same journey. */
+.trail {
+  pointer-events: none;
+}
+.trail-line {
+  fill: none;
+  stroke-linecap: round;
+}
+.trail-line-under {
+  stroke: #fff;
+  stroke-width: 6;
+  opacity: 0.85;
+}
+.trail-line-over {
+  stroke: #3d6b7d;
+  stroke-width: 2.6;
+  stroke-dasharray: 2 10;
+}
+.trail-base {
+  fill: #fff;
+  stroke: #3d6b7d;
+  stroke-width: 1.6;
+}
+.trail-pole {
+  stroke: #fff;
+  stroke-width: 3.4;
+  stroke-linecap: round;
+  fill: none;
+}
+.trail-flag {
+  fill: var(--capital);
+  stroke: #fff;
+  stroke-width: 2;
+  paint-order: stroke fill;
+}
+.trail-stop {
+  animation: stop-in 380ms cubic-bezier(0.2, 1.4, 0.4, 1) backwards;
+}
+.trail-plane path {
+  fill: var(--accent);
+  stroke: #fff;
+  stroke-width: 2.2;
+  stroke-linejoin: round;
+  paint-order: stroke fill;
+}
+.trail-plane-halo {
+  fill: #fff;
+  opacity: 0.75;
+}
+.trail-plane {
+  transition: transform 460ms ease-in-out;
+}
+
+@keyframes stop-in {
+  from { opacity: 0; transform: translateY(-6px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .trail-stop { animation: none; }
+  .trail-plane { transition: none; }
+}
+
+.micro-hit {
   cursor: pointer;
 }
 
@@ -129,6 +193,70 @@
   fill: var(--focus);
   stroke: var(--focus-edge);
   paint-order: stroke fill;
+}
+
+/* The route travelled this round. Same dotted language as the flight path on
+   the start screen, so the two read as the same journey. */
+.trail {
+  pointer-events: none;
+}
+.trail-line {
+  fill: none;
+  stroke-linecap: round;
+}
+.trail-line-under {
+  stroke: #fff;
+  stroke-width: 6;
+  opacity: 0.85;
+}
+.trail-line-over {
+  stroke: #3d6b7d;
+  stroke-width: 2.6;
+  stroke-dasharray: 2 10;
+}
+.trail-base {
+  fill: #fff;
+  stroke: #3d6b7d;
+  stroke-width: 1.6;
+}
+.trail-pole {
+  stroke: #fff;
+  stroke-width: 3.4;
+  stroke-linecap: round;
+  fill: none;
+}
+.trail-flag {
+  fill: var(--capital);
+  stroke: #fff;
+  stroke-width: 2;
+  paint-order: stroke fill;
+}
+.trail-stop {
+  animation: stop-in 380ms cubic-bezier(0.2, 1.4, 0.4, 1) backwards;
+}
+.trail-plane path {
+  fill: var(--accent);
+  stroke: #fff;
+  stroke-width: 2.2;
+  stroke-linejoin: round;
+  paint-order: stroke fill;
+}
+.trail-plane-halo {
+  fill: #fff;
+  opacity: 0.75;
+}
+.trail-plane {
+  transition: transform 460ms ease-in-out;
+}
+
+@keyframes stop-in {
+  from { opacity: 0; transform: translateY(-6px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .trail-stop { animation: none; }
+  .trail-plane { transition: none; }
 }
 
 .micro-hit {

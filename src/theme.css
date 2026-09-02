@@ -17,11 +17,15 @@
 
   --right: #43c56f;
   --right-edge: #14663a;
+  --right-tint: #ddf6e6;
+  --right-ink: #14663a;
   --miss: #e2554a;
   --miss-tint: #fbe3e0;
   --miss-ink: #8c2a22;
   --focus: #f7c948;
   --focus-edge: #a06f14;
+  --focus-tint: #fdf0cf;
+  --focus-ink: #8a5c0d;
   --capital: #e2494a;
 
   --bg: #f4f1ec;

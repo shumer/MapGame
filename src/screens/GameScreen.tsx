@@ -8,6 +8,7 @@ import { canSpeak, speak, stopSpeaking } from '../speech'
 import { sounds } from '../sound'
 import { useSound } from '../store/settings'
 import { Confetti } from '../ui/Confetti'
+import { ArrowIcon, CrossIcon, HomeIcon, SpeakerIcon, SpeakerOffIcon, TickIcon } from '../ui/icons'
 import { CountrySymbol } from '../ui/CountrySymbol'
 import { Flag } from '../ui/Flag'
 import './GameScreen.css'
@@ -38,6 +39,8 @@ export function GameScreen({ profile, mode, onExit, onDone }: Props) {
   }, [question, phase, preset.autoSpeak, speakable, target, lang])
 
   const lastAnswer = round.answers[round.answers.length - 1]
+  // Derived, not stored: the same answer always gets the same word.
+  const cheer = praise(ui, round.answers.length)
   useEffect(() => {
     if (phase !== 'revealed' || !lastAnswer) return
     const timers: number[] = []
@@ -45,7 +48,7 @@ export function GameScreen({ profile, mode, onExit, onDone }: Props) {
     if (lastAnswer.correct) {
       sounds.correct()
       if (speakable) {
-        speak(praise(ui), ui)
+        speak(cheer, ui)
         // Long enough for the cheer to finish before the country is named.
         timers.push(window.setTimeout(() => speak(target.name[lang], lang), 1000))
       }
@@ -55,7 +58,7 @@ export function GameScreen({ profile, mode, onExit, onDone }: Props) {
     }
 
     return () => timers.forEach(clearTimeout)
-  }, [phase, lastAnswer, speakable, target, lang, ui])
+  }, [phase, lastAnswer, speakable, target, lang, ui, cheer])
 
   // Every wrong pick sounds, whether it ends the question or not.
   const missCount = misses.length
@@ -76,6 +79,12 @@ export function GameScreen({ profile, mode, onExit, onDone }: Props) {
   }, [question.mode, phase, misses.length, target])
 
   const revealed = phase === 'revealed'
+
+  /** Every country visited this round, in order, for the route on the map. */
+  const trail = useMemo(
+    () => round.answers.map((a) => a.question.target),
+    [round.answers],
+  )
   // A child who cannot read gets the flag question the other way round: the
   // country is spoken aloud and the answers are flags, so nothing needs reading.
   const flagsAsAnswers = question.mode === 'flag' && !preset.showText
@@ -95,8 +104,9 @@ export function GameScreen({ profile, mode, onExit, onDone }: Props) {
     <div className={`game mode-${question.mode}`}>
       <Confetti trigger={round.score} count={120} />
       <header className="game-bar">
-        <button className="btn btn-ghost btn-round" onClick={onExit}>
-          {t('home', ui)}
+        <button className="btn btn-ghost btn-round home" onClick={onExit} aria-label={t('home', ui)}>
+          <HomeIcon size={22} />
+          <span className="home-label">{t('home', ui)}</span>
         </button>
         <div className="pips" aria-label={`${round.index} / ${round.total}`}>
           {Array.from({ length: round.total }, (_, i) => (
@@ -119,7 +129,7 @@ export function GameScreen({ profile, mode, onExit, onDone }: Props) {
           onClick={toggleMuted}
           aria-label={muted ? 'Включить звук' : 'Выключить звук'}
         >
-          {muted ? '🔇' : '🔈'}
+          {muted ? <SpeakerOffIcon size={22} /> : <SpeakerIcon size={22} />}
         </button>
         {preset.showText && <div className="score">{round.score}</div>}
       </header>
@@ -130,10 +140,13 @@ export function GameScreen({ profile, mode, onExit, onDone }: Props) {
           wrong={misses}
           // In the capitals round the country itself is not the answer, so
           // showing it on the map only helps: the child sees where they are.
-          highlight={question.mode === 'capital' && !revealed ? target.iso : null}
+          highlight={
+            !revealed && (question.mode === 'capital' || flagsAsAnswers) ? target.iso : null
+          }
           spotlight={hintRegion}
           focus={revealed || question.mode === 'capital' ? target.iso : null}
           capital={revealed ? target.iso : null}
+          trail={trail}
           onPick={question.mode === 'locate' && phase === 'asking' ? round.answer : undefined}
           interactive
         />
@@ -144,23 +157,27 @@ export function GameScreen({ profile, mode, onExit, onDone }: Props) {
           <>
             {question.mode === 'flag' && !flagsAsAnswers ? (
               <div className="ask-flag">
-                <Flag iso={target.iso} size="xl" label={t('askFlag', ui)} />
-                {preset.showText && <p className="ask-text">{prompt}</p>}
+                {preset.showText && <p className="ask-pill">{prompt}</p>}
+                <span className="flag-card">
+                  <Flag iso={target.iso} size="xl" label={t('askFlag', ui)} />
+                </span>
               </div>
             ) : (
-              <div className="ask-line">
+              <div className={`ask-line ${flagsAsAnswers ? 'is-picture' : ''}`}>
                 {question.mode === 'capital' && <Flag iso={target.iso} size="md" />}
-                {question.mode !== 'flag' && <CountrySymbol symbol={target.symbol} size={84} />}
+                <CountrySymbol symbol={target.symbol} size={flagsAsAnswers ? 116 : 84} />
                 <div className="ask-copy">
                   <p className="ask-text">{target.name[lang]}</p>
                   {!flagsAsAnswers && <p className="ask-sub">{prompt}</p>}
                 </div>
                 {speakable && (
                   <button
-                    className="btn btn-ghost btn-round speak"
+                    className={`btn btn-ghost btn-round speak ${flagsAsAnswers ? 'is-big' : ''}`}
                     onClick={() => speak(target.name[lang], lang)}
+                    aria-label={t('listen', ui)}
                   >
-                    🔊 {preset.showText ? t('listen', ui) : ''}
+                    <SpeakerIcon size={flagsAsAnswers ? 30 : 22} />
+                    {preset.showText && <span>{t('listen', ui)}</span>}
                   </button>
                 )}
               </div>
@@ -168,16 +185,27 @@ export function GameScreen({ profile, mode, onExit, onDone }: Props) {
 
             {question.mode !== 'locate' && (
               <div className={`options options-${question.options.length} ${flagsAsAnswers ? 'is-flags' : ''}`}>
-                {question.options.map((iso) => (
-                  <button
-                    key={iso}
-                    className={`option ${misses.includes(iso) ? 'is-out' : ''}`}
-                    disabled={misses.includes(iso)}
-                    onClick={() => round.answer(iso)}
-                  >
-                    {flagsAsAnswers ? <Flag iso={iso} size="lg" /> : <span>{optionLabel(iso)}</span>}
-                  </button>
-                ))}
+                {question.options.map((iso) => {
+                  const option = countryByIso(iso)!
+                  return (
+                    <button
+                      key={iso}
+                      className={`option ${misses.includes(iso) ? 'is-out' : ''}`}
+                      disabled={misses.includes(iso)}
+                      onClick={() => round.answer(iso)}
+                    >
+                      {flagsAsAnswers ? (
+                        <Flag iso={iso} size="lg" />
+                      ) : (
+                        <>
+                          <CountrySymbol symbol={option.symbol} size={34} />
+                          <span>{optionLabel(iso)}</span>
+                          {misses.includes(iso) && <CrossIcon size={22} />}
+                        </>
+                      )}
+                    </button>
+                  )
+                })}
               </div>
             )}
           </>
@@ -185,6 +213,14 @@ export function GameScreen({ profile, mode, onExit, onDone }: Props) {
 
         {revealed && (
           <div className="reveal">
+            {/* The outcome, stated before the facts. A miss gets amber and an
+                arrow rather than red: the button already went red, and telling
+                a child off twice for one mistake is not the point. */}
+            <div className={`reveal-banner ${lastAnswer?.correct ? 'is-win' : 'is-miss'}`}>
+              {lastAnswer?.correct ? <TickIcon size={22} /> : <ArrowIcon size={22} />}
+              <span>{lastAnswer?.correct ? cheer : t('thisIsIt', ui)}</span>
+            </div>
+
             <div className="reveal-art">
               <Flag iso={target.iso} size="lg" label={target.name[lang]} />
               <CountrySymbol symbol={target.symbol} size={64} />
@@ -201,8 +237,9 @@ export function GameScreen({ profile, mode, onExit, onDone }: Props) {
                 <button
                   className="btn btn-ghost btn-round"
                   onClick={() => speak(`${target.name[lang]}. ${target.capital[lang]}`, lang)}
+                  aria-label={t('listen', ui)}
                 >
-                  🔊
+                  <SpeakerIcon size={22} />
                 </button>
               )}
               <button className="btn btn-primary" onClick={round.next}>
