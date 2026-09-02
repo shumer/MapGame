@@ -87,3 +87,24 @@
   font-size: 15px;
 }
 .menu-setting { display: flex; flex-direction: column; gap: 8px; padding-bottom: 16px; }
+
+/* The current continent, doubling as the way back to the chooser. */
+.menu-place {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 10px;
+  width: 100%;
+  padding: 10px 16px;
+  border: 0;
+  border-radius: 14px;
+  background: var(--accent-tint);
+  color: var(--accent-shadow);
+  font: inherit;
+  text-align: left;
+  cursor: pointer;
+}
+
+.menu-place b { font-size: 1.05rem; }
+.menu-place span { font-size: 0.85rem; opacity: 0.8; }
+.menu-place:hover { background: var(--surface); box-shadow: 0 3px 0 var(--accent); }

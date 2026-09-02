@@ -15,13 +15,15 @@ for (const [file, url] of Object.entries(files)) {
 }
 
 export interface CountrySymbolProps {
-  /** Key from the country data. */
-  symbol: string
+  /** Key from the country data. Countries without an obvious symbol have none,
+      and render nothing rather than a picture that means something else. */
+  symbol?: string
   size?: number
 }
 
 /** The drawn hint for a country: its animal, landmark or best-known thing. */
 export function CountrySymbol({ symbol, size = 64 }: CountrySymbolProps) {
+  if (!symbol) return null
   const url = urls[symbol]
   if (url) {
     return <img className="country-symbol" src={url} width={size} height={size} alt="" />

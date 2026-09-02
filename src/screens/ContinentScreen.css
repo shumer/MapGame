@@ -1,0 +1,81 @@
+.continents {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  padding: 18px;
+  min-height: 100%;
+}
+
+.continents-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.continents-title {
+  margin: 0;
+  font-size: 1.5rem;
+}
+
+.continents-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 16px;
+}
+
+.continent-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  padding: 16px 14px 14px;
+  border: 3px solid transparent;
+  border-radius: 22px;
+  background: var(--surface);
+  box-shadow: 0 3px 0 var(--line);
+  cursor: pointer;
+  transition: box-shadow 160ms ease, border-color 120ms ease;
+}
+
+.continent-card:hover {
+  box-shadow: 0 3px 0 var(--accent);
+}
+
+.continent-card.is-current {
+  border-color: var(--accent);
+}
+
+.continent-map {
+  width: 100%;
+  max-width: 240px;
+  height: auto;
+  /* The sea, so the shape reads as a piece of a map rather than a blob. */
+  background: var(--sea);
+  border-radius: 14px;
+}
+
+.continent-backdrop {
+  fill: var(--land-backdrop);
+}
+
+.continent-land {
+  fill: var(--accent);
+  stroke: var(--sea);
+  stroke-width: 0.4;
+  stroke-linejoin: round;
+}
+
+.continent-name {
+  font-size: 1.15rem;
+  font-weight: 700;
+}
+
+.continent-count {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  color: var(--muted);
+  font-size: 0.9rem;
+  font-variant-numeric: tabular-nums;
+}

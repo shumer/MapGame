@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import { ContinentScreen } from './screens/ContinentScreen'
 import { GameScreen } from './screens/GameScreen'
 import { MenuScreen } from './screens/MenuScreen'
 import { ResultScreen } from './screens/ResultScreen'
@@ -9,20 +10,36 @@ import { useContinent } from './store/settings'
 import type { GameMode } from './game/types'
 
 type Screen =
+  | { name: 'continent' }
   | { name: 'menu' }
   | { name: 'game'; mode: GameMode }
   | { name: 'result'; mode: GameMode; score: number; total: number; isBest: boolean }
 
 export function App() {
   const profile = useActiveProfile()
-  const region = useContinent((s) => s.continent)
+  const { continent: region, setContinent } = useContinent()
   const finishRound = useProfiles((s) => s.finishRound)
   const [screen, setScreen] = useState<Screen>({ name: 'menu' })
+  const selectProfile = useProfiles((s) => s.select)
 
   // Development-only view of every drawn country hint.
   if (typeof window !== 'undefined' && window.location.hash === '#symbols') return <SymbolGallery />
 
-  if (!profile) return <StartScreen onReady={() => setScreen({ name: 'menu' })} />
+  if (!profile) return <StartScreen onReady={() => setScreen({ name: 'continent' })} />
+
+  if (screen.name === 'continent') {
+    return (
+      <ContinentScreen
+        profile={profile}
+        current={region}
+        onPick={(picked) => {
+          setContinent(picked)
+          setScreen({ name: 'menu' })
+        }}
+        onBack={() => selectProfile(null)}
+      />
+    )
+  }
 
 
   if (screen.name === 'game') {
@@ -61,6 +78,7 @@ export function App() {
       profile={profile}
       region={region}
       onPlay={(mode) => setScreen({ name: 'game', mode })}
+      onChangeRegion={() => setScreen({ name: 'continent' })}
     />
   )
 }

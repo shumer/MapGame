@@ -29,14 +29,23 @@ for (const c of data.countries) {
   }
 
   for (const lang of ['ru', 'pl', 'en']) {
-    for (const field of ['name', 'capital', 'fact']) {
+    for (const field of ['name', 'capital']) {
       if (!c[field]?.[lang]?.trim()) problems.push(`${tag}: empty ${field}.${lang}`)
+    }
+    // The written fact is optional, but a fact in one language only is a bug:
+    // a child playing in Polish would get a blank line where the others get a
+    // sentence.
+    if (c.fact && !c.fact[lang]?.trim()) problems.push(`${tag}: fact missing in ${lang}`)
+    for (const story of c.stories ?? []) {
+      if (!story[lang]?.trim()) problems.push(`${tag}: a story is missing in ${lang}`)
     }
   }
 
   if (![1, 2, 3].includes(c.fame)) problems.push(`${tag}: bad fame ${c.fame}`)
 
-  if (!SYMBOL_KEYS.includes(c.symbol)) problems.push(`${tag}: no symbol named "${c.symbol}"`)
+  if (c.symbol && !SYMBOL_KEYS.includes(c.symbol)) {
+    problems.push(`${tag}: no symbol named "${c.symbol}"`)
+  }
 
   const [lon, lat] = c.capitalCoords ?? []
   if (!(lon >= -180 && lon <= 180 && lat >= -90 && lat <= 90)) {
@@ -102,6 +111,21 @@ for (const continent of CONTINENTS) {
     if ((area < MICRO_AREA) !== c.micro) {
       problems.push(`${tag}: micro=${c.micro} but area=${area.toExponential(2)}`)
     }
+  }
+
+  // The scenery belongs in open water. A compass sitting on Kazakhstan reads
+  // as a bug to a child looking closely, and nobody notices a stray wave until
+  // they do.
+  const decor = continent.decor
+  const spots = [
+    ['compass', decor.compass],
+    ['boat', decor.boat],
+    ['whale', decor.whale],
+    ...decor.waves.map((w, i) => [`wave ${i}`, w]),
+  ]
+  for (const [what, point] of spots) {
+    const on = [...byId.values()].find((f) => geoContains(f, point))
+    if (on) problems.push(`${continent.id}: ${what} sits on land (${on.properties.id}) at ${point}`)
   }
 
   const strays = Object.keys(derived).filter((iso) => !members.some((c) => c.iso === iso))

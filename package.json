@@ -11,11 +11,12 @@
     "data:map": "node scripts/build-map.mjs",
     "data:derived": "node scripts/build-derived.mjs",
     "data:check": "node scripts/validate-data.mjs",
-    "data": "npm run data:map && npm run data:derived && npm run data:facts && npm run data:flags && npm run data:check",
+    "data": "npm run data:map && npm run data:derived && npm run data:facts && npm run data:outlines && npm run data:flags && npm run data:check",
     "data:flags": "node scripts/build-flags.mjs",
     "dev:lan": "vite --host",
     "data:facts": "node scripts/build-facts.mjs",
-    "data:wiki": "node scripts/fetch-facts.mjs"
+    "data:wiki": "node scripts/fetch-facts.mjs",
+    "data:outlines": "node scripts/build-outlines.mjs"
   },
   "dependencies": {
     "d3-geo": "^3.1.1",

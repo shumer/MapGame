@@ -8,7 +8,7 @@ import { CountrySymbol } from '../ui/CountrySymbol'
 export function SymbolGallery() {
   return (
     <div style={{ padding: 20, display: 'grid', gap: 12, gridTemplateColumns: 'repeat(auto-fill, minmax(120px, 1fr))' }}>
-      {countries.map((c) => (
+      {countries.filter((c) => c.symbol).map((c) => (
         <div
           key={c.iso}
           style={{

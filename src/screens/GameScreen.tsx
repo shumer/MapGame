@@ -153,11 +153,13 @@ export function GameScreen({ profile, mode, region, onExit, onDone }: Props) {
     const fromWiki = renderWikiFacts((wikiFacts[target.iso] ?? {}) as WikiFacts, lang)
     // Written facts first: they are the interesting ones. The computed ones
     // fill in for countries that have none.
-    const written = (target.stories ?? []).map((s) => s[lang])
+    const written = [target.fact?.[lang], ...(target.stories ?? []).map((s) => s[lang])].filter(
+      (x): x is string => Boolean(x),
+    )
     const all = [...written, ...fromWiki, ...fromMap]
     if (!all.length) return null
     return all[(round.answers.length + target.iso.charCodeAt(0)) % all.length]
-  }, [preset.showText, target.iso, target.stories, lang, round.answers.length, derived])
+  }, [preset.showText, target.iso, target.stories, target.fact, lang, round.answers.length, derived])
 
   /** The traveller stands where the last answer was, revisit or not. */
   const travellerAt = round.answers[round.answers.length - 1]?.question.target ?? null
@@ -338,7 +340,7 @@ export function GameScreen({ profile, mode, region, onExit, onDone }: Props) {
               <span className="reveal-capital">
                 {t('capitalIs', ui)}: {target.capital[lang]}
               </span>
-              {preset.showText && <p className="reveal-fact">{fact ?? target.fact[lang]}</p>}
+              {preset.showText && fact && <p className="reveal-fact">{fact}</p>}
             </div>
             <div className="reveal-actions">
               {speakable && (

@@ -6,7 +6,19 @@ export type Localized = Record<Lang, string>
 /** A playable set of countries. Europe is the one that exists today. */
 export type Region = 'europe' | 'asia' | 'africa' | 'americas' | 'oceania' | 'world'
 
-export type Subregion = 'west' | 'central' | 'east' | 'nordic' | 'baltic' | 'balkans' | 'south'
+/** Only ever used to tell "far away" from "next door" when picking wrong
+    answers, so the divisions are rough on purpose. */
+export type Subregion =
+  | 'west'
+  | 'central'
+  | 'east'
+  | 'nordic'
+  | 'baltic'
+  | 'balkans'
+  | 'south'
+  | 'southeast'
+  | 'middle-east'
+  | 'caucasus'
 
 export interface Country {
   /** ISO 3166-1 alpha-2, also the flag icon name. */
@@ -28,9 +40,14 @@ export interface Country {
   capital: Localized
   /** [lon, lat] of the capital. */
   capitalCoords: [number, number]
-  /** Key into the drawn symbol set: the country's animal, landmark or thing. */
-  symbol: string
-  fact: Localized
+  /** Key into the drawn symbol set: the country's animal, landmark or thing.
+      Optional: not every country has an obvious one, and a wrong picture is
+      worse than none. */
+  symbol?: string
+  /** A written fact. Optional, because the computed ones and the Wikidata ones
+      cover a country that has none, and inventing 46 of them would be exactly
+      the kind of half-true trivia this game avoids. */
+  fact?: Localized
   /** Hand-written facts, fact-checked against sources. Present for the 23
       best-known countries; the rest rely on the computed ones. */
   stories?: Localized[]
@@ -66,7 +83,13 @@ export interface Continent {
   name: Localized
   /** [[minLon, minLat], [maxLon, maxLat]] the map is fitted to. */
   frame: [[number, number], [number, number]]
-  projection: { type: 'conic'; parallels: [number, number]; rotate: number }
+  projection: {
+    /** Conic suits a set that stays on one side of the equator; Natural Earth
+        is for one that crosses it. */
+    type: 'conic' | 'naturalEarth1'
+    parallels: [number, number]
+    rotate: number
+  }
   decor: {
     compass: [number, number]
     boat: [number, number]

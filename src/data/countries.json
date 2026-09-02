@@ -2,6 +2,90 @@
   "version": 1,
   "countries": [
     {
+      "iso": "AD",
+      "un": "020",
+      "subregion": "south",
+      "fame": 3,
+      "micro": true,
+      "name": {
+        "ru": "Андорра",
+        "pl": "Andora",
+        "en": "Andorra"
+      },
+      "capital": {
+        "ru": "Андорра-ла-Велья",
+        "pl": "Andorra la Vella",
+        "en": "Andorra la Vella"
+      },
+      "capitalCoords": [
+        1.5218,
+        42.5063
+      ],
+      "fact": {
+        "ru": "Крошечная страна в горах между Францией и Испанией, армии у неё нет.",
+        "pl": "Malutki kraj w górach między Francją a Hiszpanią, nie ma własnej armii.",
+        "en": "A tiny country in the mountains between France and Spain, with no army."
+      },
+      "symbol": "mountains",
+      "regions": [
+        "europe"
+      ],
+      "landlocked": true,
+      "island": false
+    },
+    {
+      "iso": "AE",
+      "un": "784",
+      "regions": [
+        "asia"
+      ],
+      "subregion": "middle-east",
+      "fame": 1,
+      "micro": false,
+      "landlocked": false,
+      "island": false,
+      "name": {
+        "ru": "Объединённые Арабские Эмираты",
+        "pl": "Zjednoczone Emiraty Arabskie",
+        "en": "United Arab Emirates"
+      },
+      "capital": {
+        "ru": "Абу-Даби",
+        "pl": "Abu Zabi",
+        "en": "Abu Dhabi"
+      },
+      "capitalCoords": [
+        54.3969,
+        24.4511
+      ]
+    },
+    {
+      "iso": "AF",
+      "un": "004",
+      "regions": [
+        "asia"
+      ],
+      "subregion": "south",
+      "fame": 1,
+      "micro": false,
+      "landlocked": true,
+      "island": false,
+      "name": {
+        "ru": "Афганистан",
+        "pl": "Afganistan",
+        "en": "Afghanistan"
+      },
+      "capital": {
+        "ru": "Кабул",
+        "pl": "Kabul",
+        "en": "Kabul"
+      },
+      "capitalCoords": [
+        69.1658,
+        34.5328
+      ]
+    },
+    {
       "iso": "AL",
       "un": "008",
       "subregion": "balkans",
@@ -34,36 +118,30 @@
       "island": false
     },
     {
-      "iso": "AD",
-      "un": "020",
-      "subregion": "south",
-      "fame": 3,
-      "micro": true,
+      "iso": "AM",
+      "un": "051",
+      "regions": [
+        "asia"
+      ],
+      "subregion": "caucasus",
+      "fame": 2,
+      "micro": false,
+      "landlocked": true,
+      "island": false,
       "name": {
-        "ru": "Андорра",
-        "pl": "Andora",
-        "en": "Andorra"
+        "ru": "Армения",
+        "pl": "Armenia",
+        "en": "Armenia"
       },
       "capital": {
-        "ru": "Андорра-ла-Велья",
-        "pl": "Andorra la Vella",
-        "en": "Andorra la Vella"
+        "ru": "Ереван",
+        "pl": "Erywań",
+        "en": "Yerevan"
       },
       "capitalCoords": [
-        1.5218,
-        42.5063
-      ],
-      "fact": {
-        "ru": "Крошечная страна в горах между Францией и Испанией, армии у неё нет.",
-        "pl": "Malutki kraj w górach między Francją a Hiszpanią, nie ma własnej armii.",
-        "en": "A tiny country in the mountains between France and Spain, with no army."
-      },
-      "symbol": "mountains",
-      "regions": [
-        "europe"
-      ],
-      "landlocked": true,
-      "island": false
+        44.5144,
+        40.1814
+      ]
     },
     {
       "iso": "AT",
@@ -125,63 +203,88 @@
       "island": false
     },
     {
-      "iso": "BY",
-      "un": "112",
-      "subregion": "east",
-      "fame": 1,
+      "iso": "AZ",
+      "un": "031",
+      "regions": [
+        "asia"
+      ],
+      "subregion": "caucasus",
+      "fame": 2,
       "micro": false,
+      "landlocked": true,
+      "island": false,
       "name": {
-        "ru": "Беларусь",
-        "pl": "Białoruś",
-        "en": "Belarus"
+        "ru": "Азербайджан",
+        "pl": "Azerbejdżan",
+        "en": "Azerbaijan"
       },
       "capital": {
-        "ru": "Минск",
-        "pl": "Mińsk",
-        "en": "Minsk"
+        "ru": "Баку",
+        "pl": "Baku",
+        "en": "Baku"
       },
       "capitalCoords": [
-        27.5615,
-        53.9006
+        49.8352,
+        40.3667
+      ]
+    },
+    {
+      "iso": "BA",
+      "un": "070",
+      "subregion": "balkans",
+      "fame": 2,
+      "micro": false,
+      "name": {
+        "ru": "Босния и Герцеговина",
+        "pl": "Bośnia i Hercegowina",
+        "en": "Bosnia and Herzegovina"
+      },
+      "capital": {
+        "ru": "Сараево",
+        "pl": "Sarajewo",
+        "en": "Sarajevo"
+      },
+      "capitalCoords": [
+        18.4131,
+        43.8563
       ],
       "fact": {
-        "ru": "В Беловежской пуще живут зубры, самые крупные звери Европы.",
-        "pl": "W Puszczy Białowieskiej żyją żubry, największe zwierzęta Europy.",
-        "en": "Bison, Europe's largest animals, live in the Bialowieza Forest."
+        "ru": "В городе Мостар есть старинный мост, с которого прыгают в реку смельчаки.",
+        "pl": "W Mostarze jest stary most, z którego śmiałkowie skaczą do rzeki.",
+        "en": "In Mostar there is an old bridge that brave divers jump from into the river."
       },
-      "symbol": "bison",
-      "stories": [
-        {
-          "ru": "В Беловежской пуще живут зубры — самые тяжёлые сухопутные звери Европы",
-          "pl": "W Puszczy Białowieskiej żyją żubry, najcięższe lądowe zwierzęta Europy",
-          "en": "Bison, Europe's heaviest land animals, live in the Bialowieza Forest"
-        },
-        {
-          "ru": "Беловежская пуща — один из последних древних лесов Европы",
-          "pl": "Puszcza Białowieska to jeden z ostatnich pierwotnych lasów Europy",
-          "en": "The Bialowieza Forest is one of Europe's last ancient woodlands"
-        },
-        {
-          "ru": "Художник Марк Шагал вырос в Витебске и рисовал его всю жизнь",
-          "pl": "Malarz Marc Chagall wychował się w Witebsku i malował go przez całe życie",
-          "en": "The painter Marc Chagall grew up in Vitebsk and painted it all his life"
-        },
-        {
-          "ru": "Мирский замок стоит с XVI века и охраняется ЮНЕСКО",
-          "pl": "Zamek w Mirze stoi od XVI wieku i jest wpisany na listę UNESCO",
-          "en": "Mir Castle has stood since the 16th century and is a UNESCO site"
-        },
-        {
-          "ru": "Здесь больше десяти тысяч озёр, оставшихся от ледника",
-          "pl": "Jest tu ponad dziesięć tysięcy jezior pozostawionych przez lodowiec",
-          "en": "There are over ten thousand lakes here, left behind by a glacier"
-        }
-      ],
+      "symbol": "bridge",
       "regions": [
         "europe"
       ],
-      "landlocked": true,
+      "landlocked": false,
       "island": false
+    },
+    {
+      "iso": "BD",
+      "un": "050",
+      "regions": [
+        "asia"
+      ],
+      "subregion": "south",
+      "fame": 2,
+      "micro": false,
+      "landlocked": false,
+      "island": false,
+      "name": {
+        "ru": "Бангладеш",
+        "pl": "Bangladesz",
+        "en": "Bangladesh"
+      },
+      "capital": {
+        "ru": "Дакка",
+        "pl": "Dhaka",
+        "en": "Dhaka"
+      },
+      "capitalCoords": [
+        90.3944,
+        23.7289
+      ]
     },
     {
       "iso": "BE",
@@ -243,38 +346,6 @@
       "island": false
     },
     {
-      "iso": "BA",
-      "un": "070",
-      "subregion": "balkans",
-      "fame": 2,
-      "micro": false,
-      "name": {
-        "ru": "Босния и Герцеговина",
-        "pl": "Bośnia i Hercegowina",
-        "en": "Bosnia and Herzegovina"
-      },
-      "capital": {
-        "ru": "Сараево",
-        "pl": "Sarajewo",
-        "en": "Sarajevo"
-      },
-      "capitalCoords": [
-        18.4131,
-        43.8563
-      ],
-      "fact": {
-        "ru": "В городе Мостар есть старинный мост, с которого прыгают в реку смельчаки.",
-        "pl": "W Mostarze jest stary most, z którego śmiałkowie skaczą do rzeki.",
-        "en": "In Mostar there is an old bridge that brave divers jump from into the river."
-      },
-      "symbol": "bridge",
-      "regions": [
-        "europe"
-      ],
-      "landlocked": false,
-      "island": false
-    },
-    {
       "iso": "BG",
       "un": "100",
       "subregion": "balkans",
@@ -307,36 +378,226 @@
       "island": false
     },
     {
-      "iso": "HR",
-      "un": "191",
-      "subregion": "balkans",
-      "fame": 2,
-      "micro": false,
+      "iso": "BH",
+      "un": "048",
+      "regions": [
+        "asia"
+      ],
+      "subregion": "middle-east",
+      "fame": 3,
+      "micro": true,
+      "landlocked": false,
+      "island": true,
       "name": {
-        "ru": "Хорватия",
-        "pl": "Chorwacja",
-        "en": "Croatia"
+        "ru": "Бахрейн",
+        "pl": "Bahrajn",
+        "en": "Bahrain"
       },
       "capital": {
-        "ru": "Загреб",
-        "pl": "Zagrzeb",
-        "en": "Zagreb"
+        "ru": "Манама",
+        "pl": "Manama",
+        "en": "Manama"
       },
       "capitalCoords": [
-        15.9819,
-        45.815
+        50.5833,
+        26.2167
+      ]
+    },
+    {
+      "iso": "BN",
+      "un": "096",
+      "regions": [
+        "asia"
+      ],
+      "subregion": "southeast",
+      "fame": 3,
+      "micro": false,
+      "landlocked": false,
+      "island": false,
+      "name": {
+        "ru": "Бруней",
+        "pl": "Brunei",
+        "en": "Brunei"
+      },
+      "capital": {
+        "ru": "Бандар-Сери-Бегаван",
+        "pl": "Bandar Seri Begawan",
+        "en": "Bandar Seri Begawan"
+      },
+      "capitalCoords": [
+        114.9167,
+        4.9167
+      ]
+    },
+    {
+      "iso": "BT",
+      "un": "064",
+      "regions": [
+        "asia"
+      ],
+      "subregion": "south",
+      "fame": 3,
+      "micro": false,
+      "landlocked": true,
+      "island": false,
+      "name": {
+        "ru": "Бутан",
+        "pl": "Bhutan",
+        "en": "Bhutan"
+      },
+      "capital": {
+        "ru": "Тхимпху",
+        "pl": "Thimphu",
+        "en": "Thimphu"
+      },
+      "capitalCoords": [
+        89.6337,
+        27.4714
+      ]
+    },
+    {
+      "iso": "BY",
+      "un": "112",
+      "subregion": "east",
+      "fame": 1,
+      "micro": false,
+      "name": {
+        "ru": "Беларусь",
+        "pl": "Białoruś",
+        "en": "Belarus"
+      },
+      "capital": {
+        "ru": "Минск",
+        "pl": "Mińsk",
+        "en": "Minsk"
+      },
+      "capitalCoords": [
+        27.5615,
+        53.9006
       ],
       "fact": {
-        "ru": "У Хорватии больше тысячи островов в Адриатическом море.",
-        "pl": "Chorwacja ma ponad tysiąc wysp na Morzu Adriatyckim.",
-        "en": "Croatia has more than a thousand islands in the Adriatic Sea."
+        "ru": "В Беловежской пуще живут зубры, самые крупные звери Европы.",
+        "pl": "W Puszczy Białowieskiej żyją żubry, największe zwierzęta Europy.",
+        "en": "Bison, Europe's largest animals, live in the Bialowieza Forest."
       },
-      "symbol": "boat",
+      "symbol": "bison",
+      "stories": [
+        {
+          "ru": "В Беловежской пуще живут зубры — самые тяжёлые сухопутные звери Европы",
+          "pl": "W Puszczy Białowieskiej żyją żubry, najcięższe lądowe zwierzęta Europy",
+          "en": "Bison, Europe's heaviest land animals, live in the Bialowieza Forest"
+        },
+        {
+          "ru": "Беловежская пуща — один из последних древних лесов Европы",
+          "pl": "Puszcza Białowieska to jeden z ostatnich pierwotnych lasów Europy",
+          "en": "The Bialowieza Forest is one of Europe's last ancient woodlands"
+        },
+        {
+          "ru": "Художник Марк Шагал вырос в Витебске и рисовал его всю жизнь",
+          "pl": "Malarz Marc Chagall wychował się w Witebsku i malował go przez całe życie",
+          "en": "The painter Marc Chagall grew up in Vitebsk and painted it all his life"
+        },
+        {
+          "ru": "Мирский замок стоит с XVI века и охраняется ЮНЕСКО",
+          "pl": "Zamek w Mirze stoi od XVI wieku i jest wpisany na listę UNESCO",
+          "en": "Mir Castle has stood since the 16th century and is a UNESCO site"
+        },
+        {
+          "ru": "Здесь больше десяти тысяч озёр, оставшихся от ледника",
+          "pl": "Jest tu ponad dziesięć tysięcy jezior pozostawionych przez lodowiec",
+          "en": "There are over ten thousand lakes here, left behind by a glacier"
+        }
+      ],
       "regions": [
         "europe"
       ],
-      "landlocked": false,
+      "landlocked": true,
       "island": false
+    },
+    {
+      "iso": "CH",
+      "un": "756",
+      "subregion": "central",
+      "fame": 1,
+      "micro": false,
+      "name": {
+        "ru": "Швейцария",
+        "pl": "Szwajcaria",
+        "en": "Switzerland"
+      },
+      "capital": {
+        "ru": "Берн",
+        "pl": "Berno",
+        "en": "Bern"
+      },
+      "capitalCoords": [
+        7.4474,
+        46.948
+      ],
+      "fact": {
+        "ru": "Страна часов, сыра и шоколада. У неё квадратный флаг, таких всего два в мире.",
+        "pl": "Kraj zegarków, sera i czekolady. Ma kwadratową flagę, takich są tylko dwie na świecie.",
+        "en": "Land of watches, cheese and chocolate. Its flag is square, one of only two in the world."
+      },
+      "symbol": "cheese",
+      "stories": [
+        {
+          "ru": "Страна не участвует в чужих войнах с 1815 года",
+          "pl": "Kraj nie bierze udziału w cudzych wojnach od 1815 roku",
+          "en": "The country has stayed out of other countries' wars since 1815"
+        },
+        {
+          "ru": "Молочный шоколад придумали здесь в XIX веке",
+          "pl": "Czekoladę mleczną wynaleziono tu w XIX wieku",
+          "en": "Milk chocolate was invented here in the 19th century"
+        },
+        {
+          "ru": "Флаг Швейцарии квадратный — таких в мире всего два",
+          "pl": "Flaga Szwajcarii jest kwadratowa, takich są na świecie tylko dwie",
+          "en": "The Swiss flag is square, one of only two in the world"
+        },
+        {
+          "ru": "Готардский базисный тоннель прорыт под Альпами на 57 километров",
+          "pl": "Tunel bazowy Gotarda przebito pod Alpami na 57 kilometrów",
+          "en": "The Gotthard Base Tunnel runs 57 kilometres under the Alps"
+        },
+        {
+          "ru": "В стране четыре национальных языка: немецкий, французский, итальянский и ретороманский",
+          "pl": "Kraj ma cztery języki narodowe: niemiecki, francuski, włoski i retoromański",
+          "en": "The country has four national languages: German, French, Italian and Romansh"
+        }
+      ],
+      "regions": [
+        "europe"
+      ],
+      "landlocked": true,
+      "island": false
+    },
+    {
+      "iso": "CN",
+      "un": "156",
+      "regions": [
+        "asia"
+      ],
+      "subregion": "east",
+      "fame": 1,
+      "micro": false,
+      "landlocked": false,
+      "island": false,
+      "name": {
+        "ru": "Китай",
+        "pl": "Chiny",
+        "en": "China"
+      },
+      "capital": {
+        "ru": "Пекин",
+        "pl": "Pekin",
+        "en": "Beijing"
+      },
+      "capitalCoords": [
+        116.4075,
+        39.904
+      ]
     },
     {
       "iso": "CY",
@@ -365,7 +626,8 @@
       },
       "symbol": "columns",
       "regions": [
-        "europe"
+        "europe",
+        "asia"
       ],
       "landlocked": false,
       "island": true
@@ -427,6 +689,65 @@
         "europe"
       ],
       "landlocked": true,
+      "island": false
+    },
+    {
+      "iso": "DE",
+      "un": "276",
+      "subregion": "central",
+      "fame": 1,
+      "micro": false,
+      "name": {
+        "ru": "Германия",
+        "pl": "Niemcy",
+        "en": "Germany"
+      },
+      "capital": {
+        "ru": "Берлин",
+        "pl": "Berlin",
+        "en": "Berlin"
+      },
+      "capitalCoords": [
+        13.405,
+        52.52
+      ],
+      "fact": {
+        "ru": "Тут построили первый в мире автомобиль и придумали печатный станок.",
+        "pl": "Tu zbudowano pierwszy na świecie samochód i wynaleziono druk.",
+        "en": "The world's first car was built here, and printing was invented here."
+      },
+      "symbol": "pretzel",
+      "stories": [
+        {
+          "ru": "Иоганн Гутенберг напечатал здесь первую в Европе книгу подвижными литерами",
+          "pl": "Johannes Gutenberg wydrukował tu pierwszą w Europie książkę ruchomą czcionką",
+          "en": "Johannes Gutenberg printed Europe's first movable-type book here"
+        },
+        {
+          "ru": "Первый автомобиль с бензиновым двигателем построил Карл Бенц в 1886 году",
+          "pl": "Pierwszy samochód z silnikiem benzynowym zbudował Karl Benz w 1886 roku",
+          "en": "The first petrol-engine car was built by Karl Benz in 1886"
+        },
+        {
+          "ru": "Берлинская стена делила город двадцать восемь лет и пала в 1989 году",
+          "pl": "Mur Berliński dzielił miasto dwadzieścia osiem lat i upadł w 1989 roku",
+          "en": "The Berlin Wall divided the city for twenty-eight years and fell in 1989"
+        },
+        {
+          "ru": "Замок Нойшванштайн стал прообразом замка Спящей красавицы в Диснейленде",
+          "pl": "Zamek Neuschwanstein stał się pierwowzorem zamku Śpiącej Królewny w Disneylandzie",
+          "en": "Neuschwanstein Castle inspired Sleeping Beauty Castle at Disneyland"
+        },
+        {
+          "ru": "Здесь придумали рождественскую ёлку в том виде, в каком её ставят сейчас",
+          "pl": "Tu narodził się zwyczaj ubierania choinki w dzisiejszej formie",
+          "en": "The Christmas tree as we decorate it today began here"
+        }
+      ],
+      "regions": [
+        "europe"
+      ],
+      "landlocked": false,
       "island": false
     },
     {
@@ -514,6 +835,65 @@
         "en": "Half of Estonia is forest, and almost everything here is done online."
       },
       "symbol": "wolf",
+      "regions": [
+        "europe"
+      ],
+      "landlocked": false,
+      "island": false
+    },
+    {
+      "iso": "ES",
+      "un": "724",
+      "subregion": "south",
+      "fame": 1,
+      "micro": false,
+      "name": {
+        "ru": "Испания",
+        "pl": "Hiszpania",
+        "en": "Spain"
+      },
+      "capital": {
+        "ru": "Мадрид",
+        "pl": "Madryt",
+        "en": "Madrid"
+      },
+      "capitalCoords": [
+        -3.7038,
+        40.4168
+      ],
+      "fact": {
+        "ru": "Собор Саграда Фамилия в Барселоне строят уже больше 140 лет.",
+        "pl": "Katedrę Sagrada Familia w Barcelonie buduje się już ponad 140 lat.",
+        "en": "The Sagrada Familia in Barcelona has been under construction for over 140 years."
+      },
+      "symbol": "bull",
+      "stories": [
+        {
+          "ru": "Базилику Саграда Фамилия в Барселоне строят больше ста сорока лет",
+          "pl": "Bazylikę Sagrada Familia w Barcelonie buduje się ponad sto czterdzieści lat",
+          "en": "The Sagrada Familia basilica in Barcelona has been under construction for over 140 years"
+        },
+        {
+          "ru": "В пещере Альтамира сохранились рисунки, которым больше четырнадцати тысяч лет",
+          "pl": "W jaskini Altamira zachowały się rysunki sprzed ponad czternastu tysięcy lat",
+          "en": "The Altamira cave holds paintings more than fourteen thousand years old"
+        },
+        {
+          "ru": "Испанский — второй язык в мире по числу тех, для кого он родной",
+          "pl": "Hiszpański jest drugim językiem świata pod względem liczby rodzimych użytkowników",
+          "en": "Spanish has the second most native speakers of any language"
+        },
+        {
+          "ru": "Дворец Альгамбра в Гранаде строили мавры больше семисот лет назад",
+          "pl": "Pałac Alhambra w Granadzie zbudowali Maurowie ponad siedemset lat temu",
+          "en": "The Alhambra palace in Granada was built by the Moors over seven hundred years ago"
+        },
+        {
+          "ru": "Художники Пикассо, Дали, Гойя и Веласкес — все испанцы",
+          "pl": "Malarze Picasso, Dalí, Goya i Velázquez byli Hiszpanami",
+          "en": "Picasso, Dali, Goya and Velazquez were all Spanish painters"
+        }
+      ],
       "regions": [
         "europe"
       ],
@@ -639,63 +1019,89 @@
       "island": false
     },
     {
-      "iso": "DE",
-      "un": "276",
-      "subregion": "central",
+      "iso": "GB",
+      "un": "826",
+      "subregion": "west",
       "fame": 1,
       "micro": false,
       "name": {
-        "ru": "Германия",
-        "pl": "Niemcy",
-        "en": "Germany"
+        "ru": "Великобритания",
+        "pl": "Wielka Brytania",
+        "en": "United Kingdom"
       },
       "capital": {
-        "ru": "Берлин",
-        "pl": "Berlin",
-        "en": "Berlin"
+        "ru": "Лондон",
+        "pl": "Londyn",
+        "en": "London"
       },
       "capitalCoords": [
-        13.405,
-        52.52
+        -0.1276,
+        51.5074
       ],
       "fact": {
-        "ru": "Тут построили первый в мире автомобиль и придумали печатный станок.",
-        "pl": "Tu zbudowano pierwszy na świecie samochód i wynaleziono druk.",
-        "en": "The world's first car was built here, and printing was invented here."
+        "ru": "Страна из четырёх частей на островах. Тут ездят по левой стороне дороги.",
+        "pl": "Kraj z czterech części na wyspach. Jeździ się tu lewą stroną drogi.",
+        "en": "A country of four parts on islands, where cars drive on the left."
       },
-      "symbol": "pretzel",
+      "symbol": "bigben",
       "stories": [
         {
-          "ru": "Иоганн Гутенберг напечатал здесь первую в Европе книгу подвижными литерами",
-          "pl": "Johannes Gutenberg wydrukował tu pierwszą w Europie książkę ruchomą czcionką",
-          "en": "Johannes Gutenberg printed Europe's first movable-type book here"
+          "ru": "Биг-Бен — это название колокола, а не самой башни",
+          "pl": "Big Ben to nazwa dzwonu, a nie samej wieży",
+          "en": "Big Ben is the name of the bell, not the tower"
         },
         {
-          "ru": "Первый автомобиль с бензиновым двигателем построил Карл Бенц в 1886 году",
-          "pl": "Pierwszy samochód z silnikiem benzynowym zbudował Karl Benz w 1886 roku",
-          "en": "The first petrol-engine car was built by Karl Benz in 1886"
+          "ru": "Стоунхендж поставили около пяти тысяч лет назад, и как — точно неизвестно",
+          "pl": "Stonehenge postawiono około pięciu tysięcy lat temu, a jak, do dziś nie wiadomo",
+          "en": "Stonehenge was raised about five thousand years ago, and nobody is sure how"
         },
         {
-          "ru": "Берлинская стена делила город двадцать восемь лет и пала в 1989 году",
-          "pl": "Mur Berliński dzielił miasto dwadzieścia osiem lat i upadł w 1989 roku",
-          "en": "The Berlin Wall divided the city for twenty-eight years and fell in 1989"
+          "ru": "Здесь ездят по левой стороне дороги",
+          "pl": "Jeździ się tu lewą stroną drogi",
+          "en": "Cars here drive on the left"
         },
         {
-          "ru": "Замок Нойшванштайн стал прообразом замка Спящей красавицы в Диснейленде",
-          "pl": "Zamek Neuschwanstein stał się pierwowzorem zamku Śpiącej Królewny w Disneylandzie",
-          "en": "Neuschwanstein Castle inspired Sleeping Beauty Castle at Disneyland"
+          "ru": "Лондонское метро — старейшее в мире, открыто в 1863 году",
+          "pl": "Metro w Londynie jest najstarsze na świecie, otwarte w 1863 roku",
+          "en": "The London Underground is the oldest metro in the world, opened in 1863"
         },
         {
-          "ru": "Здесь придумали рождественскую ёлку в том виде, в каком её ставят сейчас",
-          "pl": "Tu narodził się zwyczaj ubierania choinki w dzisiejszej formie",
-          "en": "The Christmas tree as we decorate it today began here"
+          "ru": "Страна состоит из четырёх частей: Англии, Шотландии, Уэльса и Северной Ирландии",
+          "pl": "Kraj składa się z czterech części: Anglii, Szkocji, Walii i Irlandii Północnej",
+          "en": "The country is made of four parts: England, Scotland, Wales and Northern Ireland"
         }
       ],
       "regions": [
         "europe"
       ],
       "landlocked": false,
-      "island": false
+      "island": true
+    },
+    {
+      "iso": "GE",
+      "un": "268",
+      "regions": [
+        "asia"
+      ],
+      "subregion": "caucasus",
+      "fame": 2,
+      "micro": false,
+      "landlocked": false,
+      "island": false,
+      "name": {
+        "ru": "Грузия",
+        "pl": "Gruzja",
+        "en": "Georgia"
+      },
+      "capital": {
+        "ru": "Тбилиси",
+        "pl": "Tbilisi",
+        "en": "Tbilisi"
+      },
+      "capitalCoords": [
+        44.7925,
+        41.7225
+      ]
     },
     {
       "iso": "GR",
@@ -750,6 +1156,38 @@
           "en": "Democracy began in Athens, where citizens decided matters by voting"
         }
       ],
+      "regions": [
+        "europe"
+      ],
+      "landlocked": false,
+      "island": false
+    },
+    {
+      "iso": "HR",
+      "un": "191",
+      "subregion": "balkans",
+      "fame": 2,
+      "micro": false,
+      "name": {
+        "ru": "Хорватия",
+        "pl": "Chorwacja",
+        "en": "Croatia"
+      },
+      "capital": {
+        "ru": "Загреб",
+        "pl": "Zagrzeb",
+        "en": "Zagreb"
+      },
+      "capitalCoords": [
+        15.9819,
+        45.815
+      ],
+      "fact": {
+        "ru": "У Хорватии больше тысячи островов в Адриатическом море.",
+        "pl": "Chorwacja ma ponad tysiąc wysp na Morzu Adriatyckim.",
+        "en": "Croatia has more than a thousand islands in the Adriatic Sea."
+      },
+      "symbol": "boat",
       "regions": [
         "europe"
       ],
@@ -816,63 +1254,30 @@
       "island": false
     },
     {
-      "iso": "IS",
-      "un": "352",
-      "subregion": "nordic",
+      "iso": "ID",
+      "un": "360",
+      "regions": [
+        "asia"
+      ],
+      "subregion": "southeast",
       "fame": 1,
       "micro": false,
+      "landlocked": false,
+      "island": true,
       "name": {
-        "ru": "Исландия",
-        "pl": "Islandia",
-        "en": "Iceland"
+        "ru": "Индонезия",
+        "pl": "Indonezja",
+        "en": "Indonesia"
       },
       "capital": {
-        "ru": "Рейкьявик",
-        "pl": "Reykjavik",
-        "en": "Reykjavik"
+        "ru": "Джакарта",
+        "pl": "Dżakarta",
+        "en": "Jakarta"
       },
       "capitalCoords": [
-        -21.8277,
-        64.1265
-      ],
-      "fact": {
-        "ru": "Остров вулканов и гейзеров, дома тут греют горячей водой из-под земли.",
-        "pl": "Wyspa wulkanów i gejzerów, domy ogrzewa się tu gorącą wodą spod ziemi.",
-        "en": "An island of volcanoes and geysers where homes are heated by underground water."
-      },
-      "symbol": "volcano",
-      "stories": [
-        {
-          "ru": "Дома здесь отапливают горячей водой из-под земли",
-          "pl": "Domy ogrzewa się tu gorącą wodą spod ziemi",
-          "en": "Homes here are heated with hot water from underground"
-        },
-        {
-          "ru": "Слово «гейзер» пришло из исландского — от источника по имени Гейсир",
-          "pl": "Słowo „gejzer” pochodzi z islandzkiego, od źródła o nazwie Geysir",
-          "en": "The word geyser comes from Icelandic, from a spring called Geysir"
-        },
-        {
-          "ru": "Исландский парламент альтинг собрался впервые в 930 году",
-          "pl": "Islandzki parlament Althing zebrał się po raz pierwszy w 930 roku",
-          "en": "Iceland's parliament, the Althing, first met in the year 930"
-        },
-        {
-          "ru": "На острове почти нет леса, зато есть ледники и вулканы",
-          "pl": "Na wyspie prawie nie ma lasów, są za to lodowce i wulkany",
-          "en": "The island has almost no forest, but plenty of glaciers and volcanoes"
-        },
-        {
-          "ru": "Исландия была страной без комаров, пока в 2025 году не нашли первых",
-          "pl": "Islandia była krajem bez komarów, aż w 2025 roku znaleziono pierwsze",
-          "en": "Iceland had no mosquitoes at all until the first ones were found in 2025"
-        }
-      ],
-      "regions": [
-        "europe"
-      ],
-      "landlocked": false,
-      "island": true
+        106.8456,
+        -6.2088
+      ]
     },
     {
       "iso": "IE",
@@ -925,6 +1330,169 @@
           "ru": "Змей на острове нет вовсе",
           "pl": "Na wyspie nie ma żadnych węży",
           "en": "There are no snakes on the island at all"
+        }
+      ],
+      "regions": [
+        "europe"
+      ],
+      "landlocked": false,
+      "island": true
+    },
+    {
+      "iso": "IL",
+      "un": "376",
+      "regions": [
+        "asia"
+      ],
+      "subregion": "middle-east",
+      "fame": 1,
+      "micro": false,
+      "landlocked": false,
+      "island": false,
+      "name": {
+        "ru": "Израиль",
+        "pl": "Izrael",
+        "en": "Israel"
+      },
+      "capital": {
+        "ru": "Тель-Авив",
+        "pl": "Tel Awiw",
+        "en": "Tel Aviv"
+      },
+      "capitalCoords": [
+        34.78,
+        32.08
+      ]
+    },
+    {
+      "iso": "IN",
+      "un": "356",
+      "regions": [
+        "asia"
+      ],
+      "subregion": "south",
+      "fame": 1,
+      "micro": false,
+      "landlocked": false,
+      "island": false,
+      "name": {
+        "ru": "Индия",
+        "pl": "Indie",
+        "en": "India"
+      },
+      "capital": {
+        "ru": "Нью-Дели",
+        "pl": "Nowe Delhi",
+        "en": "New Delhi"
+      },
+      "capitalCoords": [
+        77.2089,
+        28.6139
+      ]
+    },
+    {
+      "iso": "IQ",
+      "un": "368",
+      "regions": [
+        "asia"
+      ],
+      "subregion": "middle-east",
+      "fame": 1,
+      "micro": false,
+      "landlocked": false,
+      "island": false,
+      "name": {
+        "ru": "Ирак",
+        "pl": "Irak",
+        "en": "Iraq"
+      },
+      "capital": {
+        "ru": "Багдад",
+        "pl": "Bagdad",
+        "en": "Baghdad"
+      },
+      "capitalCoords": [
+        44.3661,
+        33.3153
+      ]
+    },
+    {
+      "iso": "IR",
+      "un": "364",
+      "regions": [
+        "asia"
+      ],
+      "subregion": "middle-east",
+      "fame": 1,
+      "micro": false,
+      "landlocked": false,
+      "island": false,
+      "name": {
+        "ru": "Иран",
+        "pl": "Iran",
+        "en": "Iran"
+      },
+      "capital": {
+        "ru": "Тегеран",
+        "pl": "Teheran",
+        "en": "Tehran"
+      },
+      "capitalCoords": [
+        51.3897,
+        35.6889
+      ]
+    },
+    {
+      "iso": "IS",
+      "un": "352",
+      "subregion": "nordic",
+      "fame": 1,
+      "micro": false,
+      "name": {
+        "ru": "Исландия",
+        "pl": "Islandia",
+        "en": "Iceland"
+      },
+      "capital": {
+        "ru": "Рейкьявик",
+        "pl": "Reykjavik",
+        "en": "Reykjavik"
+      },
+      "capitalCoords": [
+        -21.8277,
+        64.1265
+      ],
+      "fact": {
+        "ru": "Остров вулканов и гейзеров, дома тут греют горячей водой из-под земли.",
+        "pl": "Wyspa wulkanów i gejzerów, domy ogrzewa się tu gorącą wodą spod ziemi.",
+        "en": "An island of volcanoes and geysers where homes are heated by underground water."
+      },
+      "symbol": "volcano",
+      "stories": [
+        {
+          "ru": "Дома здесь отапливают горячей водой из-под земли",
+          "pl": "Domy ogrzewa się tu gorącą wodą spod ziemi",
+          "en": "Homes here are heated with hot water from underground"
+        },
+        {
+          "ru": "Слово «гейзер» пришло из исландского — от источника по имени Гейсир",
+          "pl": "Słowo „gejzer” pochodzi z islandzkiego, od źródła o nazwie Geysir",
+          "en": "The word geyser comes from Icelandic, from a spring called Geysir"
+        },
+        {
+          "ru": "Исландский парламент альтинг собрался впервые в 930 году",
+          "pl": "Islandzki parlament Althing zebrał się po raz pierwszy w 930 roku",
+          "en": "Iceland's parliament, the Althing, first met in the year 930"
+        },
+        {
+          "ru": "На острове почти нет леса, зато есть ледники и вулканы",
+          "pl": "Na wyspie prawie nie ma lasów, są za to lodowce i wulkany",
+          "en": "The island has almost no forest, but plenty of glaciers and volcanoes"
+        },
+        {
+          "ru": "Исландия была страной без комаров, пока в 2025 году не нашли первых",
+          "pl": "Islandia była krajem bez komarów, aż w 2025 roku znaleziono pierwsze",
+          "en": "Iceland had no mosquitoes at all until the first ones were found in 2025"
         }
       ],
       "regions": [
@@ -993,36 +1561,264 @@
       "island": false
     },
     {
-      "iso": "LV",
-      "un": "428",
-      "subregion": "baltic",
+      "iso": "JO",
+      "un": "400",
+      "regions": [
+        "asia"
+      ],
+      "subregion": "middle-east",
       "fame": 2,
       "micro": false,
+      "landlocked": false,
+      "island": false,
       "name": {
-        "ru": "Латвия",
-        "pl": "Łotwa",
-        "en": "Latvia"
+        "ru": "Иордания",
+        "pl": "Jordania",
+        "en": "Jordan"
       },
       "capital": {
-        "ru": "Рига",
-        "pl": "Ryga",
-        "en": "Riga"
+        "ru": "Амман",
+        "pl": "Amman",
+        "en": "Amman"
       },
       "capitalCoords": [
-        24.1052,
-        56.9496
-      ],
-      "fact": {
-        "ru": "На берегу Балтики тут находят янтарь, застывшую смолу древних деревьев.",
-        "pl": "Na brzegu Bałtyku znajduje się tu bursztyn, zastygłą żywicę dawnych drzew.",
-        "en": "Amber, the hardened resin of ancient trees, washes up on the Baltic shore here."
-      },
-      "symbol": "amber",
+        35.9261,
+        31.931
+      ]
+    },
+    {
+      "iso": "JP",
+      "un": "392",
       "regions": [
-        "europe"
+        "asia"
       ],
+      "subregion": "east",
+      "fame": 1,
+      "micro": false,
       "landlocked": false,
-      "island": false
+      "island": true,
+      "name": {
+        "ru": "Япония",
+        "pl": "Japonia",
+        "en": "Japan"
+      },
+      "capital": {
+        "ru": "Токио",
+        "pl": "Tokio",
+        "en": "Tokyo"
+      },
+      "capitalCoords": [
+        139.6917,
+        35.6894
+      ]
+    },
+    {
+      "iso": "KG",
+      "un": "417",
+      "regions": [
+        "asia"
+      ],
+      "subregion": "central",
+      "fame": 3,
+      "micro": false,
+      "landlocked": true,
+      "island": false,
+      "name": {
+        "ru": "Кыргызстан",
+        "pl": "Kirgistan",
+        "en": "Kyrgyzstan"
+      },
+      "capital": {
+        "ru": "Бишкек",
+        "pl": "Biszkek",
+        "en": "Bishkek"
+      },
+      "capitalCoords": [
+        74.5667,
+        42.8667
+      ]
+    },
+    {
+      "iso": "KH",
+      "un": "116",
+      "regions": [
+        "asia"
+      ],
+      "subregion": "southeast",
+      "fame": 2,
+      "micro": false,
+      "landlocked": false,
+      "island": false,
+      "name": {
+        "ru": "Камбоджа",
+        "pl": "Kambodża",
+        "en": "Cambodia"
+      },
+      "capital": {
+        "ru": "Пномпень",
+        "pl": "Phnom Penh",
+        "en": "Phnom Penh"
+      },
+      "capitalCoords": [
+        104.921,
+        11.5696
+      ]
+    },
+    {
+      "iso": "KP",
+      "un": "408",
+      "regions": [
+        "asia"
+      ],
+      "subregion": "east",
+      "fame": 2,
+      "micro": false,
+      "landlocked": false,
+      "island": false,
+      "name": {
+        "ru": "Северная Корея",
+        "pl": "Korea Północna",
+        "en": "North Korea"
+      },
+      "capital": {
+        "ru": "Пхеньян",
+        "pl": "Pjongjang",
+        "en": "Pyongyang"
+      },
+      "capitalCoords": [
+        125.7475,
+        39.0167
+      ]
+    },
+    {
+      "iso": "KR",
+      "un": "410",
+      "regions": [
+        "asia"
+      ],
+      "subregion": "east",
+      "fame": 1,
+      "micro": false,
+      "landlocked": false,
+      "island": false,
+      "name": {
+        "ru": "Южная Корея",
+        "pl": "Korea Południowa",
+        "en": "South Korea"
+      },
+      "capital": {
+        "ru": "Сеул",
+        "pl": "Seul",
+        "en": "Seoul"
+      },
+      "capitalCoords": [
+        126.99,
+        37.56
+      ]
+    },
+    {
+      "iso": "KW",
+      "un": "414",
+      "regions": [
+        "asia"
+      ],
+      "subregion": "middle-east",
+      "fame": 2,
+      "micro": false,
+      "landlocked": false,
+      "island": false,
+      "name": {
+        "ru": "Кувейт",
+        "pl": "Kuwejt",
+        "en": "Kuwait"
+      },
+      "capital": {
+        "ru": "Эль-Кувейт",
+        "pl": "Kuwejt",
+        "en": "Kuwait City"
+      },
+      "capitalCoords": [
+        47.98,
+        29.375
+      ]
+    },
+    {
+      "iso": "KZ",
+      "un": "398",
+      "regions": [
+        "asia"
+      ],
+      "subregion": "central",
+      "fame": 1,
+      "micro": false,
+      "landlocked": true,
+      "island": false,
+      "name": {
+        "ru": "Казахстан",
+        "pl": "Kazachstan",
+        "en": "Kazakhstan"
+      },
+      "capital": {
+        "ru": "Астана",
+        "pl": "Astana",
+        "en": "Astana"
+      },
+      "capitalCoords": [
+        71.4333,
+        51.1333
+      ]
+    },
+    {
+      "iso": "LA",
+      "un": "418",
+      "regions": [
+        "asia"
+      ],
+      "subregion": "southeast",
+      "fame": 2,
+      "micro": false,
+      "landlocked": true,
+      "island": false,
+      "name": {
+        "ru": "Лаос",
+        "pl": "Laos",
+        "en": "Laos"
+      },
+      "capital": {
+        "ru": "Вьентьян",
+        "pl": "Wientian",
+        "en": "Vientiane"
+      },
+      "capitalCoords": [
+        102.63,
+        17.98
+      ]
+    },
+    {
+      "iso": "LB",
+      "un": "422",
+      "regions": [
+        "asia"
+      ],
+      "subregion": "middle-east",
+      "fame": 2,
+      "micro": false,
+      "landlocked": false,
+      "island": false,
+      "name": {
+        "ru": "Ливан",
+        "pl": "Liban",
+        "en": "Lebanon"
+      },
+      "capital": {
+        "ru": "Бейрут",
+        "pl": "Bejrut",
+        "en": "Beirut"
+      },
+      "capitalCoords": [
+        35.5131,
+        33.8869
+      ]
     },
     {
       "iso": "LI",
@@ -1055,6 +1851,32 @@
       ],
       "landlocked": true,
       "island": false
+    },
+    {
+      "iso": "LK",
+      "un": "144",
+      "regions": [
+        "asia"
+      ],
+      "subregion": "south",
+      "fame": 2,
+      "micro": false,
+      "landlocked": false,
+      "island": true,
+      "name": {
+        "ru": "Шри-Ланка",
+        "pl": "Sri Lanka",
+        "en": "Sri Lanka"
+      },
+      "capital": {
+        "ru": "Шри-Джаяварденепура-Котте",
+        "pl": "Sri Dźajawardanapura Kotte",
+        "en": "Sri Jayawardenepura Kotte"
+      },
+      "capitalCoords": [
+        79.9164,
+        6.9
+      ]
     },
     {
       "iso": "LT",
@@ -1121,67 +1943,35 @@
       "island": false
     },
     {
-      "iso": "MT",
-      "un": "470",
-      "subregion": "south",
+      "iso": "LV",
+      "un": "428",
+      "subregion": "baltic",
       "fame": 2,
-      "micro": true,
+      "micro": false,
       "name": {
-        "ru": "Мальта",
-        "pl": "Malta",
-        "en": "Malta"
+        "ru": "Латвия",
+        "pl": "Łotwa",
+        "en": "Latvia"
       },
       "capital": {
-        "ru": "Валлетта",
-        "pl": "Valletta",
-        "en": "Valletta"
+        "ru": "Рига",
+        "pl": "Ryga",
+        "en": "Riga"
       },
       "capitalCoords": [
-        14.5146,
-        35.8989
+        24.1052,
+        56.9496
       ],
       "fact": {
-        "ru": "Маленький остров, где стоят храмы старше египетских пирамид.",
-        "pl": "Mała wyspa, na której stoją świątynie starsze od egipskich piramid.",
-        "en": "A small island with temples older than the Egyptian pyramids."
+        "ru": "На берегу Балтики тут находят янтарь, застывшую смолу древних деревьев.",
+        "pl": "Na brzegu Bałtyku znajduje się tu bursztyn, zastygłą żywicę dawnych drzew.",
+        "en": "Amber, the hardened resin of ancient trees, washes up on the Baltic shore here."
       },
-      "symbol": "boat",
+      "symbol": "amber",
       "regions": [
         "europe"
       ],
       "landlocked": false,
-      "island": true
-    },
-    {
-      "iso": "MD",
-      "un": "498",
-      "subregion": "east",
-      "fame": 2,
-      "micro": false,
-      "name": {
-        "ru": "Молдова",
-        "pl": "Mołdawia",
-        "en": "Moldova"
-      },
-      "capital": {
-        "ru": "Кишинёв",
-        "pl": "Kiszyniów",
-        "en": "Chisinau"
-      },
-      "capitalCoords": [
-        28.8638,
-        47.0105
-      ],
-      "fact": {
-        "ru": "Под землёй тут прячутся винные подвалы длиной в двести километров.",
-        "pl": "Pod ziemią kryją się tu piwnice z winem długie na dwieście kilometrów.",
-        "en": "Wine cellars stretching two hundred kilometres run under the ground here."
-      },
-      "symbol": "grapes",
-      "regions": [
-        "europe"
-      ],
-      "landlocked": true,
       "island": false
     },
     {
@@ -1217,6 +2007,38 @@
       "island": false
     },
     {
+      "iso": "MD",
+      "un": "498",
+      "subregion": "east",
+      "fame": 2,
+      "micro": false,
+      "name": {
+        "ru": "Молдова",
+        "pl": "Mołdawia",
+        "en": "Moldova"
+      },
+      "capital": {
+        "ru": "Кишинёв",
+        "pl": "Kiszyniów",
+        "en": "Chisinau"
+      },
+      "capitalCoords": [
+        28.8638,
+        47.0105
+      ],
+      "fact": {
+        "ru": "Под землёй тут прячутся винные подвалы длиной в двести километров.",
+        "pl": "Pod ziemią kryją się tu piwnice z winem długie na dwieście kilometrów.",
+        "en": "Wine cellars stretching two hundred kilometres run under the ground here."
+      },
+      "symbol": "grapes",
+      "regions": [
+        "europe"
+      ],
+      "landlocked": true,
+      "island": false
+    },
+    {
       "iso": "ME",
       "un": "499",
       "subregion": "balkans",
@@ -1247,6 +2069,174 @@
       ],
       "landlocked": false,
       "island": false
+    },
+    {
+      "iso": "MK",
+      "un": "807",
+      "subregion": "balkans",
+      "fame": 2,
+      "micro": false,
+      "name": {
+        "ru": "Северная Македония",
+        "pl": "Macedonia Północna",
+        "en": "North Macedonia"
+      },
+      "capital": {
+        "ru": "Скопье",
+        "pl": "Skopje",
+        "en": "Skopje"
+      },
+      "capitalCoords": [
+        21.4254,
+        41.9973
+      ],
+      "fact": {
+        "ru": "Озеро Охрид одно из самых старых на Земле, ему больше миллиона лет.",
+        "pl": "Jezioro Ochrydzkie jest jednym z najstarszych na Ziemi, ma ponad milion lat.",
+        "en": "Lake Ohrid is one of the oldest lakes on Earth, over a million years old."
+      },
+      "symbol": "lake",
+      "regions": [
+        "europe"
+      ],
+      "landlocked": true,
+      "island": false
+    },
+    {
+      "iso": "MM",
+      "un": "104",
+      "regions": [
+        "asia"
+      ],
+      "subregion": "southeast",
+      "fame": 2,
+      "micro": false,
+      "landlocked": false,
+      "island": false,
+      "name": {
+        "ru": "Мьянма",
+        "pl": "Mjanma",
+        "en": "Myanmar"
+      },
+      "capital": {
+        "ru": "Нейпьидо",
+        "pl": "Naypyidaw",
+        "en": "Naypyidaw"
+      },
+      "capitalCoords": [
+        96.115,
+        19.7475
+      ]
+    },
+    {
+      "iso": "MN",
+      "un": "496",
+      "regions": [
+        "asia"
+      ],
+      "subregion": "east",
+      "fame": 1,
+      "micro": false,
+      "landlocked": true,
+      "island": false,
+      "name": {
+        "ru": "Монголия",
+        "pl": "Mongolia",
+        "en": "Mongolia"
+      },
+      "capital": {
+        "ru": "Улан-Батор",
+        "pl": "Ułan Bator",
+        "en": "Ulaanbaatar"
+      },
+      "capitalCoords": [
+        106.9055,
+        47.9214
+      ]
+    },
+    {
+      "iso": "MT",
+      "un": "470",
+      "subregion": "south",
+      "fame": 2,
+      "micro": true,
+      "name": {
+        "ru": "Мальта",
+        "pl": "Malta",
+        "en": "Malta"
+      },
+      "capital": {
+        "ru": "Валлетта",
+        "pl": "Valletta",
+        "en": "Valletta"
+      },
+      "capitalCoords": [
+        14.5146,
+        35.8989
+      ],
+      "fact": {
+        "ru": "Маленький остров, где стоят храмы старше египетских пирамид.",
+        "pl": "Mała wyspa, na której stoją świątynie starsze od egipskich piramid.",
+        "en": "A small island with temples older than the Egyptian pyramids."
+      },
+      "symbol": "boat",
+      "regions": [
+        "europe"
+      ],
+      "landlocked": false,
+      "island": true
+    },
+    {
+      "iso": "MV",
+      "un": "462",
+      "regions": [
+        "asia"
+      ],
+      "subregion": "south",
+      "fame": 3,
+      "micro": true,
+      "landlocked": false,
+      "island": true,
+      "name": {
+        "ru": "Мальдивы",
+        "pl": "Malediwy",
+        "en": "Maldives"
+      },
+      "capital": {
+        "ru": "Мале",
+        "pl": "Male",
+        "en": "Malé"
+      },
+      "capitalCoords": [
+        73.5083,
+        4.175
+      ]
+    },
+    {
+      "iso": "MY",
+      "un": "458",
+      "regions": [
+        "asia"
+      ],
+      "subregion": "southeast",
+      "fame": 1,
+      "micro": false,
+      "landlocked": false,
+      "island": false,
+      "name": {
+        "ru": "Малайзия",
+        "pl": "Malezja",
+        "en": "Malaysia"
+      },
+      "capital": {
+        "ru": "Куала-Лумпур",
+        "pl": "Kuala Lumpur",
+        "en": "Kuala Lumpur"
+      },
+      "capitalCoords": [
+        101.6869,
+        3.139
+      ]
     },
     {
       "iso": "NL",
@@ -1305,38 +2295,6 @@
         "europe"
       ],
       "landlocked": false,
-      "island": false
-    },
-    {
-      "iso": "MK",
-      "un": "807",
-      "subregion": "balkans",
-      "fame": 2,
-      "micro": false,
-      "name": {
-        "ru": "Северная Македония",
-        "pl": "Macedonia Północna",
-        "en": "North Macedonia"
-      },
-      "capital": {
-        "ru": "Скопье",
-        "pl": "Skopje",
-        "en": "Skopje"
-      },
-      "capitalCoords": [
-        21.4254,
-        41.9973
-      ],
-      "fact": {
-        "ru": "Озеро Охрид одно из самых старых на Земле, ему больше миллиона лет.",
-        "pl": "Jezioro Ochrydzkie jest jednym z najstarszych na Ziemi, ma ponad milion lat.",
-        "en": "Lake Ohrid is one of the oldest lakes on Earth, over a million years old."
-      },
-      "symbol": "lake",
-      "regions": [
-        "europe"
-      ],
-      "landlocked": true,
       "island": false
     },
     {
@@ -1399,6 +2357,110 @@
       "island": false
     },
     {
+      "iso": "NP",
+      "un": "524",
+      "regions": [
+        "asia"
+      ],
+      "subregion": "south",
+      "fame": 1,
+      "micro": false,
+      "landlocked": true,
+      "island": false,
+      "name": {
+        "ru": "Непал",
+        "pl": "Nepal",
+        "en": "Nepal"
+      },
+      "capital": {
+        "ru": "Катманду",
+        "pl": "Katmandu",
+        "en": "Kathmandu"
+      },
+      "capitalCoords": [
+        85.32,
+        27.71
+      ]
+    },
+    {
+      "iso": "OM",
+      "un": "512",
+      "regions": [
+        "asia"
+      ],
+      "subregion": "middle-east",
+      "fame": 2,
+      "micro": false,
+      "landlocked": false,
+      "island": false,
+      "name": {
+        "ru": "Оман",
+        "pl": "Oman",
+        "en": "Oman"
+      },
+      "capital": {
+        "ru": "Маскат",
+        "pl": "Maskat",
+        "en": "Muscat"
+      },
+      "capitalCoords": [
+        58.5922,
+        23.6139
+      ]
+    },
+    {
+      "iso": "PH",
+      "un": "608",
+      "regions": [
+        "asia"
+      ],
+      "subregion": "southeast",
+      "fame": 1,
+      "micro": false,
+      "landlocked": false,
+      "island": true,
+      "name": {
+        "ru": "Филиппины",
+        "pl": "Filipiny",
+        "en": "Philippines"
+      },
+      "capital": {
+        "ru": "Манила",
+        "pl": "Manila",
+        "en": "Manila"
+      },
+      "capitalCoords": [
+        120.9772,
+        14.5958
+      ]
+    },
+    {
+      "iso": "PK",
+      "un": "586",
+      "regions": [
+        "asia"
+      ],
+      "subregion": "south",
+      "fame": 1,
+      "micro": false,
+      "landlocked": false,
+      "island": false,
+      "name": {
+        "ru": "Пакистан",
+        "pl": "Pakistan",
+        "en": "Pakistan"
+      },
+      "capital": {
+        "ru": "Исламабад",
+        "pl": "Islamabad",
+        "en": "Islamabad"
+      },
+      "capitalCoords": [
+        73.0369,
+        33.6989
+      ]
+    },
+    {
       "iso": "PL",
       "un": "616",
       "subregion": "central",
@@ -1456,6 +2518,32 @@
       ],
       "landlocked": false,
       "island": false
+    },
+    {
+      "iso": "PS",
+      "un": "275",
+      "regions": [
+        "asia"
+      ],
+      "subregion": "middle-east",
+      "fame": 3,
+      "micro": false,
+      "landlocked": false,
+      "island": false,
+      "name": {
+        "ru": "Палестина",
+        "pl": "Palestyna",
+        "en": "Palestine"
+      },
+      "capital": {
+        "ru": "Рамалла",
+        "pl": "Ramallah",
+        "en": "Ramallah"
+      },
+      "capitalCoords": [
+        35.2033,
+        31.9038
+      ]
     },
     {
       "iso": "PT",
@@ -1517,6 +2605,32 @@
       "island": false
     },
     {
+      "iso": "QA",
+      "un": "634",
+      "regions": [
+        "asia"
+      ],
+      "subregion": "middle-east",
+      "fame": 2,
+      "micro": false,
+      "landlocked": false,
+      "island": false,
+      "name": {
+        "ru": "Катар",
+        "pl": "Katar",
+        "en": "Qatar"
+      },
+      "capital": {
+        "ru": "Доха",
+        "pl": "Doha",
+        "en": "Doha"
+      },
+      "capitalCoords": [
+        51.5294,
+        25.2861
+      ]
+    },
+    {
       "iso": "RO",
       "un": "642",
       "subregion": "east",
@@ -1546,6 +2660,38 @@
         "europe"
       ],
       "landlocked": false,
+      "island": false
+    },
+    {
+      "iso": "RS",
+      "un": "688",
+      "subregion": "balkans",
+      "fame": 2,
+      "micro": false,
+      "name": {
+        "ru": "Сербия",
+        "pl": "Serbia",
+        "en": "Serbia"
+      },
+      "capital": {
+        "ru": "Белград",
+        "pl": "Belgrad",
+        "en": "Belgrade"
+      },
+      "capitalCoords": [
+        20.4489,
+        44.7866
+      ],
+      "fact": {
+        "ru": "Белград стоит там, где две большие реки, Сава и Дунай, сливаются вместе.",
+        "pl": "Belgrad leży tam, gdzie dwie wielkie rzeki, Sawa i Dunaj, łączą się razem.",
+        "en": "Belgrade stands where two great rivers, the Sava and the Danube, meet."
+      },
+      "symbol": "eagle",
+      "regions": [
+        "europe"
+      ],
+      "landlocked": true,
       "island": false
     },
     {
@@ -1602,197 +2748,37 @@
         }
       ],
       "regions": [
-        "europe"
+        "europe",
+        "asia"
       ],
       "landlocked": false,
       "island": false
     },
     {
-      "iso": "SM",
-      "un": "674",
-      "subregion": "south",
-      "fame": 3,
-      "micro": true,
-      "name": {
-        "ru": "Сан-Марино",
-        "pl": "San Marino",
-        "en": "San Marino"
-      },
-      "capital": {
-        "ru": "Сан-Марино",
-        "pl": "San Marino",
-        "en": "San Marino"
-      },
-      "capitalCoords": [
-        12.4578,
-        43.9424
-      ],
-      "fact": {
-        "ru": "Самая старая республика в мире, ей больше 1700 лет. Она целиком внутри Италии.",
-        "pl": "Najstarsza republika świata, ma ponad 1700 lat. Leży w całości wewnątrz Włoch.",
-        "en": "The world's oldest republic, over 1,700 years old, sits entirely inside Italy."
-      },
-      "symbol": "towers",
+      "iso": "SA",
+      "un": "682",
       "regions": [
-        "europe"
+        "asia"
       ],
-      "landlocked": true,
-      "island": false
-    },
-    {
-      "iso": "RS",
-      "un": "688",
-      "subregion": "balkans",
-      "fame": 2,
-      "micro": false,
-      "name": {
-        "ru": "Сербия",
-        "pl": "Serbia",
-        "en": "Serbia"
-      },
-      "capital": {
-        "ru": "Белград",
-        "pl": "Belgrad",
-        "en": "Belgrade"
-      },
-      "capitalCoords": [
-        20.4489,
-        44.7866
-      ],
-      "fact": {
-        "ru": "Белград стоит там, где две большие реки, Сава и Дунай, сливаются вместе.",
-        "pl": "Belgrad leży tam, gdzie dwie wielkie rzeki, Sawa i Dunaj, łączą się razem.",
-        "en": "Belgrade stands where two great rivers, the Sava and the Danube, meet."
-      },
-      "symbol": "eagle",
-      "regions": [
-        "europe"
-      ],
-      "landlocked": true,
-      "island": false
-    },
-    {
-      "iso": "SK",
-      "un": "703",
-      "subregion": "central",
-      "fame": 2,
-      "micro": false,
-      "name": {
-        "ru": "Словакия",
-        "pl": "Słowacja",
-        "en": "Slovakia"
-      },
-      "capital": {
-        "ru": "Братислава",
-        "pl": "Bratysława",
-        "en": "Bratislava"
-      },
-      "capitalCoords": [
-        17.1077,
-        48.1486
-      ],
-      "fact": {
-        "ru": "Тут больше 6000 пещер и очень много старинных замков в горах.",
-        "pl": "Jest tu ponad 6000 jaskiń i bardzo dużo starych zamków w górach.",
-        "en": "There are over 6,000 caves here and a great many old castles in the mountains."
-      },
-      "symbol": "mountains",
-      "regions": [
-        "europe"
-      ],
-      "landlocked": true,
-      "island": false
-    },
-    {
-      "iso": "SI",
-      "un": "705",
-      "subregion": "central",
-      "fame": 2,
-      "micro": false,
-      "name": {
-        "ru": "Словения",
-        "pl": "Słowenia",
-        "en": "Slovenia"
-      },
-      "capital": {
-        "ru": "Любляна",
-        "pl": "Lublana",
-        "en": "Ljubljana"
-      },
-      "capitalCoords": [
-        14.5058,
-        46.0569
-      ],
-      "fact": {
-        "ru": "На озере Блед есть островок с церковью, туда плывут на лодке.",
-        "pl": "Na jeziorze Bled jest wysepka z kościołem, płynie się tam łódką.",
-        "en": "Lake Bled has a tiny island with a church that you reach by boat."
-      },
-      "symbol": "lake",
-      "regions": [
-        "europe"
-      ],
-      "landlocked": false,
-      "island": false
-    },
-    {
-      "iso": "ES",
-      "un": "724",
-      "subregion": "south",
+      "subregion": "middle-east",
       "fame": 1,
       "micro": false,
+      "landlocked": false,
+      "island": false,
       "name": {
-        "ru": "Испания",
-        "pl": "Hiszpania",
-        "en": "Spain"
+        "ru": "Саудовская Аравия",
+        "pl": "Arabia Saudyjska",
+        "en": "Saudi Arabia"
       },
       "capital": {
-        "ru": "Мадрид",
-        "pl": "Madryt",
-        "en": "Madrid"
+        "ru": "Эр-Рияд",
+        "pl": "Rijad",
+        "en": "Riyadh"
       },
       "capitalCoords": [
-        -3.7038,
-        40.4168
-      ],
-      "fact": {
-        "ru": "Собор Саграда Фамилия в Барселоне строят уже больше 140 лет.",
-        "pl": "Katedrę Sagrada Familia w Barcelonie buduje się już ponad 140 lat.",
-        "en": "The Sagrada Familia in Barcelona has been under construction for over 140 years."
-      },
-      "symbol": "bull",
-      "stories": [
-        {
-          "ru": "Базилику Саграда Фамилия в Барселоне строят больше ста сорока лет",
-          "pl": "Bazylikę Sagrada Familia w Barcelonie buduje się ponad sto czterdzieści lat",
-          "en": "The Sagrada Familia basilica in Barcelona has been under construction for over 140 years"
-        },
-        {
-          "ru": "В пещере Альтамира сохранились рисунки, которым больше четырнадцати тысяч лет",
-          "pl": "W jaskini Altamira zachowały się rysunki sprzed ponad czternastu tysięcy lat",
-          "en": "The Altamira cave holds paintings more than fourteen thousand years old"
-        },
-        {
-          "ru": "Испанский — второй язык в мире по числу тех, для кого он родной",
-          "pl": "Hiszpański jest drugim językiem świata pod względem liczby rodzimych użytkowników",
-          "en": "Spanish has the second most native speakers of any language"
-        },
-        {
-          "ru": "Дворец Альгамбра в Гранаде строили мавры больше семисот лет назад",
-          "pl": "Pałac Alhambra w Granadzie zbudowali Maurowie ponad siedemset lat temu",
-          "en": "The Alhambra palace in Granada was built by the Moors over seven hundred years ago"
-        },
-        {
-          "ru": "Художники Пикассо, Дали, Гойя и Веласкес — все испанцы",
-          "pl": "Malarze Picasso, Dalí, Goya i Velázquez byli Hiszpanami",
-          "en": "Picasso, Dali, Goya and Velazquez were all Spanish painters"
-        }
-      ],
-      "regions": [
-        "europe"
-      ],
-      "landlocked": false,
-      "island": false
+        46.71,
+        24.65
+      ]
     },
     {
       "iso": "SE",
@@ -1854,63 +2840,282 @@
       "island": false
     },
     {
-      "iso": "CH",
-      "un": "756",
-      "subregion": "central",
+      "iso": "SG",
+      "un": "702",
+      "regions": [
+        "asia"
+      ],
+      "subregion": "southeast",
       "fame": 1,
-      "micro": false,
+      "micro": true,
+      "landlocked": false,
+      "island": true,
       "name": {
-        "ru": "Швейцария",
-        "pl": "Szwajcaria",
-        "en": "Switzerland"
+        "ru": "Сингапур",
+        "pl": "Singapur",
+        "en": "Singapore"
       },
       "capital": {
-        "ru": "Берн",
-        "pl": "Berno",
-        "en": "Bern"
+        "ru": "Сингапур",
+        "pl": "Singapur",
+        "en": "Singapore"
       },
       "capitalCoords": [
-        7.4474,
-        46.948
+        103.8,
+        1.3
+      ]
+    },
+    {
+      "iso": "SI",
+      "un": "705",
+      "subregion": "central",
+      "fame": 2,
+      "micro": false,
+      "name": {
+        "ru": "Словения",
+        "pl": "Słowenia",
+        "en": "Slovenia"
+      },
+      "capital": {
+        "ru": "Любляна",
+        "pl": "Lublana",
+        "en": "Ljubljana"
+      },
+      "capitalCoords": [
+        14.5058,
+        46.0569
       ],
       "fact": {
-        "ru": "Страна часов, сыра и шоколада. У неё квадратный флаг, таких всего два в мире.",
-        "pl": "Kraj zegarków, sera i czekolady. Ma kwadratową flagę, takich są tylko dwie na świecie.",
-        "en": "Land of watches, cheese and chocolate. Its flag is square, one of only two in the world."
+        "ru": "На озере Блед есть островок с церковью, туда плывут на лодке.",
+        "pl": "Na jeziorze Bled jest wysepka z kościołem, płynie się tam łódką.",
+        "en": "Lake Bled has a tiny island with a church that you reach by boat."
       },
-      "symbol": "cheese",
-      "stories": [
-        {
-          "ru": "Страна не участвует в чужих войнах с 1815 года",
-          "pl": "Kraj nie bierze udziału w cudzych wojnach od 1815 roku",
-          "en": "The country has stayed out of other countries' wars since 1815"
-        },
-        {
-          "ru": "Молочный шоколад придумали здесь в XIX веке",
-          "pl": "Czekoladę mleczną wynaleziono tu w XIX wieku",
-          "en": "Milk chocolate was invented here in the 19th century"
-        },
-        {
-          "ru": "Флаг Швейцарии квадратный — таких в мире всего два",
-          "pl": "Flaga Szwajcarii jest kwadratowa, takich są na świecie tylko dwie",
-          "en": "The Swiss flag is square, one of only two in the world"
-        },
-        {
-          "ru": "Готардский базисный тоннель прорыт под Альпами на 57 километров",
-          "pl": "Tunel bazowy Gotarda przebito pod Alpami na 57 kilometrów",
-          "en": "The Gotthard Base Tunnel runs 57 kilometres under the Alps"
-        },
-        {
-          "ru": "В стране четыре национальных языка: немецкий, французский, итальянский и ретороманский",
-          "pl": "Kraj ma cztery języki narodowe: niemiecki, francuski, włoski i retoromański",
-          "en": "The country has four national languages: German, French, Italian and Romansh"
-        }
+      "symbol": "lake",
+      "regions": [
+        "europe"
       ],
+      "landlocked": false,
+      "island": false
+    },
+    {
+      "iso": "SK",
+      "un": "703",
+      "subregion": "central",
+      "fame": 2,
+      "micro": false,
+      "name": {
+        "ru": "Словакия",
+        "pl": "Słowacja",
+        "en": "Slovakia"
+      },
+      "capital": {
+        "ru": "Братислава",
+        "pl": "Bratysława",
+        "en": "Bratislava"
+      },
+      "capitalCoords": [
+        17.1077,
+        48.1486
+      ],
+      "fact": {
+        "ru": "Тут больше 6000 пещер и очень много старинных замков в горах.",
+        "pl": "Jest tu ponad 6000 jaskiń i bardzo dużo starych zamków w górach.",
+        "en": "There are over 6,000 caves here and a great many old castles in the mountains."
+      },
+      "symbol": "mountains",
       "regions": [
         "europe"
       ],
       "landlocked": true,
       "island": false
+    },
+    {
+      "iso": "SM",
+      "un": "674",
+      "subregion": "south",
+      "fame": 3,
+      "micro": true,
+      "name": {
+        "ru": "Сан-Марино",
+        "pl": "San Marino",
+        "en": "San Marino"
+      },
+      "capital": {
+        "ru": "Сан-Марино",
+        "pl": "San Marino",
+        "en": "San Marino"
+      },
+      "capitalCoords": [
+        12.4578,
+        43.9424
+      ],
+      "fact": {
+        "ru": "Самая старая республика в мире, ей больше 1700 лет. Она целиком внутри Италии.",
+        "pl": "Najstarsza republika świata, ma ponad 1700 lat. Leży w całości wewnątrz Włoch.",
+        "en": "The world's oldest republic, over 1,700 years old, sits entirely inside Italy."
+      },
+      "symbol": "towers",
+      "regions": [
+        "europe"
+      ],
+      "landlocked": true,
+      "island": false
+    },
+    {
+      "iso": "SY",
+      "un": "760",
+      "regions": [
+        "asia"
+      ],
+      "subregion": "middle-east",
+      "fame": 2,
+      "micro": false,
+      "landlocked": false,
+      "island": false,
+      "name": {
+        "ru": "Сирия",
+        "pl": "Syria",
+        "en": "Syria"
+      },
+      "capital": {
+        "ru": "Дамаск",
+        "pl": "Damaszek",
+        "en": "Damascus"
+      },
+      "capitalCoords": [
+        36.292,
+        33.513
+      ]
+    },
+    {
+      "iso": "TH",
+      "un": "764",
+      "regions": [
+        "asia"
+      ],
+      "subregion": "southeast",
+      "fame": 1,
+      "micro": false,
+      "landlocked": false,
+      "island": false,
+      "name": {
+        "ru": "Таиланд",
+        "pl": "Tajlandia",
+        "en": "Thailand"
+      },
+      "capital": {
+        "ru": "Бангкок",
+        "pl": "Bangkok",
+        "en": "Bangkok"
+      },
+      "capitalCoords": [
+        100.5167,
+        13.75
+      ]
+    },
+    {
+      "iso": "TJ",
+      "un": "762",
+      "regions": [
+        "asia"
+      ],
+      "subregion": "central",
+      "fame": 3,
+      "micro": false,
+      "landlocked": true,
+      "island": false,
+      "name": {
+        "ru": "Таджикистан",
+        "pl": "Tadżykistan",
+        "en": "Tajikistan"
+      },
+      "capital": {
+        "ru": "Душанбе",
+        "pl": "Duszanbe",
+        "en": "Dushanbe"
+      },
+      "capitalCoords": [
+        68.7864,
+        38.5731
+      ]
+    },
+    {
+      "iso": "TL",
+      "un": "626",
+      "regions": [
+        "asia"
+      ],
+      "subregion": "southeast",
+      "fame": 3,
+      "micro": false,
+      "landlocked": false,
+      "island": true,
+      "name": {
+        "ru": "Восточный Тимор",
+        "pl": "Timor Wschodni",
+        "en": "Timor-Leste"
+      },
+      "capital": {
+        "ru": "Дили",
+        "pl": "Dili",
+        "en": "Dili"
+      },
+      "capitalCoords": [
+        125.5783,
+        -8.5536
+      ]
+    },
+    {
+      "iso": "TM",
+      "un": "795",
+      "regions": [
+        "asia"
+      ],
+      "subregion": "central",
+      "fame": 3,
+      "micro": false,
+      "landlocked": true,
+      "island": false,
+      "name": {
+        "ru": "Туркменистан",
+        "pl": "Turkmenistan",
+        "en": "Turkmenistan"
+      },
+      "capital": {
+        "ru": "Ашхабад",
+        "pl": "Aszchabad",
+        "en": "Ashgabat"
+      },
+      "capitalCoords": [
+        58.3833,
+        37.95
+      ]
+    },
+    {
+      "iso": "TR",
+      "un": "792",
+      "regions": [
+        "asia"
+      ],
+      "subregion": "middle-east",
+      "fame": 1,
+      "micro": false,
+      "landlocked": false,
+      "island": false,
+      "name": {
+        "ru": "Турция",
+        "pl": "Turcja",
+        "en": "Turkey"
+      },
+      "capital": {
+        "ru": "Анкара",
+        "pl": "Ankara",
+        "en": "Ankara"
+      },
+      "capitalCoords": [
+        32.8387,
+        39.9358
+      ]
     },
     {
       "iso": "UA",
@@ -1972,63 +3177,30 @@
       "island": false
     },
     {
-      "iso": "GB",
-      "un": "826",
-      "subregion": "west",
-      "fame": 1,
+      "iso": "UZ",
+      "un": "860",
+      "regions": [
+        "asia"
+      ],
+      "subregion": "central",
+      "fame": 2,
       "micro": false,
+      "landlocked": true,
+      "island": false,
       "name": {
-        "ru": "Великобритания",
-        "pl": "Wielka Brytania",
-        "en": "United Kingdom"
+        "ru": "Узбекистан",
+        "pl": "Uzbekistan",
+        "en": "Uzbekistan"
       },
       "capital": {
-        "ru": "Лондон",
-        "pl": "Londyn",
-        "en": "London"
+        "ru": "Ташкент",
+        "pl": "Taszkent",
+        "en": "Tashkent"
       },
       "capitalCoords": [
-        -0.1276,
-        51.5074
-      ],
-      "fact": {
-        "ru": "Страна из четырёх частей на островах. Тут ездят по левой стороне дороги.",
-        "pl": "Kraj z czterech części na wyspach. Jeździ się tu lewą stroną drogi.",
-        "en": "A country of four parts on islands, where cars drive on the left."
-      },
-      "symbol": "bigben",
-      "stories": [
-        {
-          "ru": "Биг-Бен — это название колокола, а не самой башни",
-          "pl": "Big Ben to nazwa dzwonu, a nie samej wieży",
-          "en": "Big Ben is the name of the bell, not the tower"
-        },
-        {
-          "ru": "Стоунхендж поставили около пяти тысяч лет назад, и как — точно неизвестно",
-          "pl": "Stonehenge postawiono około pięciu tysięcy lat temu, a jak, do dziś nie wiadomo",
-          "en": "Stonehenge was raised about five thousand years ago, and nobody is sure how"
-        },
-        {
-          "ru": "Здесь ездят по левой стороне дороги",
-          "pl": "Jeździ się tu lewą stroną drogi",
-          "en": "Cars here drive on the left"
-        },
-        {
-          "ru": "Лондонское метро — старейшее в мире, открыто в 1863 году",
-          "pl": "Metro w Londynie jest najstarsze na świecie, otwarte w 1863 roku",
-          "en": "The London Underground is the oldest metro in the world, opened in 1863"
-        },
-        {
-          "ru": "Страна состоит из четырёх частей: Англии, Шотландии, Уэльса и Северной Ирландии",
-          "pl": "Kraj składa się z czterech części: Anglii, Szkocji, Walii i Irlandii Północnej",
-          "en": "The country is made of four parts: England, Scotland, Wales and Northern Ireland"
-        }
-      ],
-      "regions": [
-        "europe"
-      ],
-      "landlocked": false,
-      "island": true
+        69.2797,
+        41.3111
+      ]
     },
     {
       "iso": "VA",
@@ -2061,6 +3233,58 @@
       ],
       "landlocked": true,
       "island": false
+    },
+    {
+      "iso": "VN",
+      "un": "704",
+      "regions": [
+        "asia"
+      ],
+      "subregion": "southeast",
+      "fame": 1,
+      "micro": false,
+      "landlocked": false,
+      "island": false,
+      "name": {
+        "ru": "Вьетнам",
+        "pl": "Wietnam",
+        "en": "Vietnam"
+      },
+      "capital": {
+        "ru": "Ханой",
+        "pl": "Hanoi",
+        "en": "Hanoi"
+      },
+      "capitalCoords": [
+        105.8412,
+        21.0245
+      ]
+    },
+    {
+      "iso": "YE",
+      "un": "887",
+      "regions": [
+        "asia"
+      ],
+      "subregion": "middle-east",
+      "fame": 2,
+      "micro": false,
+      "landlocked": false,
+      "island": false,
+      "name": {
+        "ru": "Йемен",
+        "pl": "Jemen",
+        "en": "Yemen"
+      },
+      "capital": {
+        "ru": "Сана",
+        "pl": "Sana",
+        "en": "Sanaa"
+      },
+      "capitalCoords": [
+        44.2067,
+        15.3547
+      ]
     }
   ]
 }

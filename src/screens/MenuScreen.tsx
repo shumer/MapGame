@@ -1,4 +1,4 @@
-import { countriesOf, type Lang, type Region } from '../data'
+import { continentById, countriesOf, type Lang, type Region } from '../data'
 import { PRESETS, type GameMode, type Profile } from '../game/types'
 import { LANG_NAMES, t, type UiKey } from '../i18n/ui'
 import { useProfiles } from '../store/profiles'
@@ -24,10 +24,12 @@ export function MenuScreen({
   profile,
   region,
   onPlay,
+  onChangeRegion,
 }: {
   profile: Profile
   region: Region
   onPlay: (mode: GameMode) => void
+  onChangeRegion: () => void
 }) {
   const { select, setLangs } = useProfiles()
   const ui = profile.uiLang
@@ -61,6 +63,13 @@ export function MenuScreen({
           {t('back', ui)}
         </button>
       </header>
+
+      {/* Which part of the world this is. Tapping it goes back to the picture
+          chooser, which is how a child who cannot read gets around. */}
+      <button className="menu-place" onClick={onChangeRegion}>
+        <b>{continentById(region).name[ui]}</b>
+        <span>{t('changePlace', ui)}</span>
+      </button>
 
       <div className="menu-modes">
         {preset.modes.map((mode) => (

@@ -1,5 +1,35 @@
 {
   "europe": {
+    "AD": {
+      "focus": [
+        1.422,
+        42.436,
+        1.782,
+        42.643
+      ],
+      "near": [
+        "FR",
+        "ES",
+        "MC",
+        "CH",
+        "LI",
+        "PT"
+      ],
+      "borders": [
+        "FR",
+        "ES"
+      ],
+      "color": 2,
+      "facts": [
+        {
+          "kind": "neighbours",
+          "count": 2
+        },
+        {
+          "kind": "landlocked"
+        }
+      ]
+    },
     "AL": {
       "focus": [
         19.28,
@@ -32,36 +62,6 @@
         {
           "kind": "area",
           "km2": 28000
-        }
-      ]
-    },
-    "AD": {
-      "focus": [
-        1.422,
-        42.436,
-        1.782,
-        42.643
-      ],
-      "near": [
-        "FR",
-        "ES",
-        "MC",
-        "CH",
-        "LI",
-        "PT"
-      ],
-      "borders": [
-        "FR",
-        "ES"
-      ],
-      "color": 2,
-      "facts": [
-        {
-          "kind": "neighbours",
-          "count": 2
-        },
-        {
-          "kind": "landlocked"
         }
       ]
     },
@@ -109,40 +109,38 @@
         }
       ]
     },
-    "BY": {
+    "BA": {
       "focus": [
-        23.168,
-        51.233,
-        32.709,
-        56.164
+        15.716,
+        42.56,
+        19.604,
+        45.281
       ],
       "near": [
-        "UA",
-        "LT",
-        "RU",
-        "LV",
-        "PL",
-        "EE"
+        "RS",
+        "HR",
+        "ME",
+        "SI",
+        "HU",
+        "AL"
       ],
       "borders": [
-        "UA",
-        "LT",
-        "RU",
-        "LV",
-        "PL"
+        "RS",
+        "HR",
+        "ME"
       ],
       "color": 3,
       "facts": [
         {
           "kind": "neighbours",
-          "count": 5
+          "count": 3
         },
         {
-          "kind": "landlocked"
+          "kind": "coast"
         },
         {
           "kind": "area",
-          "km2": 207000
+          "km2": 52000
         }
       ]
     },
@@ -182,41 +180,6 @@
         }
       ]
     },
-    "BA": {
-      "focus": [
-        15.716,
-        42.56,
-        19.604,
-        45.281
-      ],
-      "near": [
-        "RS",
-        "HR",
-        "ME",
-        "SI",
-        "HU",
-        "AL"
-      ],
-      "borders": [
-        "RS",
-        "HR",
-        "ME"
-      ],
-      "color": 3,
-      "facts": [
-        {
-          "kind": "neighbours",
-          "count": 3
-        },
-        {
-          "kind": "coast"
-        },
-        {
-          "kind": "area",
-          "km2": 52000
-        }
-      ]
-    },
     "BG": {
       "focus": [
         22.34,
@@ -253,27 +216,64 @@
         }
       ]
     },
-    "HR": {
+    "BY": {
       "focus": [
-        13.519,
-        42.422,
-        19.424,
-        46.551
+        23.168,
+        51.233,
+        32.709,
+        56.164
       ],
       "near": [
-        "HU",
-        "RS",
-        "SI",
-        "ME",
-        "BA",
-        "AT"
+        "UA",
+        "LT",
+        "RU",
+        "LV",
+        "PL",
+        "EE"
       ],
       "borders": [
-        "HU",
-        "RS",
-        "SI",
-        "ME",
-        "BA"
+        "UA",
+        "LT",
+        "RU",
+        "LV",
+        "PL"
+      ],
+      "color": 3,
+      "facts": [
+        {
+          "kind": "neighbours",
+          "count": 5
+        },
+        {
+          "kind": "landlocked"
+        },
+        {
+          "kind": "area",
+          "km2": 207000
+        }
+      ]
+    },
+    "CH": {
+      "focus": [
+        5.959,
+        45.819,
+        10.459,
+        47.794
+      ],
+      "near": [
+        "FR",
+        "DE",
+        "AT",
+        "IT",
+        "LI",
+        "MC"
+      ],
+      "borders": [
+        "FR",
+        "DE",
+        "AT",
+        "IT",
+        "LI"
       ],
       "color": 2,
       "facts": [
@@ -282,11 +282,11 @@
           "count": 5
         },
         {
-          "kind": "coast"
+          "kind": "landlocked"
         },
         {
           "kind": "area",
-          "km2": 55000
+          "km2": 41000
         }
       ]
     },
@@ -362,6 +362,51 @@
         }
       ]
     },
+    "DE": {
+      "focus": [
+        5.851,
+        47.27,
+        15.032,
+        54.907
+      ],
+      "near": [
+        "FR",
+        "CZ",
+        "LU",
+        "BE",
+        "DK",
+        "PL"
+      ],
+      "borders": [
+        "FR",
+        "CZ",
+        "LU",
+        "BE",
+        "DK",
+        "PL",
+        "AT",
+        "CH",
+        "NL"
+      ],
+      "color": 0,
+      "facts": [
+        {
+          "kind": "neighbours",
+          "count": 9
+        },
+        {
+          "kind": "manyNeighbours",
+          "count": 9
+        },
+        {
+          "kind": "coast"
+        },
+        {
+          "kind": "area",
+          "km2": 356000
+        }
+      ]
+    },
     "DK": {
       "focus": [
         8.083,
@@ -426,6 +471,41 @@
         {
           "kind": "area",
           "km2": 46000
+        }
+      ]
+    },
+    "ES": {
+      "focus": [
+        -9.307,
+        36,
+        3.474,
+        43.789
+      ],
+      "near": [
+        "FR",
+        "AD",
+        "PT",
+        "MC",
+        "CH",
+        "LU"
+      ],
+      "borders": [
+        "FR",
+        "AD",
+        "PT"
+      ],
+      "color": 0,
+      "facts": [
+        {
+          "kind": "neighbours",
+          "count": 3
+        },
+        {
+          "kind": "coast"
+        },
+        {
+          "kind": "area",
+          "km2": 506000
         }
       ]
     },
@@ -512,48 +592,36 @@
         }
       ]
     },
-    "DE": {
+    "GB": {
       "focus": [
-        5.851,
-        47.27,
-        15.032,
-        54.907
+        -8.191,
+        49.963,
+        1.782,
+        60.639
       ],
       "near": [
-        "FR",
-        "CZ",
-        "LU",
+        "IE",
+        "NL",
         "BE",
+        "LU",
         "DK",
-        "PL"
+        "FR"
       ],
       "borders": [
-        "FR",
-        "CZ",
-        "LU",
-        "BE",
-        "DK",
-        "PL",
-        "AT",
-        "CH",
-        "NL"
+        "IE"
       ],
       "color": 0,
       "facts": [
         {
           "kind": "neighbours",
-          "count": 9
+          "count": 1
         },
         {
-          "kind": "manyNeighbours",
-          "count": 9
-        },
-        {
-          "kind": "coast"
+          "kind": "island"
         },
         {
           "kind": "area",
-          "km2": 356000
+          "km2": 243000
         }
       ]
     },
@@ -589,6 +657,43 @@
         {
           "kind": "area",
           "km2": 131000
+        }
+      ]
+    },
+    "HR": {
+      "focus": [
+        13.519,
+        42.422,
+        19.424,
+        46.551
+      ],
+      "near": [
+        "HU",
+        "RS",
+        "SI",
+        "ME",
+        "BA",
+        "AT"
+      ],
+      "borders": [
+        "HU",
+        "RS",
+        "SI",
+        "ME",
+        "BA"
+      ],
+      "color": 2,
+      "facts": [
+        {
+          "kind": "neighbours",
+          "count": 5
+        },
+        {
+          "kind": "coast"
+        },
+        {
+          "kind": "area",
+          "km2": 55000
         }
       ]
     },
@@ -635,6 +740,39 @@
         }
       ]
     },
+    "IE": {
+      "focus": [
+        -10.495,
+        51.44,
+        -5.995,
+        55.39
+      ],
+      "near": [
+        "GB",
+        "BE",
+        "NL",
+        "LU",
+        "FR",
+        "DK"
+      ],
+      "borders": [
+        "GB"
+      ],
+      "color": 1,
+      "facts": [
+        {
+          "kind": "neighbours",
+          "count": 1
+        },
+        {
+          "kind": "island"
+        },
+        {
+          "kind": "area",
+          "km2": 69000
+        }
+      ]
+    },
     "IS": {
       "focus": [
         -24.536,
@@ -668,39 +806,6 @@
         },
         {
           "kind": "northernCapital"
-        }
-      ]
-    },
-    "IE": {
-      "focus": [
-        -10.495,
-        51.44,
-        -5.995,
-        55.39
-      ],
-      "near": [
-        "GB",
-        "BE",
-        "NL",
-        "LU",
-        "FR",
-        "DK"
-      ],
-      "borders": [
-        "GB"
-      ],
-      "color": 0,
-      "facts": [
-        {
-          "kind": "neighbours",
-          "count": 1
-        },
-        {
-          "kind": "island"
-        },
-        {
-          "kind": "area",
-          "km2": 69000
         }
       ]
     },
@@ -739,42 +844,6 @@
         {
           "kind": "area",
           "km2": 301000
-        }
-      ]
-    },
-    "LV": {
-      "focus": [
-        20.972,
-        55.667,
-        28.209,
-        58.07
-      ],
-      "near": [
-        "BY",
-        "LT",
-        "RU",
-        "EE",
-        "PL",
-        "SE"
-      ],
-      "borders": [
-        "BY",
-        "LT",
-        "RU",
-        "EE"
-      ],
-      "color": 1,
-      "facts": [
-        {
-          "kind": "neighbours",
-          "count": 4
-        },
-        {
-          "kind": "coast"
-        },
-        {
-          "kind": "area",
-          "km2": 64000
         }
       ]
     },
@@ -875,29 +944,72 @@
         }
       ]
     },
-    "MT": {
+    "LV": {
       "focus": [
-        14.167,
-        35.806,
-        14.563,
-        36.069
+        20.972,
+        55.667,
+        28.209,
+        58.07
       ],
       "near": [
-        "VA",
-        "AL",
-        "IT",
-        "GR",
-        "ME",
-        "MK"
+        "BY",
+        "LT",
+        "RU",
+        "EE",
+        "PL",
+        "SE"
       ],
-      "borders": [],
+      "borders": [
+        "BY",
+        "LT",
+        "RU",
+        "EE"
+      ],
+      "color": 1,
+      "facts": [
+        {
+          "kind": "neighbours",
+          "count": 4
+        },
+        {
+          "kind": "coast"
+        },
+        {
+          "kind": "area",
+          "km2": 64000
+        }
+      ]
+    },
+    "MC": {
+      "focus": [
+        7.363,
+        43.72,
+        7.435,
+        43.762
+      ],
+      "near": [
+        "FR",
+        "CH",
+        "SM",
+        "IT",
+        "LI",
+        "VA"
+      ],
+      "borders": [
+        "FR"
+      ],
       "color": 0,
       "facts": [
         {
-          "kind": "noNeighbours"
+          "kind": "neighbours",
+          "count": 1
         },
         {
-          "kind": "island"
+          "kind": "coast"
+        },
+        {
+          "kind": "smallest",
+          "rank": 2
         }
       ]
     },
@@ -932,39 +1044,6 @@
         {
           "kind": "area",
           "km2": 33000
-        }
-      ]
-    },
-    "MC": {
-      "focus": [
-        7.363,
-        43.72,
-        7.435,
-        43.762
-      ],
-      "near": [
-        "FR",
-        "CH",
-        "SM",
-        "IT",
-        "LI",
-        "VA"
-      ],
-      "borders": [
-        "FR"
-      ],
-      "color": 0,
-      "facts": [
-        {
-          "kind": "neighbours",
-          "count": 1
-        },
-        {
-          "kind": "coast"
-        },
-        {
-          "kind": "smallest",
-          "rank": 2
         }
       ]
     },
@@ -1004,40 +1083,6 @@
         }
       ]
     },
-    "NL": {
-      "focus": [
-        3.366,
-        50.75,
-        7.183,
-        53.457
-      ],
-      "near": [
-        "DE",
-        "BE",
-        "LU",
-        "DK",
-        "GB",
-        "CH"
-      ],
-      "borders": [
-        "DE",
-        "BE"
-      ],
-      "color": 1,
-      "facts": [
-        {
-          "kind": "neighbours",
-          "count": 2
-        },
-        {
-          "kind": "coast"
-        },
-        {
-          "kind": "area",
-          "km2": 37000
-        }
-      ]
-    },
     "MK": {
       "focus": [
         20.432,
@@ -1071,6 +1116,66 @@
         {
           "kind": "area",
           "km2": 25000
+        }
+      ]
+    },
+    "MT": {
+      "focus": [
+        14.167,
+        35.806,
+        14.563,
+        36.069
+      ],
+      "near": [
+        "VA",
+        "AL",
+        "IT",
+        "GR",
+        "ME",
+        "MK"
+      ],
+      "borders": [],
+      "color": 0,
+      "facts": [
+        {
+          "kind": "noNeighbours"
+        },
+        {
+          "kind": "island"
+        }
+      ]
+    },
+    "NL": {
+      "focus": [
+        3.366,
+        50.75,
+        7.183,
+        53.457
+      ],
+      "near": [
+        "DE",
+        "BE",
+        "LU",
+        "DK",
+        "GB",
+        "CH"
+      ],
+      "borders": [
+        "DE",
+        "BE"
+      ],
+      "color": 1,
+      "facts": [
+        {
+          "kind": "neighbours",
+          "count": 2
+        },
+        {
+          "kind": "coast"
+        },
+        {
+          "kind": "area",
+          "km2": 37000
         }
       ]
     },
@@ -1225,6 +1330,49 @@
         }
       ]
     },
+    "RS": {
+      "focus": [
+        18.848,
+        42.229,
+        22.988,
+        46.178
+      ],
+      "near": [
+        "MK",
+        "RO",
+        "HU",
+        "HR",
+        "BG",
+        "ME"
+      ],
+      "borders": [
+        "MK",
+        "RO",
+        "HU",
+        "HR",
+        "BG",
+        "ME",
+        "BA"
+      ],
+      "color": 1,
+      "facts": [
+        {
+          "kind": "neighbours",
+          "count": 7
+        },
+        {
+          "kind": "manyNeighbours",
+          "count": 7
+        },
+        {
+          "kind": "landlocked"
+        },
+        {
+          "kind": "area",
+          "km2": 77000
+        }
+      ]
+    },
     "RU": {
       "focus": [
         19,
@@ -1276,79 +1424,73 @@
         }
       ]
     },
-    "SM": {
+    "SE": {
       "focus": [
-        12.403,
-        43.886,
-        12.511,
-        43.983
+        11.107,
+        55.335,
+        24.176,
+        69.036
       ],
       "near": [
-        "IT",
-        "VA",
-        "SI",
-        "HR",
-        "MC",
-        "LI"
+        "NO",
+        "FI",
+        "EE",
+        "LV",
+        "DK",
+        "LT"
       ],
       "borders": [
-        "IT"
+        "NO",
+        "FI"
       ],
-      "color": 1,
+      "color": 0,
       "facts": [
         {
           "kind": "neighbours",
-          "count": 1
+          "count": 2
         },
         {
-          "kind": "landlocked"
-        },
-        {
-          "kind": "smallest",
-          "rank": 3
-        }
-      ]
-    },
-    "RS": {
-      "focus": [
-        18.848,
-        42.229,
-        22.988,
-        46.178
-      ],
-      "near": [
-        "MK",
-        "RO",
-        "HU",
-        "HR",
-        "BG",
-        "ME"
-      ],
-      "borders": [
-        "MK",
-        "RO",
-        "HU",
-        "HR",
-        "BG",
-        "ME",
-        "BA"
-      ],
-      "color": 1,
-      "facts": [
-        {
-          "kind": "neighbours",
-          "count": 7
-        },
-        {
-          "kind": "manyNeighbours",
-          "count": 7
-        },
-        {
-          "kind": "landlocked"
+          "kind": "coast"
         },
         {
           "kind": "area",
-          "km2": 77000
+          "km2": 444000
+        }
+      ]
+    },
+    "SI": {
+      "focus": [
+        13.375,
+        45.419,
+        16.508,
+        46.869
+      ],
+      "near": [
+        "HU",
+        "AT",
+        "IT",
+        "HR",
+        "SM",
+        "BA"
+      ],
+      "borders": [
+        "HU",
+        "AT",
+        "IT",
+        "HR"
+      ],
+      "color": 3,
+      "facts": [
+        {
+          "kind": "neighbours",
+          "count": 4
+        },
+        {
+          "kind": "coast"
+        },
+        {
+          "kind": "area",
+          "km2": 20000
         }
       ]
     },
@@ -1389,145 +1531,36 @@
         }
       ]
     },
-    "SI": {
+    "SM": {
       "focus": [
-        13.375,
-        45.419,
-        16.508,
-        46.869
+        12.403,
+        43.886,
+        12.511,
+        43.983
       ],
       "near": [
-        "HU",
-        "AT",
         "IT",
+        "VA",
+        "SI",
         "HR",
-        "SM",
-        "BA"
-      ],
-      "borders": [
-        "HU",
-        "AT",
-        "IT",
-        "HR"
-      ],
-      "color": 3,
-      "facts": [
-        {
-          "kind": "neighbours",
-          "count": 4
-        },
-        {
-          "kind": "coast"
-        },
-        {
-          "kind": "area",
-          "km2": 20000
-        }
-      ]
-    },
-    "ES": {
-      "focus": [
-        -9.307,
-        36,
-        3.474,
-        43.789
-      ],
-      "near": [
-        "FR",
-        "AD",
-        "PT",
         "MC",
-        "CH",
-        "LU"
-      ],
-      "borders": [
-        "FR",
-        "AD",
-        "PT"
-      ],
-      "color": 0,
-      "facts": [
-        {
-          "kind": "neighbours",
-          "count": 3
-        },
-        {
-          "kind": "coast"
-        },
-        {
-          "kind": "area",
-          "km2": 506000
-        }
-      ]
-    },
-    "SE": {
-      "focus": [
-        11.107,
-        55.335,
-        24.176,
-        69.036
-      ],
-      "near": [
-        "NO",
-        "FI",
-        "EE",
-        "LV",
-        "DK",
-        "LT"
-      ],
-      "borders": [
-        "NO",
-        "FI"
-      ],
-      "color": 0,
-      "facts": [
-        {
-          "kind": "neighbours",
-          "count": 2
-        },
-        {
-          "kind": "coast"
-        },
-        {
-          "kind": "area",
-          "km2": 444000
-        }
-      ]
-    },
-    "CH": {
-      "focus": [
-        5.959,
-        45.819,
-        10.459,
-        47.794
-      ],
-      "near": [
-        "FR",
-        "DE",
-        "AT",
-        "IT",
-        "LI",
-        "MC"
-      ],
-      "borders": [
-        "FR",
-        "DE",
-        "AT",
-        "IT",
         "LI"
       ],
-      "color": 2,
+      "borders": [
+        "IT"
+      ],
+      "color": 1,
       "facts": [
         {
           "kind": "neighbours",
-          "count": 5
+          "count": 1
         },
         {
           "kind": "landlocked"
         },
         {
-          "kind": "area",
-          "km2": 41000
+          "kind": "smallest",
+          "rank": 3
         }
       ]
     },
@@ -1578,39 +1611,6 @@
         }
       ]
     },
-    "GB": {
-      "focus": [
-        -8.191,
-        49.963,
-        1.782,
-        60.639
-      ],
-      "near": [
-        "IE",
-        "NL",
-        "BE",
-        "LU",
-        "DK",
-        "FR"
-      ],
-      "borders": [
-        "IE"
-      ],
-      "color": 1,
-      "facts": [
-        {
-          "kind": "neighbours",
-          "count": 1
-        },
-        {
-          "kind": "island"
-        },
-        {
-          "kind": "area",
-          "km2": 243000
-        }
-      ]
-    },
     "VA": {
       "focus": [
         11.953,
@@ -1641,6 +1641,1768 @@
         {
           "kind": "smallest",
           "rank": 1
+        }
+      ]
+    }
+  },
+  "asia": {
+    "AE": {
+      "focus": [
+        51.575,
+        22.62,
+        56.4,
+        26.076
+      ],
+      "near": [
+        "OM",
+        "SA",
+        "QA",
+        "BH",
+        "KW",
+        "IR"
+      ],
+      "borders": [
+        "OM",
+        "SA"
+      ],
+      "color": 2,
+      "facts": [
+        {
+          "kind": "neighbours",
+          "count": 2
+        },
+        {
+          "kind": "coast"
+        },
+        {
+          "kind": "area",
+          "km2": 71000
+        }
+      ]
+    },
+    "AF": {
+      "focus": [
+        60.468,
+        29.383,
+        74.905,
+        38.468
+      ],
+      "near": [
+        "CN",
+        "PK",
+        "UZ",
+        "TJ",
+        "IR",
+        "TM"
+      ],
+      "borders": [
+        "CN",
+        "PK",
+        "UZ",
+        "TJ",
+        "IR",
+        "TM"
+      ],
+      "color": 1,
+      "facts": [
+        {
+          "kind": "neighbours",
+          "count": 6
+        },
+        {
+          "kind": "landlocked"
+        },
+        {
+          "kind": "area",
+          "km2": 642000
+        }
+      ]
+    },
+    "AM": {
+      "focus": [
+        43.438,
+        38.864,
+        46.607,
+        41.296
+      ],
+      "near": [
+        "GE",
+        "AZ",
+        "TR",
+        "IR",
+        "IQ",
+        "SY"
+      ],
+      "borders": [
+        "GE",
+        "AZ",
+        "TR",
+        "IR"
+      ],
+      "color": 1,
+      "facts": [
+        {
+          "kind": "neighbours",
+          "count": 4
+        },
+        {
+          "kind": "landlocked"
+        },
+        {
+          "kind": "area",
+          "km2": 30000
+        }
+      ]
+    },
+    "AZ": {
+      "focus": [
+        44.77,
+        38.386,
+        50.387,
+        41.897
+      ],
+      "near": [
+        "RU",
+        "GE",
+        "TR",
+        "AM",
+        "IR",
+        "IQ"
+      ],
+      "borders": [
+        "RU",
+        "GE",
+        "TR",
+        "AM",
+        "IR"
+      ],
+      "color": 3,
+      "facts": [
+        {
+          "kind": "neighbours",
+          "count": 5
+        },
+        {
+          "kind": "landlocked"
+        },
+        {
+          "kind": "area",
+          "km2": 86000
+        }
+      ]
+    },
+    "BD": {
+      "focus": [
+        88.011,
+        20.734,
+        92.655,
+        26.623
+      ],
+      "near": [
+        "IN",
+        "MM",
+        "BT",
+        "NP",
+        "TH",
+        "LA"
+      ],
+      "borders": [
+        "IN",
+        "MM"
+      ],
+      "color": 0,
+      "facts": [
+        {
+          "kind": "neighbours",
+          "count": 2
+        },
+        {
+          "kind": "coast"
+        },
+        {
+          "kind": "area",
+          "km2": 137000
+        }
+      ]
+    },
+    "BH": {
+      "focus": [
+        50.459,
+        25.789,
+        50.639,
+        26.24
+      ],
+      "near": [
+        "QA",
+        "AE",
+        "KW",
+        "SA",
+        "IR",
+        "OM"
+      ],
+      "borders": [],
+      "color": 0,
+      "facts": [
+        {
+          "kind": "noNeighbours"
+        },
+        {
+          "kind": "island"
+        },
+        {
+          "kind": "smallest",
+          "rank": 3
+        }
+      ]
+    },
+    "BN": {
+      "focus": [
+        114.005,
+        4.012,
+        115.374,
+        5.064
+      ],
+      "near": [
+        "MY",
+        "ID",
+        "PH",
+        "SG",
+        "KH",
+        "VN"
+      ],
+      "borders": [
+        "MY"
+      ],
+      "color": 0,
+      "facts": [
+        {
+          "kind": "neighbours",
+          "count": 1
+        },
+        {
+          "kind": "coast"
+        },
+        {
+          "kind": "area",
+          "km2": 6000
+        }
+      ]
+    },
+    "BT": {
+      "focus": [
+        88.731,
+        26.691,
+        92.079,
+        28.358
+      ],
+      "near": [
+        "IN",
+        "CN",
+        "BD",
+        "NP",
+        "MM",
+        "LA"
+      ],
+      "borders": [
+        "IN",
+        "CN"
+      ],
+      "color": 2,
+      "facts": [
+        {
+          "kind": "neighbours",
+          "count": 2
+        },
+        {
+          "kind": "landlocked"
+        },
+        {
+          "kind": "area",
+          "km2": 40000
+        }
+      ]
+    },
+    "CN": {
+      "focus": [
+        73.609,
+        20.242,
+        134.779,
+        53.565
+      ],
+      "near": [
+        "IN",
+        "PK",
+        "KP",
+        "BT",
+        "KZ",
+        "TJ"
+      ],
+      "borders": [
+        "IN",
+        "PK",
+        "KP",
+        "BT",
+        "KZ",
+        "TJ",
+        "MN",
+        "RU",
+        "VN",
+        "LA",
+        "KG",
+        "MM",
+        "AF",
+        "NP"
+      ],
+      "color": 0,
+      "facts": [
+        {
+          "kind": "neighbours",
+          "count": 14
+        },
+        {
+          "kind": "manyNeighbours",
+          "count": 14
+        },
+        {
+          "kind": "coast"
+        },
+        {
+          "kind": "biggest",
+          "rank": 2
+        },
+        {
+          "kind": "area",
+          "km2": 9373000
+        }
+      ]
+    },
+    "CY": {
+      "focus": [
+        32.277,
+        34.629,
+        34.113,
+        35.189
+      ],
+      "near": [
+        "LB",
+        "PS",
+        "IL",
+        "SY",
+        "TR",
+        "JO"
+      ],
+      "borders": [],
+      "color": 0,
+      "facts": [
+        {
+          "kind": "noNeighbours"
+        },
+        {
+          "kind": "island"
+        },
+        {
+          "kind": "area",
+          "km2": 5000
+        }
+      ]
+    },
+    "GE": {
+      "focus": [
+        39.982,
+        41.05,
+        46.679,
+        43.578
+      ],
+      "near": [
+        "RU",
+        "AZ",
+        "TR",
+        "AM",
+        "SY",
+        "IQ"
+      ],
+      "borders": [
+        "RU",
+        "AZ",
+        "TR",
+        "AM"
+      ],
+      "color": 0,
+      "facts": [
+        {
+          "kind": "neighbours",
+          "count": 4
+        },
+        {
+          "kind": "coast"
+        },
+        {
+          "kind": "area",
+          "km2": 69000
+        }
+      ]
+    },
+    "ID": {
+      "focus": [
+        95,
+        -9,
+        141,
+        6
+      ],
+      "near": [
+        "MY",
+        "TL",
+        "BN",
+        "SG",
+        "PH",
+        "KH"
+      ],
+      "borders": [
+        "MY",
+        "TL"
+      ],
+      "color": 0,
+      "facts": [
+        {
+          "kind": "neighbours",
+          "count": 2
+        },
+        {
+          "kind": "island"
+        },
+        {
+          "kind": "area",
+          "km2": 1887000
+        }
+      ]
+    },
+    "IL": {
+      "focus": [
+        34.257,
+        29.492,
+        35.878,
+        33.413
+      ],
+      "near": [
+        "PS",
+        "LB",
+        "SY",
+        "JO",
+        "CY",
+        "IQ"
+      ],
+      "borders": [
+        "PS",
+        "LB",
+        "SY",
+        "JO"
+      ],
+      "color": 1,
+      "facts": [
+        {
+          "kind": "neighbours",
+          "count": 4
+        },
+        {
+          "kind": "coast"
+        },
+        {
+          "kind": "area",
+          "km2": 22000
+        }
+      ]
+    },
+    "IN": {
+      "focus": [
+        68.137,
+        8.069,
+        97.372,
+        35.49
+      ],
+      "near": [
+        "CN",
+        "PK",
+        "BT",
+        "MM",
+        "BD",
+        "NP"
+      ],
+      "borders": [
+        "CN",
+        "PK",
+        "BT",
+        "MM",
+        "BD",
+        "NP"
+      ],
+      "color": 1,
+      "facts": [
+        {
+          "kind": "neighbours",
+          "count": 6
+        },
+        {
+          "kind": "coast"
+        },
+        {
+          "kind": "biggest",
+          "rank": 3
+        },
+        {
+          "kind": "area",
+          "km2": 3159000
+        }
+      ]
+    },
+    "IQ": {
+      "focus": [
+        38.758,
+        29.068,
+        48.551,
+        37.375
+      ],
+      "near": [
+        "SY",
+        "TR",
+        "IR",
+        "SA",
+        "KW",
+        "JO"
+      ],
+      "borders": [
+        "SY",
+        "TR",
+        "IR",
+        "SA",
+        "KW",
+        "JO"
+      ],
+      "color": 1,
+      "facts": [
+        {
+          "kind": "neighbours",
+          "count": 6
+        },
+        {
+          "kind": "coast"
+        },
+        {
+          "kind": "area",
+          "km2": 438000
+        }
+      ]
+    },
+    "IR": {
+      "focus": [
+        44.014,
+        25.065,
+        63.312,
+        39.766
+      ],
+      "near": [
+        "PK",
+        "AZ",
+        "TR",
+        "AM",
+        "IQ",
+        "AF"
+      ],
+      "borders": [
+        "PK",
+        "AZ",
+        "TR",
+        "AM",
+        "IQ",
+        "AF",
+        "TM"
+      ],
+      "color": 0,
+      "facts": [
+        {
+          "kind": "neighbours",
+          "count": 7
+        },
+        {
+          "kind": "manyNeighbours",
+          "count": 7
+        },
+        {
+          "kind": "coast"
+        },
+        {
+          "kind": "area",
+          "km2": 1623000
+        }
+      ]
+    },
+    "JO": {
+      "focus": [
+        34.941,
+        29.191,
+        39.298,
+        33.372
+      ],
+      "near": [
+        "IL",
+        "PS",
+        "SY",
+        "IQ",
+        "SA",
+        "LB"
+      ],
+      "borders": [
+        "IL",
+        "PS",
+        "SY",
+        "IQ",
+        "SA"
+      ],
+      "color": 2,
+      "facts": [
+        {
+          "kind": "neighbours",
+          "count": 5
+        },
+        {
+          "kind": "coast"
+        },
+        {
+          "kind": "area",
+          "km2": 89000
+        }
+      ]
+    },
+    "JP": {
+      "focus": [
+        127.651,
+        26.09,
+        145.833,
+        45.518
+      ],
+      "near": [
+        "KR",
+        "KP",
+        "MN",
+        "CN",
+        "PH",
+        "VN"
+      ],
+      "borders": [],
+      "color": 0,
+      "facts": [
+        {
+          "kind": "noNeighbours"
+        },
+        {
+          "kind": "island"
+        },
+        {
+          "kind": "area",
+          "km2": 373000
+        },
+        {
+          "kind": "easternmost"
+        }
+      ]
+    },
+    "KG": {
+      "focus": [
+        69.217,
+        39.192,
+        80.27,
+        43.263
+      ],
+      "near": [
+        "CN",
+        "UZ",
+        "KZ",
+        "TJ",
+        "AF",
+        "TM"
+      ],
+      "borders": [
+        "CN",
+        "UZ",
+        "KZ",
+        "TJ"
+      ],
+      "color": 1,
+      "facts": [
+        {
+          "kind": "neighbours",
+          "count": 4
+        },
+        {
+          "kind": "landlocked"
+        },
+        {
+          "kind": "area",
+          "km2": 199000
+        }
+      ]
+    },
+    "KH": {
+      "focus": [
+        102.304,
+        10.419,
+        107.597,
+        14.709
+      ],
+      "near": [
+        "VN",
+        "LA",
+        "TH",
+        "MY",
+        "SG",
+        "MM"
+      ],
+      "borders": [
+        "VN",
+        "LA",
+        "TH"
+      ],
+      "color": 2,
+      "facts": [
+        {
+          "kind": "neighbours",
+          "count": 3
+        },
+        {
+          "kind": "coast"
+        },
+        {
+          "kind": "area",
+          "km2": 182000
+        }
+      ]
+    },
+    "KP": {
+      "focus": [
+        124.338,
+        37.676,
+        130.711,
+        43.004
+      ],
+      "near": [
+        "CN",
+        "KR",
+        "RU",
+        "JP",
+        "MN",
+        "PH"
+      ],
+      "borders": [
+        "CN",
+        "KR",
+        "RU"
+      ],
+      "color": 2,
+      "facts": [
+        {
+          "kind": "neighbours",
+          "count": 3
+        },
+        {
+          "kind": "coast"
+        },
+        {
+          "kind": "area",
+          "km2": 122000
+        }
+      ]
+    },
+    "KR": {
+      "focus": [
+        126.139,
+        33.194,
+        129.595,
+        38.618
+      ],
+      "near": [
+        "KP",
+        "JP",
+        "CN",
+        "MN",
+        "PH",
+        "VN"
+      ],
+      "borders": [
+        "KP"
+      ],
+      "color": 0,
+      "facts": [
+        {
+          "kind": "neighbours",
+          "count": 1
+        },
+        {
+          "kind": "coast"
+        },
+        {
+          "kind": "area",
+          "km2": 99000
+        }
+      ]
+    },
+    "KW": {
+      "focus": [
+        46.535,
+        28.535,
+        48.443,
+        30.093
+      ],
+      "near": [
+        "IQ",
+        "SA",
+        "BH",
+        "QA",
+        "IR",
+        "AE"
+      ],
+      "borders": [
+        "IQ",
+        "SA"
+      ],
+      "color": 2,
+      "facts": [
+        {
+          "kind": "neighbours",
+          "count": 2
+        },
+        {
+          "kind": "coast"
+        },
+        {
+          "kind": "area",
+          "km2": 17000
+        }
+      ]
+    },
+    "KZ": {
+      "focus": [
+        46.463,
+        40.586,
+        87.327,
+        55.437
+      ],
+      "near": [
+        "CN",
+        "UZ",
+        "RU",
+        "KG",
+        "TM",
+        "TJ"
+      ],
+      "borders": [
+        "CN",
+        "UZ",
+        "RU",
+        "KG",
+        "TM"
+      ],
+      "color": 2,
+      "facts": [
+        {
+          "kind": "neighbours",
+          "count": 5
+        },
+        {
+          "kind": "landlocked"
+        },
+        {
+          "kind": "area",
+          "km2": 2706000
+        }
+      ]
+    },
+    "LA": {
+      "focus": [
+        100.108,
+        13.917,
+        107.669,
+        22.497
+      ],
+      "near": [
+        "CN",
+        "VN",
+        "KH",
+        "TH",
+        "MM",
+        "BD"
+      ],
+      "borders": [
+        "CN",
+        "VN",
+        "KH",
+        "TH",
+        "MM"
+      ],
+      "color": 1,
+      "facts": [
+        {
+          "kind": "neighbours",
+          "count": 5
+        },
+        {
+          "kind": "landlocked"
+        },
+        {
+          "kind": "area",
+          "km2": 228000
+        }
+      ]
+    },
+    "LB": {
+      "focus": [
+        35.086,
+        33.058,
+        36.598,
+        34.684
+      ],
+      "near": [
+        "IL",
+        "SY",
+        "PS",
+        "CY",
+        "JO",
+        "TR"
+      ],
+      "borders": [
+        "IL",
+        "SY"
+      ],
+      "color": 2,
+      "facts": [
+        {
+          "kind": "neighbours",
+          "count": 2
+        },
+        {
+          "kind": "coast"
+        },
+        {
+          "kind": "area",
+          "km2": 10000
+        }
+      ]
+    },
+    "LK": {
+      "focus": [
+        79.694,
+        5.924,
+        81.89,
+        9.832
+      ],
+      "near": [
+        "MV",
+        "IN",
+        "BD",
+        "MM",
+        "NP",
+        "TH"
+      ],
+      "borders": [],
+      "color": 0,
+      "facts": [
+        {
+          "kind": "noNeighbours"
+        },
+        {
+          "kind": "island"
+        },
+        {
+          "kind": "area",
+          "km2": 67000
+        }
+      ]
+    },
+    "MM": {
+      "focus": [
+        92.187,
+        9.982,
+        101.188,
+        28.535
+      ],
+      "near": [
+        "IN",
+        "CN",
+        "LA",
+        "TH",
+        "BD",
+        "BT"
+      ],
+      "borders": [
+        "IN",
+        "CN",
+        "LA",
+        "TH",
+        "BD"
+      ],
+      "color": 2,
+      "facts": [
+        {
+          "kind": "neighbours",
+          "count": 5
+        },
+        {
+          "kind": "coast"
+        },
+        {
+          "kind": "area",
+          "km2": 665000
+        }
+      ]
+    },
+    "MN": {
+      "focus": [
+        87.723,
+        41.583,
+        119.91,
+        52.13
+      ],
+      "near": [
+        "CN",
+        "RU",
+        "KP",
+        "KG",
+        "KR",
+        "BT"
+      ],
+      "borders": [
+        "CN",
+        "RU"
+      ],
+      "color": 2,
+      "facts": [
+        {
+          "kind": "neighbours",
+          "count": 2
+        },
+        {
+          "kind": "landlocked"
+        },
+        {
+          "kind": "area",
+          "km2": 1560000
+        }
+      ]
+    },
+    "MV": {
+      "focus": [
+        72.673,
+        -0.688,
+        73.645,
+        7.031
+      ],
+      "near": [
+        "LK",
+        "IN",
+        "OM",
+        "BD",
+        "PK",
+        "NP"
+      ],
+      "borders": [],
+      "color": 0,
+      "facts": [
+        {
+          "kind": "noNeighbours"
+        },
+        {
+          "kind": "island"
+        },
+        {
+          "kind": "smallest",
+          "rank": 1
+        }
+      ]
+    },
+    "MY": {
+      "focus": [
+        100.108,
+        0.856,
+        119.262,
+        7.031
+      ],
+      "near": [
+        "ID",
+        "TH",
+        "BN",
+        "SG",
+        "KH",
+        "VN"
+      ],
+      "borders": [
+        "ID",
+        "TH",
+        "BN"
+      ],
+      "color": 1,
+      "facts": [
+        {
+          "kind": "neighbours",
+          "count": 3
+        },
+        {
+          "kind": "coast"
+        },
+        {
+          "kind": "area",
+          "km2": 329000
+        }
+      ]
+    },
+    "NP": {
+      "focus": [
+        80.018,
+        26.35,
+        88.155,
+        30.421
+      ],
+      "near": [
+        "IN",
+        "CN",
+        "BT",
+        "BD",
+        "PK",
+        "MM"
+      ],
+      "borders": [
+        "IN",
+        "CN"
+      ],
+      "color": 2,
+      "facts": [
+        {
+          "kind": "neighbours",
+          "count": 2
+        },
+        {
+          "kind": "landlocked"
+        },
+        {
+          "kind": "area",
+          "km2": 147000
+        }
+      ]
+    },
+    "OM": {
+      "focus": [
+        51.971,
+        16.649,
+        59.856,
+        26.39
+      ],
+      "near": [
+        "AE",
+        "SA",
+        "YE",
+        "QA",
+        "BH",
+        "KW"
+      ],
+      "borders": [
+        "AE",
+        "SA",
+        "YE"
+      ],
+      "color": 1,
+      "facts": [
+        {
+          "kind": "neighbours",
+          "count": 3
+        },
+        {
+          "kind": "coast"
+        },
+        {
+          "kind": "area",
+          "km2": 312000
+        }
+      ]
+    },
+    "PH": {
+      "focus": [
+        117.174,
+        5.05,
+        126.607,
+        18.644
+      ],
+      "near": [
+        "BN",
+        "ID",
+        "MY",
+        "VN",
+        "KH",
+        "LA"
+      ],
+      "borders": [],
+      "color": 0,
+      "facts": [
+        {
+          "kind": "noNeighbours"
+        },
+        {
+          "kind": "island"
+        },
+        {
+          "kind": "area",
+          "km2": 295000
+        }
+      ]
+    },
+    "PK": {
+      "focus": [
+        60.828,
+        23.699,
+        77.066,
+        37.061
+      ],
+      "near": [
+        "IN",
+        "CN",
+        "IR",
+        "AF",
+        "TJ",
+        "TM"
+      ],
+      "borders": [
+        "IN",
+        "CN",
+        "IR",
+        "AF"
+      ],
+      "color": 2,
+      "facts": [
+        {
+          "kind": "neighbours",
+          "count": 4
+        },
+        {
+          "kind": "coast"
+        },
+        {
+          "kind": "area",
+          "km2": 874000
+        }
+      ]
+    },
+    "PS": {
+      "focus": [
+        34.185,
+        31.213,
+        35.59,
+        32.539
+      ],
+      "near": [
+        "IL",
+        "JO",
+        "LB",
+        "CY",
+        "SY",
+        "TR"
+      ],
+      "borders": [
+        "IL",
+        "JO"
+      ],
+      "color": 0,
+      "facts": [
+        {
+          "kind": "neighbours",
+          "count": 2
+        },
+        {
+          "kind": "coast"
+        },
+        {
+          "kind": "area",
+          "km2": 6000
+        }
+      ]
+    },
+    "QA": {
+      "focus": [
+        50.747,
+        24.56,
+        51.611,
+        26.158
+      ],
+      "near": [
+        "SA",
+        "BH",
+        "AE",
+        "KW",
+        "OM",
+        "IR"
+      ],
+      "borders": [
+        "SA"
+      ],
+      "color": 1,
+      "facts": [
+        {
+          "kind": "neighbours",
+          "count": 1
+        },
+        {
+          "kind": "coast"
+        },
+        {
+          "kind": "area",
+          "km2": 11000
+        }
+      ]
+    },
+    "RU": {
+      "focus": [
+        37,
+        42,
+        145,
+        70
+      ],
+      "near": [
+        "CN",
+        "KP",
+        "KZ",
+        "MN",
+        "GE",
+        "AZ"
+      ],
+      "borders": [
+        "CN",
+        "KP",
+        "KZ",
+        "MN",
+        "GE",
+        "AZ"
+      ],
+      "color": 1,
+      "facts": [
+        {
+          "kind": "neighbours",
+          "count": 6
+        },
+        {
+          "kind": "coast"
+        },
+        {
+          "kind": "biggest",
+          "rank": 1
+        },
+        {
+          "kind": "area",
+          "km2": 16887000
+        },
+        {
+          "kind": "northernmost"
+        },
+        {
+          "kind": "northernCapital"
+        }
+      ]
+    },
+    "SA": {
+      "focus": [
+        34.581,
+        16.376,
+        55.644,
+        32.115
+      ],
+      "near": [
+        "OM",
+        "AE",
+        "IQ",
+        "QA",
+        "KW",
+        "JO"
+      ],
+      "borders": [
+        "OM",
+        "AE",
+        "IQ",
+        "QA",
+        "KW",
+        "JO",
+        "YE"
+      ],
+      "color": 0,
+      "facts": [
+        {
+          "kind": "neighbours",
+          "count": 7
+        },
+        {
+          "kind": "manyNeighbours",
+          "count": 7
+        },
+        {
+          "kind": "coast"
+        },
+        {
+          "kind": "area",
+          "km2": 1926000
+        }
+      ]
+    },
+    "SG": {
+      "focus": [
+        103.636,
+        1.266,
+        103.996,
+        1.443
+      ],
+      "near": [
+        "MY",
+        "BN",
+        "KH",
+        "ID",
+        "TH",
+        "VN"
+      ],
+      "borders": [],
+      "color": 0,
+      "facts": [
+        {
+          "kind": "noNeighbours"
+        },
+        {
+          "kind": "island"
+        },
+        {
+          "kind": "smallest",
+          "rank": 2
+        }
+      ]
+    },
+    "SY": {
+      "focus": [
+        35.734,
+        32.32,
+        42.394,
+        37.32
+      ],
+      "near": [
+        "IL",
+        "LB",
+        "TR",
+        "IQ",
+        "JO",
+        "PS"
+      ],
+      "borders": [
+        "IL",
+        "LB",
+        "TR",
+        "IQ",
+        "JO"
+      ],
+      "color": 0,
+      "facts": [
+        {
+          "kind": "neighbours",
+          "count": 5
+        },
+        {
+          "kind": "coast"
+        },
+        {
+          "kind": "area",
+          "km2": 186000
+        }
+      ]
+    },
+    "TH": {
+      "focus": [
+        97.336,
+        5.624,
+        105.653,
+        20.447
+      ],
+      "near": [
+        "MY",
+        "KH",
+        "LA",
+        "MM",
+        "VN",
+        "BD"
+      ],
+      "borders": [
+        "MY",
+        "KH",
+        "LA",
+        "MM"
+      ],
+      "color": 0,
+      "facts": [
+        {
+          "kind": "neighbours",
+          "count": 4
+        },
+        {
+          "kind": "coast"
+        },
+        {
+          "kind": "area",
+          "km2": 516000
+        }
+      ]
+    },
+    "TJ": {
+      "focus": [
+        67.345,
+        36.678,
+        75.158,
+        41.036
+      ],
+      "near": [
+        "CN",
+        "UZ",
+        "KG",
+        "AF",
+        "PK",
+        "TM"
+      ],
+      "borders": [
+        "CN",
+        "UZ",
+        "KG",
+        "AF"
+      ],
+      "color": 2,
+      "facts": [
+        {
+          "kind": "neighbours",
+          "count": 4
+        },
+        {
+          "kind": "landlocked"
+        },
+        {
+          "kind": "area",
+          "km2": 142000
+        }
+      ]
+    },
+    "TL": {
+      "focus": [
+        124.014,
+        -9.5,
+        127.327,
+        -8.134
+      ],
+      "near": [
+        "ID",
+        "BN",
+        "MY",
+        "PH",
+        "SG",
+        "KH"
+      ],
+      "borders": [
+        "ID"
+      ],
+      "color": 1,
+      "facts": [
+        {
+          "kind": "neighbours",
+          "count": 1
+        },
+        {
+          "kind": "island"
+        },
+        {
+          "kind": "area",
+          "km2": 15000
+        },
+        {
+          "kind": "southernmost"
+        },
+        {
+          "kind": "southernCapital"
+        }
+      ]
+    },
+    "TM": {
+      "focus": [
+        52.439,
+        35.134,
+        66.661,
+        42.785
+      ],
+      "near": [
+        "UZ",
+        "KZ",
+        "IR",
+        "AF",
+        "TJ",
+        "AZ"
+      ],
+      "borders": [
+        "UZ",
+        "KZ",
+        "IR",
+        "AF"
+      ],
+      "color": 3,
+      "facts": [
+        {
+          "kind": "neighbours",
+          "count": 4
+        },
+        {
+          "kind": "landlocked"
+        },
+        {
+          "kind": "area",
+          "km2": 470000
+        }
+      ]
+    },
+    "TR": {
+      "focus": [
+        26.049,
+        35.817,
+        44.806,
+        42.102
+      ],
+      "near": [
+        "SY",
+        "GE",
+        "AZ",
+        "AM",
+        "IQ",
+        "IR"
+      ],
+      "borders": [
+        "SY",
+        "GE",
+        "AZ",
+        "AM",
+        "IQ",
+        "IR"
+      ],
+      "color": 2,
+      "facts": [
+        {
+          "kind": "neighbours",
+          "count": 6
+        },
+        {
+          "kind": "coast"
+        },
+        {
+          "kind": "area",
+          "km2": 779000
+        },
+        {
+          "kind": "westernmost"
+        }
+      ]
+    },
+    "UZ": {
+      "focus": [
+        55.968,
+        37.184,
+        73.141,
+        45.559
+      ],
+      "near": [
+        "KZ",
+        "TJ",
+        "KG",
+        "AF",
+        "TM",
+        "IR"
+      ],
+      "borders": [
+        "KZ",
+        "TJ",
+        "KG",
+        "AF",
+        "TM"
+      ],
+      "color": 0,
+      "facts": [
+        {
+          "kind": "neighbours",
+          "count": 5
+        },
+        {
+          "kind": "landlocked"
+        },
+        {
+          "kind": "area",
+          "km2": 447000
+        }
+      ]
+    },
+    "VN": {
+      "focus": [
+        102.124,
+        8.561,
+        109.469,
+        23.371
+      ],
+      "near": [
+        "CN",
+        "KH",
+        "LA",
+        "TH",
+        "MM",
+        "MY"
+      ],
+      "borders": [
+        "CN",
+        "KH",
+        "LA"
+      ],
+      "color": 3,
+      "facts": [
+        {
+          "kind": "neighbours",
+          "count": 3
+        },
+        {
+          "kind": "coast"
+        },
+        {
+          "kind": "area",
+          "km2": 330000
+        }
+      ]
+    },
+    "YE": {
+      "focus": [
+        42.61,
+        12.305,
+        54.527,
+        18.999
+      ],
+      "near": [
+        "OM",
+        "SA",
+        "QA",
+        "AE",
+        "BH",
+        "KW"
+      ],
+      "borders": [
+        "OM",
+        "SA"
+      ],
+      "color": 2,
+      "facts": [
+        {
+          "kind": "neighbours",
+          "count": 2
+        },
+        {
+          "kind": "coast"
+        },
+        {
+          "kind": "area",
+          "km2": 455000
         }
       ]
     }

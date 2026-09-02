@@ -37,6 +37,8 @@ const STRINGS = {
   langUi: { ru: 'Язык игры', pl: 'Język gry', en: 'Game language' },
   langContent: { ru: 'Учим названия на', pl: 'Uczymy się nazw po', en: 'Learning names in' },
   back: { ru: 'Назад', pl: 'Wróć', en: 'Back' },
+  whereTo: { ru: 'Куда поедем?', pl: 'Dokąd jedziemy?', en: 'Where to?' },
+  changePlace: { ru: 'Другая часть света', pl: 'Inna część świata', en: 'Somewhere else' },
   capitalIs: { ru: 'Столица', pl: 'Stolica', en: 'Capital' },
   pickFace: { ru: 'Выбери себя', pl: 'Wybierz siebie', en: 'Pick your face' },
   soundFull: { ru: 'Звук и голос', pl: 'Dźwięk i głos', en: 'Sound and voice' },

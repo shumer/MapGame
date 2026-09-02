@@ -1,4 +1,4 @@
-import { geoConicConformal, geoPath } from 'd3-geo'
+import { geoConicConformal, geoNaturalEarth1, geoPath } from 'd3-geo'
 import type { GeoProjection, GeoPath } from 'd3-geo'
 import type { Continent } from '../data'
 import type { CountryShape } from './topology'
@@ -27,10 +27,15 @@ export function createProjection(
   }
   const frame = { type: 'MultiPoint' as const, coordinates }
 
-  return geoConicConformal()
-    .parallels(continent.projection.parallels)
-    .rotate([continent.projection.rotate, 0])
-    .fitSize([width, height], frame)
+  const projection =
+    continent.projection.type === 'conic'
+      ? geoConicConformal().parallels(continent.projection.parallels)
+      : // A conic projection needs both standard parallels on the same side of
+        // the equator. A set that crosses it gets Natural Earth, which holds
+        // shapes recognisably from the tropics to the Arctic.
+        geoNaturalEarth1()
+
+  return projection.rotate([continent.projection.rotate, 0]).fitSize([width, height], frame)
 }
 
 export function createPath(projection: GeoProjection): GeoPath {
