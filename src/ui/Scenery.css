@@ -31,10 +31,17 @@
 
 .scenery-plane {
   position: absolute;
-  top: 1%;
-  left: 2%;
-  width: clamp(130px, 20vw, 240px);
+  top: 2%;
+  left: 1.5%;
+  width: clamp(140px, 15vw, 230px);
   aspect-ratio: 2 / 1;
+  /* Shown only where there is genuinely free sky beside the centred title.
+     Narrower than this and the plane lands on the heading. */
+  display: none;
+}
+
+@media (min-width: 1040px) {
+  .scenery .scenery-plane { display: block; }
 }
 .scenery-trail {
   top: 24%;
@@ -67,11 +74,10 @@
 }
 
 /* Below this the route is only a couple of dots and reads as dirt on the screen. */
-@media (max-height: 480px) {
+@media (max-height: 560px) {
   .scenery .scenery-plane { display: none; }
 }
 @media (max-height: 560px) {
   .scenery .scenery-cloud-b { display: none; }
   .scenery .scenery-hills { height: 34%; }
-  .scenery .scenery-plane { width: clamp(110px, 15vw, 160px); }
 }
