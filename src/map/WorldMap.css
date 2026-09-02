@@ -14,7 +14,11 @@
   user-select: none;
 }
 .worldmap-svg.is-interactive .country,
-.worldmap-svg.is-interactive /* The route travelled this round. Same dotted language as the flight path on
+.worldmap-svg.is-interactive .micro-hit {
+  cursor: pointer;
+}
+
+/* The route travelled this round. Same dotted language as the flight path on
    the start screen, so the two read as the same journey. */
 .trail {
   pointer-events: none;
