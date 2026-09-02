@@ -1,3 +1,4 @@
+import { useEffect } from 'react'
 import type { Lang } from '../data'
 import { LANG_NAMES, t } from '../i18n/ui'
 import { useProfiles } from '../store/profiles'
@@ -10,6 +11,7 @@ import { Scenery } from '../ui/Scenery'
 import { Star } from '../ui/Star'
 import { sounds } from '../sound'
 import { canSpeak, speak } from '../speech'
+import { say } from '../voice'
 import './StartScreen.css'
 
 const LEVELS: Level[] = ['little', 'expert']
@@ -21,6 +23,14 @@ const LANGS: Lang[] = ['ru', 'pl', 'en']
 export function StartScreen({ onReady }: { onReady: () => void }) {
   const { profiles, play } = useProfiles()
   const { lang, setLang } = useLang()
+
+  // Asked once, on arrival: the child who cannot read needs to be told what
+  // this screen wants from her. Browsers refuse audio before a gesture, so
+  // this is silent on a cold load and speaks on the way back from a round.
+  useEffect(() => {
+    const timer = setTimeout(() => say('who-plays', t('whoPlays', lang), lang), 500)
+    return () => clearTimeout(timer)
+  }, [lang])
 
   const start = (level: Level) => {
     sounds.tap()

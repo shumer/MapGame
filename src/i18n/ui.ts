@@ -39,6 +39,9 @@ const STRINGS = {
   back: { ru: 'Назад', pl: 'Wróć', en: 'Back' },
   capitalIs: { ru: 'Столица', pl: 'Stolica', en: 'Capital' },
   pickFace: { ru: 'Выбери себя', pl: 'Wybierz siebie', en: 'Pick your face' },
+  soundFull: { ru: 'Звук и голос', pl: 'Dźwięk i głos', en: 'Sound and voice' },
+  soundEffects: { ru: 'Только звуки', pl: 'Tylko dźwięki', en: 'Sounds only' },
+  soundOff: { ru: 'Тишина', pl: 'Cisza', en: 'Silent' },
 } as const
 
 export type UiKey = keyof typeof STRINGS

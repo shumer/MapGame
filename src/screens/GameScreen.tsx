@@ -5,10 +5,19 @@ import { useRound } from '../game/useRound'
 import { consolation, consolationKey, praise, praiseKey, t } from '../i18n/ui'
 import { WorldMap } from '../map/WorldMap'
 import { canSpeak, speak, stopSpeaking } from '../speech'
-import { say } from '../voice'
+import { say, stopVoice } from '../voice'
+import type { GameMode as Mode } from '../game/types'
 import { sounds } from '../sound'
 import { useSound } from '../store/settings'
-import { ArrowIcon, CrossIcon, HomeIcon, SpeakerIcon, SpeakerOffIcon, TickIcon } from '../ui/icons'
+import {
+  ArrowIcon,
+  CrossIcon,
+  HomeIcon,
+  SpeakerIcon,
+  SpeakerOffIcon,
+  SpeakerQuietIcon,
+  TickIcon,
+} from '../ui/icons'
 import { CountrySymbol } from '../ui/CountrySymbol'
 import { Flag } from '../ui/Flag'
 import './GameScreen.css'
@@ -24,19 +33,53 @@ export function GameScreen({ profile, mode, onExit, onDone }: Props) {
   const preset = PRESETS[profile.level]
   const round = useRound(profile, mode)
   const { question, phase, misses } = round
-  const { muted, toggleMuted } = useSound()
+  const { mode: soundMode, cycleSound } = useSound()
   const lang = profile.contentLang
   const ui = profile.uiLang
 
   const target = countryByIso(question.target)!
   const speakable = canSpeak(lang)
 
+  /** Recorded prompt for each round type; spoken once, at the round's start. */
+  const promptKey = (mode: Mode, picturesOnly: boolean) =>
+    mode === 'locate'
+      ? 'where-is-it'
+      : mode === 'capital'
+        ? 'which-capital'
+        : picturesOnly
+          ? 'find-flag'
+          : 'whose-flag'
+
   // The little one cannot read: the question is spoken as soon as it appears.
+  // The first question of a round opens with the spoken prompt, then the
+  // country. After that only the country is named: hearing the same
+  // instruction twelve times over is not help, it is noise.
+  const first = round.answers.length === 0
   useEffect(() => {
-    if (phase !== 'asking' || !preset.autoSpeak || !speakable) return
-    const timer = setTimeout(() => speak(target.name[lang], lang), 260)
-    return () => clearTimeout(timer)
-  }, [question, phase, preset.autoSpeak, speakable, target, lang])
+    if (phase !== 'asking') return
+    const timers: number[] = []
+
+    let cancelled = false
+    const nameIt = () => {
+      if (!cancelled && preset.autoSpeak && speakable) speak(target.name[lang], lang)
+    }
+
+    if (first) {
+      // Opening the round: greeting, then the prompt, then the country — each
+      // waiting for the one before rather than racing it.
+      say('start-01', t('play', ui), ui)
+        .then(() => (cancelled ? null : say(promptKey(question.mode, flagsAsAnswers), prompt, ui)))
+        .then(nameIt)
+    } else {
+      timers.push(window.setTimeout(nameIt, 260))
+    }
+
+    return () => {
+      cancelled = true
+      timers.forEach(clearTimeout)
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [question, phase])
 
   const lastAnswer = round.answers[round.answers.length - 1]
   // Derived, not stored: the same answer always gets the same word.
@@ -46,20 +89,22 @@ export function GameScreen({ profile, mode, onExit, onDone }: Props) {
     if (phase !== 'revealed' || !lastAnswer) return
     const timers: number[] = []
 
-    if (lastAnswer.correct) {
-      sounds.correct()
-      say(praiseKey(round.answers.length), cheer, ui)
-      // Long enough for the cheer to finish before the country is named.
-      if (speakable) timers.push(window.setTimeout(() => speak(target.name[lang], lang), 1100))
-    } else {
-      sounds.reveal()
-      // A wrong answer was silent until now; it is the moment that most needs
-      // a friendly voice.
-      say(consolationKey(round.answers.length), commiseration, ui)
-      if (speakable) timers.push(window.setTimeout(() => speak(target.name[lang], lang), 1100))
-    }
+    let cancelled = false
+    const line = lastAnswer.correct
+      ? (sounds.correct(), say(praiseKey(round.answers.length), cheer, ui))
+      : (sounds.reveal(), say(consolationKey(round.answers.length), commiseration, ui))
 
-    return () => timers.forEach(clearTimeout)
+    // The country is named only once the reaction has finished speaking.
+    line.then(() => {
+      if (!cancelled && speakable) speak(target.name[lang], lang)
+    })
+
+    return () => {
+      cancelled = true
+      timers.forEach(clearTimeout)
+      stopVoice()
+      stopSpeaking()
+    }
   }, [phase, lastAnswer, speakable, target, lang, ui, cheer, commiseration, round.answers.length])
 
   // Every wrong pick sounds, whether it ends the question or not.
@@ -132,12 +177,26 @@ export function GameScreen({ profile, mode, onExit, onDone }: Props) {
             />
           ))}
         </div>
+        {/* One button, three steps: everything, effects only, silence. */}
         <button
-          className="btn btn-ghost btn-round mute"
-          onClick={toggleMuted}
-          aria-label={muted ? 'Включить звук' : 'Выключить звук'}
+          className={`btn btn-ghost btn-round mute is-${soundMode}`}
+          onClick={cycleSound}
+          aria-label={t(
+            soundMode === 'full' ? 'soundFull' : soundMode === 'effects' ? 'soundEffects' : 'soundOff',
+            ui,
+          )}
+          title={t(
+            soundMode === 'full' ? 'soundFull' : soundMode === 'effects' ? 'soundEffects' : 'soundOff',
+            ui,
+          )}
         >
-          {muted ? <SpeakerOffIcon size={22} /> : <SpeakerIcon size={22} />}
+          {soundMode === 'full' ? (
+            <SpeakerIcon size={22} />
+          ) : soundMode === 'effects' ? (
+            <SpeakerQuietIcon size={22} />
+          ) : (
+            <SpeakerOffIcon size={22} />
+          )}
         </button>
         {preset.showText && <div className="score">{round.score}</div>}
       </header>

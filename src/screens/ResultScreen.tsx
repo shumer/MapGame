@@ -2,6 +2,7 @@ import { useEffect } from 'react'
 import { t } from '../i18n/ui'
 import type { Profile } from '../game/types'
 import { sounds } from '../sound'
+import { say } from '../voice'
 import { Avatar } from '../ui/Avatar'
 import { Confetti } from '../ui/Confetti'
 import { Star } from '../ui/Star'
@@ -30,7 +31,11 @@ export function ResultScreen({ profile, score, total, isBest, onAgain, onHome }:
 
   useEffect(() => {
     sounds.fanfare(stars)
-  }, [stars])
+    // One of three recorded lines, chosen by how the round went.
+    const key = stars === 3 ? 'end-3stars' : stars === 2 ? 'end-2stars' : 'end-1star'
+    const timer = setTimeout(() => say(key, t('roundDone', ui), ui), 700)
+    return () => clearTimeout(timer)
+  }, [stars, ui])
 
   return (
     <div className="result">

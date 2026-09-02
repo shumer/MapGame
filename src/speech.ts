@@ -1,6 +1,13 @@
 import { speechLocale, type Lang } from './data'
 import { isMuted } from './sound'
 
+/** Set separately from the effects, so the voice can be dropped on its own. */
+let voiceOff = false
+export const setVoiceMuted = (value: boolean) => {
+  voiceOff = value
+}
+export const isVoiceMuted = () => voiceOff
+
 let voices: SpeechSynthesisVoice[] = []
 
 function refresh() {
@@ -28,10 +35,12 @@ function voiceFor(lang: Lang): SpeechSynthesisVoice | undefined {
 export const canSpeak = (lang: Lang): boolean =>
   typeof window !== 'undefined' && 'speechSynthesis' in window && !!voiceFor(lang)
 
-export function speak(text: string, lang: Lang) {
-  if (typeof window === 'undefined' || !('speechSynthesis' in window)) return
-  // The mute button covers the whole game, speech included.
-  if (isMuted()) return
+/** Resolves when the utterance finishes, so lines can be chained rather than
+    talked over. Resolves immediately when there is nothing to say. */
+export function speak(text: string, lang: Lang): Promise<void> {
+  if (typeof window === 'undefined' || !('speechSynthesis' in window)) return Promise.resolve()
+  if (isMuted() || voiceOff) return Promise.resolve()
+
   window.speechSynthesis.cancel()
   const u = new SpeechSynthesisUtterance(text)
   const voice = voiceFor(lang)
@@ -40,7 +49,12 @@ export function speak(text: string, lang: Lang) {
   // Slightly slow and a touch high: easier for a child to follow.
   u.rate = 0.92
   u.pitch = 1.05
-  window.speechSynthesis.speak(u)
+
+  return new Promise((resolve) => {
+    u.onend = () => resolve()
+    u.onerror = () => resolve()
+    window.speechSynthesis.speak(u)
+  })
 }
 
 export const stopSpeaking = () => window.speechSynthesis?.cancel()

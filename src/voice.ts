@@ -1,4 +1,4 @@
-import { speak, canSpeak } from './speech'
+import { speak, canSpeak, isVoiceMuted } from './speech'
 import { isMuted } from './sound'
 import type { Lang } from './data'
 
@@ -27,6 +27,14 @@ for (const [path, url] of Object.entries(files)) {
 /** Reused so a rapid sequence of lines does not stack up players. */
 let current: HTMLAudioElement | null = null
 
+/**
+ * Guards against the same line firing twice in a row within a moment — React's
+ * development mode runs effects twice, and a doubled "off we go" is audible.
+ */
+let lastKey = ''
+let lastAt = 0
+const REPEAT_GUARD_MS = 700
+
 export const hasRecording = (key: string, lang: Lang) => recordings.has(`${lang}/${key}`)
 
 export function stopVoice() {
@@ -39,27 +47,31 @@ export function stopVoice() {
 
 /**
  * Plays a line. `key` picks the recording; `text` is what the synthesiser falls
- * back to. Returns true when a recording was used.
+ * back to. Resolves when the line has finished, so a caller can follow it with
+ * another one instead of talking over it.
  */
-export function say(key: string, text: string, lang: Lang): boolean {
-  if (isMuted()) return false
+export function say(key: string, text: string, lang: Lang): Promise<void> {
+  if (isMuted() || isVoiceMuted()) return Promise.resolve()
+
+  const now = Date.now()
+  if (key === lastKey && now - lastAt < REPEAT_GUARD_MS) return Promise.resolve()
+  lastKey = key
+  lastAt = now
+
   const url = recordings.get(`${lang}/${key}`)
-  if (!url) {
-    if (canSpeak(lang)) speak(text, lang)
-    return false
-  }
+  if (!url) return canSpeak(lang) ? speak(text, lang) : Promise.resolve()
+
   stopVoice()
   const audio = new Audio(url)
   current = audio
-  // Autoplay can still be refused; falling back keeps the game audible.
-  audio.play().catch(() => {
-    if (canSpeak(lang)) speak(text, lang)
-  })
-  return true
-}
 
-/** Picks one of a numbered set, e.g. praise-01..praise-06. */
-export function sayOneOf(keys: string[], texts: string[], lang: Lang): boolean {
-  const i = Math.floor(Math.random() * keys.length)
-  return say(keys[i], texts[i] ?? texts[0], lang)
+  return new Promise((resolve) => {
+    audio.addEventListener('ended', () => resolve(), { once: true })
+    audio.addEventListener('error', () => resolve(), { once: true })
+    // Autoplay can still be refused; falling back keeps the game audible.
+    audio.play().catch(() => {
+      if (canSpeak(lang)) speak(text, lang).then(resolve)
+      else resolve()
+    })
+  })
 }

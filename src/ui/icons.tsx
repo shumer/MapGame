@@ -18,6 +18,17 @@ export function SpeakerIcon({ size = 24 }: { size?: number }) {
   )
 }
 
+/** Sound on, voice off: the speaker keeps one arc and loses the second. */
+export function SpeakerQuietIcon({ size = 24 }: { size?: number }) {
+  return (
+    <svg width={size} height={size} viewBox="0 0 24 24" role="presentation" style={{ display: 'block' }}>
+      <path d="M4 9.5h3.2L12 5.4v13.2L7.2 14.5H4z" fill="currentColor" />
+      <path d="M15.4 9.2a4 4 0 0 1 0 5.6" stroke="currentColor" strokeWidth="2" strokeLinecap="round" fill="none" />
+      <path d="M18.4 8.4l4.2 7.2M22.6 8.4l-4.2 7.2" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" opacity="0.55" />
+    </svg>
+  )
+}
+
 export function SpeakerOffIcon({ size = 24 }: { size?: number }) {
   return (
     <svg width={size} height={size} viewBox="0 0 24 24" role="presentation" style={{ display: 'block' }}>
