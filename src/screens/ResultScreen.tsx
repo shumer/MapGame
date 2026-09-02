@@ -4,6 +4,7 @@ import type { Profile } from '../game/types'
 import { sounds } from '../sound'
 import { Avatar } from '../ui/Avatar'
 import { Confetti } from '../ui/Confetti'
+import { Star } from '../ui/Star'
 import './ResultScreen.css'
 
 interface Props {
@@ -45,7 +46,7 @@ export function ResultScreen({ profile, score, total, isBest, onAgain, onHome }:
             className={i < stars ? 'star is-on' : 'star'}
             style={{ animationDelay: `${i * 160}ms` }}
           >
-            ★
+            <Star size={78} filled={i < stars} />
           </span>
         ))}
       </div>

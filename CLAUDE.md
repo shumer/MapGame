@@ -135,7 +135,7 @@ The bright green with a dark edge is enough. Dimming every other country removes
 
 ### Do NOT use emoji for interface icons
 
-They render differently on every device and platform. Draw an SVG instead — see `ModeIcon`, `Kid`, `CountrySymbol`.
+They render differently on every device and platform. Draw an SVG instead — see `ModeIcon`, `Kid`, `CountrySymbol`. Emoji *artwork* checked into the repo as an SVG file is fine and renders identically everywhere: `src/assets/art/plane.svg` is Noto Emoji art under Apache 2.0. Anything added that way needs an entry in `src/assets/art/NOTICE.md`, and the licence must not be share-alike.
 
 ### Do NOT add a dark theme
 

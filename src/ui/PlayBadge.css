@@ -1,0 +1,21 @@
+.play-badge {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  translate: -50% 50%;
+  display: grid;
+  place-items: center;
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background: var(--accent);
+  color: var(--on-accent);
+  box-shadow: 0 4px 0 var(--accent-shadow);
+  transition: transform 140ms ease;
+}
+.play-badge svg { width: 28px; height: 28px; }
+
+@media (max-width: 420px), (max-height: 560px) {
+  .play-badge { width: 46px; height: 46px; }
+  .play-badge svg { width: 23px; height: 23px; }
+}

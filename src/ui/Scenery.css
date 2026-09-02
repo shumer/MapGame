@@ -1,0 +1,77 @@
+.scenery {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  /* The sky is a plain gradient: nothing to crop, nothing to scale wrong. */
+  background: linear-gradient(#bfe4f5 0%, #e7f3f8 62%, #eef7f6 100%);
+}
+
+.scenery svg { position: absolute; display: block; }
+
+.scenery-sun {
+  top: 1%;
+  right: 3%;
+  width: clamp(80px, 12vw, 150px);
+  height: auto;
+}
+
+.scenery-cloud-a {
+  top: 20%;
+  left: 1%;
+  width: clamp(110px, 18vw, 230px);
+  height: auto;
+}
+.scenery-cloud-b {
+  top: 9%;
+  right: 22%;
+  width: clamp(80px, 13vw, 160px);
+  height: auto;
+  opacity: 0.92;
+}
+
+.scenery-plane {
+  position: absolute;
+  top: 1%;
+  left: 2%;
+  width: clamp(130px, 20vw, 240px);
+  aspect-ratio: 2 / 1;
+}
+.scenery-trail {
+  top: 24%;
+  left: 0;
+  width: 62%;
+  height: auto;
+}
+.scenery-plane-art {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 52%;
+  height: auto;
+  display: block;
+  /* Nose points up-right, following the trail. */
+  rotate: 8deg;
+}
+
+.scenery-hills {
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: clamp(180px, 42%, 460px);
+}
+.scenery-bushes {
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: clamp(90px, 20%, 220px);
+}
+
+/* Below this the route is only a couple of dots and reads as dirt on the screen. */
+@media (max-height: 480px) {
+  .scenery .scenery-plane { display: none; }
+}
+@media (max-height: 560px) {
+  .scenery .scenery-cloud-b { display: none; }
+  .scenery .scenery-hills { height: 34%; }
+  .scenery .scenery-plane { width: clamp(110px, 15vw, 160px); }
+}

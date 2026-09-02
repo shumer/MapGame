@@ -39,6 +39,13 @@ A page for proofreading the translations: `node scripts/build-review-page.mjs ou
 
 A single self-contained HTML file with the whole game: `SINGLE_FILE=1 npx vite build`.
 
+## Third-party artwork
+
+The plane on the start screen is the small airplane from Google's
+[Noto Emoji](https://github.com/googlefonts/noto-emoji), used under the Apache
+2.0 licence. See `src/assets/art/NOTICE.md`. Everything else — characters,
+country symbols, icons, scenery — is drawn in code.
+
 ## How it is put together
 
 - `src/data` — data and types.

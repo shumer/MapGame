@@ -1,11 +1,15 @@
 import type { Lang } from '../data'
-import { t } from '../i18n/ui'
+import { LANG_NAMES, t } from '../i18n/ui'
 import { useProfiles } from '../store/profiles'
 import { useLang } from '../store/settings'
 import { PRESETS, type Level } from '../game/types'
 import { Flag } from '../ui/Flag'
 import { Kid } from '../ui/Kid'
+import { PlayBadge } from '../ui/PlayBadge'
+import { Scenery } from '../ui/Scenery'
+import { Star } from '../ui/Star'
 import { sounds } from '../sound'
+import { canSpeak, speak } from '../speech'
 import './StartScreen.css'
 
 const LEVELS: Level[] = ['little', 'expert']
@@ -14,67 +18,23 @@ const LEVELS: Level[] = ['little', 'expert']
 const LANG_FLAG: Record<Lang, string> = { ru: 'RU', pl: 'PL', en: 'GB' }
 const LANGS: Lang[] = ['ru', 'pl', 'en']
 
-/** Painted backdrop: sky, clouds, hills and a plane trailing a dotted route. */
-function Scenery() {
-  return (
-    <svg className="scenery" viewBox="0 0 800 500" preserveAspectRatio="xMidYMax slice" aria-hidden="true">
-      <defs>
-        <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
-          <stop offset="0%" stopColor="#bfe4f5" />
-          <stop offset="100%" stopColor="#e7f3f8" />
-        </linearGradient>
-      </defs>
-      <rect width="800" height="500" fill="url(#sky)" />
-
-      <circle cx="648" cy="76" r="44" fill="#ffe08a" />
-      <circle cx="648" cy="76" r="60" fill="#ffe08a" opacity="0.35" />
-
-      <g fill="#ffffff" opacity="0.9">
-        <ellipse cx="200" cy="92" rx="44" ry="25" />
-        <ellipse cx="238" cy="84" rx="32" ry="21" />
-        <ellipse cx="166" cy="84" rx="28" ry="18" />
-        <ellipse cx="452" cy="60" rx="36" ry="20" />
-        <ellipse cx="484" cy="54" rx="26" ry="16" />
-        <ellipse cx="330" cy="132" rx="28" ry="15" opacity="0.75" />
-      </g>
-
-      {/* Dotted flight path with a little plane at the end. The whole route
-          stays well inside the frame, which is cropped on wide screens. */}
-      <path
-        d="M170 258C240 214 300 268 372 236S520 196 606 214"
-        stroke="#8fb8c9"
-        strokeWidth="3"
-        strokeLinecap="round"
-        strokeDasharray="2 14"
-        fill="none"
-        opacity="0.85"
-      />
-      <g transform="translate(612 214) rotate(-8)">
-        <path d="M0 0l-26-8 4 8-4 8 26-8z" fill="#e2685f" />
-        <path d="M-12-2l-6-14 8 2 6 12z" fill="#c8534b" />
-      </g>
-
-      {/* Rolling hills. */}
-      <path d="M0 350c120-40 210 20 320 6s180-60 300-40 180 44 180 44v140H0z" fill="#a9d9a4" />
-      <path d="M0 402c140-34 250 16 380 4s230-42 420-24v118H0z" fill="#8ecb8c" />
-      <g fill="#6fb573">
-        <circle cx="96" cy="392" r="20" />
-        <circle cx="120" cy="400" r="14" />
-        <circle cx="700" cy="404" r="18" />
-        <circle cx="676" cy="412" r="12" />
-      </g>
-    </svg>
-  )
-}
-
 export function StartScreen({ onReady }: { onReady: () => void }) {
   const { profiles, play } = useProfiles()
   const { lang, setLang } = useLang()
 
   const start = (level: Level) => {
     sounds.tap()
+    // Named aloud on the way in, so a child who cannot read hears which
+    // character they just chose.
+    if (canSpeak(lang)) speak(t(level === 'little' ? 'levelLittle' : 'levelExpert', lang), lang)
     play(level, lang)
     onReady()
+  }
+
+  const pickLang = (l: Lang) => {
+    setLang(l)
+    sounds.tap()
+    if (canSpeak(l)) speak(LANG_NAMES[l], l)
   }
 
   return (
@@ -93,16 +53,20 @@ export function StartScreen({ onReady }: { onReady: () => void }) {
               : 0
             return (
               <button key={level} className={`kid-card kid-${level}`} onClick={() => start(level)}>
-                <Kid level={level} />
-                <span className="kid-name">{t(level === 'little' ? 'levelLittle' : 'levelExpert', lang)}</span>
+                <span className="kid-art">
+                  <Kid level={level} />
+                </span>
+                <span className="kid-name">
+                  {t(level === 'little' ? 'levelLittle' : 'levelExpert', lang)}
+                </span>
                 <span className="kid-hint">
                   {t(level === 'little' ? 'levelLittleHint' : 'levelExpertHint', lang)}
                 </span>
-                {learned > 0 && (
-                  <span className="kid-progress">
-                    ★ {learned} / {PRESETS[level].maxFame === 1 ? 23 : 45}
-                  </span>
-                )}
+                <span className={`kid-progress ${learned > 0 ? '' : 'is-empty'}`}>
+                  <Star size={14} />
+                  {learned} / {PRESETS[level].maxFame === 1 ? 23 : 45}
+                </span>
+                <PlayBadge />
               </button>
             )
           })}
@@ -117,14 +81,12 @@ export function StartScreen({ onReady }: { onReady: () => void }) {
               <button
                 key={l}
                 className={`lang-pick ${lang === l ? 'is-on' : ''}`}
-                onClick={() => {
-                  setLang(l)
-                  sounds.tap()
-                }}
+                onClick={() => pickLang(l)}
                 aria-pressed={lang === l}
-                aria-label={l}
+                aria-label={LANG_NAMES[l]}
               >
                 <Flag iso={LANG_FLAG[l]} size="md" />
+                <span className="lang-tick" aria-hidden="true" />
               </button>
             ))}
           </div>

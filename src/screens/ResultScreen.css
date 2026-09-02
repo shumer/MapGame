@@ -13,10 +13,11 @@
 
 .stars { display: flex; gap: 10px; margin-bottom: 6px; }
 .star {
-  font-size: clamp(46px, 12vw, 78px);
-  line-height: 1;
+  display: block;
+  width: clamp(46px, 12vw, 78px);
   color: var(--line);
 }
+.star svg { width: 100%; height: auto; }
 .star.is-on {
   color: #f2b134;
   animation: star-in 460ms cubic-bezier(0.2, 1.4, 0.4, 1) backwards;

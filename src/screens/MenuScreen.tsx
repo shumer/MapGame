@@ -4,6 +4,7 @@ import { LANG_NAMES, t, type UiKey } from '../i18n/ui'
 import { useProfiles } from '../store/profiles'
 import { sounds } from '../sound'
 import { Kid } from '../ui/Kid'
+import { Star } from '../ui/Star'
 import { ModeIcon } from '../ui/ModeIcon'
 import './MenuScreen.css'
 
@@ -66,7 +67,12 @@ export function MenuScreen({ profile, onPlay }: { profile: Profile; onPlay: (mod
                 {t(mode === 'flag' && !preset.showText ? 'modeFlagHintLittle' : MODE_HINT[mode], ui)}
               </span>
             </span>
-            {profile.best[mode] !== undefined && <span className="mode-best">★ {profile.best[mode]}</span>}
+            {profile.best[mode] !== undefined && (
+              <span className="mode-best">
+                <Star size={16} />
+                {profile.best[mode]}
+              </span>
+            )}
           </button>
         ))}
       </div>
