@@ -13,6 +13,7 @@ interface ProfileState {
   reset: (id: string) => void
   setLangs: (id: string, uiLang: Lang, contentLang: Lang) => void
   saveProgress: (id: string, iso: string, progress: CountryProgress) => void
+  collectAnimal: (id: string, animalId: string) => void
   finishRound: (id: string, mode: GameMode, score: number) => void
 }
 
@@ -62,6 +63,18 @@ export const useProfiles = create<ProfileState>()(
       saveProgress: (id, iso, progress) =>
         set((s) => ({
           profiles: patch(s.profiles, id, (p) => ({ ...p, progress: { ...p.progress, [iso]: progress } })),
+        })),
+
+      /** An animal is collected by answering about it correctly, never by
+          tapping it in the zoo: a collection you can fill in two minutes of
+          tapping stops being worth filling. */
+      collectAnimal: (id, animalId) =>
+        set((s) => ({
+          profiles: patch(s.profiles, id, (p) =>
+            p.animalsSeen?.includes(animalId)
+              ? p
+              : { ...p, animalsSeen: [...(p.animalsSeen ?? []), animalId] },
+          ),
         })),
 
       finishRound: (id, mode, score) =>

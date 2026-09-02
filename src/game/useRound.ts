@@ -39,6 +39,7 @@ export interface RoundState {
 export function useRound(profile: Profile, mode: GameMode | 'mixed', region: Region): RoundState {
   const preset = PRESETS[profile.level]
   const saveProgress = useProfiles((s) => s.saveProgress)
+  const collectAnimal = useProfiles((s) => s.collectAnimal)
 
   const pool = useMemo(() => poolFor(preset, region), [preset, region])
   // A round works off its own copy of the memory so repeats inside one round
@@ -76,10 +77,13 @@ export function useRound(profile: Profile, mode: GameMode | 'mixed', region: Reg
       memory.current[question.target] = next
       saveProgress(profile.id, question.target, next)
       seenThisRound.current[question.target] = (seenThisRound.current[question.target] ?? 0) + 1
+      // A right answer in the animal round adds the creature to the album.
+      const animal = question.askedAnimal ?? question.answer
+      if (correct && animal) collectAnimal(profile.id, animal)
       setAnswers((a) => [...a, { question, picked, correct, attempts }])
       setPhase('revealed')
     },
-    [profile.id, question, saveProgress],
+    [profile.id, question, saveProgress, collectAnimal],
   )
 
   const answer = useCallback(

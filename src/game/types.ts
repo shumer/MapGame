@@ -87,6 +87,9 @@ export interface Profile {
   /** Language the country names are learned in. */
   contentLang: Lang
   progress: Record<string, CountryProgress>
+  /** Animals met by answering correctly, kept apart from `progress` so that
+      spaced repetition never starts scheduling creatures. */
+  animalsSeen?: string[]
   best: Partial<Record<GameMode, number>>
   rounds: number
 }

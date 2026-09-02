@@ -78,3 +78,48 @@
   text-align: center;
   color: var(--muted);
 }
+
+/* The album. Animals met by answering correctly show in colour and get their
+   name; the rest are there as shapes, so the child can see what is still out
+   there without being told what it is called. */
+.album-toggle {
+  margin-left: auto;
+  font-size: 0.95rem;
+}
+
+.album-toggle.is-on {
+  background: var(--accent-tint);
+  color: var(--accent-shadow);
+}
+
+.album {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(96px, 1fr));
+  gap: 10px;
+  overflow-y: auto;
+  padding: 6px 2px 16px;
+}
+
+.album-cell {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  padding: 12px 6px;
+  border-radius: 16px;
+  background: var(--surface);
+  box-shadow: inset 0 0 0 2px var(--line);
+  font-size: 0.8rem;
+  font-weight: 700;
+  text-align: center;
+}
+
+/* Not yet met: a shape rather than a picture. */
+.album-cell:not(.is-met) .country-symbol {
+  filter: grayscale(1) opacity(0.28) contrast(0.7);
+}
+
+.album-cell.is-met {
+  background: #f8f4ea;
+  box-shadow: inset 0 0 0 2px var(--accent-tint);
+}

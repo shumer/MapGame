@@ -1,5 +1,12 @@
 import { useState } from 'react'
-import { animalsOf, continentById, countryByIso, countriesWithAnimals, type Region } from '../data'
+import {
+  animals,
+  animalsOf,
+  continentById,
+  countryByIso,
+  countriesWithAnimals,
+  type Region,
+} from '../data'
 import { t } from '../i18n/ui'
 import type { Profile } from '../game/types'
 import { WorldMap } from '../map/WorldMap'
@@ -26,6 +33,8 @@ export function ZooScreen({
   onExit: () => void
 }) {
   const [picked, setPicked] = useState<string | null>(null)
+  const [showAlbum, setShowAlbum] = useState(false)
+  const collected = new Set(profile.animalsSeen ?? [])
   const ui = profile.uiLang
   const lang = profile.contentLang
   const country = picked ? countryByIso(picked) : null
@@ -40,9 +49,29 @@ export function ZooScreen({
           <span className="home-label">{t('home', ui)}</span>
         </button>
         <span className="zoo-title">{continentById(region).name[ui]}</span>
+        <button
+          className={`btn btn-ghost album-toggle ${showAlbum ? 'is-on' : ''}`}
+          onClick={() => setShowAlbum((v) => !v)}
+        >
+          {t('album', ui)} <b>{collected.size}</b> / {animals.length}
+        </button>
       </header>
 
-      <div className="zoo-map">
+      {showAlbum && (
+        <section className="album">
+          {animals.map((a) => {
+            const met = collected.has(a.id)
+            return (
+              <span key={a.id} className={`album-cell ${met ? 'is-met' : ''}`}>
+                <CountrySymbol symbol={a.id} size={44} />
+                {met && <span>{a.name[lang]}</span>}
+              </span>
+            )
+          })}
+        </section>
+      )}
+
+      {!showAlbum && <div className="zoo-map">
         <WorldMap
           region={region}
           highlight={picked}
@@ -54,9 +83,9 @@ export function ZooScreen({
             if (c) speak(c.name[lang], lang)
           }}
         />
-      </div>
+      </div>}
 
-      {country && (
+      {!showAlbum && country && (
         <section className="zoo-card">
           <div className="zoo-head">
             <Flag iso={country.iso} size="md" />
@@ -91,7 +120,9 @@ export function ZooScreen({
         </section>
       )}
 
-      {!country && <p className="zoo-hint">{known.size > 0 ? t('tapCountry', ui) : ''}</p>}
+      {!showAlbum && !country && (
+        <p className="zoo-hint">{known.size > 0 ? t('tapCountry', ui) : ''}</p>
+      )}
     </div>
   )
 }

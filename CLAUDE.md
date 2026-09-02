@@ -43,6 +43,7 @@ what a local `npm run dev` never will.
   build-review-page.mjs / build-artifact.mjs
 /src/data/
   countries.json       # THE hand-written source of truth: names, capitals, facts, symbols
+  animals.json         # Hand-written: which animals live where, for the animal round
   continents.json      # Hand-written: what a playable set is (frame, projection, scenery)
   <set>.topo.json      # Generated, one per continent. Do not edit.
   derived.json         # Generated, keyed by continent. Do not edit.

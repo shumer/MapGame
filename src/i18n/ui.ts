@@ -40,6 +40,7 @@ const STRINGS = {
   modeAnimals: { ru: 'Животные', pl: 'Zwierzęta', en: 'Animals' },
   modeAnimalsHint: { ru: 'Кто здесь живёт?', pl: 'Kto tu mieszka?', en: 'Who lives here?' },
   zoo: { ru: 'Зоопарк', pl: 'Zoo', en: 'Zoo' },
+  album: { ru: 'Альбом', pl: 'Album', en: 'Album' },
   zooHint: { ru: 'Смотри, кто где живёт', pl: 'Zobacz, kto gdzie mieszka', en: 'See who lives where' },
   tapCountry: { ru: 'Нажми на страну', pl: 'Dotknij kraju', en: 'Tap a country' },
   whereLives: { ru: 'Где он живёт?', pl: 'Gdzie on mieszka?', en: 'Where does it live?' },
