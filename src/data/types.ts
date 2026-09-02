@@ -41,6 +41,8 @@ export interface Derived {
   borders: string[]
   /** Palette slot, picked so that no two bordering countries share one. */
   color: number
+  /** Facts computed from the map; rendered by src/i18n/facts.ts. */
+  facts: { kind: string; count?: number; rank?: number; km2?: number }[]
 }
 
 export type DerivedData = Record<string, Derived>

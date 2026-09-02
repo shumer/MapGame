@@ -1,8 +1,9 @@
 import { useEffect, useMemo } from 'react'
-import { countryByIso, derived } from '../data'
+import { countryByIso, derived, wikiFacts } from '../data'
 import { PRESETS, type GameMode, type Profile } from '../game/types'
 import { useRound } from '../game/useRound'
 import { consolation, consolationKey, praise, praiseKey, t } from '../i18n/ui'
+import { renderFact, renderWikiFacts, type WikiFacts } from '../i18n/facts'
 import { WorldMap } from '../map/WorldMap'
 import { canSpeak, speak, stopSpeaking } from '../speech'
 import { say, stopVoice } from '../voice'
@@ -137,6 +138,22 @@ export function GameScreen({ profile, mode, onExit, onDone }: Props) {
     [round.answers],
   )
 
+  /**
+   * A fact about the country, shown while the answer is being chosen. Only for
+   * the older child: the little one cannot read it, and it would only crowd
+   * her screen. Rotates per question rather than per render.
+   */
+  const fact = useMemo(() => {
+    if (!preset.showText) return null
+    const fromMap = (derived[target.iso].facts ?? [])
+      .map((f) => renderFact(f, lang))
+      .filter((x): x is string => Boolean(x))
+    const fromWiki = renderWikiFacts((wikiFacts[target.iso] ?? {}) as WikiFacts, lang)
+    const all = [...fromWiki, ...fromMap]
+    if (!all.length) return null
+    return all[(round.answers.length + target.iso.charCodeAt(0)) % all.length]
+  }, [preset.showText, target.iso, lang, round.answers.length])
+
   /** The traveller stands where the last answer was, revisit or not. */
   const travellerAt = round.answers[round.answers.length - 1]?.question.target ?? null
   // A child who cannot read gets the flag question the other way round: the
@@ -251,6 +268,8 @@ export function GameScreen({ profile, mode, onExit, onDone }: Props) {
                 )}
               </div>
             )}
+
+            {fact && <p className="fact-line">{fact}</p>}
 
             {question.mode !== 'locate' && (
               <div className={`options options-${question.options.length} ${flagsAsAnswers ? 'is-flags' : ''}`}>

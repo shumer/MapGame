@@ -170,6 +170,31 @@
 
 .speak { flex: 0 0 auto; }
 
+/* A fact about the country, offered while the answer is being chosen. Quiet on
+   purpose: it is something to notice, not the question. */
+.fact-line {
+  margin: 0;
+  padding: 10px 14px;
+  border-radius: 14px;
+  background: var(--accent-tint);
+  color: var(--muted);
+  font-size: clamp(13px, 2.2vw, 15px);
+  line-height: 1.4;
+  text-align: center;
+  text-wrap: balance;
+  animation: fact-in 400ms ease backwards;
+  animation-delay: 320ms;
+}
+
+@keyframes fact-in {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .fact-line { animation: none; }
+}
+
 .options { display: grid; gap: 10px; }
 .options-2 { grid-template-columns: 1fr 1fr; }
 .options-3, .options-4 { grid-template-columns: 1fr 1fr; }

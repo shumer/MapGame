@@ -36,7 +36,9 @@ export function MenuScreen({ profile, onPlay }: { profile: Profile; onPlay: (mod
           <Kid level={profile.level} />
         </div>
         <div className="menu-who">
-          <p className="menu-hello">{profile.name}</p>
+          <p className="menu-hello">
+            {t(profile.level === 'little' ? 'levelLittle' : 'levelExpert', ui)}
+          </p>
           <div className="menu-bar" aria-label={`${learned} / ${pool}`}>
             <span style={{ width: `${Math.round((learned / pool) * 100)}%` }} />
           </div>

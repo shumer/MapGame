@@ -1,5 +1,6 @@
 import raw from './countries.json'
 import derivedRaw from './derived.json'
+import wikiRaw from './country-facts.json'
 import type { Country, CountryData, DerivedData, Lang } from './types'
 
 export * from './types'
@@ -8,6 +9,9 @@ export * from './types'
 // scripts/validate-data.mjs is what actually guarantees it.
 export const countries = (raw as CountryData).countries
 export const derived = derivedRaw as unknown as DerivedData
+
+/** Facts pulled from Wikidata, keyed by ISO code. See scripts/fetch-facts.mjs. */
+export const wikiFacts = wikiRaw as Record<string, Record<string, string | number>>
 
 const byIso = new Map(countries.map((c) => [c.iso, c]))
 const byUn = new Map(countries.map((c) => [c.un, c]))

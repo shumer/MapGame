@@ -16,7 +16,8 @@ You are a senior front-end developer building a children's educational game, wit
 - `npm run dev` — local dev server on http://localhost:5173
 - `npm run build` — production build into `dist/` (PWA, service worker, offline cache)
 - `npm run data` — regenerate every derived data file, then validate. Run after touching `src/data/countries.json`.
-- `npm run data:map` / `data:derived` / `data:flags` / `data:check` — the individual steps
+- `npm run data:map` / `data:derived` / `data:facts` / `data:flags` / `data:check` — the individual steps. Order matters: `data:facts` writes into the file `data:derived` regenerates.
+- `npm run data:wiki` — refetch the Wikidata facts into `src/data/country-facts.json`. Not part of `npm run data`: it hits the network, and the committed file is what builds use.
 - `npm run lint` — oxlint
 - `npx tsc -b` — type check
 
@@ -61,6 +62,17 @@ what a local `npm run dev` never will.
 ### Data flows one way
 
 `src/data/countries.json` is the only file a human edits. Everything else — the map, the zoom frames, the neighbour lists, the palette assignment, the flag files, the app icons — is generated from it by `npm run data`. If you need a new per-country fact, add the field to `countries.json` and to `types.ts`, then teach the validator about it.
+
+### Facts are computed, never asserted
+
+Country facts come from two places, and neither is prose typed from memory:
+`scripts/build-facts.mjs` derives them from the map itself (neighbour counts,
+coastline, size ranking, extremes), and `scripts/fetch-facts.mjs` pulls
+structured values from Wikidata (population, highest peak, official language,
+founding year). Only machine-readable values are taken and the wording is ours,
+so nothing is copied from an encyclopaedia. A fact a child repeats had better
+be true, and hand-written trivia across 45 countries in three languages is
+exactly where that breaks.
 
 ### The validator is the contract
 
