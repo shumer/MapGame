@@ -1,0 +1,80 @@
+.zoo {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  height: 100%;
+  padding: 10px;
+}
+
+.zoo-title {
+  font-weight: 700;
+  color: var(--muted);
+}
+
+.zoo-map {
+  flex: 1;
+  min-height: 0;
+}
+
+/* A sheet along the bottom rather than a side panel: the tablet is usually
+   held upright, and the bottom of the screen is where the thumb is. */
+.zoo-card {
+  border-radius: 22px 22px 0 0;
+  background: var(--surface);
+  box-shadow: 0 -2px 20px -12px rgba(20, 30, 35, 0.5);
+  padding: 14px 16px 18px;
+}
+
+.zoo-head {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 12px;
+}
+
+.zoo-head b {
+  font-size: 1.35rem;
+}
+
+.zoo-close {
+  margin-left: auto;
+  font-size: 1.5rem;
+  line-height: 1;
+}
+
+.zoo-animals {
+  display: flex;
+  gap: 12px;
+  overflow-x: auto;
+  padding-bottom: 4px;
+}
+
+.zoo-animal,
+.zoo-empty {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  flex: 0 0 auto;
+  width: 108px;
+  padding: 12px 8px;
+  border: 0;
+  border-radius: 18px;
+  background: #f8f4ea;
+  box-shadow: inset 0 0 0 3px var(--line);
+  font: inherit;
+  cursor: pointer;
+}
+
+.zoo-animal span {
+  font-size: 0.9rem;
+  font-weight: 700;
+  text-align: center;
+}
+
+.zoo-hint {
+  margin: 0;
+  padding: 6px 4px 10px;
+  text-align: center;
+  color: var(--muted);
+}

@@ -108,3 +108,21 @@
 .menu-place b { font-size: 1.05rem; }
 .menu-place span { font-size: 0.85rem; opacity: 0.8; }
 .menu-place:hover { background: var(--surface); box-shadow: 0 3px 0 var(--accent); }
+
+/* The zoo: same shape as a mode card, but tinted, because it is not a round. */
+.zoo-card-link {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  width: 100%;
+  padding: 14px 18px;
+  border: 0;
+  border-radius: 18px;
+  background: #eef3e6;
+  box-shadow: 0 3px 0 #d7e2c8;
+  font: inherit;
+  text-align: left;
+  cursor: pointer;
+}
+
+.zoo-card-link:hover { box-shadow: 0 3px 0 var(--accent); }

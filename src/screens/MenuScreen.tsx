@@ -28,11 +28,13 @@ export function MenuScreen({
   region,
   onPlay,
   onChangeRegion,
+  onZoo,
 }: {
   profile: Profile
   region: Region
   onPlay: (mode: GameMode) => void
   onChangeRegion: () => void
+  onZoo: () => void
 }) {
   const { select, setLangs } = useProfiles()
   const ui = profile.uiLang
@@ -106,6 +108,18 @@ export function MenuScreen({
           </button>
         ))}
       </div>
+
+      {/* The zoo is not a mode: nothing is asked and nothing is scored, so it
+          sits apart from the round cards rather than among them. */}
+      {animalPool > 0 && (
+        <button className="zoo-card-link" onClick={onZoo}>
+          <ModeIcon mode="animals" />
+          <span className="mode-text">
+            <b>{t('zoo', ui)}</b>
+            <span>{t('zooHint', ui)}</span>
+          </span>
+        </button>
+      )}
 
       {/* Language settings live here rather than on the start screen: it is a
           grown-up's control, and the start screen belongs to the child. */}
