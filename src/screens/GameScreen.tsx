@@ -297,7 +297,13 @@ export function GameScreen({ profile, mode, onExit, onDone }: Props) {
                         <Flag iso={iso} size="lg" />
                       ) : (
                         <>
-                          <CountrySymbol symbol={option.symbol} size={34} />
+                          {/* Only when the options are countries. On a list of
+                              capitals the country's symbol both gives the answer
+                              away — it is shown beside the question too — and
+                              labels a city with a country's badge. */}
+                          {question.mode === 'flag' && (
+                            <CountrySymbol symbol={option.symbol} size={34} />
+                          )}
                           <span>{optionLabel(iso)}</span>
                           {misses.includes(iso) && <CrossIcon size={22} />}
                         </>
