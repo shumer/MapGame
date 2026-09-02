@@ -1,8 +1,10 @@
 import outlinesRaw from '../data/outlines.json'
 import { continents, countriesOf, type Region } from '../data'
+import { useState } from 'react'
 import { t } from '../i18n/ui'
 import { PRESETS, type Profile } from '../game/types'
 import { sounds } from '../sound'
+import { Globe } from '../ui/Globe'
 import { Star } from '../ui/Star'
 import './ContinentScreen.css'
 
@@ -33,10 +35,20 @@ export function ContinentScreen({
 }) {
   const ui = profile.uiLang
   const preset = PRESETS[profile.level]
+  // The globe turns to the chosen continent before the map opens, so the trip
+  // starts on a round Earth rather than cutting straight to a flat one.
+  const [leavingFor, setLeavingFor] = useState<Region | null>(null)
 
   return (
     <div className="continents">
       <header className="continents-head">
+        {/* Turning on its own until a choice is made, then swinging round to
+            face it: the trip starts on a round Earth, not on a flat one. */}
+        <Globe
+          facing={leavingFor}
+          size={132}
+          onSettled={() => leavingFor && onPick(leavingFor)}
+        />
         <h1 className="continents-title">{t('whereTo', ui)}</h1>
         <button className="btn btn-ghost btn-round" onClick={onBack}>
           {t('back', ui)}
@@ -53,10 +65,13 @@ export function ContinentScreen({
           return (
             <button
               key={c.id}
-              className={`continent-card ${c.id === current ? 'is-current' : ''}`}
+              className={`continent-card ${c.id === current ? 'is-current' : ''} ${
+                leavingFor === c.id ? 'is-leaving' : ''
+              }`}
+              disabled={leavingFor !== null}
               onClick={() => {
                 sounds.tap()
-                onPick(c.id)
+                setLeavingFor(c.id)
               }}
             >
               <svg

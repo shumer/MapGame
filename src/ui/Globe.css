@@ -1,0 +1,28 @@
+.globe {
+  display: block;
+  overflow: visible;
+  filter: drop-shadow(0 6px 0 rgba(31, 74, 82, 0.12));
+}
+
+.globe-sea {
+  fill: var(--sea);
+}
+
+.globe-land {
+  fill: #a9d9c2;
+  stroke: #8dc6ac;
+  stroke-width: 0.4;
+}
+
+/* The part of the world we are about to travel to. */
+.globe-spot {
+  fill: var(--accent);
+  opacity: 0.32;
+}
+
+.globe-edge {
+  fill: none;
+  stroke: var(--sea-ink);
+  stroke-width: 1.4;
+  opacity: 0.35;
+}

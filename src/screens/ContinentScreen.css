@@ -79,3 +79,25 @@
   font-size: 0.9rem;
   font-variant-numeric: tabular-nums;
 }
+
+.continents-head .globe {
+  flex: 0 0 auto;
+}
+
+.continents-title {
+  flex: 1;
+}
+
+/* The card that was just chosen, while the globe turns towards it. */
+.continent-card.is-leaving {
+  border-color: var(--accent);
+  transform: scale(0.98);
+}
+
+.continent-card:disabled {
+  cursor: default;
+}
+
+.continent-card:disabled:not(.is-leaving) {
+  opacity: 0.55;
+}
