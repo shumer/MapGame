@@ -22,10 +22,13 @@ export interface WorldMapProps {
   focus?: string | null
   /** Draws a dot on this country's capital. */
   capital?: string | null
-  /** Countries already answered this round, in order. Drawn as a dotted route
-      with a flag on each stop and the plane at the head — the journey the game
+  /** Countries already answered this round, in order, each appearing once.
+      Drawn as a dotted route with a flag on every stop — the journey the game
       is named after, which the map was otherwise not showing at all. */
   trail?: string[]
+  /** Where the traveller stands: usually the last stop, but a revisited
+      country puts him back on a flag that is already planted. */
+  travellerAt?: string | null
   /** Any change fires confetti over the focused country. Zero fires nothing. */
   celebrate?: number
   /** Called with an ISO code when a playable country is tapped. */
@@ -49,6 +52,7 @@ export function WorldMap({
   focus = null,
   capital = null,
   trail = [],
+  travellerAt = null,
   celebrate = 0,
   onPick,
   interactive = true,
@@ -191,7 +195,10 @@ export function WorldMap({
           // and a transition here would make him lag behind the map on every
           // pan and pinch rather than only when he moves on.
           const walker = route.querySelector('.trail-walker') as SVGGElement | null
-          const head = pts[pts.length - 1]
+          const standing = travellerAt ? trailBoxes.get(travellerAt) : null
+          const head = standing
+            ? [((standing[0] + standing[2]) / 2) * v.k + v.x, ((standing[1] + standing[3]) / 2) * v.k + v.y]
+            : pts[pts.length - 1]
           if (walker && head) {
             walker.setAttribute('transform', `translate(${head[0]} ${head[1]})`)
           }
@@ -221,7 +228,7 @@ export function WorldMap({
           )
         }
       }),
-    [subscribe, capitals, microBoxes, trailBoxes, trail, capital, width, height],
+    [subscribe, capitals, microBoxes, trailBoxes, trail, travellerAt, capital, width, height],
   )
 
   useEffect(() => {

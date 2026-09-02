@@ -25,6 +25,42 @@
 .pip.is-miss { background: var(--miss); }
 .pip.is-now { background: var(--accent); transform: scale(1.25); }
 
+/* The home and listen buttons: icon plus label, tinted so they read as chrome
+   rather than as answers. */
+.home,
+.speak {
+  color: var(--accent);
+  background: var(--surface);
+  box-shadow: inset 0 0 0 2px var(--line), 0 2px 0 var(--line);
+}
+.home:hover,
+.speak:hover { box-shadow: inset 0 0 0 2px var(--accent), 0 2px 0 var(--accent-tint); }
+.home:active,
+.speak:active { transform: translateY(2px); box-shadow: inset 0 0 0 2px var(--line); }
+.home-label,
+.speak span { color: var(--ink); font-weight: 700; }
+
+/* The little one gets a big round listen button with no text to read. */
+.speak.is-big {
+  width: 64px;
+  height: 64px;
+  padding: 0;
+  border-radius: 50%;
+}
+
+.mute {
+  color: var(--muted);
+  background: var(--surface);
+  box-shadow: inset 0 0 0 2px var(--line);
+}
+.mute:hover { color: var(--accent); }
+
+/* On a narrow screen the label goes and the icon speaks for itself. */
+@media (max-width: 520px) {
+  .home-label { display: none; }
+  .home { width: 44px; padding: 10px; }
+}
+
 .score {
   font-size: 22px;
   font-weight: 800;

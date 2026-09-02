@@ -8,6 +8,13 @@ import { PRESETS, type Answer, type GameMode, type Profile, type Question } from
 const LOCATE_TRIES = 2
 
 /**
+ * How often one country may come up within a single round. Spaced repetition
+ * deliberately brings a missed country back, but three visits to the same place
+ * in one journey reads as the game being stuck, not as revision.
+ */
+const MAX_PER_ROUND = 2
+
+/**
  * How long a wrong answer stays on screen before the right one is revealed.
  * Long enough to see the button turn red and shake, and to hear it.
  */
@@ -38,6 +45,8 @@ export function useRound(profile: Profile, mode: GameMode | 'mixed'): RoundState
   // are scheduled even before anything is written back to the profile.
   const memory = useRef({ ...profile.progress })
   const asked = useRef(0)
+  /** How many times each country has come up this round. */
+  const seenThisRound = useRef<Record<string, number>>({})
 
   // The first question of a round is always at index zero, so this does not
   // need to read the counter.
@@ -46,6 +55,12 @@ export function useRound(profile: Profile, mode: GameMode | 'mixed'): RoundState
     const target = pickTarget(pool, profile.progress, 0, null)
     return buildQuestion(chosen, target, pool, preset)
   }, [mode, pool, preset, profile.progress])
+
+  /** The countries still allowed this round. */
+  const available = useCallback(() => {
+    const left = pool.filter((c) => (seenThisRound.current[c.iso] ?? 0) < MAX_PER_ROUND)
+    return left.length ? left : pool
+  }, [pool])
 
   const [question, setQuestion] = useState<Question>(start)
   const [answers, setAnswers] = useState<Answer[]>([])
@@ -60,6 +75,7 @@ export function useRound(profile: Profile, mode: GameMode | 'mixed'): RoundState
       const next = advance(memory.current[question.target], correct, asked.current)
       memory.current[question.target] = next
       saveProgress(profile.id, question.target, next)
+      seenThisRound.current[question.target] = (seenThisRound.current[question.target] ?? 0) + 1
       setAnswers((a) => [...a, { question, picked, correct, attempts }])
       setPhase('revealed')
     },
@@ -99,11 +115,11 @@ export function useRound(profile: Profile, mode: GameMode | 'mixed'): RoundState
       return
     }
     const chosen = mode === 'mixed' ? nextMode(preset, question.mode) : mode
-    const target = pickTarget(pool, memory.current, asked.current, question.target)
+    const target = pickTarget(available(), memory.current, asked.current, question.target)
     setQuestion(buildQuestion(chosen, target, pool, preset))
     setMisses([])
     setPhase('asking')
-  }, [mode, pool, preset, question])
+  }, [mode, pool, preset, question, available])
 
   return {
     phase,

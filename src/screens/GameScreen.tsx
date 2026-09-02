@@ -82,11 +82,18 @@ export function GameScreen({ profile, mode, onExit, onDone }: Props) {
 
   const revealed = phase === 'revealed'
 
-  /** Every country visited this round, in order, for the route on the map. */
+  /**
+   * Stops on the route: each country once, in the order it was first reached.
+   * A country can legitimately come up twice in a round, but planting a second
+   * flag on it would read as a bug.
+   */
   const trail = useMemo(
-    () => round.answers.map((a) => a.question.target),
+    () => [...new Set(round.answers.map((a) => a.question.target))],
     [round.answers],
   )
+
+  /** The traveller stands where the last answer was, revisit or not. */
+  const travellerAt = round.answers[round.answers.length - 1]?.question.target ?? null
   // A child who cannot read gets the flag question the other way round: the
   // country is spoken aloud and the answers are flags, so nothing needs reading.
   const flagsAsAnswers = question.mode === 'flag' && !preset.showText
@@ -148,6 +155,7 @@ export function GameScreen({ profile, mode, onExit, onDone }: Props) {
           focus={revealed || question.mode === 'capital' ? target.iso : null}
           capital={revealed ? target.iso : null}
           trail={trail}
+          travellerAt={travellerAt}
           celebrate={revealed && lastAnswer?.correct ? round.score : 0}
           onPick={question.mode === 'locate' && phase === 'asking' ? round.answer : undefined}
           interactive

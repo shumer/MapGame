@@ -8,9 +8,18 @@
   padding: 14px 24px;
   min-height: 52px;
   cursor: pointer;
+  /* Flex, so an icon and its label sit on one line rather than wrapping onto
+     two, which is what happened as soon as buttons gained icons. */
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 9px;
+  white-space: nowrap;
+  line-height: 1;
   transition: transform 120ms ease, background 160ms ease, box-shadow 160ms ease;
 }
 .btn:active { transform: translateY(1px) scale(0.99); }
+.btn svg { flex: 0 0 auto; }
 
 .btn-primary {
   background: var(--accent);
@@ -30,6 +39,13 @@
   padding: 10px 18px;
   border-radius: 999px;
   font-weight: 600;
+  gap: 8px;
+}
+
+/* Icon-only round buttons stay square so they read as buttons, not pills. */
+.btn-round:not(:has(span)) {
+  padding: 10px;
+  width: 44px;
 }
 
 .chip {
