@@ -32,8 +32,14 @@ you decide to ship. To ship:
 ```
 npm version <patch|minor> --no-git-tag-version
 git commit -am "Release x.y.z" && git push
-gh release create vx.y.z --title "vx.y.z" --notes "what changed"
+gh release create vx.y.z --title "vx.y.z" --notes "**Играть: https://shumer.github.io/MapGame/**
+
+what changed"
 ```
+
+Put the play link at the top of every release note: the release page is where
+somebody lands when they hear there is a new version, and the game itself
+should be one click away.
 
 The repository needs Pages enabled once, with the source set to GitHub
 Actions.
