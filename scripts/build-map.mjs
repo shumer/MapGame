@@ -16,6 +16,11 @@ const BACKDROP = [
   '364', '268', '051', '031', '398', '795', '860', '304', '400', '682',
 ]
 
+// Natural Earth carries Kosovo with no ISO numeric code, so it matches neither
+// list and leaves a hole in the Balkans with the sea showing through. It is not
+// one of the playable countries, so it joins the backdrop under its own id.
+const BACKDROP_BY_NAME = new Map([['Kosovo', 'XKX']])
+
 // Signed area of a ring. Zero means the ring collapsed onto a line or a point,
 // which d3-geo goes on to read as a ring covering the whole sphere.
 function ringArea(ring) {
@@ -52,13 +57,15 @@ const world = feature(topo, topo.objects.countries)
 
 const playable = new Set(data.countries.map((c) => c.un))
 const backdrop = new Set(BACKDROP)
+const idOf = (f) =>
+  BACKDROP_BY_NAME.get(f.properties.name) ?? String(f.id).padStart(3, '0')
 const keep = world.features.filter((f) => {
-  const id = String(f.id).padStart(3, '0')
-  return playable.has(id) || backdrop.has(id)
+  const id = idOf(f)
+  return playable.has(id) || backdrop.has(id) || BACKDROP_BY_NAME.has(f.properties.name)
 })
 
 for (const f of keep) {
-  const id = String(f.id).padStart(3, '0')
+  const id = idOf(f)
   f.properties = { id, playable: playable.has(id) }
 }
 
