@@ -147,6 +147,15 @@ It hands the answer to any child who knows flags. The flag of the country being 
 
 It pulls all ~250 world flags into the bundle. `build-flags.mjs` copies only the 45 in use, and `Flag.tsx` loads them through `import.meta.glob`.
 
+### Do NOT put anything that travels over land under the country layer
+
+The sea decoration in `SeaDecor` is drawn before the countries on purpose, so a
+wave that strays onto a coast is covered. The travellers in `Travellers` are the
+opposite case: the car drives across France, Germany and Poland, so drawn in the
+same place it is hidden by every country it crosses. It goes last inside
+`.lands`. The routes themselves are checked by `data:check` — the boat's course
+must never touch land and the car's must never touch water.
+
 ### Do NOT let map callbacks change identity every frame
 
 `useMapView` mirrors the current view in a ref so `focusBox`, `reset` and `animate` stay referentially stable. If they change on each animation frame, the effect that starts a zoom restarts it forever and the map never returns from a focused country.

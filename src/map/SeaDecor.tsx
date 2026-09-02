@@ -11,7 +11,7 @@ import boatUrl from '../assets/art/decor/boat.svg?url'
 
 /** [lon, lat] spots chosen to be open water in every direction. */
 const SPOTS = {
-  compass: [-19.5, 45.5],
+  compass: [-23, 35.5],
   boat: [-13, 38.5],
   whale: [-15.5, 58.5],
   waves: [

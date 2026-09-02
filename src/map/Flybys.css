@@ -21,18 +21,6 @@
   top: 12%;
   animation: fly-right 46s linear infinite;
 }
-.flyby-boat {
-  width: 40px;
-  top: 62%;
-  animation: sail-right 72s linear infinite;
-  animation-delay: 14s;
-}
-.flyby-car {
-  width: 34px;
-  top: 44%;
-  animation: drive-left 88s linear infinite;
-  animation-delay: 32s;
-}
 .flyby-bird {
   width: 22px;
   animation: flap-left 58s linear infinite;
@@ -48,25 +36,6 @@
   23% { opacity: 1; }
   26% { left: 108%; transform: translateY(6px) rotate(-5deg); opacity: 0; }
   100% { left: 108%; opacity: 0; }
-}
-
-@keyframes sail-right {
-  0% { left: -8%; transform: translateY(0) rotate(0deg); opacity: 0; }
-  2% { opacity: 1; }
-  8% { transform: translateY(-4px) rotate(3deg); }
-  14% { transform: translateY(3px) rotate(-3deg); }
-  20% { opacity: 1; }
-  22% { left: 106%; opacity: 0; }
-  100% { left: 106%; opacity: 0; }
-}
-
-@keyframes drive-left {
-  0% { left: 104%; transform: scaleX(-1) translateY(0); opacity: 0; }
-  2% { opacity: 1; }
-  9% { transform: scaleX(-1) translateY(-3px); }
-  16% { opacity: 1; }
-  18% { left: -8%; transform: scaleX(-1) translateY(0); opacity: 0; }
-  100% { left: -8%; opacity: 0; }
 }
 
 @keyframes flap-left {
