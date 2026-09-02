@@ -124,20 +124,6 @@ export const SYMBOLS: Record<string, ReactNode> = {
     </>
   ),
 
-  stork: (
-    <>
-      {/* Standing white bird: long red beak, long red legs, black wing tips. */}
-      <path d="M20 46q-6-10 2-18t18-4l6 4-4 8q2 12-6 16z" fill="#fbfbf9" />
-      <path d="M22 44q10 6 18 0-2 8-10 8t-8-8z" fill="#33333a" />
-      <circle cx="42" cy="20" r="8" fill="#fbfbf9" />
-      <path d="M49 19l15 3-15 4z" fill="#e2494a" />
-      <circle cx="44" cy="17" r="2.2" fill="#2f2f33" />
-      <circle cx="44.8" cy="16.2" r="0.8" fill="#fff" />
-      <path d="M28 50v10M34 50v10" stroke="#e2494a" strokeWidth="3.2" strokeLinecap="round" />
-      <path d="M26 60h8M32 60h8" stroke="#e2494a" strokeWidth="2.6" strokeLinecap="round" />
-      <path d="M38 26q-8-2-14 2" stroke="#e6e6e2" strokeWidth="2" fill="none" strokeLinecap="round" />
-    </>
-  ),
 
   eagle: (
     <>
@@ -267,41 +253,8 @@ export const SYMBOLS: Record<string, ReactNode> = {
     </>
   ),
 
-  windmill: (
-    <>
-      <path d="M22 58l6-30h8l6 30z" fill="#e8dcc6" />
-      <path d="M26 40h12" stroke="#c9b89a" strokeWidth="3" />
-      <path d="M32 26l-6-8h12z" fill="#e2494a" />
-      <g stroke="#8a6a4a" strokeWidth="3.4" strokeLinecap="round">
-        <path d="M32 22L12 8M32 22l20 14M32 22L18 42M32 22L46 2" />
-      </g>
-      <circle cx="32" cy="22" r="4" fill="#6b4a2a" />
-      <path d="M28 46h8v12h-8z" fill="#8a6a4a" />
-    </>
-  ),
 
-  eiffel: (
-    <>
-      <path d="M32 4l4 10h-8z" fill="#9c8a74" />
-      <path d="M28 14h8v10h-8z" fill="#b0a08a" />
-      <path d="M24 24h16l4 14H20z" fill="#9c8a74" />
-      <path d="M20 38h24l10 20H10z" fill="#b0a08a" />
-      <path d="M22 38q10 16 4 20M42 38q-10 16-4 20" stroke="#8a7a66" strokeWidth="2.5" fill="none" />
-      <path d="M18 48h28" stroke="#8a7a66" strokeWidth="3" />
-      <path d="M26 24h12" stroke="#8a7a66" strokeWidth="2.5" />
-    </>
-  ),
 
-  bigben: (
-    <>
-      <path d="M24 58V22h16v36z" fill="#c9a978" />
-      <path d="M22 22h20l-10-8z" fill="#8a6a4a" />
-      <path d="M32 8v6" stroke="#8a6a4a" strokeWidth="2.4" strokeLinecap="round" />
-      <circle cx="32" cy="34" r="9" fill="#f6efdd" stroke="#8a6a4a" strokeWidth="2.4" />
-      <path d="M32 34V28M32 34l5 3" stroke="#3c3630" strokeWidth="2.2" strokeLinecap="round" />
-      <path d="M26 48h12M26 53h12" stroke="#a98a5c" strokeWidth="2.4" />
-    </>
-  ),
 
   columns: (
     <>
