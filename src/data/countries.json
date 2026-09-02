@@ -1,0 +1,1265 @@
+{
+  "version": 1,
+  "countries": [
+    {
+      "iso": "AL",
+      "un": "008",
+      "region": "europe",
+      "subregion": "balkans",
+      "fame": 2,
+      "micro": false,
+      "name": {
+        "ru": "Албания",
+        "pl": "Albania",
+        "en": "Albania"
+      },
+      "capital": {
+        "ru": "Тирана",
+        "pl": "Tirana",
+        "en": "Tirana"
+      },
+      "capitalCoords": [
+        19.8187,
+        41.3275
+      ],
+      "fact": {
+        "ru": "В Албании больше 170 тысяч бетонных бункеров, их строили по всей стране.",
+        "pl": "W Albanii jest ponad 170 tysięcy betonowych bunkrów, budowano je w całym kraju.",
+        "en": "Albania has over 170,000 concrete bunkers built all across the country."
+      },
+      "symbol": "eagle"
+    },
+    {
+      "iso": "AD",
+      "un": "020",
+      "region": "europe",
+      "subregion": "south",
+      "fame": 3,
+      "micro": true,
+      "name": {
+        "ru": "Андорра",
+        "pl": "Andora",
+        "en": "Andorra"
+      },
+      "capital": {
+        "ru": "Андорра-ла-Велья",
+        "pl": "Andorra la Vella",
+        "en": "Andorra la Vella"
+      },
+      "capitalCoords": [
+        1.5218,
+        42.5063
+      ],
+      "fact": {
+        "ru": "Крошечная страна в горах между Францией и Испанией, армии у неё нет.",
+        "pl": "Malutki kraj w górach między Francją a Hiszpanią, nie ma własnej armii.",
+        "en": "A tiny country in the mountains between France and Spain, with no army."
+      },
+      "symbol": "mountains"
+    },
+    {
+      "iso": "AT",
+      "un": "040",
+      "region": "europe",
+      "subregion": "central",
+      "fame": 1,
+      "micro": false,
+      "name": {
+        "ru": "Австрия",
+        "pl": "Austria",
+        "en": "Austria"
+      },
+      "capital": {
+        "ru": "Вена",
+        "pl": "Wiedeń",
+        "en": "Vienna"
+      },
+      "capitalCoords": [
+        16.3738,
+        48.2082
+      ],
+      "fact": {
+        "ru": "Почти вся Австрия покрыта Альпами, тут очень любят кататься на лыжах.",
+        "pl": "Prawie całą Austrię pokrywają Alpy, bardzo lubi się tu jeździć na nartach.",
+        "en": "Austria is almost fully covered by the Alps, and skiing is a favourite here."
+      },
+      "symbol": "violin"
+    },
+    {
+      "iso": "BY",
+      "un": "112",
+      "region": "europe",
+      "subregion": "east",
+      "fame": 1,
+      "micro": false,
+      "name": {
+        "ru": "Беларусь",
+        "pl": "Białoruś",
+        "en": "Belarus"
+      },
+      "capital": {
+        "ru": "Минск",
+        "pl": "Mińsk",
+        "en": "Minsk"
+      },
+      "capitalCoords": [
+        27.5615,
+        53.9006
+      ],
+      "fact": {
+        "ru": "В Беловежской пуще живут зубры, самые крупные звери Европы.",
+        "pl": "W Puszczy Białowieskiej żyją żubry, największe zwierzęta Europy.",
+        "en": "Bison, Europe's largest animals, live in the Bialowieza Forest."
+      },
+      "symbol": "bison"
+    },
+    {
+      "iso": "BE",
+      "un": "056",
+      "region": "europe",
+      "subregion": "west",
+      "fame": 1,
+      "micro": false,
+      "name": {
+        "ru": "Бельгия",
+        "pl": "Belgia",
+        "en": "Belgium"
+      },
+      "capital": {
+        "ru": "Брюссель",
+        "pl": "Bruksela",
+        "en": "Brussels"
+      },
+      "capitalCoords": [
+        4.3517,
+        50.8503
+      ],
+      "fact": {
+        "ru": "Бельгия славится шоколадом, вафлями и комиксами про Тинтина.",
+        "pl": "Belgia słynie z czekolady, gofrów i komiksów o Tintinie.",
+        "en": "Belgium is famous for chocolate, waffles and the Tintin comics."
+      },
+      "symbol": "chocolate"
+    },
+    {
+      "iso": "BA",
+      "un": "070",
+      "region": "europe",
+      "subregion": "balkans",
+      "fame": 2,
+      "micro": false,
+      "name": {
+        "ru": "Босния и Герцеговина",
+        "pl": "Bośnia i Hercegowina",
+        "en": "Bosnia and Herzegovina"
+      },
+      "capital": {
+        "ru": "Сараево",
+        "pl": "Sarajewo",
+        "en": "Sarajevo"
+      },
+      "capitalCoords": [
+        18.4131,
+        43.8563
+      ],
+      "fact": {
+        "ru": "В городе Мостар есть старинный мост, с которого прыгают в реку смельчаки.",
+        "pl": "W Mostarze jest stary most, z którego śmiałkowie skaczą do rzeki.",
+        "en": "In Mostar there is an old bridge that brave divers jump from into the river."
+      },
+      "symbol": "bridge"
+    },
+    {
+      "iso": "BG",
+      "un": "100",
+      "region": "europe",
+      "subregion": "balkans",
+      "fame": 2,
+      "micro": false,
+      "name": {
+        "ru": "Болгария",
+        "pl": "Bułgaria",
+        "en": "Bulgaria"
+      },
+      "capital": {
+        "ru": "София",
+        "pl": "Sofia",
+        "en": "Sofia"
+      },
+      "capitalCoords": [
+        23.3219,
+        42.6977
+      ],
+      "fact": {
+        "ru": "Здесь выращивают розы и делают из них масло для духов.",
+        "pl": "Uprawia się tu róże i robi z nich olejek do perfum.",
+        "en": "Roses are grown here and turned into oil for perfumes."
+      },
+      "symbol": "rose"
+    },
+    {
+      "iso": "HR",
+      "un": "191",
+      "region": "europe",
+      "subregion": "balkans",
+      "fame": 2,
+      "micro": false,
+      "name": {
+        "ru": "Хорватия",
+        "pl": "Chorwacja",
+        "en": "Croatia"
+      },
+      "capital": {
+        "ru": "Загреб",
+        "pl": "Zagrzeb",
+        "en": "Zagreb"
+      },
+      "capitalCoords": [
+        15.9819,
+        45.815
+      ],
+      "fact": {
+        "ru": "У Хорватии больше тысячи островов в Адриатическом море.",
+        "pl": "Chorwacja ma ponad tysiąc wysp na Morzu Adriatyckim.",
+        "en": "Croatia has more than a thousand islands in the Adriatic Sea."
+      },
+      "symbol": "boat"
+    },
+    {
+      "iso": "CY",
+      "un": "196",
+      "region": "europe",
+      "subregion": "south",
+      "fame": 2,
+      "micro": false,
+      "name": {
+        "ru": "Кипр",
+        "pl": "Cypr",
+        "en": "Cyprus"
+      },
+      "capital": {
+        "ru": "Никосия",
+        "pl": "Nikozja",
+        "en": "Nicosia"
+      },
+      "capitalCoords": [
+        33.3642,
+        35.155
+      ],
+      "fact": {
+        "ru": "Остров в Средиземном море, на его флаге нарисована сама страна.",
+        "pl": "Wyspa na Morzu Śródziemnym, na jej fladze narysowany jest sam kraj.",
+        "en": "An island in the Mediterranean whose flag shows the island itself."
+      },
+      "symbol": "columns"
+    },
+    {
+      "iso": "CZ",
+      "un": "203",
+      "region": "europe",
+      "subregion": "central",
+      "fame": 1,
+      "micro": false,
+      "name": {
+        "ru": "Чехия",
+        "pl": "Czechy",
+        "en": "Czechia"
+      },
+      "capital": {
+        "ru": "Прага",
+        "pl": "Praga",
+        "en": "Prague"
+      },
+      "capitalCoords": [
+        14.4378,
+        50.0755
+      ],
+      "fact": {
+        "ru": "В Праге на башне стоят самые старые работающие астрономические часы в мире.",
+        "pl": "W Pradze na wieży stoi najstarszy działający zegar astronomiczny na świecie.",
+        "en": "Prague has the oldest astronomical clock in the world still running."
+      },
+      "symbol": "clock"
+    },
+    {
+      "iso": "DK",
+      "un": "208",
+      "region": "europe",
+      "subregion": "nordic",
+      "fame": 1,
+      "micro": false,
+      "name": {
+        "ru": "Дания",
+        "pl": "Dania",
+        "en": "Denmark"
+      },
+      "capital": {
+        "ru": "Копенгаген",
+        "pl": "Kopenhaga",
+        "en": "Copenhagen"
+      },
+      "capitalCoords": [
+        12.551,
+        55.68
+      ],
+      "fact": {
+        "ru": "Тут придумали конструктор LEGO и сказки Андерсена.",
+        "pl": "Tu wymyślono klocki LEGO i bajki Andersena.",
+        "en": "LEGO bricks and Andersen's fairy tales both come from here."
+      },
+      "symbol": "lego"
+    },
+    {
+      "iso": "EE",
+      "un": "233",
+      "region": "europe",
+      "subregion": "baltic",
+      "fame": 2,
+      "micro": false,
+      "name": {
+        "ru": "Эстония",
+        "pl": "Estonia",
+        "en": "Estonia"
+      },
+      "capital": {
+        "ru": "Таллин",
+        "pl": "Tallinn",
+        "en": "Tallinn"
+      },
+      "capitalCoords": [
+        24.7536,
+        59.437
+      ],
+      "fact": {
+        "ru": "Половину Эстонии занимают леса, а половину жителей зовут по интернету.",
+        "pl": "Połowę Estonii zajmują lasy, a prawie wszystko załatwia się tu przez internet.",
+        "en": "Half of Estonia is forest, and almost everything here is done online."
+      },
+      "symbol": "wolf"
+    },
+    {
+      "iso": "FI",
+      "un": "246",
+      "region": "europe",
+      "subregion": "nordic",
+      "fame": 1,
+      "micro": false,
+      "name": {
+        "ru": "Финляндия",
+        "pl": "Finlandia",
+        "en": "Finland"
+      },
+      "capital": {
+        "ru": "Хельсинки",
+        "pl": "Helsinki",
+        "en": "Helsinki"
+      },
+      "capitalCoords": [
+        24.9384,
+        60.1699
+      ],
+      "fact": {
+        "ru": "Страна тысячи озёр, их тут почти 188 тысяч. И тут живёт Санта.",
+        "pl": "Kraj tysiąca jezior, jest ich prawie 188 tysięcy. I mieszka tu Święty Mikołaj.",
+        "en": "The land of a thousand lakes has almost 188,000 of them. Santa lives here too."
+      },
+      "symbol": "deer"
+    },
+    {
+      "iso": "FR",
+      "un": "250",
+      "region": "europe",
+      "subregion": "west",
+      "fame": 1,
+      "micro": false,
+      "name": {
+        "ru": "Франция",
+        "pl": "Francja",
+        "en": "France"
+      },
+      "capital": {
+        "ru": "Париж",
+        "pl": "Paryż",
+        "en": "Paris"
+      },
+      "capitalCoords": [
+        2.3522,
+        48.8566
+      ],
+      "fact": {
+        "ru": "Эйфелева башня летом становится выше на 15 сантиметров, металл нагревается.",
+        "pl": "Wieża Eiffla latem rośnie o 15 centymetrów, bo metal się nagrzewa.",
+        "en": "The Eiffel Tower grows about 15 cm taller in summer as the metal heats up."
+      },
+      "symbol": "eiffel"
+    },
+    {
+      "iso": "DE",
+      "un": "276",
+      "region": "europe",
+      "subregion": "central",
+      "fame": 1,
+      "micro": false,
+      "name": {
+        "ru": "Германия",
+        "pl": "Niemcy",
+        "en": "Germany"
+      },
+      "capital": {
+        "ru": "Берлин",
+        "pl": "Berlin",
+        "en": "Berlin"
+      },
+      "capitalCoords": [
+        13.405,
+        52.52
+      ],
+      "fact": {
+        "ru": "Тут построили первый в мире автомобиль и придумали печатный станок.",
+        "pl": "Tu zbudowano pierwszy na świecie samochód i wynaleziono druk.",
+        "en": "The world's first car was built here, and printing was invented here."
+      },
+      "symbol": "pretzel"
+    },
+    {
+      "iso": "GR",
+      "un": "300",
+      "region": "europe",
+      "subregion": "south",
+      "fame": 1,
+      "micro": false,
+      "name": {
+        "ru": "Греция",
+        "pl": "Grecja",
+        "en": "Greece"
+      },
+      "capital": {
+        "ru": "Афины",
+        "pl": "Ateny",
+        "en": "Athens"
+      },
+      "capitalCoords": [
+        23.7275,
+        37.9838
+      ],
+      "fact": {
+        "ru": "В Греции придумали Олимпийские игры почти три тысячи лет назад.",
+        "pl": "W Grecji wymyślono igrzyska olimpijskie prawie trzy tysiące lat temu.",
+        "en": "The Olympic Games began in Greece almost three thousand years ago."
+      },
+      "symbol": "owl"
+    },
+    {
+      "iso": "HU",
+      "un": "348",
+      "region": "europe",
+      "subregion": "central",
+      "fame": 1,
+      "micro": false,
+      "name": {
+        "ru": "Венгрия",
+        "pl": "Węgry",
+        "en": "Hungary"
+      },
+      "capital": {
+        "ru": "Будапешт",
+        "pl": "Budapeszt",
+        "en": "Budapest"
+      },
+      "capitalCoords": [
+        19.0402,
+        47.4979
+      ],
+      "fact": {
+        "ru": "Будапешт это два города, Буда и Пешт, их соединили мостами через Дунай.",
+        "pl": "Budapeszt to dwa miasta, Buda i Peszt, połączone mostami na Dunaju.",
+        "en": "Budapest is two cities, Buda and Pest, joined by bridges over the Danube."
+      },
+      "symbol": "horse"
+    },
+    {
+      "iso": "IS",
+      "un": "352",
+      "region": "europe",
+      "subregion": "nordic",
+      "fame": 1,
+      "micro": false,
+      "name": {
+        "ru": "Исландия",
+        "pl": "Islandia",
+        "en": "Iceland"
+      },
+      "capital": {
+        "ru": "Рейкьявик",
+        "pl": "Reykjavik",
+        "en": "Reykjavik"
+      },
+      "capitalCoords": [
+        -21.8277,
+        64.1265
+      ],
+      "fact": {
+        "ru": "Остров вулканов и гейзеров, дома тут греют горячей водой из-под земли.",
+        "pl": "Wyspa wulkanów i gejzerów, domy ogrzewa się tu gorącą wodą spod ziemi.",
+        "en": "An island of volcanoes and geysers where homes are heated by underground water."
+      },
+      "symbol": "volcano"
+    },
+    {
+      "iso": "IE",
+      "un": "372",
+      "region": "europe",
+      "subregion": "west",
+      "fame": 1,
+      "micro": false,
+      "name": {
+        "ru": "Ирландия",
+        "pl": "Irlandia",
+        "en": "Ireland"
+      },
+      "capital": {
+        "ru": "Дублин",
+        "pl": "Dublin",
+        "en": "Dublin"
+      },
+      "capitalCoords": [
+        -6.2603,
+        53.3498
+      ],
+      "fact": {
+        "ru": "Изумрудный остров, тут так много дождей, что трава зелёная круглый год.",
+        "pl": "Szmaragdowa wyspa, pada tu tak często, że trawa jest zielona cały rok.",
+        "en": "The Emerald Isle rains so often that the grass stays green all year."
+      },
+      "symbol": "clover"
+    },
+    {
+      "iso": "IT",
+      "un": "380",
+      "region": "europe",
+      "subregion": "south",
+      "fame": 1,
+      "micro": false,
+      "name": {
+        "ru": "Италия",
+        "pl": "Włochy",
+        "en": "Italy"
+      },
+      "capital": {
+        "ru": "Рим",
+        "pl": "Rzym",
+        "en": "Rome"
+      },
+      "capitalCoords": [
+        12.4964,
+        41.9028
+      ],
+      "fact": {
+        "ru": "Страна похожа на сапог. Тут придумали пиццу и мороженое джелато.",
+        "pl": "Kraj wygląda jak but. Tu wymyślono pizzę i lody gelato.",
+        "en": "The country is shaped like a boot. Pizza and gelato were invented here."
+      },
+      "symbol": "pizza"
+    },
+    {
+      "iso": "LV",
+      "un": "428",
+      "region": "europe",
+      "subregion": "baltic",
+      "fame": 2,
+      "micro": false,
+      "name": {
+        "ru": "Латвия",
+        "pl": "Łotwa",
+        "en": "Latvia"
+      },
+      "capital": {
+        "ru": "Рига",
+        "pl": "Ryga",
+        "en": "Riga"
+      },
+      "capitalCoords": [
+        24.1052,
+        56.9496
+      ],
+      "fact": {
+        "ru": "На берегу Балтики тут находят янтарь, застывшую смолу древних деревьев.",
+        "pl": "Na brzegu Bałtyku znajduje się tu bursztyn, zastygłą żywicę dawnych drzew.",
+        "en": "Amber, the hardened resin of ancient trees, washes up on the Baltic shore here."
+      },
+      "symbol": "amber"
+    },
+    {
+      "iso": "LI",
+      "un": "438",
+      "region": "europe",
+      "subregion": "central",
+      "fame": 3,
+      "micro": true,
+      "name": {
+        "ru": "Лихтенштейн",
+        "pl": "Liechtenstein",
+        "en": "Liechtenstein"
+      },
+      "capital": {
+        "ru": "Вадуц",
+        "pl": "Vaduz",
+        "en": "Vaduz"
+      },
+      "capitalCoords": [
+        9.5209,
+        47.141
+      ],
+      "fact": {
+        "ru": "Страну можно пройти пешком за один день, а правит ею настоящий князь.",
+        "pl": "Kraj można przejść pieszo w jeden dzień, a rządzi nim prawdziwy książę.",
+        "en": "You can walk across this country in a day, and a real prince rules it."
+      },
+      "symbol": "castle"
+    },
+    {
+      "iso": "LT",
+      "un": "440",
+      "region": "europe",
+      "subregion": "baltic",
+      "fame": 2,
+      "micro": false,
+      "name": {
+        "ru": "Литва",
+        "pl": "Litwa",
+        "en": "Lithuania"
+      },
+      "capital": {
+        "ru": "Вильнюс",
+        "pl": "Wilno",
+        "en": "Vilnius"
+      },
+      "capitalCoords": [
+        25.2797,
+        54.6872
+      ],
+      "fact": {
+        "ru": "Тут есть Гора крестов, на неё люди принесли больше ста тысяч крестов.",
+        "pl": "Jest tu Góra Krzyży, na którą ludzie przynieśli ponad sto tysięcy krzyży.",
+        "en": "The Hill of Crosses here holds more than a hundred thousand crosses."
+      },
+      "symbol": "castle"
+    },
+    {
+      "iso": "LU",
+      "un": "442",
+      "region": "europe",
+      "subregion": "west",
+      "fame": 3,
+      "micro": true,
+      "name": {
+        "ru": "Люксембург",
+        "pl": "Luksemburg",
+        "en": "Luxembourg"
+      },
+      "capital": {
+        "ru": "Люксембург",
+        "pl": "Luksemburg",
+        "en": "Luxembourg"
+      },
+      "capitalCoords": [
+        6.1319,
+        49.6116
+      ],
+      "fact": {
+        "ru": "Первая страна в мире, где весь общественный транспорт бесплатный.",
+        "pl": "Pierwszy kraj na świecie, gdzie cały transport publiczny jest darmowy.",
+        "en": "The first country in the world to make all public transport free."
+      },
+      "symbol": "crown"
+    },
+    {
+      "iso": "MT",
+      "un": "470",
+      "region": "europe",
+      "subregion": "south",
+      "fame": 2,
+      "micro": true,
+      "name": {
+        "ru": "Мальта",
+        "pl": "Malta",
+        "en": "Malta"
+      },
+      "capital": {
+        "ru": "Валлетта",
+        "pl": "Valletta",
+        "en": "Valletta"
+      },
+      "capitalCoords": [
+        14.5146,
+        35.8989
+      ],
+      "fact": {
+        "ru": "Маленький остров, где стоят храмы старше египетских пирамид.",
+        "pl": "Mała wyspa, na której stoją świątynie starsze od egipskich piramid.",
+        "en": "A small island with temples older than the Egyptian pyramids."
+      },
+      "symbol": "boat"
+    },
+    {
+      "iso": "MD",
+      "un": "498",
+      "region": "europe",
+      "subregion": "east",
+      "fame": 2,
+      "micro": false,
+      "name": {
+        "ru": "Молдова",
+        "pl": "Mołdawia",
+        "en": "Moldova"
+      },
+      "capital": {
+        "ru": "Кишинёв",
+        "pl": "Kiszyniów",
+        "en": "Chisinau"
+      },
+      "capitalCoords": [
+        28.8638,
+        47.0105
+      ],
+      "fact": {
+        "ru": "Под землёй тут прячутся винные подвалы длиной в двести километров.",
+        "pl": "Pod ziemią kryją się tu piwnice z winem długie na dwieście kilometrów.",
+        "en": "Wine cellars stretching two hundred kilometres run under the ground here."
+      },
+      "symbol": "grapes"
+    },
+    {
+      "iso": "MC",
+      "un": "492",
+      "region": "europe",
+      "subregion": "west",
+      "fame": 3,
+      "micro": true,
+      "name": {
+        "ru": "Монако",
+        "pl": "Monako",
+        "en": "Monaco"
+      },
+      "capital": {
+        "ru": "Монако",
+        "pl": "Monako",
+        "en": "Monaco"
+      },
+      "capitalCoords": [
+        7.4246,
+        43.7384
+      ],
+      "fact": {
+        "ru": "Вторая по размеру самая маленькая страна мира, её можно обойти за час.",
+        "pl": "Drugi najmniejszy kraj świata, można go obejść w godzinę.",
+        "en": "The second smallest country in the world, you can walk around it in an hour."
+      },
+      "symbol": "racecar"
+    },
+    {
+      "iso": "ME",
+      "un": "499",
+      "region": "europe",
+      "subregion": "balkans",
+      "fame": 2,
+      "micro": false,
+      "name": {
+        "ru": "Черногория",
+        "pl": "Czarnogóra",
+        "en": "Montenegro"
+      },
+      "capital": {
+        "ru": "Подгорица",
+        "pl": "Podgorica",
+        "en": "Podgorica"
+      },
+      "capitalCoords": [
+        19.2594,
+        42.4304
+      ],
+      "fact": {
+        "ru": "Название значит чёрная гора, тут горы подходят прямо к морю.",
+        "pl": "Nazwa znaczy czarna góra, góry schodzą tu prosto do morza.",
+        "en": "The name means black mountain, and the mountains here run right down to the sea."
+      },
+      "symbol": "mountains"
+    },
+    {
+      "iso": "NL",
+      "un": "528",
+      "region": "europe",
+      "subregion": "west",
+      "fame": 1,
+      "micro": false,
+      "name": {
+        "ru": "Нидерланды",
+        "pl": "Holandia",
+        "en": "Netherlands"
+      },
+      "capital": {
+        "ru": "Амстердам",
+        "pl": "Amsterdam",
+        "en": "Amsterdam"
+      },
+      "capitalCoords": [
+        4.9041,
+        52.3676
+      ],
+      "fact": {
+        "ru": "Треть страны ниже уровня моря, её защищают дамбы. Велосипедов больше, чем людей.",
+        "pl": "Jedna trzecia kraju leży poniżej poziomu morza, chronią go tamy. Rowerów jest więcej niż ludzi.",
+        "en": "A third of the country lies below sea level behind dikes. There are more bikes than people."
+      },
+      "symbol": "windmill"
+    },
+    {
+      "iso": "MK",
+      "un": "807",
+      "region": "europe",
+      "subregion": "balkans",
+      "fame": 2,
+      "micro": false,
+      "name": {
+        "ru": "Северная Македония",
+        "pl": "Macedonia Północna",
+        "en": "North Macedonia"
+      },
+      "capital": {
+        "ru": "Скопье",
+        "pl": "Skopje",
+        "en": "Skopje"
+      },
+      "capitalCoords": [
+        21.4254,
+        41.9973
+      ],
+      "fact": {
+        "ru": "Озеро Охрид одно из самых старых на Земле, ему больше миллиона лет.",
+        "pl": "Jezioro Ochrydzkie jest jednym z najstarszych na Ziemi, ma ponad milion lat.",
+        "en": "Lake Ohrid is one of the oldest lakes on Earth, over a million years old."
+      },
+      "symbol": "lake"
+    },
+    {
+      "iso": "NO",
+      "un": "578",
+      "region": "europe",
+      "subregion": "nordic",
+      "fame": 1,
+      "micro": false,
+      "name": {
+        "ru": "Норвегия",
+        "pl": "Norwegia",
+        "en": "Norway"
+      },
+      "capital": {
+        "ru": "Осло",
+        "pl": "Oslo",
+        "en": "Oslo"
+      },
+      "capitalCoords": [
+        10.7522,
+        59.9139
+      ],
+      "fact": {
+        "ru": "Летом на севере солнце не заходит совсем, это страна фьордов и викингов.",
+        "pl": "Latem na północy słońce w ogóle nie zachodzi, to kraj fiordów i wikingów.",
+        "en": "In the north the summer sun never sets. This is the land of fjords and Vikings."
+      },
+      "symbol": "viking"
+    },
+    {
+      "iso": "PL",
+      "un": "616",
+      "region": "europe",
+      "subregion": "central",
+      "fame": 1,
+      "micro": false,
+      "name": {
+        "ru": "Польша",
+        "pl": "Polska",
+        "en": "Poland"
+      },
+      "capital": {
+        "ru": "Варшава",
+        "pl": "Warszawa",
+        "en": "Warsaw"
+      },
+      "capitalCoords": [
+        21.0122,
+        52.2297
+      ],
+      "fact": {
+        "ru": "В соляной шахте в Величке целые залы и статуи вырезаны из соли.",
+        "pl": "W kopalni soli w Wieliczce całe sale i rzeźby są wykute w soli.",
+        "en": "In the Wieliczka salt mine whole halls and statues are carved out of salt."
+      },
+      "symbol": "stork"
+    },
+    {
+      "iso": "PT",
+      "un": "620",
+      "region": "europe",
+      "subregion": "south",
+      "fame": 1,
+      "micro": false,
+      "name": {
+        "ru": "Португалия",
+        "pl": "Portugalia",
+        "en": "Portugal"
+      },
+      "capital": {
+        "ru": "Лиссабон",
+        "pl": "Lizbona",
+        "en": "Lisbon"
+      },
+      "capitalCoords": [
+        -9.1393,
+        38.7223
+      ],
+      "fact": {
+        "ru": "Отсюда уплывали корабли открывать новые земли. И тут делают пробку для бутылок.",
+        "pl": "Stąd wypływały statki odkrywać nowe lądy. I robi się tu korki do butelek.",
+        "en": "Ships sailed from here to discover new lands. Most bottle cork comes from here."
+      },
+      "symbol": "boat"
+    },
+    {
+      "iso": "RO",
+      "un": "642",
+      "region": "europe",
+      "subregion": "east",
+      "fame": 2,
+      "micro": false,
+      "name": {
+        "ru": "Румыния",
+        "pl": "Rumunia",
+        "en": "Romania"
+      },
+      "capital": {
+        "ru": "Бухарест",
+        "pl": "Bukareszt",
+        "en": "Bucharest"
+      },
+      "capitalCoords": [
+        26.1025,
+        44.4268
+      ],
+      "fact": {
+        "ru": "В горах Трансильвании стоит замок, который называют замком Дракулы.",
+        "pl": "W górach Transylwanii stoi zamek, który nazywa się zamkiem Draculi.",
+        "en": "In the mountains of Transylvania stands the castle known as Dracula's castle."
+      },
+      "symbol": "castle"
+    },
+    {
+      "iso": "RU",
+      "un": "643",
+      "region": "europe",
+      "subregion": "east",
+      "fame": 1,
+      "micro": false,
+      "name": {
+        "ru": "Россия",
+        "pl": "Rosja",
+        "en": "Russia"
+      },
+      "capital": {
+        "ru": "Москва",
+        "pl": "Moskwa",
+        "en": "Moscow"
+      },
+      "capitalCoords": [
+        37.6173,
+        55.7558
+      ],
+      "fact": {
+        "ru": "Самая большая страна мира, она лежит сразу в Европе и Азии, тут 11 часовых поясов.",
+        "pl": "Największy kraj świata, leży od razu w Europie i Azji, ma 11 stref czasowych.",
+        "en": "The largest country in the world spans Europe and Asia and has 11 time zones."
+      },
+      "symbol": "bear"
+    },
+    {
+      "iso": "SM",
+      "un": "674",
+      "region": "europe",
+      "subregion": "south",
+      "fame": 3,
+      "micro": true,
+      "name": {
+        "ru": "Сан-Марино",
+        "pl": "San Marino",
+        "en": "San Marino"
+      },
+      "capital": {
+        "ru": "Сан-Марино",
+        "pl": "San Marino",
+        "en": "San Marino"
+      },
+      "capitalCoords": [
+        12.4578,
+        43.9424
+      ],
+      "fact": {
+        "ru": "Самая старая республика в мире, ей больше 1700 лет. Она целиком внутри Италии.",
+        "pl": "Najstarsza republika świata, ma ponad 1700 lat. Leży w całości wewnątrz Włoch.",
+        "en": "The world's oldest republic, over 1,700 years old, sits entirely inside Italy."
+      },
+      "symbol": "towers"
+    },
+    {
+      "iso": "RS",
+      "un": "688",
+      "region": "europe",
+      "subregion": "balkans",
+      "fame": 2,
+      "micro": false,
+      "name": {
+        "ru": "Сербия",
+        "pl": "Serbia",
+        "en": "Serbia"
+      },
+      "capital": {
+        "ru": "Белград",
+        "pl": "Belgrad",
+        "en": "Belgrade"
+      },
+      "capitalCoords": [
+        20.4489,
+        44.7866
+      ],
+      "fact": {
+        "ru": "Белград стоит там, где две большие реки, Сава и Дунай, сливаются вместе.",
+        "pl": "Belgrad leży tam, gdzie dwie wielkie rzeki, Sawa i Dunaj, łączą się razem.",
+        "en": "Belgrade stands where two great rivers, the Sava and the Danube, meet."
+      },
+      "symbol": "eagle"
+    },
+    {
+      "iso": "SK",
+      "un": "703",
+      "region": "europe",
+      "subregion": "central",
+      "fame": 2,
+      "micro": false,
+      "name": {
+        "ru": "Словакия",
+        "pl": "Słowacja",
+        "en": "Slovakia"
+      },
+      "capital": {
+        "ru": "Братислава",
+        "pl": "Bratysława",
+        "en": "Bratislava"
+      },
+      "capitalCoords": [
+        17.1077,
+        48.1486
+      ],
+      "fact": {
+        "ru": "Тут больше 6000 пещер и очень много старинных замков в горах.",
+        "pl": "Jest tu ponad 6000 jaskiń i bardzo dużo starych zamków w górach.",
+        "en": "There are over 6,000 caves here and a great many old castles in the mountains."
+      },
+      "symbol": "mountains"
+    },
+    {
+      "iso": "SI",
+      "un": "705",
+      "region": "europe",
+      "subregion": "central",
+      "fame": 2,
+      "micro": false,
+      "name": {
+        "ru": "Словения",
+        "pl": "Słowenia",
+        "en": "Slovenia"
+      },
+      "capital": {
+        "ru": "Любляна",
+        "pl": "Lublana",
+        "en": "Ljubljana"
+      },
+      "capitalCoords": [
+        14.5058,
+        46.0569
+      ],
+      "fact": {
+        "ru": "На озере Блед есть островок с церковью, туда плывут на лодке.",
+        "pl": "Na jeziorze Bled jest wysepka z kościołem, płynie się tam łódką.",
+        "en": "Lake Bled has a tiny island with a church that you reach by boat."
+      },
+      "symbol": "lake"
+    },
+    {
+      "iso": "ES",
+      "un": "724",
+      "region": "europe",
+      "subregion": "south",
+      "fame": 1,
+      "micro": false,
+      "name": {
+        "ru": "Испания",
+        "pl": "Hiszpania",
+        "en": "Spain"
+      },
+      "capital": {
+        "ru": "Мадрид",
+        "pl": "Madryt",
+        "en": "Madrid"
+      },
+      "capitalCoords": [
+        -3.7038,
+        40.4168
+      ],
+      "fact": {
+        "ru": "Собор Саграда Фамилия в Барселоне строят уже больше 140 лет.",
+        "pl": "Katedrę Sagrada Familia w Barcelonie buduje się już ponad 140 lat.",
+        "en": "The Sagrada Familia in Barcelona has been under construction for over 140 years."
+      },
+      "symbol": "bull"
+    },
+    {
+      "iso": "SE",
+      "un": "752",
+      "region": "europe",
+      "subregion": "nordic",
+      "fame": 1,
+      "micro": false,
+      "name": {
+        "ru": "Швеция",
+        "pl": "Szwecja",
+        "en": "Sweden"
+      },
+      "capital": {
+        "ru": "Стокгольм",
+        "pl": "Sztokholm",
+        "en": "Stockholm"
+      },
+      "capitalCoords": [
+        18.0686,
+        59.3293
+      ],
+      "fact": {
+        "ru": "Стокгольм стоит на 14 островах. Отсюда родом Пеппи Длинныйчулок и Карлсон.",
+        "pl": "Sztokholm leży na 14 wyspach. Stąd pochodzi Pippi Pończoszanka i Karlsson.",
+        "en": "Stockholm sits on 14 islands. Pippi Longstocking and Karlsson come from here."
+      },
+      "symbol": "deer"
+    },
+    {
+      "iso": "CH",
+      "un": "756",
+      "region": "europe",
+      "subregion": "central",
+      "fame": 1,
+      "micro": false,
+      "name": {
+        "ru": "Швейцария",
+        "pl": "Szwajcaria",
+        "en": "Switzerland"
+      },
+      "capital": {
+        "ru": "Берн",
+        "pl": "Berno",
+        "en": "Bern"
+      },
+      "capitalCoords": [
+        7.4474,
+        46.948
+      ],
+      "fact": {
+        "ru": "Страна часов, сыра и шоколада. У неё квадратный флаг, таких всего два в мире.",
+        "pl": "Kraj zegarków, sera i czekolady. Ma kwadratową flagę, takich są tylko dwie na świecie.",
+        "en": "Land of watches, cheese and chocolate. Its flag is square, one of only two in the world."
+      },
+      "symbol": "cheese"
+    },
+    {
+      "iso": "UA",
+      "un": "804",
+      "region": "europe",
+      "subregion": "east",
+      "fame": 1,
+      "micro": false,
+      "name": {
+        "ru": "Украина",
+        "pl": "Ukraina",
+        "en": "Ukraine"
+      },
+      "capital": {
+        "ru": "Киев",
+        "pl": "Kijów",
+        "en": "Kyiv"
+      },
+      "capitalCoords": [
+        30.5234,
+        50.4501
+      ],
+      "fact": {
+        "ru": "Самая большая страна целиком в Европе. Её флаг это небо над пшеничным полем.",
+        "pl": "Największy kraj leżący w całości w Europie. Jej flaga to niebo nad polem pszenicy.",
+        "en": "The largest country lying entirely in Europe. Its flag is sky above a wheat field."
+      },
+      "symbol": "sunflower"
+    },
+    {
+      "iso": "GB",
+      "un": "826",
+      "region": "europe",
+      "subregion": "west",
+      "fame": 1,
+      "micro": false,
+      "name": {
+        "ru": "Великобритания",
+        "pl": "Wielka Brytania",
+        "en": "United Kingdom"
+      },
+      "capital": {
+        "ru": "Лондон",
+        "pl": "Londyn",
+        "en": "London"
+      },
+      "capitalCoords": [
+        -0.1276,
+        51.5074
+      ],
+      "fact": {
+        "ru": "Страна из четырёх частей на островах. Тут ездят по левой стороне дороги.",
+        "pl": "Kraj z czterech części na wyspach. Jeździ się tu lewą stroną drogi.",
+        "en": "A country of four parts on islands, where cars drive on the left."
+      },
+      "symbol": "bigben"
+    },
+    {
+      "iso": "VA",
+      "un": "336",
+      "region": "europe",
+      "subregion": "south",
+      "fame": 3,
+      "micro": true,
+      "name": {
+        "ru": "Ватикан",
+        "pl": "Watykan",
+        "en": "Vatican City"
+      },
+      "capital": {
+        "ru": "Ватикан",
+        "pl": "Watykan",
+        "en": "Vatican City"
+      },
+      "capitalCoords": [
+        12.4534,
+        41.9029
+      ],
+      "fact": {
+        "ru": "Самая маленькая страна мира, она целиком помещается внутри Рима.",
+        "pl": "Najmniejszy kraj świata, mieści się w całości wewnątrz Rzymu.",
+        "en": "The smallest country in the world fits entirely inside the city of Rome."
+      },
+      "symbol": "dome"
+    }
+  ]
+}

@@ -1,0 +1,86 @@
+.menu {
+  max-width: 640px;
+  margin: 0 auto;
+  padding: 22px 20px 40px;
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+}
+
+.menu-head {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr) auto;
+  align-items: center;
+  gap: 14px;
+}
+.menu-kid { width: 68px; }
+.menu-kid .kid { filter: none; }
+
+.menu-who { min-width: 0; }
+.menu-hello { margin: 0; font-size: clamp(24px, 5vw, 32px); font-weight: 800; }
+
+.menu-bar {
+  height: 10px;
+  border-radius: 999px;
+  background: var(--line);
+  overflow: hidden;
+  margin: 6px 0 4px;
+}
+.menu-bar span {
+  display: block;
+  height: 100%;
+  border-radius: 999px;
+  background: var(--accent);
+  transition: width 400ms ease;
+}
+
+.menu-learned { margin: 0; color: var(--muted); font-size: 14px; }
+.menu-learned b { color: var(--ink); font-size: 16px; }
+
+.menu-modes { display: flex; flex-direction: column; gap: 12px; }
+
+.mode-card {
+  font: inherit;
+  display: grid;
+  grid-template-columns: 54px minmax(0, 1fr) auto;
+  align-items: center;
+  gap: 16px;
+  text-align: left;
+  background: var(--surface);
+  border: 0;
+  box-shadow: 0 3px 0 var(--line);
+  border-radius: 22px;
+  padding: 16px 20px;
+  cursor: pointer;
+  transition: transform 120ms ease, box-shadow 160ms ease;
+}
+.mode-card:hover { box-shadow: 0 3px 0 var(--accent); }
+.mode-card:active { transform: translateY(2px); box-shadow: 0 1px 0 var(--line); }
+
+.mode-icon { width: 54px; height: 54px; display: block; }
+
+.mode-text { display: flex; flex-direction: column; gap: 3px; min-width: 0; }
+.mode-text b { font-size: 21px; }
+.mode-text span { color: var(--muted); font-size: 15px; }
+
+.mode-best {
+  font-size: 17px;
+  font-weight: 800;
+  color: var(--accent);
+  font-variant-numeric: tabular-nums;
+  white-space: nowrap;
+}
+
+.menu-settings {
+  background: var(--surface);
+  border-radius: 18px;
+  padding: 4px 18px;
+  color: var(--muted);
+}
+.menu-settings summary {
+  cursor: pointer;
+  padding: 12px 0;
+  font-weight: 600;
+  font-size: 15px;
+}
+.menu-setting { display: flex; flex-direction: column; gap: 8px; padding-bottom: 16px; }

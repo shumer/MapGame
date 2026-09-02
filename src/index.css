@@ -1,0 +1,23 @@
+@import './ui/controls.css';
+
+* { box-sizing: border-box; }
+
+html, body, #root {
+  height: 100%;
+  margin: 0;
+}
+
+body {
+  background: var(--bg);
+  -webkit-text-size-adjust: 100%;
+  color: var(--ink);
+  font-family: 'Nunito', system-ui, -apple-system, sans-serif;
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* Nothing in the game is meant to be selected: a long press on a tablet should
+   feel like a button press, not the start of a text selection. */
+button, .worldmap, .pips, .stars {
+  user-select: none;
+  -webkit-user-select: none;
+}

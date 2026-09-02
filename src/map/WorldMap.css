@@ -1,0 +1,138 @@
+.worldmap {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  min-height: 200px;
+  overflow: hidden;
+  border-radius: var(--radius-map, 20px);
+  background: var(--sea);
+}
+
+.worldmap-svg {
+  display: block;
+  touch-action: none;
+  user-select: none;
+}
+.worldmap-svg.is-interactive .country,
+.worldmap-svg.is-interactive .micro-hit {
+  cursor: pointer;
+}
+
+.sea {
+  fill: var(--sea);
+}
+
+.backdrop {
+  fill: var(--land-backdrop);
+  stroke: var(--coastline);
+  stroke-width: 0.5;
+  stroke-linejoin: round;
+  pointer-events: none;
+}
+
+/* A soft drop shadow under the land reads as the cartoon sticker look while
+   the borders themselves stay accurate. */
+.lands {
+  filter: drop-shadow(0 1px 1.5px rgba(20, 45, 60, 0.28));
+}
+
+.country {
+  stroke: var(--coastline);
+  stroke-linejoin: round;
+  stroke-linecap: round;
+  transition: fill 260ms ease, opacity 260ms ease, stroke 260ms ease;
+}
+
+/* Four colours are enough to keep every pair of neighbours distinct;
+   the last two slots exist for when other regions are added. */
+.tone-0 { fill: var(--tone-0); }
+.tone-1 { fill: var(--tone-1); }
+.tone-2 { fill: var(--tone-2); }
+.tone-3 { fill: var(--tone-3); }
+.tone-4 { fill: var(--tone-4); }
+.tone-5 { fill: var(--tone-5); }
+
+.country.is-dim {
+  fill: var(--land-backdrop);
+  opacity: 0.75;
+}
+.country.is-correct {
+  fill: var(--right);
+  stroke: var(--right-edge);
+  animation: pop 480ms ease-out;
+  /* Sits above its neighbours so the outline is not clipped by them. */
+  paint-order: stroke fill;
+}
+.country.is-wrong {
+  fill: var(--miss);
+}
+
+/* "This is the country we are asking about" - deliberately not the green used
+   for a correct answer, so the two never get confused. */
+.country.is-focus {
+  fill: var(--focus);
+  stroke: var(--focus-edge);
+  paint-order: stroke fill;
+}
+
+.micro-hit {
+  fill: transparent;
+}
+.micro-dot {
+  stroke: var(--coastline);
+  stroke-width: 2;
+  transition: fill 260ms ease;
+}
+.micro.is-correct .micro-dot {
+  fill: var(--right);
+  animation: pop 480ms ease-out;
+}
+.micro.is-wrong .micro-dot {
+  fill: var(--miss);
+}
+.micro.is-focus .micro-dot {
+  fill: var(--focus);
+  stroke: var(--focus-edge);
+}
+.micro.is-dim .micro-dot {
+  fill: var(--land-backdrop);
+}
+
+.capital-halo {
+  fill: var(--capital);
+  opacity: 0.28;
+  animation: halo 1.6s ease-in-out infinite;
+  transform-box: fill-box;
+  transform-origin: center;
+}
+.capital-dot {
+  fill: var(--capital);
+  stroke: var(--coastline);
+  stroke-width: 2;
+}
+
+.worldmap-loading {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  color: var(--muted);
+}
+
+@keyframes pop {
+  0% { opacity: 0.35; }
+  55% { opacity: 1; }
+  100% { opacity: 1; }
+}
+@keyframes halo {
+  0%, 100% { transform: scale(1); opacity: 0.28; }
+  50% { transform: scale(1.35); opacity: 0.12; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .country.is-correct,
+  .micro.is-correct .micro-dot,
+  .capital-halo {
+    animation: none;
+  }
+}

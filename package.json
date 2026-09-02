@@ -1,0 +1,42 @@
+{
+  "name": "mapgame",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc -b && vite build",
+    "lint": "oxlint",
+    "preview": "vite preview",
+    "data:map": "node scripts/build-map.mjs",
+    "data:derived": "node scripts/build-derived.mjs",
+    "data:check": "node scripts/validate-data.mjs",
+    "data": "npm run data:map && npm run data:derived && npm run data:flags && npm run data:check",
+    "data:flags": "node scripts/build-flags.mjs"
+  },
+  "dependencies": {
+    "d3-geo": "^3.1.1",
+    "flag-icons": "^7.5.0",
+    "react": "^19.2.8",
+    "react-dom": "^19.2.8",
+    "topojson-client": "^3.1.0",
+    "world-atlas": "^2.0.2",
+    "zustand": "^5.0.15"
+  },
+  "devDependencies": {
+    "@types/d3-geo": "^3.1.1",
+    "@types/node": "^24.13.3",
+    "@types/react": "^19.2.18",
+    "@types/react-dom": "^19.2.4",
+    "@types/topojson-client": "^3.1.5",
+    "@vitejs/plugin-react": "^6.1.0",
+    "oxlint": "^1.79.0",
+    "sharp": "^0.35.4",
+    "topojson-server": "^3.0.1",
+    "topojson-simplify": "^3.0.3",
+    "typescript": "~6.0.2",
+    "vite": "^8.2.2",
+    "vite-plugin-pwa": "^1.3.0",
+    "vite-plugin-singlefile": "^2.3.3"
+  }
+}

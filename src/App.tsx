@@ -1,0 +1,57 @@
+import { useState } from 'react'
+import { GameScreen } from './screens/GameScreen'
+import { MenuScreen } from './screens/MenuScreen'
+import { ResultScreen } from './screens/ResultScreen'
+import { StartScreen } from './screens/StartScreen'
+import { SymbolGallery } from './screens/SymbolGallery'
+import { useActiveProfile, useProfiles } from './store/profiles'
+import type { GameMode } from './game/types'
+
+type Screen =
+  | { name: 'menu' }
+  | { name: 'game'; mode: GameMode }
+  | { name: 'result'; mode: GameMode; score: number; total: number; isBest: boolean }
+
+export function App() {
+  const profile = useActiveProfile()
+  const finishRound = useProfiles((s) => s.finishRound)
+  const [screen, setScreen] = useState<Screen>({ name: 'menu' })
+
+  // Development-only view of every drawn country hint.
+  if (typeof window !== 'undefined' && window.location.hash === '#symbols') return <SymbolGallery />
+
+  if (!profile) return <StartScreen onReady={() => setScreen({ name: 'menu' })} />
+
+
+  if (screen.name === 'game') {
+    return (
+      <GameScreen
+        // Remounts on replay so the round starts clean.
+        key={`${screen.mode}-${profile.rounds}`}
+        profile={profile}
+        mode={screen.mode}
+        onExit={() => setScreen({ name: 'menu' })}
+        onDone={(score, total) => {
+          const isBest = score > (profile.best[screen.mode] ?? 0)
+          finishRound(profile.id, screen.mode, score)
+          setScreen({ name: 'result', mode: screen.mode, score, total, isBest })
+        }}
+      />
+    )
+  }
+
+  if (screen.name === 'result') {
+    return (
+      <ResultScreen
+        profile={profile}
+        score={screen.score}
+        total={screen.total}
+        isBest={screen.isBest}
+        onAgain={() => setScreen({ name: 'game', mode: screen.mode })}
+        onHome={() => setScreen({ name: 'menu' })}
+      />
+    )
+  }
+
+  return <MenuScreen profile={profile} onPlay={(mode) => setScreen({ name: 'game', mode })} />
+}

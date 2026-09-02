@@ -1,0 +1,64 @@
+import type { Lang } from '../data'
+
+/** Every string the interface shows, in the three languages the game supports. */
+const STRINGS = {
+  appName: { ru: 'Путешествие по Европе', pl: 'Podróż po Europie', en: 'Journey across Europe' },
+  whoPlays: { ru: 'Кто играет?', pl: 'Kto gra?', en: 'Who is playing?' },
+  addPlayer: { ru: 'Новый игрок', pl: 'Nowy gracz', en: 'New player' },
+  yourName: { ru: 'Как тебя зовут?', pl: 'Jak masz na imię?', en: 'What is your name?' },
+  levelLittle: { ru: 'Малыш', pl: 'Maluch', en: 'Little one' },
+  levelExpert: { ru: 'Знаток', pl: 'Znawca', en: 'Expert' },
+  levelLittleHint: { ru: 'Два ответа, всё вслух', pl: 'Dwie odpowiedzi, wszystko na głos', en: 'Two answers, everything read aloud' },
+  levelExpertHint: { ru: 'Четыре ответа, столицы, счёт', pl: 'Cztery odpowiedzi, stolice, punkty', en: 'Four answers, capitals, score' },
+  play: { ru: 'Играть', pl: 'Graj', en: 'Play' },
+  start: { ru: 'Начать', pl: 'Zaczynamy', en: 'Start' },
+  again: { ru: 'Ещё раз', pl: 'Jeszcze raz', en: 'Again' },
+  home: { ru: 'В начало', pl: 'Do początku', en: 'Home' },
+  next: { ru: 'Дальше', pl: 'Dalej', en: 'Next' },
+  modeFlag: { ru: 'Флаги', pl: 'Flagi', en: 'Flags' },
+  modeLocate: { ru: 'Найди на карте', pl: 'Znajdź na mapie', en: 'Find on the map' },
+  modeCapital: { ru: 'Столицы', pl: 'Stolice', en: 'Capitals' },
+  modeFlagHint: { ru: 'Чей это флаг?', pl: 'Czyja to flaga?', en: 'Whose flag is this?' },
+  modeFlagHintLittle: { ru: 'Найди нужный флаг', pl: 'Znajdź właściwą flagę', en: 'Find the right flag' },
+  modeLocateHint: { ru: 'Покажи страну на карте', pl: 'Pokaż kraj na mapie', en: 'Point to the country' },
+  modeCapitalHint: { ru: 'Какая столица у страны?', pl: 'Jaka jest stolica kraju?', en: 'What is the capital?' },
+  askFlag: { ru: 'Чей это флаг?', pl: 'Czyja to flaga?', en: 'Whose flag is this?' },
+  // Phrased as a standalone question under the country name, so no language
+  // needs the country declined - "Stolica kraju Niemcy?" was simply wrong.
+  askLocate: { ru: 'Где это на карте?', pl: 'Gdzie to jest na mapie?', en: 'Where is it on the map?' },
+  askCapital: { ru: 'Какая тут столица?', pl: 'Jaka jest tu stolica?', en: 'What is its capital?' },
+  rightAnswer: { ru: 'Верно!', pl: 'Dobrze!', en: 'Correct!' },
+  thisIsIt: { ru: 'Вот она', pl: 'To tutaj', en: 'Here it is' },
+  listen: { ru: 'Послушать', pl: 'Posłuchaj', en: 'Listen' },
+  roundDone: { ru: 'Раунд пройден', pl: 'Runda skończona', en: 'Round complete' },
+  scoreOf: { ru: 'из', pl: 'z', en: 'of' },
+  newBest: { ru: 'Новый рекорд!', pl: 'Nowy rekord!', en: 'New best!' },
+  learned: { ru: 'Выучено стран', pl: 'Poznane kraje', en: 'Countries learned' },
+  langUi: { ru: 'Язык игры', pl: 'Język gry', en: 'Game language' },
+  langContent: { ru: 'Учим названия на', pl: 'Uczymy się nazw po', en: 'Learning names in' },
+  back: { ru: 'Назад', pl: 'Wróć', en: 'Back' },
+  capitalIs: { ru: 'Столица', pl: 'Stolica', en: 'Capital' },
+  pickFace: { ru: 'Выбери себя', pl: 'Wybierz siebie', en: 'Pick your face' },
+} as const
+
+export type UiKey = keyof typeof STRINGS
+
+export const t = (key: UiKey, lang: Lang): string => STRINGS[key][lang]
+
+/** Spoken after a correct answer, picked at random so it does not get stale. */
+const PRAISE: Record<Lang, string[]> = {
+  ru: ['Ура!', 'Молодец!', 'Отлично!', 'Здорово!', 'Точно!', 'Так держать!'],
+  pl: ['Hurra!', 'Brawo!', 'Świetnie!', 'Super!', 'Zgadza się!', 'Tak trzymaj!'],
+  en: ['Hooray!', 'Well done!', 'Great!', 'Nice one!', "That's it!", 'Keep going!'],
+}
+
+export const praise = (lang: Lang): string => {
+  const list = PRAISE[lang]
+  return list[Math.floor(Math.random() * list.length)]
+}
+
+export const LANG_NAMES: Record<Lang, string> = {
+  ru: 'Русский',
+  pl: 'Polski',
+  en: 'English',
+}

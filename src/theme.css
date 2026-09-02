@@ -1,0 +1,36 @@
+/* Colours for the whole game. The map palette is deliberately pastel and the
+   coastline is a thick light stroke, which is what gives the flat cartoon look
+   without giving up real Natural Earth borders. */
+:root {
+  color-scheme: light;
+  --sea: #cfe9f4;
+  --land-backdrop: #dfe4e0;
+  --coastline: #fbfdfc;
+
+  --tone-0: #f7c9a4;
+  --tone-1: #a9d9c2;
+  --tone-2: #f4dc94;
+  --tone-3: #c9b8e6;
+  --tone-4: #f0abab;
+  --tone-5: #c8de9f;
+
+  --right: #43c56f;
+  --right-edge: #14663a;
+  --miss: #e9887f;
+  --focus: #f7c948;
+  --focus-edge: #a06f14;
+  --capital: #e2494a;
+
+  --bg: #f4f1ec;
+  --surface: #ffffff;
+  --ink: #22282b;
+  --muted: #6a7478;
+  --line: #dcdcd6;
+  --accent: #2f7d76;
+  --accent-bright: #3a9a91;
+  --accent-shadow: #1f5f59;
+  --accent-tint: #e4f1ef;
+  --on-accent: #ffffff;
+
+  --radius-map: 20px;
+}
