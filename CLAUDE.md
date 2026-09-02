@@ -21,7 +21,7 @@ You are a senior front-end developer building a children's educational game, wit
 - `npm run lint` — oxlint
 - `npx tsc -b` — type check
 
-Before pushing, run what CI runs: `npx tsc -b && npm run data:check && npm run build`.
+Before pushing, run what CI runs: `npx tsc -b && npm run data:check && npm run build`. Pushing does not publish: GitHub Pages is updated by publishing a release, so bump the version and cut one when a change should reach the tablet.
 Deployment fails on any of the three, and `data:check` in particular catches
 what a local `npm run dev` never will.
 - `SINGLE_FILE=1 npx vite build` — self-contained single-file build into `dist-single/`, for sharing the game as one HTML file

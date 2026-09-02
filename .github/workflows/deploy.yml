@@ -1,9 +1,11 @@
-# Builds the game and publishes it to GitHub Pages on every push to main.
+# Publishes the game to GitHub Pages when a release is published. Pushes to
+# main are checked by ci.yml but no longer change what the kids are playing:
+# the site moves only when a release is cut.
 name: Deploy to GitHub Pages
 
 on:
-  push:
-    branches: [main]
+  release:
+    types: [published]
   workflow_dispatch:
 
 permissions:

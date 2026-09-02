@@ -23,9 +23,19 @@ npm run dev:lan
 
 Vite then prints a `http://<your-ip>:5173` address to open on the device.
 
-Pushing to `main` deploys to GitHub Pages automatically
-(`.github/workflows/deploy.yml`). The repository needs Pages enabled once, with
-the source set to GitHub Actions.
+Every push to `main` runs the checks (`.github/workflows/ci.yml`), but the
+published site only changes when a release is published
+(`.github/workflows/deploy.yml`), so what the kids are playing stays put until
+you decide to ship. To ship:
+
+```
+npm version <patch|minor> --no-git-tag-version
+git commit -am "Release x.y.z" && git push
+gh release create vx.y.z --title "vx.y.z" --notes "what changed"
+```
+
+The repository needs Pages enabled once, with the source set to GitHub
+Actions.
 
 ## Data
 
