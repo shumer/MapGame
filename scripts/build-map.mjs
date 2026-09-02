@@ -64,13 +64,28 @@ for (const continent of CONTINENTS) {
       ? 'x-' + String(f.properties.name ?? 'unnamed').toLowerCase().replace(/[^a-z0-9]+/g, '-')
       : String(f.id).padStart(3, '0'))
 
+  // Anything with land inside the frame is drawn, playable or not. Listing
+  // the backdrop by hand always missed something -- eastern Africa along the
+  // bottom of the Asia frame, the Baltics along its top -- and a country left
+  // out is not a blank space but a hole with the sea showing through it.
+  const [[minLon, minLat], [maxLon, maxLat]] = continent.frame
+  const inFrame = (f) => {
+    const polys =
+      f.geometry.type === 'Polygon' ? [f.geometry.coordinates] : f.geometry.coordinates
+    return polys.some((poly) =>
+      poly[0].some(
+        ([lon, lat]) => lon >= minLon && lon <= maxLon && lat >= minLat && lat <= maxLat,
+      ),
+    )
+  }
+
   const excluded = new Set(continent.exclude ?? [])
   const keep = world.features
     .filter((f) => {
       if (excluded.has(idOf(f))) return false
       if (continent.backdropRest) return true
       const id = idOf(f)
-      return playable.has(id) || backdrop.has(id) || byName.has(f.properties.name)
+      return playable.has(id) || backdrop.has(id) || byName.has(f.properties.name) || inFrame(f)
     })
     .map((f) => {
       const id = idOf(f)

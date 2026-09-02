@@ -155,6 +155,15 @@ Seven countries (AD, LI, LU, MT, MC, SM, VA) are too small to tap at map scale. 
 
 `geoConicConformal().fitSize()` on a four-corner polygon sends the projection through its own singularity and collapses the scale to about 0.001 — the map renders as a single dot. Fit to a grid of `MultiPoint` coordinates instead. See `createProjection` in `src/map/projection.ts`.
 
+### The backdrop is worked out, not listed
+
+Every country with land inside a set's frame is drawn, playable or not.
+Listing the neighbours by hand always missed something -- eastern Africa along
+the bottom of the Asia frame, the Baltics along its top, Western Sahara between
+Morocco and Mauritania -- and a country left out is not a blank space but a
+hole with the sea showing through it. The `backdrop` list in the config is now
+only for adding something the frame test misses.
+
 ### Do NOT push the quantization grid too fine
 
 `quant` is per continent (20000 for a continent, 5000 for the world). Going to
