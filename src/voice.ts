@@ -1,4 +1,5 @@
 import { speak, canSpeak } from './speech'
+import { isMuted } from './sound'
 import type { Lang } from './data'
 
 /**
@@ -41,6 +42,7 @@ export function stopVoice() {
  * back to. Returns true when a recording was used.
  */
 export function say(key: string, text: string, lang: Lang): boolean {
+  if (isMuted()) return false
   const url = recordings.get(`${lang}/${key}`)
   if (!url) {
     if (canSpeak(lang)) speak(text, lang)

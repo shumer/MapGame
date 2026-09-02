@@ -2,6 +2,7 @@ import { create } from 'zustand'
 import { persist } from 'zustand/middleware'
 import type { Lang } from '../data'
 import { setMuted } from '../sound'
+import { stopSpeaking } from '../speech'
 
 interface SoundState {
   muted: boolean
@@ -33,6 +34,8 @@ export const useSound = create<SoundState>()(
       toggleMuted: () => {
         const next = !get().muted
         setMuted(next)
+        // Silence whatever is mid-sentence, rather than only the next line.
+        if (next) stopSpeaking()
         set({ muted: next })
       },
     }),

@@ -1,4 +1,5 @@
 import { speechLocale, type Lang } from './data'
+import { isMuted } from './sound'
 
 let voices: SpeechSynthesisVoice[] = []
 
@@ -29,6 +30,8 @@ export const canSpeak = (lang: Lang): boolean =>
 
 export function speak(text: string, lang: Lang) {
   if (typeof window === 'undefined' || !('speechSynthesis' in window)) return
+  // The mute button covers the whole game, speech included.
+  if (isMuted()) return
   window.speechSynthesis.cancel()
   const u = new SpeechSynthesisUtterance(text)
   const voice = voiceFor(lang)
