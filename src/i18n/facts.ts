@@ -133,9 +133,12 @@ export interface WikiFacts {
 function roundPeople(n: number, lang: Lang): string {
   if (n >= 1_000_000) {
     const m = Math.round(n / 100_000) / 10
-    const shown = m % 1 === 0 ? String(m) : m.toFixed(1).replace('.', lang === 'en' ? '.' : ',')
-    if (lang === 'ru') return `${shown} ${ruPlural(Math.round(m), 'миллион', 'миллиона', 'миллионов')}`
-    if (lang === 'pl') return `${shown} ${plPlural(Math.round(m), 'milion', 'miliony', 'milionów')}`
+    const fraction = m % 1 !== 0
+    const shown = fraction ? m.toFixed(1).replace('.', lang === 'en' ? '.' : ',') : String(m)
+    // A fraction takes the genitive singular in both Slavic languages:
+    // "5,4 миллиона", not "5,4 миллионов".
+    if (lang === 'ru') return `${shown} ${fraction ? 'миллиона' : ruPlural(m, 'миллион', 'миллиона', 'миллионов')}`
+    if (lang === 'pl') return `${shown} ${fraction ? 'miliona' : plPlural(m, 'milion', 'miliony', 'milionów')}`
     return `${shown} million`
   }
   return groupDigits(Math.round(n / 1000) * 1000, lang)

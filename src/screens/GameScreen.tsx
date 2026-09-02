@@ -46,7 +46,7 @@ export function GameScreen({ profile, mode, onExit, onDone }: Props) {
   const promptKey = (mode: Mode, picturesOnly: boolean) =>
     mode === 'locate'
       ? 'where-is-it'
-      : mode === 'capital' || mode === 'flagCapital'
+      : mode === 'capital'
         ? 'which-capital'
         : picturesOnly
           ? 'find-flag'
@@ -140,9 +140,8 @@ export function GameScreen({ profile, mode, onExit, onDone }: Props) {
   )
 
   /**
-   * A fact about the country, shown while the answer is being chosen. Only for
-   * the older child: the little one cannot read it, and it would only crowd
-   * her screen. Rotates per question rather than per render.
+   * A fact about the country. Only for the older child: the little one cannot
+   * read it. Rotates per question rather than per render.
    */
   const fact = useMemo(() => {
     if (!preset.showText) return null
@@ -163,22 +162,20 @@ export function GameScreen({ profile, mode, onExit, onDone }: Props) {
   // A child who cannot read gets the flag question the other way round: the
   // country is spoken aloud and the answers are flags, so nothing needs reading.
   const flagsAsAnswers = question.mode === 'flag' && !preset.showText
-  /** The rounds that put a flag on the panel and words on the buttons. */
-  const showsFlag = question.mode === 'flag' ? !flagsAsAnswers : question.mode === 'flagCapital'
+  /** The rounds that put a flag on the panel and words on the buttons. The
+      capitals round names no country: the flag is the only clue, so it asks
+      whose flag this is and what its capital is at once. */
+  const showsFlag = question.mode === 'flag' ? !flagsAsAnswers : question.mode === 'capital'
   const prompt =
     question.mode === 'flag'
       ? t('askFlag', ui)
       : question.mode === 'locate'
         ? t('askLocate', ui)
-        : question.mode === 'flagCapital'
-          ? t('askFlagCapital', ui)
-          : t('askCapital', ui)
+        : t('askCapital', ui)
 
   const optionLabel = (iso: string) => {
     const c = countryByIso(iso)!
-    return question.mode === 'capital' || question.mode === 'flagCapital'
-      ? c.capital[lang]
-      : c.name[lang]
+    return question.mode === 'capital' ? c.capital[lang] : c.name[lang]
   }
 
   return (
@@ -234,9 +231,9 @@ export function GameScreen({ profile, mode, onExit, onDone }: Props) {
           wrong={misses}
           // In the capitals round the country itself is not the answer, so
           // showing it on the map only helps: the child sees where they are.
-          highlight={!revealed && (question.mode === 'capital' || flagsAsAnswers) ? target.iso : null}
+          highlight={!revealed && flagsAsAnswers ? target.iso : null}
           spotlight={hintRegion}
-          focus={revealed || question.mode === 'capital' ? target.iso : null}
+          focus={revealed ? target.iso : null}
           capital={revealed ? target.iso : null}
           trail={trail}
           travellerAt={travellerAt}
@@ -280,7 +277,10 @@ export function GameScreen({ profile, mode, onExit, onDone }: Props) {
               </div>
             )}
 
-            {fact && <p className="fact-line">{fact}</p>}
+            {/* Only in the round that names the country. Everywhere else the
+                question is a flag, and a fact naming the language or the
+                national dish would simply answer it. */}
+            {fact && question.mode === 'locate' && <p className="fact-line">{fact}</p>}
 
             {question.mode !== 'locate' && (
               <div className={`options options-${question.options.length} ${flagsAsAnswers ? 'is-flags' : ''}`}>
@@ -335,7 +335,7 @@ export function GameScreen({ profile, mode, onExit, onDone }: Props) {
               <span className="reveal-capital">
                 {t('capitalIs', ui)}: {target.capital[lang]}
               </span>
-              {preset.showText && <p className="reveal-fact">{target.fact[lang]}</p>}
+              {preset.showText && <p className="reveal-fact">{fact ?? target.fact[lang]}</p>}
             </div>
             <div className="reveal-actions">
               {speakable && (

@@ -21,23 +21,12 @@ export function ModeIcon({ mode }: { mode: GameMode }) {
       </svg>
     )
   }
-  if (mode === 'flagCapital') {
-    // A flag with a star beside it: the flag asks, the capital answers.
-    return (
-      <svg viewBox="0 0 48 48" className="mode-icon" role="presentation">
-        <path d="M10 8v34" stroke="#8a6a4a" strokeWidth="4" strokeLinecap="round" />
-        <path d="M12 11h18l-4 6 4 6H12z" fill="#3f8fbf" />
-        <path d="M35 24l3.2 6.6 7.3 1-5.3 5.1 1.3 7.2-6.5-3.4-6.5 3.4 1.3-7.2-5.3-5.1 7.3-1z" fill="#f2b134" />
-      </svg>
-    )
-  }
+  // Capitals: a flag asking, a star answering.
   return (
     <svg viewBox="0 0 48 48" className="mode-icon" role="presentation">
-      <path d="M8 34h32v6H8z" fill="#c9b8e6" />
-      <path d="M11 34l3-14 6 6 4-12 4 12 6-6 3 14z" fill="#f2b134" />
-      <circle cx="24" cy="10" r="3.4" fill="#e2685f" />
-      <circle cx="13" cy="17" r="2.6" fill="#e2685f" />
-      <circle cx="35" cy="17" r="2.6" fill="#e2685f" />
+      <path d="M10 8v34" stroke="#8a6a4a" strokeWidth="4" strokeLinecap="round" />
+      <path d="M12 11h18l-4 6 4 6H12z" fill="#3f8fbf" />
+      <path d="M35 24l3.2 6.6 7.3 1-5.3 5.1 1.3 7.2-6.5-3.4-6.5 3.4 1.3-7.2-5.3-5.1 7.3-1z" fill="#f2b134" />
     </svg>
   )
 }

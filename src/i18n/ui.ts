@@ -18,13 +18,10 @@ const STRINGS = {
   modeFlag: { ru: 'Флаги', pl: 'Flagi', en: 'Flags' },
   modeLocate: { ru: 'Найди на карте', pl: 'Znajdź na mapie', en: 'Find on the map' },
   modeCapital: { ru: 'Столицы', pl: 'Stolice', en: 'Capitals' },
-  modeFlagCapital: { ru: 'Флаг и столица', pl: 'Flaga i stolica', en: 'Flag and capital' },
   modeFlagHint: { ru: 'Чей это флаг?', pl: 'Czyja to flaga?', en: 'Whose flag is this?' },
   modeFlagHintLittle: { ru: 'Найди нужный флаг', pl: 'Znajdź właściwą flagę', en: 'Find the right flag' },
   modeLocateHint: { ru: 'Покажи страну на карте', pl: 'Pokaż kraj na mapie', en: 'Point to the country' },
-  modeCapitalHint: { ru: 'Какая столица у страны?', pl: 'Jaka jest stolica kraju?', en: 'What is the capital?' },
-  modeFlagCapitalHint: { ru: 'Столица по флагу', pl: 'Stolica po fladze', en: 'The capital from the flag' },
-  askFlagCapital: { ru: 'Какая тут столица?', pl: 'Jaka jest tu stolica?', en: 'What is its capital?' },
+  modeCapitalHint: { ru: 'Столица по флагу', pl: 'Stolica po fladze', en: 'The capital from the flag' },
   askFlag: { ru: 'Чей это флаг?', pl: 'Czyja to flaga?', en: 'Whose flag is this?' },
   // Phrased as a standalone question under the country name, so no language
   // needs the country declined - "Stolica kraju Niemcy?" was simply wrong.
