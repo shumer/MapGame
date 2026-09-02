@@ -1,19 +1,19 @@
 import planeUrl from '../assets/art/plane.svg?url'
-import birdUrl from '../assets/art/decor/bird.svg?url'
 import './Flybys.css'
 
 /**
- * Things that pass overhead: a plane and a pair of birds. They are in the air,
- * so screen space is right for them — they read as flying over the map rather
- * than travelling on it. Anything that belongs on the ground or the water is in
- * Travellers instead, on a route that respects the coastline.
+ * A plane crossing the map. Three of them share one long cycle with staggered
+ * delays, so what the player sees is a single plane taking a different route
+ * each time: high and eastbound, low and westbound, then across the middle.
+ * Screen space is right for it — it reads as flying over the map rather than
+ * travelling on it.
  */
 export function Flybys() {
   return (
     <div className="flybys" aria-hidden="true">
-      <img className="flyby flyby-plane" src={planeUrl} alt="" />
-      <img className="flyby flyby-bird flyby-bird-a" src={birdUrl} alt="" />
-      <img className="flyby flyby-bird flyby-bird-b" src={birdUrl} alt="" />
+      <img className="flyby flyby-plane plane-high" src={planeUrl} alt="" />
+      <img className="flyby flyby-plane plane-low" src={planeUrl} alt="" />
+      <img className="flyby flyby-plane plane-mid" src={planeUrl} alt="" />
     </div>
   )
 }

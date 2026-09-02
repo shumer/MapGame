@@ -4,7 +4,6 @@ import { countries, countryByUn, derived } from '../data'
 import { buildPaths, createPath, createProjection } from './projection'
 import { Flybys } from './Flybys'
 import { SeaDecor } from './SeaDecor'
-import { Travellers } from './Travellers'
 import walkerUrl from '../assets/art/decor/walker.svg?url'
 import { loadShapes, type CountryShape } from './topology'
 import { useMapView } from './useMapView'
@@ -308,10 +307,6 @@ export function WorldMap({
                   />
                 )
               })}
-
-            {/* The boat and the car ride on top of the countries: the car is on
-                land, so anything drawn after it would hide it. */}
-            {projection && <Travellers project={(c) => projection(c) ?? null} />}
           </g>
 
           {/* The route travelled so far, outside the zoom transform so the

@@ -75,57 +75,6 @@ for (const c of data.countries) {
   }
 }
 
-// The boat must stay on water and the car on land, along the whole route and
-// not merely at its corners: a straight leg can cut across a coastline.
-const travellers = fs.readFileSync('src/map/Travellers.tsx', 'utf8')
-/** Reads a `const NAME: [number, number][] = [...]` literal. The type
-    annotation contains brackets of its own, so the end is found by balance
-    rather than by the first closing bracket. */
-const routeOf = (name) => {
-  const start = travellers.indexOf(`const ${name}`)
-  if (start < 0) return []
-  const open = travellers.indexOf('= [', start) + 2
-  let depth = 0
-  let end = open
-  for (let i = open; i < travellers.length; i++) {
-    if (travellers[i] === '[') depth++
-    else if (travellers[i] === ']' && --depth === 0) {
-      end = i
-      break
-    }
-  }
-  const body = travellers.slice(open, end)
-  return [...body.matchAll(/\[\s*(-?[\d.]+),\s*(-?[\d.]+)\s*\]/g)].map((m) => [
-    Number(m[1]),
-    Number(m[2]),
-  ])
-}
-const landFeatures = feature(topo, topo.objects.countries).features
-const onLand = (p) => landFeatures.some((f) => geoContains(f, p))
-const walkRoute = (pts) => {
-  const out = []
-  for (let i = 1; i < pts.length; i++) {
-    for (let t = 0; t <= 1; t += 0.05) {
-      out.push([
-        pts[i - 1][0] + (pts[i][0] - pts[i - 1][0]) * t,
-        pts[i - 1][1] + (pts[i][1] - pts[i - 1][1]) * t,
-      ])
-    }
-  }
-  return out
-}
-
-const seaRoute = routeOf('SEA_ROUTE')
-const landRoute = routeOf('LAND_ROUTE')
-if (seaRoute.length < 2 || landRoute.length < 2) {
-  problems.push('could not read the traveller routes from src/map/Travellers.tsx')
-} else {
-  const aground = walkRoute(seaRoute).filter(onLand)
-  const adrift = walkRoute(landRoute).filter((p) => !onLand(p))
-  if (aground.length) problems.push(`boat route crosses land at ${aground.length} sampled points`)
-  if (adrift.length) problems.push(`car route crosses water at ${adrift.length} sampled points`)
-}
-
 const orphans = Object.keys(derived).filter((iso) => !data.countries.some((c) => c.iso === iso))
 if (orphans.length) problems.push(`derived has entries for unknown countries: ${orphans.join(', ')}`)
 
