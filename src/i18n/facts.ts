@@ -3,7 +3,7 @@ import type { Lang } from '../data'
 /**
  * Renders the facts derived in scripts/build-facts.mjs. They are computed from
  * the map rather than written by hand, so they cannot quietly disagree with it
- * — which matters more here than anywhere: a wrong fact teaches a child
+ * which matters more here than anywhere: a wrong fact teaches a child
  * something wrong, and they will repeat it.
  */
 export interface DerivedFact {
@@ -28,6 +28,14 @@ const plPlural = (n: number, one: string, few: string, many: string) => {
   if (n === 1) return one
   if (mod10 >= 2 && mod10 <= 4 && (mod100 < 12 || mod100 > 14)) return few
   return many
+}
+
+/** "441 метр", "154 метра", "777 метров" -- and the Polish equivalents. */
+const metres = (n: number, lang: Lang) => {
+  const shown = groupDigits(n, lang)
+  if (lang === 'ru') return `${shown} ${ruPlural(n, 'метр', 'метра', 'метров')}`
+  if (lang === 'pl') return `${shown} ${plPlural(n, 'metr', 'metry', 'metrów')}`
+  return `${shown} ${n === 1 ? 'metre' : 'metres'}`
 }
 
 const groupDigits = (n: number, lang: Lang) =>
@@ -96,13 +104,13 @@ const RENDER: Record<string, Renderer> = {
     lang === 'ru' ? 'Забирается восточнее всех' : lang === 'pl' ? 'Sięga najdalej na wschód' : 'Reaches furthest east',
   northernCapital: (_f, lang) =>
     lang === 'ru'
-      ? 'Её столица — самая северная в наборе'
+      ? 'Её столица самая северная в наборе'
       : lang === 'pl'
         ? 'Jej stolica leży najdalej na północ'
         : 'Its capital is the northernmost here',
   southernCapital: (_f, lang) =>
     lang === 'ru'
-      ? 'Её столица — самая южная в наборе'
+      ? 'Её столица самая южная в наборе'
       : lang === 'pl'
         ? 'Jej stolica leży najdalej na południe'
         : 'Its capital is the southernmost here',
@@ -127,10 +135,25 @@ export interface WikiFacts {
   language_ru?: string
   language_pl?: string
   language_en?: string
+  /** Metres below sea level, and what is down there. */
+  depth?: number
+  low_ru?: string
+  low_pl?: string
+  low_en?: string
+  /** Only set for the countries that drive on the left. */
+  leftHandTraffic?: boolean
 }
 
 /** Rounded to something a child can hold: millions, or hundreds of thousands. */
 function roundPeople(n: number, lang: Lang): string {
+  if (n >= 1_000_000_000) {
+    const b = Math.round(n / 100_000_000) / 10
+    const fraction = b % 1 !== 0
+    const shown = fraction ? b.toFixed(1).replace('.', lang === 'en' ? '.' : ',') : String(b)
+    if (lang === 'ru') return `${shown} ${fraction ? 'миллиарда' : ruPlural(b, 'миллиард', 'миллиарда', 'миллиардов')}`
+    if (lang === 'pl') return `${shown} ${fraction ? 'miliarda' : plPlural(b, 'miliard', 'miliardy', 'miliardów')}`
+    return `${shown} billion`
+  }
   if (n >= 1_000_000) {
     const m = Math.round(n / 100_000) / 10
     const fraction = m % 1 !== 0
@@ -160,25 +183,53 @@ export function renderWikiFacts(w: WikiFacts, lang: Lang): string[] {
 
   const peak = w[`peak_${lang}`]
   if (peak && w.elevation) {
-    const m = groupDigits(w.elevation, lang)
+    const m = metres(w.elevation, lang)
     out.push(
       lang === 'ru'
-        ? `Самая высокая гора — ${peak}, ${m} метров`
+        ? `Самая высокая гора: ${peak}, ${m}`
         : lang === 'pl'
-          ? `Najwyższa góra to ${peak}, ${m} metrów`
-          : `Its highest mountain is ${peak}, ${m} metres`,
+          ? `Najwyższa góra to ${peak}, ${m}`
+          : `Its highest mountain is ${peak}, ${m}`,
     )
   }
 
   const language = w[`language_${lang}`]
   if (language) {
-    const name = language.replace(/ (язык|language|język)$/i, '')
+    // Wikidata capitalises some language names; Russian and Polish do not.
+    const bare = language
+      .replace(/\s*\([^)]*\)\s*$/, '')
+      .replace(/ (язык|language|język)$/i, '')
+      .replace(/^język /i, '')
+    const name = lang === 'en' ? bare : bare[0].toLowerCase() + bare.slice(1)
     out.push(
       lang === 'ru'
-        ? `Государственный язык — ${name}`
+        ? `Государственный язык: ${name}`
         : lang === 'pl'
           ? `Językiem urzędowym jest ${name}`
           : `The official language is ${name}`,
+    )
+  }
+
+  const low = w[`low_${lang}`]
+  if (low && w.depth) {
+    const m = metres(Math.abs(w.depth), lang)
+    out.push(
+      lang === 'ru'
+        ? `Самое низкое место: ${low}, на ${m} ниже уровня моря`
+        : lang === 'pl'
+          ? `Najniższe miejsce to ${low}, ${m} poniżej poziomu morza`
+          // Colon rather than "is": these names come without their article.
+          : `Its lowest place: ${low}, ${m} below sea level`,
+    )
+  }
+
+  if (w.leftHandTraffic) {
+    out.push(
+      lang === 'ru'
+        ? 'Машины здесь ездят по левой стороне дороги'
+        : lang === 'pl'
+          ? 'Samochody jeżdżą tu lewą stroną drogi'
+          : 'Cars here drive on the left',
     )
   }
 

@@ -58,7 +58,19 @@
         54.3969,
         24.4511
       ],
-      "symbol": "city"
+      "symbol": "city",
+      "stories": [
+        {
+          "ru": "Бурдж-Халифа самое высокое здание в мире, больше восьмисот метров.",
+          "pl": "Burdż Chalifa to najwyższy budynek świata, ponad osiemset metrów.",
+          "en": "The Burj Khalifa is the tallest building in the world, over eight hundred metres."
+        },
+        {
+          "ru": "Страна собрана из семи эмиратов, у каждого свой правитель.",
+          "pl": "Kraj składa się z siedmiu emiratów, każdy ma własnego władcę.",
+          "en": "The country is made of seven emirates, each with its own ruler."
+        }
+      ]
     },
     {
       "iso": "AF",
@@ -84,6 +96,18 @@
       "capitalCoords": [
         69.1658,
         34.5328
+      ],
+      "stories": [
+        {
+          "ru": "Почти всю страну занимают горы Гиндукуш, перевалы там выше трёх километров.",
+          "pl": "Prawie cały kraj zajmują góry Hindukusz, przełęcze są tam wyżej niż trzy kilometry.",
+          "en": "The Hindu Kush covers almost the whole country, with passes over three kilometres up."
+        },
+        {
+          "ru": "Синий камень лазурит везли отсюда в Египет ещё фараонам.",
+          "pl": "Niebieski kamień lazuryt wożono stąd do Egiptu jeszcze faraonom.",
+          "en": "The blue stone lapis lazuli was carried from here to Egypt in the time of the pharaohs."
+        }
       ]
     },
     {
@@ -316,7 +340,7 @@
       "symbol": "chocolate",
       "stories": [
         {
-          "ru": "Атомиум в Брюсселе — это кристалл железа, увеличенный в миллиарды раз",
+          "ru": "Атомиум в Брюсселе - это кристалл железа, увеличенный в миллиарды раз",
           "pl": "Atomium w Brukseli to kryształ żelaza powiększony miliardy razy",
           "en": "The Atomium in Brussels is an iron crystal magnified billions of times"
         },
@@ -485,12 +509,12 @@
       "symbol": "bison",
       "stories": [
         {
-          "ru": "В Беловежской пуще живут зубры — самые тяжёлые сухопутные звери Европы",
+          "ru": "В Беловежской пуще живут зубры - самые тяжёлые сухопутные звери Европы",
           "pl": "W Puszczy Białowieskiej żyją żubry, najcięższe lądowe zwierzęta Europy",
           "en": "Bison, Europe's heaviest land animals, live in the Bialowieza Forest"
         },
         {
-          "ru": "Беловежская пуща — один из последних древних лесов Европы",
+          "ru": "Беловежская пуща - один из последних древних лесов Европы",
           "pl": "Puszcza Białowieska to jeden z ostatnich pierwotnych lasów Europy",
           "en": "The Bialowieza Forest is one of Europe's last ancient woodlands"
         },
@@ -554,7 +578,7 @@
           "en": "Milk chocolate was invented here in the 19th century"
         },
         {
-          "ru": "Флаг Швейцарии квадратный — таких в мире всего два",
+          "ru": "Флаг Швейцарии квадратный - таких в мире всего два",
           "pl": "Flaga Szwajcarii jest kwadratowa, takich są na świecie tylko dwie",
           "en": "The Swiss flag is square, one of only two in the world"
         },
@@ -600,7 +624,24 @@
         116.4075,
         39.904
       ],
-      "symbol": "panda"
+      "symbol": "panda",
+      "stories": [
+        {
+          "ru": "Вся страна живёт по одному времени, хотя Китай шире, чем вся Европа.",
+          "pl": "Cały kraj żyje według jednego czasu, choć Chiny są szersze niż cała Europa.",
+          "en": "The whole country runs on one clock, though China is wider than all of Europe."
+        },
+        {
+          "ru": "Великая Китайская стена не одна стена, а множество участков, которые строили почти две тысячи лет.",
+          "pl": "Wielki Mur Chiński to nie jeden mur, tylko wiele odcinków budowanych przez prawie dwa tysiące lat.",
+          "en": "The Great Wall is not one wall but many stretches, built over almost two thousand years."
+        },
+        {
+          "ru": "Панда почти весь день ест бамбук, потому что он совсем не питательный.",
+          "pl": "Panda je bambus niemal cały dzień, bo bambus jest bardzo mało pożywny.",
+          "en": "A panda eats bamboo almost all day, because bamboo is barely nourishing."
+        }
+      ]
     },
     {
       "iso": "CY",
@@ -781,7 +822,7 @@
       "symbol": "lego",
       "stories": [
         {
-          "ru": "Название LEGO — от датского «leg godt», что значит «играй хорошо»",
+          "ru": "Название LEGO - от датского «leg godt», что значит «играй хорошо»",
           "pl": "Nazwa LEGO pochodzi od duńskiego „leg godt”, czyli „baw się dobrze”",
           "en": "The name LEGO comes from Danish \"leg godt\", meaning \"play well\""
         },
@@ -791,7 +832,7 @@
           "en": "The Little Mermaid has sat on her rock in Copenhagen since 1913"
         },
         {
-          "ru": "Датский флаг — один из старейших государственных флагов мира",
+          "ru": "Датский флаг - один из старейших государственных флагов мира",
           "pl": "Duńska flaga to jedna z najstarszych flag państwowych świata",
           "en": "The Danish flag is one of the oldest national flags in the world"
         },
@@ -882,7 +923,7 @@
           "en": "The Altamira cave holds paintings more than fourteen thousand years old"
         },
         {
-          "ru": "Испанский — второй язык в мире по числу тех, для кого он родной",
+          "ru": "Испанский - второй язык в мире по числу тех, для кого он родной",
           "pl": "Hiszpański jest drugim językiem świata pod względem liczby rodzimych użytkowników",
           "en": "Spanish has the second most native speakers of any language"
         },
@@ -892,7 +933,7 @@
           "en": "The Alhambra palace in Granada was built by the Moors over seven hundred years ago"
         },
         {
-          "ru": "Художники Пикассо, Дали, Гойя и Веласкес — все испанцы",
+          "ru": "Художники Пикассо, Дали, Гойя и Веласкес - все испанцы",
           "pl": "Malarze Picasso, Dalí, Goya i Velázquez byli Hiszpanami",
           "en": "Picasso, Dali, Goya and Velazquez were all Spanish painters"
         }
@@ -931,13 +972,13 @@
       "symbol": "deer",
       "stories": [
         {
-          "ru": "Здесь около 188 тысяч озёр — на карте страны воды почти столько же, сколько суши",
-          "pl": "Jest tu około 188 tysięcy jezior — na mapie kraju wody jest niemal tyle co lądu",
+          "ru": "Здесь около 188 тысяч озёр - на карте страны воды почти столько же, сколько суши",
+          "pl": "Jest tu około 188 tysięcy jezior - na mapie kraju wody jest niemal tyle co lądu",
           "en": "There are about 188,000 lakes here: on the map, almost as much water as land"
         },
         {
-          "ru": "Саун здесь около трёх миллионов — примерно по одной на каждый дом",
-          "pl": "Saun jest tu około trzech milionów — mniej więcej po jednej na dom",
+          "ru": "Саун здесь около трёх миллионов - примерно по одной на каждый дом",
+          "pl": "Saun jest tu około trzech milionów - mniej więcej po jednej na dom",
           "en": "There are about three million saunas here, roughly one per household"
         },
         {
@@ -990,12 +1031,12 @@
       "symbol": "eiffel",
       "stories": [
         {
-          "ru": "Эйфелеву башню строили как временную — её хотели снести через двадцать лет",
+          "ru": "Эйфелеву башню строили как временную - её хотели снести через двадцать лет",
           "pl": "Wieżę Eiffla zbudowano jako tymczasową, miała zniknąć po dwudziestu latach",
           "en": "The Eiffel Tower was built as a temporary structure, to be removed after twenty years"
         },
         {
-          "ru": "Лувр — самый посещаемый музей мира, там висит «Мона Лиза»",
+          "ru": "Лувр - самый посещаемый музей мира, там висит «Мона Лиза»",
           "pl": "Luwr to najczęściej odwiedzane muzeum świata, wisi tam „Mona Lisa”",
           "en": "The Louvre is the world's most visited museum, and home to the Mona Lisa"
         },
@@ -1049,12 +1090,12 @@
       "symbol": "bigben",
       "stories": [
         {
-          "ru": "Биг-Бен — это название колокола, а не самой башни",
+          "ru": "Биг-Бен - это название колокола, а не самой башни",
           "pl": "Big Ben to nazwa dzwonu, a nie samej wieży",
           "en": "Big Ben is the name of the bell, not the tower"
         },
         {
-          "ru": "Стоунхендж поставили около пяти тысяч лет назад, и как — точно неизвестно",
+          "ru": "Стоунхендж поставили около пяти тысяч лет назад, и как - точно неизвестно",
           "pl": "Stonehenge postawiono około pięciu tysięcy lat temu, a jak, do dziś nie wiadomo",
           "en": "Stonehenge was raised about five thousand years ago, and nobody is sure how"
         },
@@ -1064,7 +1105,7 @@
           "en": "Cars here drive on the left"
         },
         {
-          "ru": "Лондонское метро — старейшее в мире, открыто в 1863 году",
+          "ru": "Лондонское метро - старейшее в мире, открыто в 1863 году",
           "pl": "Metro w Londynie jest najstarsze na świecie, otwarte w 1863 roku",
           "en": "The London Underground is the oldest metro in the world, opened in 1863"
         },
@@ -1226,12 +1267,12 @@
       "symbol": "horse",
       "stories": [
         {
-          "ru": "Будапешт сложился из трёх городов — Буды, Обуды и Пешта — в 1873 году",
-          "pl": "Budapeszt powstał z trzech miast — Budy, Óbudy i Pesztu — w 1873 roku",
+          "ru": "Будапешт сложился из трёх городов - Буды, Обуды и Пешта - в 1873 году",
+          "pl": "Budapeszt powstał z trzech miast - Budy, Óbudy i Pesztu - w 1873 roku",
           "en": "Budapest was formed from three towns, Buda, Obuda and Pest, joined in 1873"
         },
         {
-          "ru": "Метро в Будапеште — старейшее в континентальной Европе, открыто в 1896 году",
+          "ru": "Метро в Будапеште - старейшее в континентальной Европе, открыто в 1896 году",
           "pl": "Metro w Budapeszcie jest najstarsze w Europie kontynentalnej, otwarte w 1896 roku",
           "en": "Budapest's metro is the oldest on mainland Europe, opened in 1896"
         },
@@ -1246,7 +1287,7 @@
           "en": "Hot springs run under Budapest, and the city has dozens of bathhouses"
         },
         {
-          "ru": "Венгерский не похож на языки соседей: его дальняя родня — финский и языки Сибири",
+          "ru": "Венгерский не похож на языки соседей: его дальняя родня - финский и языки Сибири",
           "pl": "Węgierski nie przypomina języków sąsiadów: jego daleka rodzina to fiński i języki Syberii",
           "en": "Hungarian is unlike its neighbours' languages: its distant relatives are Finnish and languages of Siberia"
         }
@@ -1282,7 +1323,24 @@
         106.8456,
         -6.2088
       ],
-      "symbol": "orangutan"
+      "symbol": "orangutan",
+      "stories": [
+        {
+          "ru": "Индонезия это больше семнадцати тысяч островов, и люди живут меньше чем на трети из них.",
+          "pl": "Indonezja to ponad siedemnaście tysięcy wysp, a ludzie mieszkają na mniej niż jednej trzeciej.",
+          "en": "Indonesia is more than seventeen thousand islands, and people live on fewer than a third."
+        },
+        {
+          "ru": "Комодские вараны, самые большие ящерицы на земле, водятся только здесь.",
+          "pl": "Warany z Komodo, największe jaszczurki świata, żyją tylko tutaj.",
+          "en": "Komodo dragons, the largest lizards on earth, live only here."
+        },
+        {
+          "ru": "Вулкан Кракатау взорвался в 1883 году так, что грохот слышали за тысячи километров.",
+          "pl": "Wulkan Krakatau wybuchł w 1883 roku tak, że huk słyszano tysiące kilometrów dalej.",
+          "en": "Krakatoa erupted in 1883 so loudly that the bang was heard thousands of kilometres away."
+        }
+      ]
     },
     {
       "iso": "IE",
@@ -1312,7 +1370,7 @@
       "symbol": "clover",
       "stories": [
         {
-          "ru": "Символ страны — арфа, она изображена на монетах и гербе",
+          "ru": "Символ страны - арфа, она изображена на монетах и гербе",
           "pl": "Symbolem kraju jest harfa, widnieje na monetach i w herbie",
           "en": "The country's symbol is the harp, on its coins and its coat of arms"
         },
@@ -1367,6 +1425,18 @@
       "capitalCoords": [
         34.78,
         32.08
+      ],
+      "stories": [
+        {
+          "ru": "Берег Мёртвого моря самое низкое место на суше во всём мире.",
+          "pl": "Brzeg Morza Martwego to najniższe miejsce lądu na świecie.",
+          "en": "The shore of the Dead Sea is the lowest land on earth."
+        },
+        {
+          "ru": "В Мёртвом море невозможно утонуть: вода такая солёная, что сама выталкивает наверх.",
+          "pl": "W Morzu Martwym nie da się utonąć: woda jest tak słona, że sama wypycha na powierzchnię.",
+          "en": "You cannot sink in the Dead Sea: the water is so salty it pushes you back up."
+        }
       ]
     },
     {
@@ -1394,7 +1464,24 @@
         77.2089,
         28.6139
       ],
-      "symbol": "tiger"
+      "symbol": "tiger",
+      "stories": [
+        {
+          "ru": "В конституции Индии записаны 22 языка, и это не считая сотен других.",
+          "pl": "W konstytucji Indii wymienione są 22 języki, nie licząc setek innych.",
+          "en": "India's constitution lists 22 languages, and that is before counting hundreds more."
+        },
+        {
+          "ru": "Шахматы придумали в Индии, там игра называлась чатуранга.",
+          "pl": "Szachy wymyślono w Indiach, gdzie gra nazywała się czaturanga.",
+          "en": "Chess was invented in India, where the game was called chaturanga."
+        },
+        {
+          "ru": "Тадж-Махал построили как гробницу: правитель хотел, чтобы жену помнили вечно.",
+          "pl": "Tadż Mahal zbudowano jako grobowiec: władca chciał, by żonę pamiętano na zawsze.",
+          "en": "The Taj Mahal was built as a tomb: a ruler wanted his wife remembered forever."
+        }
+      ]
     },
     {
       "iso": "IQ",
@@ -1420,6 +1507,13 @@
       "capitalCoords": [
         44.3661,
         33.3153
+      ],
+      "stories": [
+        {
+          "ru": "Между реками Тигр и Евфрат появилась первая на земле письменность.",
+          "pl": "Między Tygrysem a Eufratem powstało pierwsze na świecie pismo.",
+          "en": "The world's first writing appeared between the Tigris and the Euphrates."
+        }
       ]
     },
     {
@@ -1446,6 +1540,18 @@
       "capitalCoords": [
         51.3897,
         35.6889
+      ],
+      "stories": [
+        {
+          "ru": "До 1935 года страну во всём мире называли Персией.",
+          "pl": "Do 1935 roku kraj na całym świecie nazywano Persją.",
+          "en": "Until 1935 the country was known everywhere as Persia."
+        },
+        {
+          "ru": "Персидские ковры ткут так плотно, что в одном квадратном сантиметре бывает больше сотни узелков.",
+          "pl": "Dywany perskie tka się tak gęsto, że na jednym centymetrze kwadratowym bywa ponad sto węzełków.",
+          "en": "Persian carpets are woven so tightly that a single square centimetre can hold over a hundred knots."
+        }
       ]
     },
     {
@@ -1481,7 +1587,7 @@
           "en": "Homes here are heated with hot water from underground"
         },
         {
-          "ru": "Слово «гейзер» пришло из исландского — от источника по имени Гейсир",
+          "ru": "Слово «гейзер» пришло из исландского - от источника по имени Гейсир",
           "pl": "Słowo „gejzer” pochodzi z islandzkiego, od źródła o nazwie Geysir",
           "en": "The word geyser comes from Icelandic, from a spring called Geysir"
         },
@@ -1617,7 +1723,24 @@
         139.6917,
         35.6894
       ],
-      "symbol": "fuji"
+      "symbol": "fuji",
+      "stories": [
+        {
+          "ru": "В Японии посчитали острова заново и нашли 14 125 штук, вдвое больше, чем думали раньше.",
+          "pl": "Japonia przeliczyła swoje wyspy i naliczyła 14 125, dwa razy więcej niż sądzono wcześniej.",
+          "en": "Japan recounted its islands and found 14,125 of them, twice as many as it thought before."
+        },
+        {
+          "ru": "Гора Фудзи это вулкан, он спит с 1707 года.",
+          "pl": "Góra Fudżi to wulkan, śpi od 1707 roku.",
+          "en": "Mount Fuji is a volcano, asleep since 1707."
+        },
+        {
+          "ru": "Скоростные поезда синкансэн опаздывают в среднем меньше чем на минуту.",
+          "pl": "Szybkie pociągi shinkansen spóźniają się średnio krócej niż minutę.",
+          "en": "The shinkansen bullet trains run late by less than a minute on average."
+        }
+      ]
     },
     {
       "iso": "KG",
@@ -1722,7 +1845,19 @@
         126.99,
         37.56
       ],
-      "symbol": "judo"
+      "symbol": "judo",
+      "stories": [
+        {
+          "ru": "Корейскую азбуку придумали специально, чтобы читать научился каждый, а не только учёные.",
+          "pl": "Koreański alfabet wymyślono specjalnie po to, by czytać nauczył się każdy, nie tylko uczeni.",
+          "en": "The Korean alphabet was invented on purpose so everyone could learn to read, not only scholars."
+        },
+        {
+          "ru": "Тхэквондо родом отсюда, и это самое известное корейское боевое искусство.",
+          "pl": "Taekwondo pochodzi stąd i jest najbardziej znaną koreańską sztuką walki.",
+          "en": "Taekwondo comes from here and is the best known Korean martial art."
+        }
+      ]
     },
     {
       "iso": "KW",
@@ -1774,6 +1909,18 @@
       "capitalCoords": [
         71.4333,
         51.1333
+      ],
+      "stories": [
+        {
+          "ru": "Казахстан самая большая страна в мире, у которой нет выхода к океану.",
+          "pl": "Kazachstan to największy kraj świata bez dostępu do oceanu.",
+          "en": "Kazakhstan is the largest country in the world with no way out to the ocean."
+        },
+        {
+          "ru": "Первый человек полетел в космос с космодрома Байконур, он находится в Казахстане.",
+          "pl": "Pierwszy człowiek poleciał w kosmos z kosmodromu Bajkonur, który leży w Kazachstanie.",
+          "en": "The first person flew to space from Baikonur, which is in Kazakhstan."
+        }
       ]
     },
     {
@@ -2162,7 +2309,24 @@
         106.9055,
         47.9214
       ],
-      "symbol": "horse"
+      "symbol": "horse",
+      "stories": [
+        {
+          "ru": "Монголия самая безлюдная страна мира: примерно два человека на квадратный километр.",
+          "pl": "Mongolia to najrzadziej zaludniony kraj świata: około dwóch ludzi na kilometr kwadratowy.",
+          "en": "Mongolia is the emptiest country on earth: about two people per square kilometre."
+        },
+        {
+          "ru": "Юрту можно собрать и разобрать за несколько часов и увезти с собой.",
+          "pl": "Jurtę można złożyć i rozłożyć w kilka godzin i zabrać ze sobą.",
+          "en": "A yurt can be taken down and put up in a few hours and carried away."
+        },
+        {
+          "ru": "Пустыня Гоби зимой промерзает, там бывает снег и мороз.",
+          "pl": "Pustynia Gobi zimą zamarza, bywa tam śnieg i mróz.",
+          "en": "The Gobi freezes in winter, with snow and frost."
+        }
+      ]
     },
     {
       "iso": "MT",
@@ -2248,7 +2412,19 @@
         101.6869,
         3.139
       ],
-      "symbol": "hibiscus"
+      "symbol": "hibiscus",
+      "stories": [
+        {
+          "ru": "Башни Петронас были самыми высокими зданиями мира, пока их не обогнали.",
+          "pl": "Wieże Petronas były najwyższymi budynkami świata, zanim je wyprzedzono.",
+          "en": "The Petronas Towers were the tallest buildings in the world until they were overtaken."
+        },
+        {
+          "ru": "Раффлезия, самый большой цветок на земле, растёт в здешних лесах и пахнет тухлым мясом.",
+          "pl": "Rafflesia, największy kwiat świata, rośnie w tutejszych lasach i pachnie zepsutym mięsem.",
+          "en": "Rafflesia, the biggest flower on earth, grows in these forests and smells of rotten meat."
+        }
+      ]
     },
     {
       "iso": "NL",
@@ -2337,7 +2513,7 @@
       "symbol": "viking",
       "stories": [
         {
-          "ru": "Фьорды — это долины, которые выпилили ледники, а потом залило море",
+          "ru": "Фьорды - это долины, которые выпилили ледники, а потом залило море",
           "pl": "Fiordy to doliny wyrzeźbione przez lodowce i zalane później przez morze",
           "en": "Fjords are valleys carved by glaciers and later flooded by the sea"
         },
@@ -2393,7 +2569,19 @@
         85.32,
         27.71
       ],
-      "symbol": "mountains"
+      "symbol": "mountains",
+      "stories": [
+        {
+          "ru": "Эверест, самая высокая гора мира, стоит на границе Непала и Китая.",
+          "pl": "Everest, najwyższa góra świata, leży na granicy Nepalu i Chin.",
+          "en": "Everest, the highest mountain on earth, sits on the border of Nepal and China."
+        },
+        {
+          "ru": "У Непала единственный в мире флаг, который не прямоугольный.",
+          "pl": "Nepal ma jedyną na świecie flagę, która nie jest prostokątem.",
+          "en": "Nepal has the only flag in the world that is not a rectangle."
+        }
+      ]
     },
     {
       "iso": "OM",
@@ -2446,7 +2634,19 @@
         120.9772,
         14.5958
       ],
-      "symbol": "island"
+      "symbol": "island",
+      "stories": [
+        {
+          "ru": "На Филиппинах 7641 остров, и пятьсот из них нашли только в 2017 году.",
+          "pl": "Filipiny mają 7641 wysp, a pięćset z nich odkryto dopiero w 2017 roku.",
+          "en": "The Philippines has 7,641 islands, and five hundred of them were only found in 2017."
+        },
+        {
+          "ru": "Долгопят с огромными глазами помещается в ладони.",
+          "pl": "Wyrak o ogromnych oczach mieści się w dłoni.",
+          "en": "The tarsier, with its enormous eyes, fits in the palm of a hand."
+        }
+      ]
     },
     {
       "iso": "PK",
@@ -2472,6 +2672,18 @@
       "capitalCoords": [
         73.0369,
         33.6989
+      ],
+      "stories": [
+        {
+          "ru": "Гора К2 вторая по высоте в мире и куда опаснее Эвереста.",
+          "pl": "Szczyt K2 jest drugi na świecie i o wiele groźniejszy niż Everest.",
+          "en": "K2 is the second highest mountain in the world and far deadlier than Everest."
+        },
+        {
+          "ru": "Городу Мохенджо-Даро около четырёх с половиной тысяч лет, и в нём уже была канализация.",
+          "pl": "Miasto Mohendżo-Daro ma około czterech i pół tysiąca lat i miało już kanalizację.",
+          "en": "Mohenjo-daro is about four and a half thousand years old and already had drains."
+        }
       ]
     },
     {
@@ -2512,7 +2724,7 @@
           "en": "Nicolaus Copernicus worked out that the Earth goes around the Sun"
         },
         {
-          "ru": "Мария Склодовская-Кюри получила две Нобелевские премии — по физике и по химии",
+          "ru": "Мария Склодовская-Кюри получила две Нобелевские премии - по физике и по химии",
           "pl": "Maria Skłodowska-Curie otrzymała dwie Nagrody Nobla: z fizyki i z chemii",
           "en": "Marie Sklodowska-Curie won two Nobel Prizes, in physics and in chemistry"
         },
@@ -2741,7 +2953,7 @@
           "en": "The country lies in both Europe and Asia and spans eleven time zones"
         },
         {
-          "ru": "Байкал — самое глубокое озеро на Земле, больше километра в глубину",
+          "ru": "Байкал - самое глубокое озеро на Земле, больше километра в глубину",
           "pl": "Bajkał to najgłębsze jezioro na Ziemi, ponad kilometr głębokości",
           "en": "Lake Baikal is the deepest lake on Earth, over a kilometre deep"
         },
@@ -2793,7 +3005,19 @@
         46.71,
         24.65
       ],
-      "symbol": "camel"
+      "symbol": "camel",
+      "stories": [
+        {
+          "ru": "В Саудовской Аравии нет ни одной реки, которая течёт круглый год.",
+          "pl": "W Arabii Saudyjskiej nie ma ani jednej rzeki płynącej przez cały rok.",
+          "en": "Saudi Arabia has not a single river that flows all year round."
+        },
+        {
+          "ru": "Пустыня Руб-эль-Хали самое большое сплошное песчаное море на планете.",
+          "pl": "Pustynia Rub al-Chali to największe zwarte morze piasku na świecie.",
+          "en": "The Rub' al Khali is the largest unbroken sea of sand on the planet."
+        }
+      ]
     },
     {
       "iso": "SE",
@@ -2823,7 +3047,7 @@
       "symbol": "deer",
       "stories": [
         {
-          "ru": "Почти все Нобелевские премии вручают в Стокгольме, а премию мира — в Осло",
+          "ru": "Почти все Нобелевские премии вручают в Стокгольме, а премию мира - в Осло",
           "pl": "Prawie wszystkie Nagrody Nobla wręcza się w Sztokholmie, a pokojową w Oslo",
           "en": "Almost all Nobel Prizes are awarded in Stockholm; the Peace Prize is awarded in Oslo"
         },
@@ -2879,7 +3103,19 @@
         103.8,
         1.3
       ],
-      "symbol": "lion"
+      "symbol": "lion",
+      "stories": [
+        {
+          "ru": "Сингапур намыл себе землю из песка и стал примерно на четверть больше.",
+          "pl": "Singapur usypał sobie ziemię z piasku i urósł o mniej więcej jedną czwartą.",
+          "en": "Singapore built land out of sand and grew by roughly a quarter."
+        },
+        {
+          "ru": "Это целая страна размером с город: можно проехать её насквозь меньше чем за час.",
+          "pl": "To całe państwo wielkości miasta: da się je przejechać w niecałą godzinę.",
+          "en": "It is a whole country the size of a city: you can drive across it in under an hour."
+        }
+      ]
     },
     {
       "iso": "SI",
@@ -3028,7 +3264,24 @@
         100.5167,
         13.75
       ],
-      "symbol": "elephant"
+      "symbol": "elephant",
+      "stories": [
+        {
+          "ru": "Таиланд единственная страна Юго-Восточной Азии, которая никогда не была ничьей колонией.",
+          "pl": "Tajlandia to jedyny kraj Azji Południowo-Wschodniej, który nigdy nie był niczyją kolonią.",
+          "en": "Thailand is the only country in Southeast Asia that was never anyone's colony."
+        },
+        {
+          "ru": "Полное церемониальное название Бангкока самое длинное название города в мире.",
+          "pl": "Pełna ceremonialna nazwa Bangkoku to najdłuższa nazwa miasta na świecie.",
+          "en": "Bangkok's full ceremonial name is the longest city name in the world."
+        },
+        {
+          "ru": "Слон в Таиланде почётное животное, его изображение веками было на флаге.",
+          "pl": "Słoń jest w Tajlandii zwierzęciem czczonym, przez wieki był na fladze.",
+          "en": "The elephant is honoured in Thailand and was on the flag for centuries."
+        }
+      ]
     },
     {
       "iso": "TJ",
@@ -3133,7 +3386,24 @@
         32.8387,
         39.9358
       ],
-      "symbol": "mosque"
+      "symbol": "mosque",
+      "stories": [
+        {
+          "ru": "Стамбул стоит сразу на двух континентах, одна его половина в Европе, другая в Азии.",
+          "pl": "Stambuł leży na dwóch kontynentach naraz, jedna połowa w Europie, druga w Azji.",
+          "en": "Istanbul stands on two continents at once, one half in Europe, the other in Asia."
+        },
+        {
+          "ru": "Тюльпаны попали в Голландию из Турции, а не наоборот.",
+          "pl": "Tulipany trafiły do Holandii z Turcji, a nie odwrotnie.",
+          "en": "Tulips reached Holland from Turkey, not the other way round."
+        },
+        {
+          "ru": "В Каппадокии люди веками жили в домах, вырубленных прямо в мягких скалах.",
+          "pl": "W Kapadocji ludzie przez wieki mieszkali w domach wykutych w miękkich skałach.",
+          "en": "In Cappadocia people lived for centuries in houses carved into soft rock."
+        }
+      ]
     },
     {
       "iso": "UA",
@@ -3178,7 +3448,7 @@
           "en": "The blue and yellow are often read as sky above wheat, but the colours come from an old coat of arms"
         },
         {
-          "ru": "Тоннель любви в Клевани — железная дорога, вокруг которой сомкнулись деревья",
+          "ru": "Тоннель любви в Клевани - железная дорога, вокруг которой сомкнулись деревья",
           "pl": "Tunel Miłości w Klewaniu to tory kolejowe, nad którymi zwarły się drzewa",
           "en": "The Tunnel of Love at Klevan is a railway line overgrown into a green arch"
         },
@@ -3277,7 +3547,19 @@
         105.8412,
         21.0245
       ],
-      "symbol": "dragon"
+      "symbol": "dragon",
+      "stories": [
+        {
+          "ru": "В бухте Халонг из воды торчат почти две тысячи известняковых островков.",
+          "pl": "W zatoce Ha Long z wody wystaje prawie dwa tysiące wapiennych wysepek.",
+          "en": "Almost two thousand limestone islets rise out of the water in Ha Long Bay."
+        },
+        {
+          "ru": "Вьетнам один из главных поставщиков кофе в мире.",
+          "pl": "Wietnam to jeden z głównych dostawców kawy na świecie.",
+          "en": "Vietnam is one of the world's main coffee growers."
+        }
+      ]
     },
     {
       "iso": "YE",

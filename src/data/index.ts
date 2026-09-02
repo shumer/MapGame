@@ -20,7 +20,7 @@ export const countriesOf = (region: Region): Country[] =>
 export const derivedOf = (region: Region) => derived[region]
 
 /** Facts pulled from Wikidata, keyed by ISO code. See scripts/fetch-facts.mjs. */
-export const wikiFacts = wikiRaw as Record<string, Record<string, string | number>>
+export const wikiFacts = wikiRaw as Record<string, Record<string, string | number | boolean>>
 
 const byIso = new Map(countries.map((c) => [c.iso, c]))
 const byUn = new Map(countries.map((c) => [c.un, c]))
