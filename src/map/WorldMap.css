@@ -195,12 +195,25 @@
   fill: var(--miss);
 }
 
-/* "This is the country we are asking about" - deliberately not the green used
-   for a correct answer, so the two never get confused. */
+/* "This is the country we are asking about". A pale fill alone was lost among
+   the pastel neighbours, so it carries a thick red outline as well — a colour
+   used nowhere else on the map except a wrong answer, which is a solid fill
+   rather than an outline and reads differently. */
 .country.is-focus {
   fill: var(--focus);
-  stroke: var(--focus-edge);
+  stroke: var(--focus-ring);
+  stroke-width: 4.5;
   paint-order: stroke fill;
+  animation: focus-pulse 2.4s ease-in-out infinite;
+}
+
+@keyframes focus-pulse {
+  0%, 100% { stroke-width: 4.5; }
+  50% { stroke-width: 6.5; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .country.is-focus { animation: none; }
 }
 
 /* The route travelled this round. Same dotted language as the flight path on
