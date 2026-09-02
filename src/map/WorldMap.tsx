@@ -116,6 +116,7 @@ export function WorldMap({
   const landsRef = useRef<SVGGElement>(null)
   const markersRef = useRef(new Map<string, SVGGElement>())
   const decorRef = useRef<SVGGElement>(null)
+  const flybysRef = useRef<SVGGElement>(null)
   const capitalRef = useRef<SVGGElement>(null)
   const trailRef = useRef<SVGGElement>(null)
 
@@ -154,6 +155,9 @@ export function WorldMap({
       subscribe((v) => {
         landsRef.current?.setAttribute('transform', `translate(${v.x} ${v.y}) scale(${v.k})`)
         decorRef.current?.style.setProperty('opacity', v.k > DECOR_MAX_SCALE ? '0' : '1')
+        // The plane rides the zoom so it leaves the frame with the map, but it
+        // should not grow with it: undo the scale on the sprite itself.
+        flybysRef.current?.style.setProperty('--inv-scale', String(1 / v.k))
 
         // The route is redrawn per frame rather than re-rendered: it is a
         // dozen points, and this keeps React out of the gesture loop.
@@ -307,6 +311,14 @@ export function WorldMap({
                   />
                 )
               })}
+
+            {/* Last inside the zoom group: the plane flies over the countries,
+                and zooming carries it off the edge with them. */}
+            {projection && (
+              <g ref={flybysRef}>
+                <Flybys project={(c) => projection(c) ?? null} />
+              </g>
+            )}
           </g>
 
           {/* The route travelled so far, outside the zoom transform so the
@@ -364,7 +376,6 @@ export function WorldMap({
           </g>
         </svg>
       )}
-      {shapes && <Flybys />}
       {celebrate > 0 && (
         <Confetti trigger={celebrate} originPx={burstAt} count={90} inline />
       )}

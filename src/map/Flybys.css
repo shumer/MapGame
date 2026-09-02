@@ -1,74 +1,39 @@
 .flybys {
-  position: absolute;
-  inset: 0;
-  overflow: hidden;
   pointer-events: none;
-  z-index: 2;
 }
 
-.flyby {
-  position: absolute;
-  display: block;
-  /* Off screen until its turn comes round. */
-  opacity: 0;
-  filter: drop-shadow(0 2px 3px rgba(20, 45, 60, 0.2));
-}
-
-/* One 132s cycle shared by all three, each crossing taking about a sixth of it
-   and the delays spacing them out. The map is quiet between crossings. */
 .flyby-plane {
-  width: 52px;
+  /* Nose along the route, so the zigzag reads as banking. */
+  offset-rotate: auto;
+  transform-box: fill-box;
+  transform-origin: center;
+  /* Set per frame by WorldMap so zooming does not blow the plane up. */
+  transform: scale(var(--inv-scale, 1));
+  opacity: 0;
 }
+
+/* One 132s cycle shared by all three, each crossing taking about a fifth of it
+   and the delays spacing them out, so only one plane is up at a time. */
 .plane-high {
-  top: 9%;
-  animation: fly-high 132s linear infinite;
+  animation: fly-route 132s linear infinite;
 }
 .plane-low {
-  top: 66%;
-  width: 44px;
-  animation: fly-low 132s linear infinite;
+  animation: fly-route 132s linear infinite;
   animation-delay: 46s;
+  /* This one flies east to west: turned by the path, it would be upside down. */
+  transform: scale(var(--inv-scale, 1)) scaleY(-1);
 }
 .plane-mid {
-  top: 33%;
-  animation: fly-mid 132s linear infinite;
+  animation: fly-route 132s linear infinite;
   animation-delay: 92s;
 }
 
-/* Eastbound along the top, dipping and climbing on the way. */
-@keyframes fly-high {
-  0% { left: -12%; transform: translateY(0) rotate(-5deg); opacity: 0; }
+@keyframes fly-route {
+  0% { offset-distance: 0%; opacity: 0; }
   2% { opacity: 1; }
-  5% { transform: translateY(-24px) rotate(-9deg); }
-  9% { transform: translateY(14px) rotate(7deg); }
-  13% { transform: translateY(-16px) rotate(-8deg); }
-  16% { opacity: 1; }
-  18% { left: 108%; transform: translateY(6px) rotate(4deg); opacity: 0; }
-  100% { left: 108%; opacity: 0; }
-}
-
-/* Westbound low across the map, mirrored so it faces the way it flies. */
-@keyframes fly-low {
-  0% { left: 106%; transform: scaleX(-1) translateY(0) rotate(-4deg); opacity: 0; }
-  2% { opacity: 1; }
-  6% { transform: scaleX(-1) translateY(20px) rotate(6deg); }
-  10% { transform: scaleX(-1) translateY(-18px) rotate(-8deg); }
-  14% { transform: scaleX(-1) translateY(10px) rotate(5deg); }
   17% { opacity: 1; }
-  19% { left: -10%; transform: scaleX(-1) translateY(-6px) rotate(-3deg); opacity: 0; }
-  100% { left: -10%; opacity: 0; }
-}
-
-/* Eastbound through the middle, with the widest swings of the three. */
-@keyframes fly-mid {
-  0% { left: -12%; transform: translateY(0) rotate(6deg); opacity: 0; }
-  2% { opacity: 1; }
-  6% { transform: translateY(34px) rotate(9deg); }
-  11% { transform: translateY(-28px) rotate(-10deg); }
-  15% { transform: translateY(22px) rotate(8deg); }
-  18% { opacity: 1; }
-  20% { left: 108%; transform: translateY(-10px) rotate(-5deg); opacity: 0; }
-  100% { left: 108%; opacity: 0; }
+  20% { offset-distance: 100%; opacity: 0; }
+  100% { offset-distance: 100%; opacity: 0; }
 }
 
 /* Nothing here carries meaning, so it all goes when motion is unwelcome. */
