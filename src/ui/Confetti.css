@@ -1,3 +1,10 @@
+/* Inline confetti sits over its own container, so a celebration can land on the
+   thing being celebrated rather than in the corners of the screen. */
+.confetti.is-inline {
+  position: absolute;
+  z-index: 3;
+}
+
 .confetti {
   position: fixed;
   inset: 0;

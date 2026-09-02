@@ -29,13 +29,17 @@ export interface ConfettiProps {
    * poppers actually go off. 'burst' is a single fountain from the middle.
    */
   mode?: 'poppers' | 'burst'
+  /** Fountain origin in canvas pixels, overriding the mode's own position. */
+  originPx?: { x: number; y: number } | null
+  /** Positions the canvas over its parent instead of the whole viewport. */
+  inline?: boolean
 }
 
 /**
  * A party popper. Runs on canvas because a few hundred moving pieces as DOM
  * nodes would drop frames on a tablet, and stops itself once they settle.
  */
-export function Confetti({ trigger, count = 110, mode = 'poppers' }: ConfettiProps) {
+export function Confetti({ trigger, count = 110, mode = 'poppers', originPx = null, inline = false }: ConfettiProps) {
   const canvasRef = useRef<HTMLCanvasElement>(null)
   const pieces = useRef<Piece[]>([])
   const frame = useRef(0)
@@ -56,8 +60,9 @@ export function Confetti({ trigger, count = 110, mode = 'poppers' }: ConfettiPro
     if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return
 
     // Each popper aims up and inwards; a single burst just goes up.
-    const sources =
-      mode === 'poppers'
+    const sources = originPx
+      ? [{ x: originPx.x, y: originPx.y, aim: -Math.PI / 2 }]
+      : mode === 'poppers'
         ? [
             { x: w * 0.06, y: h * 0.97, aim: -Math.PI / 2 + 0.62 },
             { x: w * 0.94, y: h * 0.97, aim: -Math.PI / 2 - 0.62 },
@@ -119,7 +124,7 @@ export function Confetti({ trigger, count = 110, mode = 'poppers' }: ConfettiPro
     frame.current = requestAnimationFrame(step)
 
     return () => cancelAnimationFrame(frame.current)
-  }, [trigger, count, mode])
+  }, [trigger, count, mode, originPx])
 
-  return <canvas className="confetti" ref={canvasRef} aria-hidden="true" />
+  return <canvas className={inline ? 'confetti is-inline' : 'confetti'} ref={canvasRef} aria-hidden="true" />
 }

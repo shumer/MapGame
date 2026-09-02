@@ -7,7 +7,6 @@ import { WorldMap } from '../map/WorldMap'
 import { canSpeak, speak, stopSpeaking } from '../speech'
 import { sounds } from '../sound'
 import { useSound } from '../store/settings'
-import { Confetti } from '../ui/Confetti'
 import { ArrowIcon, CrossIcon, HomeIcon, SpeakerIcon, SpeakerOffIcon, TickIcon } from '../ui/icons'
 import { CountrySymbol } from '../ui/CountrySymbol'
 import { Flag } from '../ui/Flag'
@@ -102,7 +101,6 @@ export function GameScreen({ profile, mode, onExit, onDone }: Props) {
 
   return (
     <div className={`game mode-${question.mode}`}>
-      <Confetti trigger={round.score} count={120} />
       <header className="game-bar">
         <button className="btn btn-ghost btn-round home" onClick={onExit} aria-label={t('home', ui)}>
           <HomeIcon size={22} />
@@ -147,6 +145,7 @@ export function GameScreen({ profile, mode, onExit, onDone }: Props) {
           focus={revealed || question.mode === 'capital' ? target.iso : null}
           capital={revealed ? target.iso : null}
           trail={trail}
+          celebrate={revealed && lastAnswer?.correct ? round.score : 0}
           onPick={question.mode === 'locate' && phase === 'asking' ? round.answer : undefined}
           interactive
         />

@@ -168,6 +168,18 @@
 }
 .lang-pick.is-on .lang-tick { opacity: 1; }
 
+/* A tablet in landscape is around 768px tall, and at that height the language
+   flags fell off the bottom. Tighten before it comes to that. */
+@media (max-height: 820px) {
+  .start-inner { padding: 16px 20px 22px; }
+  .start-lead { margin-bottom: 12px; }
+  .kid-card { padding: 14px 14px 30px; }
+  .kid-card .kid { width: min(30vw, 240px, 27vh); }
+  .kid-little .kid { width: min(22vw, 176px, 20vh); }
+  .kid-hint { min-height: 0; }
+  .langs { margin-top: 26px; }
+}
+
 /* A short landscape window is the real tablet case: keep everything on screen. */
 @media (max-height: 560px) {
   .start-inner { padding: 8px 16px 14px; gap: 0; }

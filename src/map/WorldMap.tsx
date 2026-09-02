@@ -1,4 +1,5 @@
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react'
+import { Confetti } from '../ui/Confetti'
 import { countries, countryByUn, derived } from '../data'
 import { buildPaths, createPath, createProjection } from './projection'
 import { SeaDecor } from './SeaDecor'
@@ -24,6 +25,8 @@ export interface WorldMapProps {
       with a flag on each stop and the plane at the head — the journey the game
       is named after, which the map was otherwise not showing at all. */
   trail?: string[]
+  /** Any change fires confetti over the focused country. Zero fires nothing. */
+  celebrate?: number
   /** Called with an ISO code when a playable country is tapped. */
   onPick?: (iso: string) => void
   interactive?: boolean
@@ -45,6 +48,7 @@ export function WorldMap({
   focus = null,
   capital = null,
   trail = [],
+  celebrate = 0,
   onPick,
   interactive = true,
 }: WorldMapProps) {
@@ -227,6 +231,16 @@ export function WorldMap({
 
   const capitalPoint = capital ? capitals.get(capital) : null
 
+  // Where the celebration should come from: the country currently framed.
+  const burstAt = useMemo(() => {
+    const box = focus ? trailBoxes.get(focus) : null
+    if (!box) return null
+    const v = map.viewRef.current
+    return { x: ((box[0] + box[2]) / 2) * v.k + v.x, y: ((box[1] + box[3]) / 2) * v.k + v.y }
+    // The view is read at reveal time, when the zoom has already settled.
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [focus, trailBoxes, celebrate])
+
   return (
     <div className="worldmap" ref={ref}>
       {width > 0 && height > 0 && shapes && (
@@ -320,6 +334,9 @@ export function WorldMap({
             )}
           </g>
         </svg>
+      )}
+      {celebrate > 0 && (
+        <Confetti trigger={celebrate} originPx={burstAt} count={90} inline />
       )}
       {!shapes && <div className="worldmap-loading">Карта загружается…</div>}
     </div>
