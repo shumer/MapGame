@@ -19,7 +19,26 @@
 .menu-who { min-width: 0; }
 .menu-hello { margin: 0; font-size: clamp(24px, 5vw, 32px); font-weight: 800; }
 
+/* The progress bar is a button now: it opens the map of what has been
+   learned, which is where a child looks when they want to see more of it. */
+.menu-progress {
+  display: block;
+  width: 100%;
+  padding: 4px 6px 6px;
+  border: 0;
+  border-radius: 12px;
+  background: none;
+  font: inherit;
+  text-align: left;
+  cursor: pointer;
+}
+
+.menu-progress:hover {
+  background: var(--accent-tint);
+}
+
 .menu-bar {
+  display: block;
   height: 10px;
   border-radius: 999px;
   background: var(--line);
@@ -34,7 +53,7 @@
   transition: width 400ms ease;
 }
 
-.menu-learned { margin: 0; color: var(--muted); font-size: 14px; }
+.menu-learned { display: block; margin: 0; color: var(--muted); font-size: 14px; }
 .menu-learned b { color: var(--ink); font-size: 16px; }
 
 .menu-modes { display: flex; flex-direction: column; gap: 12px; }

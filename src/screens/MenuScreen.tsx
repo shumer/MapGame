@@ -29,12 +29,14 @@ export function MenuScreen({
   onPlay,
   onChangeRegion,
   onZoo,
+  onProgress,
 }: {
   profile: Profile
   region: Region
   onPlay: (mode: GameMode) => void
   onChangeRegion: () => void
   onZoo: () => void
+  onProgress: () => void
 }) {
   const { select, setLangs } = useProfiles()
   const ui = profile.uiLang
@@ -62,12 +64,16 @@ export function MenuScreen({
           <p className="menu-hello">
             {t(profile.level === 'little' ? 'levelLittle' : 'levelExpert', ui)}
           </p>
-          <div className="menu-bar" aria-label={`${learned} / ${pool}`}>
-            <span style={{ width: `${Math.round((learned / pool) * 100)}%` }} />
-          </div>
-          <p className="menu-learned">
-            {t('learned', ui)}: <b>{learned}</b> / {pool}
-          </p>
+          {/* The bar is also the way in to the progress map: tapping the thing
+              that shows how much is done is where a child will look for more. */}
+          <button className="menu-progress" onClick={onProgress}>
+            <span className="menu-bar" aria-label={`${learned} / ${pool}`}>
+              <span style={{ width: `${Math.round((learned / pool) * 100)}%` }} />
+            </span>
+            <span className="menu-learned">
+              {t('learned', ui)}: <b>{learned}</b> / {pool}
+            </span>
+          </button>
         </div>
         <button className="btn btn-ghost btn-round" onClick={() => select(null)}>
           {t('back', ui)}

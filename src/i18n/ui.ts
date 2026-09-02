@@ -39,6 +39,8 @@ const STRINGS = {
   back: { ru: 'Назад', pl: 'Wróć', en: 'Back' },
   modeAnimals: { ru: 'Животные', pl: 'Zwierzęta', en: 'Animals' },
   modeAnimalsHint: { ru: 'Кто здесь живёт?', pl: 'Kto tu mieszka?', en: 'Who lives here?' },
+  myWorld: { ru: 'Мой мир', pl: 'Mój świat', en: 'My world' },
+  myWorldHint: { ru: 'Что уже выучено', pl: 'Co już poznane', en: 'What you have learned' },
   zoo: { ru: 'Зоопарк', pl: 'Zoo', en: 'Zoo' },
   album: { ru: 'Альбом', pl: 'Album', en: 'Album' },
   zooHint: { ru: 'Смотри, кто где живёт', pl: 'Zobacz, kto gdzie mieszka', en: 'See who lives where' },

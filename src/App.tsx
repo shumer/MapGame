@@ -3,6 +3,7 @@ import { ContinentScreen } from './screens/ContinentScreen'
 import { GameScreen } from './screens/GameScreen'
 import { MenuScreen } from './screens/MenuScreen'
 import { ResultScreen } from './screens/ResultScreen'
+import { ProgressScreen } from './screens/ProgressScreen'
 import { StartScreen } from './screens/StartScreen'
 import { ZooScreen } from './screens/ZooScreen'
 import { SymbolGallery } from './screens/SymbolGallery'
@@ -15,6 +16,7 @@ type Screen =
   | { name: 'continent' }
   | { name: 'menu' }
   | { name: 'zoo' }
+  | { name: 'progress' }
   | { name: 'game'; mode: GameMode }
   | { name: 'result'; mode: GameMode; score: number; total: number; isBest: boolean }
 
@@ -52,6 +54,12 @@ export function App() {
     )
   }
 
+
+  if (screen.name === 'progress') {
+    return (
+      <ProgressScreen profile={profile} region={region} onExit={() => setScreen({ name: 'menu' })} />
+    )
+  }
 
   if (screen.name === 'zoo') {
     return <ZooScreen profile={profile} region={region} onExit={() => setScreen({ name: 'menu' })} />
@@ -95,6 +103,7 @@ export function App() {
       onPlay={(mode) => setScreen({ name: 'game', mode })}
       onChangeRegion={() => setScreen({ name: 'continent' })}
       onZoo={() => setScreen({ name: 'zoo' })}
+      onProgress={() => setScreen({ name: 'progress' })}
     />
   )
 }

@@ -401,3 +401,13 @@
     animation: none;
   }
 }
+
+/* The progress map: learned countries keep their colour, the rest are the
+   colour of land not yet travelled to. */
+.country.is-unknown {
+  fill: var(--land-backdrop);
+}
+
+.country.is-part {
+  opacity: 0.45;
+}

@@ -34,6 +34,10 @@ export interface WorldMapProps {
   travellerAt?: string | null
   /** Any change fires confetti over the focused country. Zero fires nothing. */
   celebrate?: number
+  /** Progress colouring: everything fades to backdrop except what has been
+      learned, so the map fills in as a child works through it. */
+  learned?: string[]
+  started?: string[]
   /** Called with an ISO code when a playable country is tapped. */
   onPick?: (iso: string) => void
   interactive?: boolean
@@ -58,6 +62,8 @@ export function WorldMap({
   trail = [],
   travellerAt = null,
   celebrate = 0,
+  learned,
+  started,
   onPick,
   interactive = true,
 }: WorldMapProps) {
@@ -259,6 +265,13 @@ export function WorldMap({
     if (wrong.includes(iso)) return 'wrong'
     if (highlight === iso) return 'focus'
     if (spotlight?.length && !spotlight.includes(iso)) return 'dim'
+    // On the progress map a country keeps its colour once it is known, and
+    // everything else stays the colour of land nobody has visited.
+    if (learned) {
+      if (learned.includes(iso)) return 'plain'
+      if (started?.includes(iso)) return 'part'
+      return 'unknown'
+    }
     return 'plain'
   }
 
