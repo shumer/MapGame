@@ -2,6 +2,7 @@ import { useCallback, useEffect, useMemo, useRef, useState } from 'react'
 import { Confetti } from '../ui/Confetti'
 import { countries, countryByUn, derived } from '../data'
 import { buildPaths, createPath, createProjection } from './projection'
+import { Flybys } from './Flybys'
 import { SeaDecor } from './SeaDecor'
 import walkerUrl from '../assets/art/decor/walker.svg?url'
 import { loadShapes, type CountryShape } from './topology'
@@ -363,6 +364,7 @@ export function WorldMap({
           </g>
         </svg>
       )}
+      {shapes && <Flybys />}
       {celebrate > 0 && (
         <Confetti trigger={celebrate} originPx={burstAt} count={90} inline />
       )}

@@ -1,0 +1,85 @@
+.flybys {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+  z-index: 2;
+}
+
+.flyby {
+  position: absolute;
+  display: block;
+  /* Off screen until its turn comes round. */
+  opacity: 0;
+  filter: drop-shadow(0 2px 3px rgba(20, 45, 60, 0.2));
+}
+
+/* Each keyframe set spends most of its cycle parked off the left edge, so the
+   map is quiet between appearances rather than constantly moving. */
+.flyby-plane {
+  width: 54px;
+  top: 12%;
+  animation: fly-right 46s linear infinite;
+}
+.flyby-boat {
+  width: 40px;
+  top: 62%;
+  animation: sail-right 72s linear infinite;
+  animation-delay: 14s;
+}
+.flyby-car {
+  width: 34px;
+  top: 44%;
+  animation: drive-left 88s linear infinite;
+  animation-delay: 32s;
+}
+.flyby-bird {
+  width: 22px;
+  animation: flap-left 58s linear infinite;
+}
+.flyby-bird-a { top: 24%; animation-delay: 8s; }
+.flyby-bird-b { top: 27%; width: 17px; animation-delay: 9.4s; }
+
+/* 0-26% of the cycle is the crossing; the rest is waiting out of sight. */
+@keyframes fly-right {
+  0% { left: -12%; transform: translateY(0) rotate(-4deg); opacity: 0; }
+  3% { opacity: 1; }
+  13% { transform: translateY(-18px) rotate(-2deg); }
+  23% { opacity: 1; }
+  26% { left: 108%; transform: translateY(6px) rotate(-5deg); opacity: 0; }
+  100% { left: 108%; opacity: 0; }
+}
+
+@keyframes sail-right {
+  0% { left: -8%; transform: translateY(0) rotate(0deg); opacity: 0; }
+  2% { opacity: 1; }
+  8% { transform: translateY(-4px) rotate(3deg); }
+  14% { transform: translateY(3px) rotate(-3deg); }
+  20% { opacity: 1; }
+  22% { left: 106%; opacity: 0; }
+  100% { left: 106%; opacity: 0; }
+}
+
+@keyframes drive-left {
+  0% { left: 104%; transform: scaleX(-1) translateY(0); opacity: 0; }
+  2% { opacity: 1; }
+  9% { transform: scaleX(-1) translateY(-3px); }
+  16% { opacity: 1; }
+  18% { left: -8%; transform: scaleX(-1) translateY(0); opacity: 0; }
+  100% { left: -8%; opacity: 0; }
+}
+
+@keyframes flap-left {
+  0% { left: 104%; transform: scaleX(-1) translateY(0); opacity: 0; }
+  2% { opacity: 0.9; }
+  6% { transform: scaleX(-1) translateY(-10px); }
+  11% { transform: scaleX(-1) translateY(8px); }
+  15% { opacity: 0.9; }
+  17% { left: -8%; opacity: 0; }
+  100% { left: -8%; opacity: 0; }
+}
+
+/* Nothing here carries meaning, so it all goes when motion is unwelcome. */
+@media (prefers-reduced-motion: reduce) {
+  .flybys { display: none; }
+}

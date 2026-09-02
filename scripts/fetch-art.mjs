@@ -41,6 +41,9 @@ const DECOR = {
   boat: '26f5',
   // The traveller at the head of the route on the map.
   walker: '1f6b6',
+  // Wildlife that drifts across the map now and then.
+  car: '1f697',
+  bird: '1f426',
 }
 
 /** Strips the Illustrator preamble and editor-only attributes. */
