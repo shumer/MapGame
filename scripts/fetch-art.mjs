@@ -33,6 +33,27 @@ const SYMBOLS = {
   crown: '1f451',
   racecar: '1f3ce',
   violin: '1f3bb',
+
+  // Asia. Nothing here may repeat what is on the country's own flag: in the
+  // flag round the symbol sits on the answer buttons, and a symbol that echoes
+  // the flag hands the answer over. That rules out the eagle for Kazakhstan,
+  // the dragon for Bhutan and Angkor Wat for Cambodia.
+  panda: '1f43c',
+  tiger: '1f405',
+  elephant: '1f418',
+  orangutan: '1f9a7',
+  camel: '1f42a',
+  lion: '1f981',
+  dragon: '1f409',
+  fish: '1f420',
+  fuji: '1f5fb',
+  island: '1f3dd',
+  city: '1f3d9',
+  mosque: '1f54c',
+  hibiscus: '1f33a',
+  tea: '1f375',
+  fire: '1f525',
+  judo: '1f94b',
 }
 
 const DECOR = {
