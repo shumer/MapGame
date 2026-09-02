@@ -75,6 +75,13 @@ const SYMBOLS = {
   diamond: '1f48e',
   drum: '1f941',
   desert: '1f3dc',
+
+  // Oceania.
+  kangaroo: '1f998',
+  sheep: '1f411',
+  shell: '1f41a',
+  jellyfish: '1fabc',
+  whale: '1f40b',
 }
 
 const DECOR = {

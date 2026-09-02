@@ -40,11 +40,18 @@ WHERE {
   ${LANGS.map((l) => label('country', l)).join('\n  ')}
 }`
 
+// The public endpoint throttles and times out; a 502 or 504 means try again,
+// not give up.
 const url = 'https://query.wikidata.org/sparql?format=json&query=' + encodeURIComponent(query)
-const res = await fetch(url, { headers: { 'User-Agent': UA, Accept: 'application/sparql-results+json' } })
-if (!res.ok) {
-  console.error('Wikidata query failed:', res.status)
-  process.exit(1)
+let res
+for (let attempt = 1; attempt <= 4; attempt++) {
+  res = await fetch(url, { headers: { 'User-Agent': UA, Accept: 'application/sparql-results+json' } })
+  if (res.ok) break
+  if (attempt === 4) {
+    console.error('Wikidata query failed:', res.status)
+    process.exit(1)
+  }
+  await new Promise((r) => setTimeout(r, attempt * 4000))
 }
 const body = await res.json()
 

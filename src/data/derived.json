@@ -306,7 +306,7 @@
         "MD"
       ],
       "borders": [],
-      "color": 0,
+      "color": 4,
       "facts": [
         {
           "kind": "noNeighbours"
@@ -789,7 +789,7 @@
         "NL"
       ],
       "borders": [],
-      "color": 0,
+      "color": 3,
       "facts": [
         {
           "kind": "noNeighbours"
@@ -1135,7 +1135,7 @@
         "MK"
       ],
       "borders": [],
-      "color": 0,
+      "color": 4,
       "facts": [
         {
           "kind": "noNeighbours"
@@ -1841,7 +1841,7 @@
         "OM"
       ],
       "borders": [],
-      "color": 0,
+      "color": 3,
       "facts": [
         {
           "kind": "noNeighbours"
@@ -1992,7 +1992,7 @@
         "JO"
       ],
       "borders": [],
-      "color": 0,
+      "color": 3,
       "facts": [
         {
           "kind": "noNeighbours"
@@ -2288,7 +2288,7 @@
         "VN"
       ],
       "borders": [],
-      "color": 0,
+      "color": 4,
       "facts": [
         {
           "kind": "noNeighbours"
@@ -2602,7 +2602,7 @@
         "TH"
       ],
       "borders": [],
-      "color": 0,
+      "color": 3,
       "facts": [
         {
           "kind": "noNeighbours"
@@ -2703,7 +2703,7 @@
         "NP"
       ],
       "borders": [],
-      "color": 0,
+      "color": 4,
       "facts": [
         {
           "kind": "noNeighbours"
@@ -2837,7 +2837,7 @@
         "LA"
       ],
       "borders": [],
-      "color": 0,
+      "color": 5,
       "facts": [
         {
           "kind": "noNeighbours"
@@ -3061,7 +3061,7 @@
         "VN"
       ],
       "borders": [],
-      "color": 0,
+      "color": 4,
       "facts": [
         {
           "kind": "noNeighbours"
@@ -3803,7 +3803,7 @@
         "SL"
       ],
       "borders": [],
-      "color": 0,
+      "color": 3,
       "facts": [
         {
           "kind": "noNeighbours"
@@ -4261,7 +4261,7 @@
         "KE"
       ],
       "borders": [],
-      "color": 0,
+      "color": 2,
       "facts": [
         {
           "kind": "noNeighbours"
@@ -4433,7 +4433,7 @@
         "SZ"
       ],
       "borders": [],
-      "color": 0,
+      "color": 4,
       "facts": [
         {
           "kind": "noNeighbours"
@@ -4541,7 +4541,7 @@
         "SZ"
       ],
       "borders": [],
-      "color": 0,
+      "color": 5,
       "facts": [
         {
           "kind": "noNeighbours"
@@ -4794,7 +4794,7 @@
         "TZ"
       ],
       "borders": [],
-      "color": 0,
+      "color": 3,
       "facts": [
         {
           "kind": "noNeighbours"
@@ -5014,7 +5014,7 @@
         "TG"
       ],
       "borders": [],
-      "color": 0,
+      "color": 5,
       "facts": [
         {
           "kind": "noNeighbours"
@@ -5377,6 +5377,438 @@
       ]
     }
   },
+  "oceania": {
+    "AU": {
+      "focus": [
+        113.141,
+        -43.638,
+        153.645,
+        -10.687
+      ],
+      "near": [
+        "PG",
+        "SB",
+        "VU",
+        "PW",
+        "NZ",
+        "FM"
+      ],
+      "borders": [],
+      "color": 0,
+      "facts": [
+        {
+          "kind": "noNeighbours"
+        },
+        {
+          "kind": "coast"
+        },
+        {
+          "kind": "biggest",
+          "rank": 1
+        },
+        {
+          "kind": "area",
+          "km2": 7706000
+        }
+      ]
+    },
+    "FJ": {
+      "focus": [
+        177,
+        -19.3,
+        180,
+        -16
+      ],
+      "near": [
+        "TO",
+        "WS",
+        "TV",
+        "VU",
+        "KI",
+        "NR"
+      ],
+      "borders": [],
+      "color": 1,
+      "facts": [
+        {
+          "kind": "noNeighbours"
+        },
+        {
+          "kind": "island"
+        },
+        {
+          "kind": "area",
+          "km2": 19000
+        },
+        {
+          "kind": "easternmost"
+        }
+      ]
+    },
+    "FM": {
+      "focus": [
+        138.056,
+        0.916,
+        163.042,
+        9.776
+      ],
+      "near": [
+        "NR",
+        "MH",
+        "SB",
+        "PG",
+        "KI",
+        "PW"
+      ],
+      "borders": [],
+      "color": 2,
+      "facts": [
+        {
+          "kind": "noNeighbours"
+        },
+        {
+          "kind": "island"
+        }
+      ]
+    },
+    "KI": {
+      "focus": [
+        172,
+        0.8,
+        174,
+        2.2
+      ],
+      "near": [
+        "NR",
+        "TV",
+        "MH",
+        "FJ",
+        "VU",
+        "SB"
+      ],
+      "borders": [],
+      "color": 3,
+      "facts": [
+        {
+          "kind": "noNeighbours"
+        },
+        {
+          "kind": "island"
+        }
+      ]
+    },
+    "MH": {
+      "focus": [
+        165.527,
+        4.575,
+        172.043,
+        14.613
+      ],
+      "near": [
+        "NR",
+        "KI",
+        "FM",
+        "TV",
+        "SB",
+        "VU"
+      ],
+      "borders": [],
+      "color": 4,
+      "facts": [
+        {
+          "kind": "noNeighbours"
+        },
+        {
+          "kind": "island"
+        },
+        {
+          "kind": "smallest",
+          "rank": 3
+        },
+        {
+          "kind": "northernmost"
+        }
+      ]
+    },
+    "NR": {
+      "focus": [
+        166.895,
+        -0.55,
+        166.967,
+        -0.49
+      ],
+      "near": [
+        "KI",
+        "MH",
+        "SB",
+        "TV",
+        "FM",
+        "VU"
+      ],
+      "borders": [],
+      "color": 5,
+      "facts": [
+        {
+          "kind": "noNeighbours"
+        },
+        {
+          "kind": "island"
+        },
+        {
+          "kind": "smallest",
+          "rank": 2
+        }
+      ]
+    },
+    "NZ": {
+      "focus": [
+        166,
+        -47.3,
+        178.6,
+        -34.4
+      ],
+      "near": [
+        "TO",
+        "FJ",
+        "VU",
+        "WS",
+        "TV",
+        "SB"
+      ],
+      "borders": [],
+      "color": 2,
+      "facts": [
+        {
+          "kind": "noNeighbours"
+        },
+        {
+          "kind": "island"
+        },
+        {
+          "kind": "biggest",
+          "rank": 3
+        },
+        {
+          "kind": "area",
+          "km2": 269000
+        },
+        {
+          "kind": "southernmost"
+        },
+        {
+          "kind": "southernCapital"
+        }
+      ]
+    },
+    "PG": {
+      "focus": [
+        140.864,
+        -10.702,
+        155.95,
+        -2.561
+      ],
+      "near": [
+        "SB",
+        "FM",
+        "PW",
+        "AU",
+        "NR",
+        "VU"
+      ],
+      "borders": [],
+      "color": 1,
+      "facts": [
+        {
+          "kind": "noNeighbours"
+        },
+        {
+          "kind": "island"
+        },
+        {
+          "kind": "biggest",
+          "rank": 2
+        },
+        {
+          "kind": "area",
+          "km2": 467000
+        }
+      ]
+    },
+    "PW": {
+      "focus": [
+        131.143,
+        2.95,
+        134.743,
+        8.097
+      ],
+      "near": [
+        "PG",
+        "FM",
+        "SB",
+        "AU",
+        "NR",
+        "MH"
+      ],
+      "borders": [],
+      "color": 3,
+      "facts": [
+        {
+          "kind": "noNeighbours"
+        },
+        {
+          "kind": "island"
+        },
+        {
+          "kind": "northernCapital"
+        }
+      ]
+    },
+    "SB": {
+      "focus": [
+        155.662,
+        -11.844,
+        167.003,
+        -6.605
+      ],
+      "near": [
+        "VU",
+        "NR",
+        "PG",
+        "FM",
+        "KI",
+        "TV"
+      ],
+      "borders": [],
+      "color": 3,
+      "facts": [
+        {
+          "kind": "noNeighbours"
+        },
+        {
+          "kind": "island"
+        },
+        {
+          "kind": "area",
+          "km2": 27000
+        }
+      ]
+    },
+    "TO": {
+      "focus": [
+        -176,
+        -21.6,
+        -174,
+        -18.5
+      ],
+      "near": [
+        "FJ",
+        "WS",
+        "TV",
+        "VU",
+        "KI",
+        "NZ"
+      ],
+      "borders": [],
+      "color": 4,
+      "facts": [
+        {
+          "kind": "noNeighbours"
+        },
+        {
+          "kind": "island"
+        },
+        {
+          "kind": "westernmost"
+        }
+      ]
+    },
+    "TV": {
+      "focus": [
+        178.4,
+        -9.1,
+        180,
+        -7.9
+      ],
+      "near": [
+        "KI",
+        "FJ",
+        "WS",
+        "NR",
+        "VU",
+        "TO"
+      ],
+      "borders": [],
+      "color": 0,
+      "facts": [
+        {
+          "kind": "noNeighbours"
+        },
+        {
+          "kind": "island"
+        },
+        {
+          "kind": "smallest",
+          "rank": 1
+        }
+      ]
+    },
+    "VU": {
+      "focus": [
+        166.535,
+        -20.257,
+        169.883,
+        -13.068
+      ],
+      "near": [
+        "SB",
+        "FJ",
+        "TV",
+        "NR",
+        "TO",
+        "KI"
+      ],
+      "borders": [],
+      "color": 0,
+      "facts": [
+        {
+          "kind": "noNeighbours"
+        },
+        {
+          "kind": "island"
+        },
+        {
+          "kind": "area",
+          "km2": 12000
+        }
+      ]
+    },
+    "WS": {
+      "focus": [
+        -172.9,
+        -14.2,
+        -171.3,
+        -13.3
+      ],
+      "near": [
+        "TO",
+        "FJ",
+        "TV",
+        "KI",
+        "VU",
+        "NR"
+      ],
+      "borders": [],
+      "color": 1,
+      "facts": [
+        {
+          "kind": "noNeighbours"
+        },
+        {
+          "kind": "island"
+        }
+      ]
+    }
+  },
   "world": {
     "AD": {
       "focus": [
@@ -5631,6 +6063,40 @@
         }
       ]
     },
+    "AU": {
+      "focus": [
+        113.141,
+        -43.638,
+        153.645,
+        -10.687
+      ],
+      "near": [
+        "TL",
+        "PG",
+        "ID",
+        "SB",
+        "VU",
+        "PW"
+      ],
+      "borders": [],
+      "color": 2,
+      "facts": [
+        {
+          "kind": "noNeighbours"
+        },
+        {
+          "kind": "coast"
+        },
+        {
+          "kind": "biggest",
+          "rank": 3
+        },
+        {
+          "kind": "area",
+          "km2": 7710000
+        }
+      ]
+    },
     "AZ": {
       "focus": [
         44.77,
@@ -5864,7 +6330,7 @@
         "OM"
       ],
       "borders": [],
-      "color": 0,
+      "color": 3,
       "facts": [
         {
           "kind": "noNeighbours"
@@ -6387,16 +6853,13 @@
         "SL"
       ],
       "borders": [],
-      "color": 0,
+      "color": 3,
       "facts": [
         {
           "kind": "noNeighbours"
         },
         {
           "kind": "island"
-        },
-        {
-          "kind": "westernmost"
         }
       ]
     },
@@ -6416,7 +6879,7 @@
         "JO"
       ],
       "borders": [],
-      "color": 0,
+      "color": 4,
       "facts": [
         {
           "kind": "noNeighbours"
@@ -6828,6 +7291,65 @@
         {
           "kind": "area",
           "km2": 331000
+        }
+      ]
+    },
+    "FJ": {
+      "focus": [
+        177,
+        -19.3,
+        180,
+        -16
+      ],
+      "near": [
+        "TO",
+        "TV",
+        "WS",
+        "VU",
+        "KI",
+        "NR"
+      ],
+      "borders": [],
+      "color": 5,
+      "facts": [
+        {
+          "kind": "noNeighbours"
+        },
+        {
+          "kind": "island"
+        },
+        {
+          "kind": "area",
+          "km2": 19000
+        },
+        {
+          "kind": "easternmost"
+        }
+      ]
+    },
+    "FM": {
+      "focus": [
+        138.056,
+        0.916,
+        163.042,
+        9.776
+      ],
+      "near": [
+        "NR",
+        "MH",
+        "SB",
+        "PG",
+        "PW",
+        "VU"
+      ],
+      "borders": [],
+      "color": 1,
+      "facts": [
+        {
+          "kind": "noNeighbours"
+        },
+        {
+          "kind": "island"
         }
       ]
     },
@@ -7279,20 +7801,21 @@
       "near": [
         "MY",
         "TL",
+        "PG",
         "BN",
         "SG",
-        "PH",
-        "KH"
+        "PH"
       ],
       "borders": [
         "MY",
-        "TL"
+        "TL",
+        "PG"
       ],
       "color": 1,
       "facts": [
         {
           "kind": "neighbours",
-          "count": 2
+          "count": 3
         },
         {
           "kind": "island"
@@ -7406,10 +7929,6 @@
           "kind": "coast"
         },
         {
-          "kind": "biggest",
-          "rank": 3
-        },
-        {
           "kind": "area",
           "km2": 3159000
         }
@@ -7512,7 +8031,7 @@
         "NL"
       ],
       "borders": [],
-      "color": 0,
+      "color": 3,
       "facts": [
         {
           "kind": "noNeighbours"
@@ -7618,10 +8137,10 @@
         "MN",
         "CN",
         "PH",
-        "VN"
+        "PW"
       ],
       "borders": [],
-      "color": 0,
+      "color": 3,
       "facts": [
         {
           "kind": "noNeighbours"
@@ -7743,6 +8262,32 @@
         }
       ]
     },
+    "KI": {
+      "focus": [
+        172,
+        0.8,
+        174,
+        2.2
+      ],
+      "near": [
+        "TV",
+        "WS",
+        "MH",
+        "FJ",
+        "NR",
+        "TO"
+      ],
+      "borders": [],
+      "color": 3,
+      "facts": [
+        {
+          "kind": "noNeighbours"
+        },
+        {
+          "kind": "island"
+        }
+      ]
+    },
     "KM": {
       "focus": [
         43.21,
@@ -7759,7 +8304,7 @@
         "KE"
       ],
       "borders": [],
-      "color": 0,
+      "color": 4,
       "facts": [
         {
           "kind": "noNeighbours"
@@ -8025,7 +8570,7 @@
         "TH"
       ],
       "borders": [],
-      "color": 0,
+      "color": 5,
       "facts": [
         {
           "kind": "noNeighbours"
@@ -8104,9 +8649,6 @@
         {
           "kind": "area",
           "km2": 30000
-        },
-        {
-          "kind": "southernCapital"
         }
       ]
     },
@@ -8315,7 +8857,7 @@
         },
         {
           "kind": "smallest",
-          "rank": 2
+          "rank": 3
         }
       ]
     },
@@ -8405,7 +8947,7 @@
         "SZ"
       ],
       "borders": [],
-      "color": 0,
+      "color": 1,
       "facts": [
         {
           "kind": "noNeighbours"
@@ -8416,6 +8958,32 @@
         {
           "kind": "area",
           "km2": 596000
+        }
+      ]
+    },
+    "MH": {
+      "focus": [
+        165.527,
+        4.575,
+        172.043,
+        14.613
+      ],
+      "near": [
+        "NR",
+        "FM",
+        "KI",
+        "TV",
+        "SB",
+        "VU"
+      ],
+      "borders": [],
+      "color": 2,
+      "facts": [
+        {
+          "kind": "noNeighbours"
+        },
+        {
+          "kind": "island"
         }
       ]
     },
@@ -8621,7 +9189,7 @@
         "ME"
       ],
       "borders": [],
-      "color": 0,
+      "color": 3,
       "facts": [
         {
           "kind": "noNeighbours"
@@ -8647,7 +9215,7 @@
         "SZ"
       ],
       "borders": [],
-      "color": 0,
+      "color": 5,
       "facts": [
         {
           "kind": "noNeighbours"
@@ -8673,7 +9241,7 @@
         "PK"
       ],
       "borders": [],
-      "color": 0,
+      "color": 4,
       "facts": [
         {
           "kind": "noNeighbours"
@@ -9010,6 +9578,72 @@
         }
       ]
     },
+    "NR": {
+      "focus": [
+        166.895,
+        -0.55,
+        166.967,
+        -0.49
+      ],
+      "near": [
+        "MH",
+        "SB",
+        "FM",
+        "TV",
+        "VU",
+        "KI"
+      ],
+      "borders": [],
+      "color": 0,
+      "facts": [
+        {
+          "kind": "noNeighbours"
+        },
+        {
+          "kind": "island"
+        },
+        {
+          "kind": "smallest",
+          "rank": 2
+        }
+      ]
+    },
+    "NZ": {
+      "focus": [
+        166,
+        -47.3,
+        178.6,
+        -34.4
+      ],
+      "near": [
+        "TO",
+        "FJ",
+        "VU",
+        "WS",
+        "TV",
+        "SB"
+      ],
+      "borders": [],
+      "color": 0,
+      "facts": [
+        {
+          "kind": "noNeighbours"
+        },
+        {
+          "kind": "island"
+        },
+        {
+          "kind": "area",
+          "km2": 269000
+        },
+        {
+          "kind": "southernmost"
+        },
+        {
+          "kind": "southernCapital"
+        }
+      ]
+    },
     "OM": {
       "focus": [
         51.971,
@@ -9045,6 +9679,39 @@
         }
       ]
     },
+    "PG": {
+      "focus": [
+        140.864,
+        -10.702,
+        155.95,
+        -2.561
+      ],
+      "near": [
+        "ID",
+        "SB",
+        "PW",
+        "FM",
+        "TL",
+        "AU"
+      ],
+      "borders": [
+        "ID"
+      ],
+      "color": 0,
+      "facts": [
+        {
+          "kind": "neighbours",
+          "count": 1
+        },
+        {
+          "kind": "island"
+        },
+        {
+          "kind": "area",
+          "km2": 468000
+        }
+      ]
+    },
     "PH": {
       "focus": [
         117.174,
@@ -9054,14 +9721,14 @@
       ],
       "near": [
         "BN",
+        "PW",
         "ID",
         "MY",
         "VN",
-        "KH",
-        "LA"
+        "KH"
       ],
       "borders": [],
-      "color": 0,
+      "color": 4,
       "facts": [
         {
           "kind": "noNeighbours"
@@ -9219,6 +9886,32 @@
         {
           "kind": "area",
           "km2": 92000
+        }
+      ]
+    },
+    "PW": {
+      "focus": [
+        131.143,
+        2.95,
+        134.743,
+        8.097
+      ],
+      "near": [
+        "PH",
+        "PG",
+        "TL",
+        "BN",
+        "ID",
+        "FM"
+      ],
+      "borders": [],
+      "color": 5,
+      "facts": [
+        {
+          "kind": "noNeighbours"
+        },
+        {
+          "kind": "island"
         }
       ]
     },
@@ -9389,9 +10082,6 @@
         },
         {
           "kind": "northernmost"
-        },
-        {
-          "kind": "easternmost"
         }
       ]
     },
@@ -9474,6 +10164,36 @@
         }
       ]
     },
+    "SB": {
+      "focus": [
+        155.662,
+        -11.844,
+        167.003,
+        -6.605
+      ],
+      "near": [
+        "VU",
+        "NR",
+        "PG",
+        "FM",
+        "MH",
+        "TV"
+      ],
+      "borders": [],
+      "color": 3,
+      "facts": [
+        {
+          "kind": "noNeighbours"
+        },
+        {
+          "kind": "island"
+        },
+        {
+          "kind": "area",
+          "km2": 28000
+        }
+      ]
+    },
     "SC": {
       "focus": [
         46.206,
@@ -9490,7 +10210,7 @@
         "TZ"
       ],
       "borders": [],
-      "color": 0,
+      "color": 3,
       "facts": [
         {
           "kind": "noNeighbours"
@@ -9739,10 +10459,6 @@
         },
         {
           "kind": "landlocked"
-        },
-        {
-          "kind": "smallest",
-          "rank": 3
         }
       ]
     },
@@ -9871,7 +10587,7 @@
         "TG"
       ],
       "borders": [],
-      "color": 0,
+      "color": 5,
       "facts": [
         {
           "kind": "noNeighbours"
@@ -10107,10 +10823,10 @@
       "near": [
         "ID",
         "BN",
-        "MY",
-        "PH",
-        "SG",
-        "KH"
+        "PW",
+        "AU",
+        "PG",
+        "MY"
       ],
       "borders": [
         "ID"
@@ -10200,6 +10916,35 @@
         }
       ]
     },
+    "TO": {
+      "focus": [
+        -176,
+        -21.6,
+        -174,
+        -18.5
+      ],
+      "near": [
+        "FJ",
+        "WS",
+        "TV",
+        "VU",
+        "KI",
+        "NZ"
+      ],
+      "borders": [],
+      "color": 1,
+      "facts": [
+        {
+          "kind": "noNeighbours"
+        },
+        {
+          "kind": "island"
+        },
+        {
+          "kind": "westernmost"
+        }
+      ]
+    },
     "TR": {
       "focus": [
         26.049,
@@ -10241,6 +10986,32 @@
         {
           "kind": "area",
           "km2": 780000
+        }
+      ]
+    },
+    "TV": {
+      "focus": [
+        178.4,
+        -9.1,
+        180,
+        -7.9
+      ],
+      "near": [
+        "FJ",
+        "WS",
+        "KI",
+        "TO",
+        "VU",
+        "NR"
+      ],
+      "borders": [],
+      "color": 4,
+      "facts": [
+        {
+          "kind": "noNeighbours"
+        },
+        {
+          "kind": "island"
         }
       ]
     },
@@ -10473,6 +11244,62 @@
         }
       ]
     },
+    "VU": {
+      "focus": [
+        166.535,
+        -20.257,
+        169.883,
+        -13.068
+      ],
+      "near": [
+        "SB",
+        "FJ",
+        "TV",
+        "NR",
+        "TO",
+        "WS"
+      ],
+      "borders": [],
+      "color": 2,
+      "facts": [
+        {
+          "kind": "noNeighbours"
+        },
+        {
+          "kind": "island"
+        },
+        {
+          "kind": "area",
+          "km2": 12000
+        }
+      ]
+    },
+    "WS": {
+      "focus": [
+        -172.9,
+        -14.2,
+        -171.3,
+        -13.3
+      ],
+      "near": [
+        "TO",
+        "FJ",
+        "TV",
+        "KI",
+        "VU",
+        "NR"
+      ],
+      "borders": [],
+      "color": 3,
+      "facts": [
+        {
+          "kind": "noNeighbours"
+        },
+        {
+          "kind": "island"
+        }
+      ]
+    },
     "YE": {
       "focus": [
         42.61,
@@ -10542,9 +11369,6 @@
         {
           "kind": "area",
           "km2": 1223000
-        },
-        {
-          "kind": "southernmost"
         }
       ]
     },

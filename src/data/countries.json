@@ -254,6 +254,50 @@
       "island": false
     },
     {
+      "iso": "AU",
+      "un": "036",
+      "regions": [
+        "oceania"
+      ],
+      "subregion": "australia",
+      "fame": 1,
+      "micro": false,
+      "landlocked": false,
+      "island": false,
+      "name": {
+        "ru": "Австралия",
+        "pl": "Australia",
+        "en": "Australia"
+      },
+      "capital": {
+        "ru": "Канберра",
+        "pl": "Canberra",
+        "en": "Canberra"
+      },
+      "capitalCoords": [
+        149.1269,
+        -35.2931
+      ],
+      "symbol": "kangaroo",
+      "stories": [
+        {
+          "ru": "Австралия единственная страна, которая занимает целый материк.",
+          "pl": "Australia to jedyny kraj zajmujący cały kontynent.",
+          "en": "Australia is the only country that takes up a whole continent."
+        },
+        {
+          "ru": "Кенгуру и коалы в дикой природе живут только здесь.",
+          "pl": "Kangury i koale żyją na wolności tylko tutaj.",
+          "en": "Kangaroos and koalas live in the wild only here."
+        },
+        {
+          "ru": "Большой Барьерный риф самое большое живое сооружение на планете, его видно из космоса.",
+          "pl": "Wielka Rafa Koralowa to największa żywa budowla na planecie, widać ją z kosmosu.",
+          "en": "The Great Barrier Reef is the largest living structure on the planet, visible from space."
+        }
+      ]
+    },
+    {
       "iso": "AZ",
       "un": "031",
       "regions": [
@@ -1483,6 +1527,66 @@
       "island": false
     },
     {
+      "iso": "FJ",
+      "un": "242",
+      "regions": [
+        "oceania"
+      ],
+      "subregion": "melanesia",
+      "fame": 1,
+      "micro": false,
+      "landlocked": false,
+      "island": true,
+      "name": {
+        "ru": "Фиджи",
+        "pl": "Fidżi",
+        "en": "Fiji"
+      },
+      "capital": {
+        "ru": "Сува",
+        "pl": "Suva",
+        "en": "Suva"
+      },
+      "capitalCoords": [
+        178.4333,
+        -18.1333
+      ],
+      "symbol": "shell",
+      "stories": [
+        {
+          "ru": "Фиджи это больше трёхсот островов, и люди живут примерно на сотне из них.",
+          "pl": "Fidżi to ponad trzysta wysp, a ludzie mieszkają na mniej więcej stu z nich.",
+          "en": "Fiji is more than three hundred islands, and people live on about a hundred of them."
+        }
+      ]
+    },
+    {
+      "iso": "FM",
+      "un": "583",
+      "regions": [
+        "oceania"
+      ],
+      "subregion": "micronesia",
+      "fame": 2,
+      "micro": true,
+      "landlocked": false,
+      "island": true,
+      "name": {
+        "ru": "Микронезия",
+        "pl": "Mikronezja",
+        "en": "Micronesia"
+      },
+      "capital": {
+        "ru": "Паликир",
+        "pl": "Palikir",
+        "en": "Palikir"
+      },
+      "capitalCoords": [
+        158.185,
+        6.9178
+      ]
+    },
+    {
       "iso": "FR",
       "un": "250",
       "subregion": "west",
@@ -2471,6 +2575,32 @@
       ]
     },
     {
+      "iso": "KI",
+      "un": "296",
+      "regions": [
+        "oceania"
+      ],
+      "subregion": "micronesia",
+      "fame": 2,
+      "micro": true,
+      "landlocked": false,
+      "island": true,
+      "name": {
+        "ru": "Кирибати",
+        "pl": "Kiribati",
+        "en": "Kiribati"
+      },
+      "capital": {
+        "ru": "Южная Тарава",
+        "pl": "South Tarawa",
+        "en": "South Tarawa"
+      },
+      "capitalCoords": [
+        172.9667,
+        1.3333
+      ]
+    },
+    {
       "iso": "KM",
       "un": "174",
       "regions": [
@@ -3080,6 +3210,32 @@
       ]
     },
     {
+      "iso": "MH",
+      "un": "584",
+      "regions": [
+        "oceania"
+      ],
+      "subregion": "micronesia",
+      "fame": 2,
+      "micro": true,
+      "landlocked": false,
+      "island": true,
+      "name": {
+        "ru": "Маршалловы Острова",
+        "pl": "Wyspy Marshalla",
+        "en": "Marshall Islands"
+      },
+      "capital": {
+        "ru": "Маджуро",
+        "pl": "Majuro",
+        "en": "Majuro"
+      },
+      "capitalCoords": [
+        171.3802,
+        7.0918
+      ]
+    },
+    {
       "iso": "MK",
       "un": "807",
       "subregion": "balkans",
@@ -3661,6 +3817,78 @@
       ]
     },
     {
+      "iso": "NR",
+      "un": "520",
+      "regions": [
+        "oceania"
+      ],
+      "subregion": "micronesia",
+      "fame": 3,
+      "micro": true,
+      "landlocked": false,
+      "island": true,
+      "name": {
+        "ru": "Науру",
+        "pl": "Nauru",
+        "en": "Nauru"
+      },
+      "capital": {
+        "ru": "Ярен",
+        "pl": "Yaren",
+        "en": "Yaren District"
+      },
+      "capitalCoords": [
+        166.9209,
+        -0.5477
+      ],
+      "stories": [
+        {
+          "ru": "Науру третья по площади страна мира с конца, обойти её пешком можно за день.",
+          "pl": "Nauru to trzeci najmniejszy kraj świata, można go obejść pieszo w jeden dzień.",
+          "en": "Nauru is the third smallest country in the world; you could walk around it in a day."
+        }
+      ]
+    },
+    {
+      "iso": "NZ",
+      "un": "554",
+      "regions": [
+        "oceania"
+      ],
+      "subregion": "australia",
+      "fame": 1,
+      "micro": false,
+      "landlocked": false,
+      "island": true,
+      "name": {
+        "ru": "Новая Зеландия",
+        "pl": "Nowa Zelandia",
+        "en": "New Zealand"
+      },
+      "capital": {
+        "ru": "Веллингтон",
+        "pl": "Wellington",
+        "en": "Wellington"
+      },
+      "capitalCoords": [
+        174.7772,
+        -41.2889
+      ],
+      "symbol": "sheep",
+      "stories": [
+        {
+          "ru": "Овец в Новой Зеландии в несколько раз больше, чем людей.",
+          "pl": "Owiec w Nowej Zelandii jest kilka razy więcej niż ludzi.",
+          "en": "There are several times more sheep in New Zealand than people."
+        },
+        {
+          "ru": "Птица киви не умеет летать, а её яйцо огромное по сравнению с ней самой.",
+          "pl": "Ptak kiwi nie umie latać, a jego jajo jest ogromne w porównaniu z nim samym.",
+          "en": "The kiwi bird cannot fly, and its egg is enormous compared with the bird."
+        }
+      ]
+    },
+    {
       "iso": "OM",
       "un": "512",
       "regions": [
@@ -3684,6 +3912,39 @@
       "capitalCoords": [
         58.5922,
         23.6139
+      ]
+    },
+    {
+      "iso": "PG",
+      "un": "598",
+      "regions": [
+        "oceania"
+      ],
+      "subregion": "melanesia",
+      "fame": 1,
+      "micro": false,
+      "landlocked": false,
+      "island": true,
+      "name": {
+        "ru": "Папуа - Новая Гвинея",
+        "pl": "Papua-Nowa Gwinea",
+        "en": "Papua New Guinea"
+      },
+      "capital": {
+        "ru": "Порт-Морсби",
+        "pl": "Port Moresby",
+        "en": "Port Moresby"
+      },
+      "capitalCoords": [
+        147.1494,
+        -9.4789
+      ],
+      "stories": [
+        {
+          "ru": "В Папуа - Новой Гвинее говорят на восьмистах с лишним языках, больше, чем в любой другой стране.",
+          "pl": "W Papui-Nowej Gwinei mówi się ponad ośmiuset językami, więcej niż w jakimkolwiek innym kraju.",
+          "en": "Papua New Guinea speaks over eight hundred languages, more than any other country."
+        }
       ]
     },
     {
@@ -3908,6 +4169,33 @@
       "island": false
     },
     {
+      "iso": "PW",
+      "un": "585",
+      "regions": [
+        "oceania"
+      ],
+      "subregion": "micronesia",
+      "fame": 2,
+      "micro": true,
+      "landlocked": false,
+      "island": true,
+      "name": {
+        "ru": "Палау",
+        "pl": "Palau",
+        "en": "Palau"
+      },
+      "capital": {
+        "ru": "Нгерулмуд",
+        "pl": "Ngerulmud",
+        "en": "Ngerulmud"
+      },
+      "capitalCoords": [
+        134.6242,
+        7.5006
+      ],
+      "symbol": "jellyfish"
+    },
+    {
       "iso": "QA",
       "un": "634",
       "regions": [
@@ -4120,6 +4408,32 @@
           "pl": "Pustynia Rub al-Chali to największe zwarte morze piasku na świecie.",
           "en": "The Rub' al Khali is the largest unbroken sea of sand on the planet."
         }
+      ]
+    },
+    {
+      "iso": "SB",
+      "un": "090",
+      "regions": [
+        "oceania"
+      ],
+      "subregion": "melanesia",
+      "fame": 2,
+      "micro": false,
+      "landlocked": false,
+      "island": true,
+      "name": {
+        "ru": "Соломоновы Острова",
+        "pl": "Wyspy Salomona",
+        "en": "Solomon Islands"
+      },
+      "capital": {
+        "ru": "Хониара",
+        "pl": "Honiara",
+        "en": "Honiara"
+      },
+      "capitalCoords": [
+        159.95,
+        -9.4333
       ]
     },
     {
@@ -4774,6 +5088,40 @@
       ]
     },
     {
+      "iso": "TO",
+      "un": "776",
+      "regions": [
+        "oceania"
+      ],
+      "subregion": "polynesia",
+      "fame": 2,
+      "micro": true,
+      "landlocked": false,
+      "island": true,
+      "name": {
+        "ru": "Тонга",
+        "pl": "Tonga",
+        "en": "Tonga"
+      },
+      "capital": {
+        "ru": "Нукуалофа",
+        "pl": "Nukuʻalofa",
+        "en": "Nukuʻalofa"
+      },
+      "capitalCoords": [
+        -175.2018,
+        -21.1343
+      ],
+      "symbol": "whale",
+      "stories": [
+        {
+          "ru": "Тонга единственное королевство Океании, и его никогда не превращали в колонию.",
+          "pl": "Tonga to jedyne królestwo Oceanii i nigdy nie zamieniono go w kolonię.",
+          "en": "Tonga is the only kingdom in Oceania, and it was never turned into a colony."
+        }
+      ]
+    },
+    {
       "iso": "TR",
       "un": "792",
       "regions": [
@@ -4814,6 +5162,39 @@
           "ru": "В Каппадокии люди веками жили в домах, вырубленных прямо в мягких скалах.",
           "pl": "W Kapadocji ludzie przez wieki mieszkali w domach wykutych w miękkich skałach.",
           "en": "In Cappadocia people lived for centuries in houses carved into soft rock."
+        }
+      ]
+    },
+    {
+      "iso": "TV",
+      "un": "798",
+      "regions": [
+        "oceania"
+      ],
+      "subregion": "polynesia",
+      "fame": 3,
+      "micro": true,
+      "landlocked": false,
+      "island": true,
+      "name": {
+        "ru": "Тувалу",
+        "pl": "Tuvalu",
+        "en": "Tuvalu"
+      },
+      "capital": {
+        "ru": "Фунафути",
+        "pl": "Funafuti",
+        "en": "Funafuti"
+      },
+      "capitalCoords": [
+        179.1174,
+        -8.5048
+      ],
+      "stories": [
+        {
+          "ru": "Тувалу почти плоское: самое высокое место всего в несколько метров над водой.",
+          "pl": "Tuvalu jest niemal płaskie: najwyższe miejsce to zaledwie kilka metrów nad wodą.",
+          "en": "Tuvalu is nearly flat: its highest point is only a few metres above the water."
         }
       ]
     },
@@ -5036,6 +5417,59 @@
           "pl": "Wietnam to jeden z głównych dostawców kawy na świecie.",
           "en": "Vietnam is one of the world's main coffee growers."
         }
+      ]
+    },
+    {
+      "iso": "VU",
+      "un": "548",
+      "regions": [
+        "oceania"
+      ],
+      "subregion": "melanesia",
+      "fame": 2,
+      "micro": false,
+      "landlocked": false,
+      "island": true,
+      "name": {
+        "ru": "Вануату",
+        "pl": "Vanuatu",
+        "en": "Vanuatu"
+      },
+      "capital": {
+        "ru": "Порт-Вила",
+        "pl": "Port Vila",
+        "en": "Port Vila"
+      },
+      "capitalCoords": [
+        168.3167,
+        -17.7333
+      ],
+      "symbol": "volcano"
+    },
+    {
+      "iso": "WS",
+      "un": "882",
+      "regions": [
+        "oceania"
+      ],
+      "subregion": "polynesia",
+      "fame": 2,
+      "micro": true,
+      "landlocked": false,
+      "island": true,
+      "name": {
+        "ru": "Самоа",
+        "pl": "Samoa",
+        "en": "Samoa"
+      },
+      "capital": {
+        "ru": "Апиа",
+        "pl": "Apia",
+        "en": "Apia"
+      },
+      "capitalCoords": [
+        -171.8333,
+        -13.8333
       ]
     },
     {

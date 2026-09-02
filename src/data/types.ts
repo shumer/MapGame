@@ -25,6 +25,11 @@ export type Subregion =
   | 'central-asia'
   | 'middle-east'
   | 'caucasus'
+  // Oceania
+  | 'australia'
+  | 'melanesia'
+  | 'micronesia'
+  | 'polynesia'
   // Africa
   | 'north-africa'
   | 'west-africa'

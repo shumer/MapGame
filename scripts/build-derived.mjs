@@ -124,12 +124,27 @@ const order = members
   .map((c) => c.iso)
   .sort((a, b) => derived[b].borders.length - derived[a].borders.length)
 
-for (const iso of order) {
-  const taken = new Set(derived[iso].borders.map((n) => derived[n]?.color).filter((v) => v !== undefined))
-  let slot = 0
-  while (taken.has(slot) && slot < PALETTE_SIZE - 1) slot++
-  derived[iso].color = slot
+// Nearness is not symmetric: New Zealand is among Australia's six closest
+// countries but Australia is not among New Zealand's, because Tonga and Fiji
+// are nearer. For colouring it has to work both ways round.
+const nearBoth = new Map(members.map((c) => [c.iso, new Set(derived[c.iso].near)]))
+for (const [iso, set] of nearBoth) {
+  for (const other of set) nearBoth.get(other)?.add(iso)
 }
+
+order.forEach((iso, i) => {
+  // Islands have no borders to clash over, so the greedy pass would give every
+  // one of them slot zero. They avoid their nearest neighbours instead, which
+  // is what stops Australia and New Zealand coming out the same colour.
+  const avoid = derived[iso].borders.length
+    ? derived[iso].borders
+    : [...(nearBoth.get(iso) ?? [])]
+  const taken = new Set(avoid.map((n) => derived[n]?.color).filter((v) => v !== undefined))
+  let slot = derived[iso].borders.length ? 0 : i % PALETTE_SIZE
+  let tries = 0
+  while (taken.has(slot) && tries++ < PALETTE_SIZE) slot = (slot + 1) % PALETTE_SIZE
+  derived[iso].color = slot
+})
 
 const clashes = members.flatMap((c) =>
   derived[c.iso].borders

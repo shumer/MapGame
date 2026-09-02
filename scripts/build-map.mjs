@@ -105,6 +105,12 @@ for (const continent of CONTINENTS) {
     if (!changed) break
   }
 
+  // The file is written from `out`, which was built before the last pass
+  // cleaned it, so a shape can be listed as dropped and still be in there.
+  // Report only what actually failed to make it.
+  const survived = new Set(features.map((f) => f.properties.id))
+  for (const id of [...dropped]) if (survived.has(id)) dropped.delete(id)
+
   const path = topoPath(continent.id)
   fs.writeFileSync(path, JSON.stringify(out))
   const kb = (fs.statSync(path).size / 1024).toFixed(0)

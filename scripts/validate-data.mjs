@@ -124,7 +124,10 @@ for (const continent of CONTINENTS) {
       // rounded, not the data being wrong: what this check is really for is a
       // capital dropped in the wrong country entirely.
       const km = nearestKm(f, c.capitalCoords)
-      if (km > 60) problems.push(`${tag}: capital ${km} km outside its polygon`)
+      // A microstate is drawn as a marker on its capital rather than as a
+      // polygon, and an atoll a few hundred metres wide barely survives the
+      // grid at all, so its outline is not something to measure against.
+      if (km > 60 && !c.micro) problems.push(`${tag}: capital ${km} km outside its polygon`)
       else notes.push(`${tag}: capital ${km} km outside the rounded coastline`)
     }
 
