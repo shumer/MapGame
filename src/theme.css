@@ -17,7 +17,9 @@
 
   --right: #43c56f;
   --right-edge: #14663a;
-  --miss: #e9887f;
+  --miss: #e2554a;
+  --miss-tint: #fbe3e0;
+  --miss-ink: #8c2a22;
   --focus: #f7c948;
   --focus-edge: #a06f14;
   --capital: #e2494a;

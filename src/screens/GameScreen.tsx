@@ -57,11 +57,11 @@ export function GameScreen({ profile, mode, onExit, onDone }: Props) {
     return () => timers.forEach(clearTimeout)
   }, [phase, lastAnswer, speakable, target, lang, ui])
 
-  // A wrong pick that does not end the question still needs feedback.
+  // Every wrong pick sounds, whether it ends the question or not.
   const missCount = misses.length
   useEffect(() => {
-    if (phase === 'asking' && missCount > 0) sounds.wrong()
-  }, [missCount, phase])
+    if (missCount > 0) sounds.wrong()
+  }, [missCount])
 
   useEffect(() => stopSpeaking, [])
 

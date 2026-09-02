@@ -1,4 +1,4 @@
-import { useCallback, useMemo, useRef, useState } from 'react'
+import { useCallback, useEffect, useMemo, useRef, useState } from 'react'
 import { countryByIso } from '../data'
 import { useProfiles } from '../store/profiles'
 import { advance, buildQuestion, nextMode, pickTarget, poolFor } from './questions'
@@ -6,6 +6,12 @@ import { PRESETS, type Answer, type GameMode, type Profile, type Question } from
 
 /** Wrong tries on the map before the answer is simply shown. */
 const LOCATE_TRIES = 2
+
+/**
+ * How long a wrong answer stays on screen before the right one is revealed.
+ * Long enough to see the button turn red and shake, and to hear it.
+ */
+const WRONG_ANSWER_PAUSE = 850
 
 export type Phase = 'asking' | 'revealed' | 'done'
 
@@ -45,6 +51,9 @@ export function useRound(profile: Profile, mode: GameMode | 'mixed'): RoundState
   const [answers, setAnswers] = useState<Answer[]>([])
   const [misses, setMisses] = useState<string[]>([])
   const [phase, setPhase] = useState<Phase>('asking')
+  const revealTimer = useRef(0)
+
+  useEffect(() => () => clearTimeout(revealTimer.current), [])
 
   const commit = useCallback(
     (picked: string, correct: boolean, attempts: number) => {
@@ -59,22 +68,31 @@ export function useRound(profile: Profile, mode: GameMode | 'mixed'): RoundState
 
   const answer = useCallback(
     (iso: string) => {
-      if (phase !== 'asking') return
+      if (phase !== 'asking' || revealTimer.current) return
       if (iso === question.target) {
         commit(iso, misses.length === 0, misses.length + 1)
         return
       }
+
       const tried = [...new Set([...misses, iso])]
       setMisses(tried)
-      // On the map a child gets another go with the region hinted; a wrong
-      // button answer is final, and the right one is shown straight away.
+
+      // On the map a child gets another go with the region hinted.
       if (question.mode === 'locate' && tried.length < LOCATE_TRIES) return
-      commit(iso, false, tried.length)
+
+      // Otherwise hold on the wrong answer for a moment: the button turns red
+      // and shakes, the sound plays, and only then does the map give it away.
+      revealTimer.current = window.setTimeout(() => {
+        revealTimer.current = 0
+        commit(iso, false, tried.length)
+      }, WRONG_ANSWER_PAUSE)
     },
     [commit, misses, phase, question],
   )
 
   const next = useCallback(() => {
+    clearTimeout(revealTimer.current)
+    revealTimer.current = 0
     asked.current += 1
     if (asked.current >= preset.questionsPerRound) {
       setPhase('done')

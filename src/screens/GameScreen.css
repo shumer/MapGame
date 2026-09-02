@@ -140,7 +140,25 @@
    column rather than the viewport, which keeps it inside a narrow side panel. */
 .options.is-flags .option { min-height: 0; padding: 10px; }
 .options.is-flags .flag { width: 100%; max-width: 220px; }
-.option.is-out { opacity: 0.4; box-shadow: inset 0 0 0 2px var(--miss); }
+/* A wrong pick: red, shaken, and unmistakable before the answer appears. */
+.option.is-out {
+  background: var(--miss-tint);
+  color: var(--miss-ink);
+  box-shadow: inset 0 0 0 3px var(--miss);
+  animation: option-shake 420ms cubic-bezier(0.36, 0.07, 0.19, 0.97);
+}
+
+@keyframes option-shake {
+  10%, 90% { transform: translateX(-3px); }
+  20%, 80% { transform: translateX(5px); }
+  30%, 50%, 70% { transform: translateX(-8px); }
+  40%, 60% { transform: translateX(8px); }
+  100% { transform: translateX(0); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .option.is-out { animation: none; }
+}
 
 .reveal {
   display: grid;
