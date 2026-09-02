@@ -102,8 +102,16 @@ export function WorldMap({
   const markersRef = useRef(new Map<string, SVGGElement>())
   const decorRef = useRef<SVGGElement>(null)
   const capitalRef = useRef<SVGGElement>(null)
-  const capitalIso = useRef<string | null>(capital)
-  capitalIso.current = capital
+
+  // Screen box per microstate, resolved once instead of searched per frame.
+  const microBoxes = useMemo(() => {
+    const out = new Map<string, [number, number, number, number]>()
+    for (const c of countries) {
+      const box = boxes.get(c.un)
+      if (c.micro && box) out.set(c.iso, box)
+    }
+    return out
+  }, [boxes])
 
   const setMarker = useCallback((iso: string, el: SVGGElement | null) => {
     if (el) markersRef.current.set(iso, el)
@@ -121,7 +129,7 @@ export function WorldMap({
         landsRef.current?.setAttribute('transform', `translate(${v.x} ${v.y}) scale(${v.k})`)
         decorRef.current?.style.setProperty('opacity', v.k > DECOR_MAX_SCALE ? '0' : '1')
 
-        const cap = capitalIso.current ? capitals.get(capitalIso.current) : null
+        const cap = capital ? capitals.get(capital) : null
         if (cap && capitalRef.current) {
           capitalRef.current.setAttribute(
             'transform',
@@ -136,7 +144,7 @@ export function WorldMap({
           const y = p[1] * v.k + v.y
           el.setAttribute('transform', `translate(${x} ${y})`)
 
-          const box = boxes.get(countries.find((c) => c.iso === iso)?.un ?? '')
+          const box = microBoxes.get(iso)
           const onScreen = box ? Math.max(box[2] - box[0], box[3] - box[1]) * v.k : 0
           const offScreen = x < -20 || y < -20 || x > width + 20 || y > height + 20
           el.style.setProperty(
@@ -145,7 +153,7 @@ export function WorldMap({
           )
         }
       }),
-    [subscribe, capitals, boxes, width, height],
+    [subscribe, capitals, microBoxes, capital, width, height],
   )
 
   useEffect(() => {
@@ -235,8 +243,8 @@ export function WorldMap({
               <g
                 className="capital"
                 ref={capitalRef}
-                transform={`translate(${capitalPoint[0] * map.viewRef.current.k + map.viewRef.current.x} ${
-                  capitalPoint[1] * map.viewRef.current.k + map.viewRef.current.y
+                transform={`translate(${capitalPoint[0] * map.view.k + map.view.x} ${
+                  capitalPoint[1] * map.view.k + map.view.y
                 })`}
               >
                 <circle r={9} className="capital-halo" />
