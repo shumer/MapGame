@@ -1,4 +1,4 @@
-import { countriesOf, derivedOf, type Country, type Region } from '../data'
+import { animals, animalsOf, countriesOf, countriesWithAnimals, derivedOf, type Country, type Region } from '../data'
 import type { CountryProgress, GameMode, Preset, Question } from './types'
 
 /** How many questions later a country comes back, by how well it is known. */
@@ -24,8 +24,65 @@ export function poolFor(preset: Preset, region: Region): Country[] {
   return countriesOf(region).filter((c) => c.fame <= preset.maxFame)
 }
 
-export function poolForMode(preset: Preset, _mode: GameMode, region: Region): Country[] {
+export function poolForMode(preset: Preset, mode: GameMode, region: Region): Country[] {
+  // Only countries with an animal can be asked about in the animal round.
+  if (mode === 'animals') {
+    return countriesWithAnimals(region).filter((c) => c.fame <= preset.maxFame)
+  }
   return poolFor(preset, region)
+}
+
+/** The continents an animal is found on, used to keep the widespread ones out
+    of the wrong answers. */
+const continentsOf = (animal: (typeof animals)[number]): Set<Region> => {
+  const out = new Set<Region>()
+  for (const iso of animal.livesIn) {
+    const country = countriesOf('world').find((c) => c.iso === iso)
+    for (const r of country?.regions ?? []) if (r !== 'world') out.add(r)
+  }
+  return out
+}
+
+/** How few countries make the animal round repetitive rather than a round. */
+export const ANIMAL_MIN_POOL = 6
+
+/**
+ * Wrong animals for "who lives here".
+ *
+ * The obvious rule -- offer anything not listed for this country -- is not
+ * honest enough. The lists say where an animal is known for living, not
+ * everywhere it exists, so hippos and crocodiles are absent from Ethiopia's
+ * list while being perfectly real there. A child who knows that would be told
+ * they are wrong, which is the worst thing this game can do.
+ *
+ * So a wrong answer has to be wrong by continent: an animal that lives nowhere
+ * in the set the question is being asked in. Then "not in Ethiopia" is backed
+ * by "not in Africa at all", which is a claim the data can actually support.
+ */
+function animalOptions(target: Country, count: number, kind: Preset['distractors']): string[] {
+  const here = animalsOf(target.iso)
+  const right = pickOne(here)
+
+  // Measured against the country's own continent rather than the set being
+  // played: in the world set every animal lives somewhere in it, so nothing
+  // would ever be foreign.
+  const home = target.regions.find((r) => r !== 'world') ?? target.regions[0]
+  const inRegion = new Set(countriesOf(home).map((c) => c.iso))
+
+  // Widespread animals make bad wrong answers even when the data does not list
+  // them here: owls, foxes and snakes live nearly everywhere, so "the owl does
+  // not live in Congo" is a claim the game cannot honestly make. Only animals
+  // tied to one or two continents are offered as wrong.
+  const foreign = animals.filter(
+    (a) => !a.livesIn.some((iso) => inRegion.has(iso)) && continentsOf(a).size <= 2,
+  )
+
+  // For the older child, prefer wrong answers of the same kind of creature, so
+  // the choice is about geography rather than about spotting the odd one out.
+  const sameSize = foreign.filter((a) => a.livesIn.length >= 4)
+  const preferred = kind === 'near' && sameSize.length >= count ? sameSize : foreign
+  const wrong = shuffle(preferred.map((a) => a.id)).slice(0, count)
+  return shuffle([right.id, ...wrong])
 }
 
 /**
@@ -97,6 +154,11 @@ export function buildQuestion(
 ): Question {
   if (mode === 'locate') {
     return { mode, target: target.iso, options: [] }
+  }
+  if (mode === 'animals') {
+    const options = animalOptions(target, preset.choices - 1, preset.distractors)
+    const answer = options.find((id) => animalsOf(target.iso).some((a) => a.id === id))
+    return { mode, target: target.iso, options, answer }
   }
   const wrong = distractors(target, pool, preset.choices - 1, preset.distractors, region)
   return { mode, target: target.iso, options: shuffle([target.iso, ...wrong]) }

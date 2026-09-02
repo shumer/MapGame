@@ -1,5 +1,5 @@
 import { useEffect, useMemo } from 'react'
-import { countryByIso, derivedOf, wikiFacts, type Region } from '../data'
+import { animals, countryByIso, derivedOf, wikiFacts, type Region } from '../data'
 import { PRESETS, type GameMode, type Profile } from '../game/types'
 import { useRound } from '../game/useRound'
 import { consolation, consolationKey, praise, praiseKey, t } from '../i18n/ui'
@@ -175,12 +175,17 @@ export function GameScreen({ profile, mode, region, onExit, onDone }: Props) {
       ? t('askFlag', ui)
       : question.mode === 'locate'
         ? t('askLocate', ui)
-        : t('askCapital', ui)
+        : question.mode === 'animals'
+          ? t('whoLivesHere', ui)
+          : t('askCapital', ui)
 
   const optionLabel = (iso: string) => {
     const c = countryByIso(iso)!
     return question.mode === 'capital' ? c.capital[lang] : c.name[lang]
   }
+
+  const animalById = (id: string) => animals.find((a) => a.id === id)
+  const isAnimals = question.mode === 'animals'
 
   return (
     <div className={`game mode-${question.mode}`}>
@@ -236,9 +241,11 @@ export function GameScreen({ profile, mode, region, onExit, onDone }: Props) {
           wrong={misses}
           // In the capitals round the country itself is not the answer, so
           // showing it on the map only helps: the child sees where they are.
-          highlight={!revealed && flagsAsAnswers ? target.iso : null}
+          // The animal round asks about a named country, so it is marked from
+          // the start: the question is which creature lives there.
+          highlight={!revealed && (flagsAsAnswers || isAnimals) ? target.iso : null}
           spotlight={hintRegion}
-          focus={revealed ? target.iso : null}
+          focus={revealed || isAnimals ? target.iso : null}
           capital={revealed ? target.iso : null}
           trail={trail}
           travellerAt={travellerAt}
@@ -263,8 +270,12 @@ export function GameScreen({ profile, mode, region, onExit, onDone }: Props) {
               </div>
             ) : (
               <div className={`ask-line ${flagsAsAnswers ? 'is-picture' : ''}`}>
-                {question.mode === 'capital' && <Flag iso={target.iso} size="md" />}
-                <CountrySymbol symbol={target.symbol} size={flagsAsAnswers ? 116 : 84} />
+                {(question.mode === 'capital' || isAnimals) && <Flag iso={target.iso} size="md" />}
+                {/* Never in the animal round: for half the countries the
+                    symbol IS the animal being asked about. */}
+                {!isAnimals && (
+                  <CountrySymbol symbol={target.symbol} size={flagsAsAnswers ? 116 : 84} />
+                )}
                 <div className="ask-copy">
                   <p className="ask-text">{target.name[lang]}</p>
                   {!flagsAsAnswers && <p className="ask-sub">{prompt}</p>}
@@ -288,8 +299,30 @@ export function GameScreen({ profile, mode, region, onExit, onDone }: Props) {
             {fact && question.mode === 'locate' && <p className="fact-line">{fact}</p>}
 
             {question.mode !== 'locate' && (
-              <div className={`options options-${question.options.length} ${flagsAsAnswers ? 'is-flags' : ''}`}>
-                {question.options.map((iso) => {
+              <div
+                className={`options options-${question.options.length} ${
+                  flagsAsAnswers ? 'is-flags' : ''
+                } ${isAnimals ? 'is-animals' : ''}`}
+              >
+                {isAnimals &&
+                  question.options.map((id) => {
+                    const animal = animalById(id)
+                    if (!animal) return null
+                    return (
+                      <button
+                        key={id}
+                        className={`option option-animal ${misses.includes(id) ? 'is-out' : ''}`}
+                        disabled={misses.includes(id)}
+                        onClick={() => round.answer(id)}
+                      >
+                        <CountrySymbol symbol={animal.id} size={preset.showText ? 76 : 128} />
+                        {preset.showText && <span>{animal.name[lang]}</span>}
+                        {misses.includes(id) && <CrossIcon size={22} />}
+                      </button>
+                    )
+                  })}
+                {!isAnimals &&
+                  question.options.map((iso) => {
                   const option = countryByIso(iso)!
                   return (
                     <button
@@ -333,13 +366,22 @@ export function GameScreen({ profile, mode, region, onExit, onDone }: Props) {
 
             <div className="reveal-art">
               <Flag iso={target.iso} size="lg" label={target.name[lang]} />
-              <CountrySymbol symbol={target.symbol} size={64} />
+              {/* The animal that was the answer, rather than the country's own
+                  symbol, which in this round would often be the same picture. */}
+              <CountrySymbol symbol={isAnimals ? question.answer : target.symbol} size={64} />
             </div>
             <div className="reveal-text">
               <b className="reveal-name">{target.name[lang]}</b>
-              <span className="reveal-capital">
-                {t('capitalIs', ui)}: {target.capital[lang]}
-              </span>
+              {isAnimals && question.answer && (
+                <span className="reveal-capital">
+                  {animalById(question.answer)?.name[lang]} {t('livesIn', ui)}
+                </span>
+              )}
+              {!isAnimals && (
+                <span className="reveal-capital">
+                  {t('capitalIs', ui)}: {target.capital[lang]}
+                </span>
+              )}
               {preset.showText && fact && <p className="reveal-fact">{fact}</p>}
             </div>
             <div className="reveal-actions">

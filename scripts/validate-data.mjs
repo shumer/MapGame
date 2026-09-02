@@ -12,6 +12,7 @@ import { CONTINENTS, membersOf, topoPath } from './continents.mjs'
 const MICRO_AREA = 1e-4
 
 const data = JSON.parse(fs.readFileSync('src/data/countries.json', 'utf8'))
+const animalData = JSON.parse(fs.readFileSync('src/data/animals.json', 'utf8'))
 const derivedAll = JSON.parse(fs.readFileSync('src/data/derived.json', 'utf8'))
 const continentIds = new Set(CONTINENTS.map((c) => c.id))
 
@@ -162,6 +163,54 @@ for (const continent of CONTINENTS) {
   }
 }
 
+// Animals. A wrong fact here is repeated out loud by a child, so the checks
+// are about honesty as much as about shape: an animal that lives nowhere
+// cannot be asked about, and one that lives everywhere cannot be a question.
+const isoSet = new Set(data.countries.map((c) => c.iso))
+const seenAnimals = new Set()
+const iconOwners = new Map()
+
+for (const a of animalData.animals) {
+  const tag = `animal ${a.id}`
+  if (seenAnimals.has(a.id)) problems.push(`${tag}: duplicate id`)
+  seenAnimals.add(a.id)
+
+  for (const lang of ['ru', 'pl', 'en']) {
+    if (!a.name?.[lang]?.trim()) problems.push(`${tag}: no name in ${lang}`)
+  }
+
+  if (!SYMBOL_KEYS.includes(a.id)) problems.push(`${tag}: no picture named "${a.id}"`)
+
+  if (!a.livesIn?.length) problems.push(`${tag}: lives nowhere`)
+  for (const iso of a.livesIn ?? []) {
+    if (!isoSet.has(iso)) problems.push(`${tag}: unknown country ${iso}`)
+  }
+  // Half the world is not an answer to anything.
+  if ((a.livesIn?.length ?? 0) > data.countries.length / 3) {
+    problems.push(`${tag}: lives in ${a.livesIn.length} countries, too many to ask about`)
+  }
+
+  if (a.iconOf) {
+    if (!isoSet.has(a.iconOf)) problems.push(`${tag}: unknown iconOf ${a.iconOf}`)
+    if (!a.livesIn?.includes(a.iconOf)) problems.push(`${tag}: iconOf ${a.iconOf} is not in livesIn`)
+    const taken = iconOwners.get(a.iconOf)
+    if (taken) problems.push(`${tag}: ${a.iconOf} already stands for ${taken}`)
+    iconOwners.set(a.iconOf, a.id)
+  }
+}
+
+// Every country in the round needs wrong answers that are honestly wrong.
+const CHOICES = 4
+for (const c of data.countries) {
+  const here = animalData.animals.filter((a) => a.livesIn.includes(c.iso))
+  if (!here.length) continue
+  const elsewhere = animalData.animals.filter((a) => !a.livesIn.includes(c.iso))
+  if (elsewhere.length < CHOICES - 1) {
+    problems.push(`${c.iso}: only ${elsewhere.length} animals that do not live there`)
+  }
+}
+
+console.log(`animals: ${animalData.animals.length}, covering ${new Set(animalData.animals.flatMap((a) => a.livesIn)).size} countries`)
 console.log(`countries: ${data.countries.length}`)
 console.log(`fame: ${[1, 2, 3].map((n) => `${n}=${data.countries.filter((c) => c.fame === n).length}`).join('  ')}`)
 console.log(`micro: ${data.countries.filter((c) => c.micro).map((c) => c.iso).join(', ')}`)

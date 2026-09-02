@@ -82,6 +82,24 @@ export interface Country {
   stories?: Localized[]
 }
 
+/** An animal a child can meet in the game. */
+export interface Animal {
+  /** Key into the drawn symbol set, and the id used everywhere else. */
+  id: string
+  name: Localized
+  /** The country this animal stands for, if it is that country's symbol. At
+      most one, so a question can name a single right answer. */
+  iconOf?: string
+  /** Every country it actually lives in. Long lists are fine: what keeps a
+      question honest is that no wrong answer lives there too. */
+  livesIn: string[]
+}
+
+export interface AnimalData {
+  version: number
+  animals: Animal[]
+}
+
 export interface CountryData {
   version: number
   countries: Country[]

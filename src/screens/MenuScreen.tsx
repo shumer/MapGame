@@ -1,4 +1,5 @@
-import { continentById, countriesOf, type Lang, type Region } from '../data'
+import { continentById, countriesOf, countriesWithAnimals, type Lang, type Region } from '../data'
+import { ANIMAL_MIN_POOL } from '../game/questions'
 import { PRESETS, type GameMode, type Profile } from '../game/types'
 import { LANG_NAMES, t, type UiKey } from '../i18n/ui'
 import { useProfiles } from '../store/profiles'
@@ -12,11 +13,13 @@ const MODE_LABEL: Record<GameMode, UiKey> = {
   flag: 'modeFlag',
   locate: 'modeLocate',
   capital: 'modeCapital',
+  animals: 'modeAnimals',
 }
 const MODE_HINT: Record<GameMode, UiKey> = {
   flag: 'modeFlagHint',
   locate: 'modeLocateHint',
   capital: 'modeCapitalHint',
+  animals: 'modeAnimalsHint',
 }
 const LANGS: Lang[] = ['ru', 'pl', 'en']
 
@@ -41,6 +44,11 @@ export function MenuScreen({
   const inSet = countriesOf(region)
   const learned = inSet.filter((c) => (profile.progress[c.iso]?.streak ?? 0) >= 3).length
   const pool = inSet.filter((c) => c.fame <= preset.maxFame).length
+
+  // A set with only a handful of animals turns the round into the same three
+  // questions, so the mode simply is not offered there.
+  const animalPool = countriesWithAnimals(region).filter((c) => c.fame <= preset.maxFame).length
+  const modes = preset.modes.filter((m) => m !== 'animals' || animalPool >= ANIMAL_MIN_POOL)
 
   return (
     <div className="menu">
@@ -72,7 +80,7 @@ export function MenuScreen({
       </button>
 
       <div className="menu-modes">
-        {preset.modes.map((mode) => (
+        {modes.map((mode) => (
           <button
             key={mode}
             className="mode-card"

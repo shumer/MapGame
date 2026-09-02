@@ -85,7 +85,10 @@ export function useRound(profile: Profile, mode: GameMode | 'mixed', region: Reg
   const answer = useCallback(
     (iso: string) => {
       if (phase !== 'asking' || revealTimer.current) return
-      if (iso === question.target) {
+      // In the animal round the options are animals, so the right answer is
+      // named on the question rather than being the country itself.
+      const right = question.answer ?? question.target
+      if (iso === right) {
         commit(iso, misses.length === 0, misses.length + 1)
         return
       }

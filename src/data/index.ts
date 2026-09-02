@@ -1,7 +1,8 @@
+import animalsRaw from './animals.json'
 import raw from './countries.json'
 import derivedRaw from './derived.json'
 import wikiRaw from './country-facts.json'
-import type { Country, CountryData, DerivedData, Lang, Region } from './types'
+import type { Animal, AnimalData, Country, CountryData, DerivedData, Lang, Region } from './types'
 import { continentById } from './continents'
 
 export * from './types'
@@ -26,6 +27,25 @@ export const countriesOf = (region: Region): Country[] =>
 
 /** Map-dependent data for one set: neighbours, zoom frames, colours, facts. */
 export const derivedOf = (region: Region) => derived[region]
+
+/** Every animal the game knows about. */
+export const animals = (animalsRaw as AnimalData).animals
+
+const livesInIso = new Map<string, Animal[]>()
+for (const animal of animals) {
+  for (const iso of animal.livesIn) {
+    const list = livesInIso.get(iso) ?? []
+    list.push(animal)
+    livesInIso.set(iso, list)
+  }
+}
+
+/** The animals that live in a country, in data order. */
+export const animalsOf = (iso: string): Animal[] => livesInIso.get(iso) ?? []
+
+/** Countries with at least one animal, which is what the animal round asks about. */
+export const countriesWithAnimals = (region: Region): Country[] =>
+  countriesOf(region).filter((c) => livesInIso.has(c.iso))
 
 /** Facts pulled from Wikidata, keyed by ISO code. See scripts/fetch-facts.mjs. */
 export const wikiFacts = wikiRaw as Record<string, Record<string, string | number | boolean>>

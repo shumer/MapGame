@@ -1,0 +1,1068 @@
+{
+  "version": 1,
+  "animals": [
+    {
+      "id": "panda",
+      "name": {
+        "ru": "панда",
+        "pl": "panda",
+        "en": "panda"
+      },
+      "iconOf": "CN",
+      "livesIn": [
+        "CN"
+      ]
+    },
+    {
+      "id": "kangaroo",
+      "name": {
+        "ru": "кенгуру",
+        "pl": "kangur",
+        "en": "kangaroo"
+      },
+      "iconOf": "AU",
+      "livesIn": [
+        "AU"
+      ]
+    },
+    {
+      "id": "koala",
+      "name": {
+        "ru": "коала",
+        "pl": "koala",
+        "en": "koala"
+      },
+      "livesIn": [
+        "AU"
+      ]
+    },
+    {
+      "id": "orangutan",
+      "name": {
+        "ru": "орангутан",
+        "pl": "orangutan",
+        "en": "orangutan"
+      },
+      "iconOf": "ID",
+      "livesIn": [
+        "ID",
+        "MY"
+      ]
+    },
+    {
+      "id": "sloth",
+      "name": {
+        "ru": "ленивец",
+        "pl": "leniwiec",
+        "en": "sloth"
+      },
+      "iconOf": "BO",
+      "livesIn": [
+        "BR",
+        "CR",
+        "PA",
+        "CO",
+        "EC",
+        "PE",
+        "BO",
+        "VE",
+        "NI",
+        "HN"
+      ]
+    },
+    {
+      "id": "llama",
+      "name": {
+        "ru": "лама",
+        "pl": "lama",
+        "en": "llama"
+      },
+      "iconOf": "PE",
+      "livesIn": [
+        "PE",
+        "BO",
+        "CL",
+        "AR",
+        "EC"
+      ]
+    },
+    {
+      "id": "tiger",
+      "name": {
+        "ru": "тигр",
+        "pl": "tygrys",
+        "en": "tiger"
+      },
+      "iconOf": "IN",
+      "livesIn": [
+        "IN",
+        "BD",
+        "NP",
+        "TH",
+        "MY",
+        "ID",
+        "RU",
+        "BT",
+        "MM",
+        "VN",
+        "LA",
+        "KH"
+      ]
+    },
+    {
+      "id": "lion",
+      "name": {
+        "ru": "лев",
+        "pl": "lew",
+        "en": "lion"
+      },
+      "livesIn": [
+        "TZ",
+        "KE",
+        "ZA",
+        "BW",
+        "NA",
+        "ZW",
+        "ZM",
+        "UG",
+        "ET",
+        "MZ",
+        "SN",
+        "IN"
+      ]
+    },
+    {
+      "id": "leopard",
+      "name": {
+        "ru": "леопард",
+        "pl": "lampart",
+        "en": "leopard"
+      },
+      "livesIn": [
+        "KE",
+        "TZ",
+        "ZA",
+        "IN",
+        "LK",
+        "NP",
+        "IR",
+        "CD",
+        "ZM",
+        "ZW",
+        "NA"
+      ]
+    },
+    {
+      "id": "elephant",
+      "name": {
+        "ru": "слон",
+        "pl": "słoń",
+        "en": "elephant"
+      },
+      "iconOf": "TH",
+      "livesIn": [
+        "TH",
+        "IN",
+        "LK",
+        "KE",
+        "TZ",
+        "ZA",
+        "BW",
+        "ZW",
+        "NA",
+        "MM",
+        "LA",
+        "KH",
+        "NP",
+        "ZM",
+        "MZ"
+      ]
+    },
+    {
+      "id": "giraffe",
+      "name": {
+        "ru": "жираф",
+        "pl": "żyrafa",
+        "en": "giraffe"
+      },
+      "iconOf": "KE",
+      "livesIn": [
+        "KE",
+        "TZ",
+        "ZA",
+        "NA",
+        "BW",
+        "ZM",
+        "ZW",
+        "UG",
+        "TD",
+        "NE"
+      ]
+    },
+    {
+      "id": "zebra",
+      "name": {
+        "ru": "зебра",
+        "pl": "zebra",
+        "en": "zebra"
+      },
+      "iconOf": "TZ",
+      "livesIn": [
+        "TZ",
+        "KE",
+        "ZA",
+        "NA",
+        "BW",
+        "ZW",
+        "ZM",
+        "AO"
+      ]
+    },
+    {
+      "id": "hippo",
+      "name": {
+        "ru": "бегемот",
+        "pl": "hipopotam",
+        "en": "hippo"
+      },
+      "iconOf": "BW",
+      "livesIn": [
+        "ZM",
+        "ZW",
+        "TZ",
+        "KE",
+        "UG",
+        "ZA",
+        "BW",
+        "MZ",
+        "CD"
+      ]
+    },
+    {
+      "id": "rhino",
+      "name": {
+        "ru": "носорог",
+        "pl": "nosorożec",
+        "en": "rhino"
+      },
+      "iconOf": "NA",
+      "livesIn": [
+        "NA",
+        "ZA",
+        "KE",
+        "TZ",
+        "ZW",
+        "BW",
+        "NP",
+        "IN",
+        "ID"
+      ]
+    },
+    {
+      "id": "gorilla",
+      "name": {
+        "ru": "горилла",
+        "pl": "goryl",
+        "en": "gorilla"
+      },
+      "iconOf": "CD",
+      "livesIn": [
+        "CD",
+        "RW",
+        "UG",
+        "CM",
+        "GA",
+        "CG",
+        "CF",
+        "GQ"
+      ]
+    },
+    {
+      "id": "camel",
+      "name": {
+        "ru": "верблюд",
+        "pl": "wielbłąd",
+        "en": "camel"
+      },
+      "iconOf": "SA",
+      "livesIn": [
+        "SA",
+        "AE",
+        "OM",
+        "QA",
+        "KW",
+        "YE",
+        "JO",
+        "EG",
+        "MA",
+        "DZ",
+        "LY",
+        "TN",
+        "SD",
+        "ML",
+        "NE",
+        "TD",
+        "MR",
+        "IN"
+      ]
+    },
+    {
+      "id": "bactrian",
+      "name": {
+        "ru": "двугорбый верблюд",
+        "pl": "wielbłąd dwugarbny",
+        "en": "bactrian camel"
+      },
+      "livesIn": [
+        "MN",
+        "CN",
+        "KZ",
+        "UZ",
+        "TM"
+      ]
+    },
+    {
+      "id": "penguin",
+      "name": {
+        "ru": "пингвин",
+        "pl": "pingwin",
+        "en": "penguin"
+      },
+      "iconOf": "ZA",
+      "livesIn": [
+        "AR",
+        "CL",
+        "ZA",
+        "NZ",
+        "AU"
+      ]
+    },
+    {
+      "id": "bear",
+      "name": {
+        "ru": "бурый медведь",
+        "pl": "niedźwiedź brunatny",
+        "en": "brown bear"
+      },
+      "iconOf": "RU",
+      "livesIn": [
+        "RU",
+        "CA",
+        "US",
+        "FI",
+        "SE",
+        "NO",
+        "RO",
+        "SK",
+        "BG",
+        "JP",
+        "TR",
+        "HR",
+        "SI",
+        "PL",
+        "ES"
+      ]
+    },
+    {
+      "id": "wolf",
+      "name": {
+        "ru": "волк",
+        "pl": "wilk",
+        "en": "wolf"
+      },
+      "iconOf": "EE",
+      "livesIn": [
+        "RU",
+        "CA",
+        "US",
+        "PL",
+        "RO",
+        "FI",
+        "SE",
+        "NO",
+        "EE",
+        "LV",
+        "LT",
+        "ES",
+        "IT",
+        "MN",
+        "KZ",
+        "IN",
+        "TR",
+        "CN",
+        "BY",
+        "UA",
+        "EG",
+        "DZ",
+        "MA",
+        "ET"
+      ]
+    },
+    {
+      "id": "bison",
+      "name": {
+        "ru": "зубр",
+        "pl": "żubr",
+        "en": "bison"
+      },
+      "iconOf": "BY",
+      "livesIn": [
+        "PL",
+        "BY",
+        "US",
+        "CA"
+      ]
+    },
+    {
+      "id": "deer",
+      "name": {
+        "ru": "олень",
+        "pl": "jeleń",
+        "en": "deer"
+      },
+      "iconOf": "FI",
+      "livesIn": [
+        "FI",
+        "SE",
+        "NO",
+        "CA",
+        "US",
+        "RU",
+        "PL",
+        "DE",
+        "GB",
+        "AT",
+        "IE",
+        "CZ",
+        "SK"
+      ]
+    },
+    {
+      "id": "fox",
+      "name": {
+        "ru": "лиса",
+        "pl": "lis",
+        "en": "fox"
+      },
+      "livesIn": [
+        "RU",
+        "CA",
+        "US",
+        "GB",
+        "FI",
+        "SE",
+        "NO",
+        "PL",
+        "DE",
+        "FR",
+        "JP",
+        "IE",
+        "IT",
+        "ES"
+      ]
+    },
+    {
+      "id": "hedgehog",
+      "name": {
+        "ru": "ёж",
+        "pl": "jeż",
+        "en": "hedgehog"
+      },
+      "livesIn": [
+        "DE",
+        "GB",
+        "PL",
+        "FR",
+        "IT",
+        "RU",
+        "CZ",
+        "AT",
+        "NL",
+        "BE",
+        "DK"
+      ]
+    },
+    {
+      "id": "beaver",
+      "name": {
+        "ru": "бобр",
+        "pl": "bóbr",
+        "en": "beaver"
+      },
+      "iconOf": "CA",
+      "livesIn": [
+        "CA",
+        "US",
+        "RU",
+        "PL",
+        "DE",
+        "FI",
+        "SE",
+        "NO",
+        "LT",
+        "LV",
+        "EE",
+        "BY"
+      ]
+    },
+    {
+      "id": "otter",
+      "name": {
+        "ru": "выдра",
+        "pl": "wydra",
+        "en": "otter"
+      },
+      "livesIn": [
+        "GB",
+        "IE",
+        "NO",
+        "SE",
+        "FI",
+        "CA",
+        "US",
+        "IN",
+        "ID",
+        "PT",
+        "ES"
+      ]
+    },
+    {
+      "id": "boar",
+      "name": {
+        "ru": "кабан",
+        "pl": "dzik",
+        "en": "wild boar"
+      },
+      "livesIn": [
+        "PL",
+        "DE",
+        "FR",
+        "IT",
+        "ES",
+        "RU",
+        "JP",
+        "TR",
+        "HU",
+        "CZ",
+        "RO",
+        "BY",
+        "UA"
+      ]
+    },
+    {
+      "id": "goat",
+      "name": {
+        "ru": "горный козёл",
+        "pl": "koziorożec",
+        "en": "mountain goat"
+      },
+      "livesIn": [
+        "CH",
+        "AT",
+        "IT",
+        "ES",
+        "GR",
+        "NO",
+        "KG",
+        "MN",
+        "MA",
+        "NP"
+      ]
+    },
+    {
+      "id": "horse",
+      "name": {
+        "ru": "лошадь",
+        "pl": "koń",
+        "en": "horse"
+      },
+      "iconOf": "MN",
+      "livesIn": [
+        "MN",
+        "KZ",
+        "HU",
+        "RU",
+        "IS",
+        "KG"
+      ]
+    },
+    {
+      "id": "sheep",
+      "name": {
+        "ru": "овца",
+        "pl": "owca",
+        "en": "sheep"
+      },
+      "iconOf": "NZ",
+      "livesIn": [
+        "NZ",
+        "AU",
+        "GB",
+        "IE",
+        "ES",
+        "MN",
+        "KG",
+        "IS",
+        "NO"
+      ]
+    },
+    {
+      "id": "bull",
+      "name": {
+        "ru": "бык",
+        "pl": "byk",
+        "en": "bull"
+      },
+      "iconOf": "ES",
+      "livesIn": [
+        "ES",
+        "UY",
+        "AR",
+        "BR",
+        "PT",
+        "MX",
+        "IN"
+      ]
+    },
+    {
+      "id": "eagle",
+      "name": {
+        "ru": "орёл",
+        "pl": "orzeł",
+        "en": "eagle"
+      },
+      "iconOf": "US",
+      "livesIn": [
+        "US",
+        "KZ",
+        "MN",
+        "RS",
+        "AL",
+        "RU",
+        "PL",
+        "ES",
+        "MX",
+        "NO",
+        "SE",
+        "FI"
+      ]
+    },
+    {
+      "id": "owl",
+      "name": {
+        "ru": "сова",
+        "pl": "sowa",
+        "en": "owl"
+      },
+      "iconOf": "GR",
+      "livesIn": [
+        "GR",
+        "FI",
+        "SE",
+        "CA",
+        "US",
+        "RU",
+        "NO",
+        "DE",
+        "PL",
+        "GB"
+      ]
+    },
+    {
+      "id": "stork",
+      "name": {
+        "ru": "аист",
+        "pl": "bocian",
+        "en": "stork"
+      },
+      "iconOf": "PL",
+      "livesIn": [
+        "PL",
+        "DE",
+        "ES",
+        "PT",
+        "MA",
+        "TR",
+        "UA",
+        "BY",
+        "LT",
+        "HU",
+        "RO"
+      ]
+    },
+    {
+      "id": "flamingo",
+      "name": {
+        "ru": "фламинго",
+        "pl": "flaming",
+        "en": "flamingo"
+      },
+      "iconOf": "ZM",
+      "livesIn": [
+        "TT",
+        "ZM",
+        "KE",
+        "TZ",
+        "CL",
+        "BO",
+        "PE",
+        "ES",
+        "IN",
+        "MX",
+        "BS"
+      ]
+    },
+    {
+      "id": "peacock",
+      "name": {
+        "ru": "павлин",
+        "pl": "paw",
+        "en": "peacock"
+      },
+      "livesIn": [
+        "IN",
+        "LK",
+        "NP",
+        "MM",
+        "BD"
+      ]
+    },
+    {
+      "id": "parrot",
+      "name": {
+        "ru": "попугай",
+        "pl": "papuga",
+        "en": "parrot"
+      },
+      "iconOf": "VE",
+      "livesIn": [
+        "BR",
+        "CO",
+        "VE",
+        "PE",
+        "EC",
+        "AU",
+        "ID",
+        "PG",
+        "NZ",
+        "CR",
+        "PA"
+      ]
+    },
+    {
+      "id": "swan",
+      "name": {
+        "ru": "лебедь",
+        "pl": "łabędź",
+        "en": "swan"
+      },
+      "livesIn": [
+        "GB",
+        "IE",
+        "DK",
+        "SE",
+        "FI",
+        "PL",
+        "DE",
+        "NL",
+        "RU"
+      ]
+    },
+    {
+      "id": "crocodile",
+      "name": {
+        "ru": "крокодил",
+        "pl": "krokodyl",
+        "en": "crocodile"
+      },
+      "iconOf": "ZW",
+      "livesIn": [
+        "EG",
+        "ZW",
+        "ZM",
+        "AU",
+        "IN",
+        "ID",
+        "PH",
+        "TH",
+        "KE",
+        "TZ",
+        "BW",
+        "ZA",
+        "CU",
+        "MX",
+        "CR",
+        "PG"
+      ]
+    },
+    {
+      "id": "turtle",
+      "name": {
+        "ru": "черепаха",
+        "pl": "żółw",
+        "en": "turtle"
+      },
+      "iconOf": "SC",
+      "livesIn": [
+        "SC",
+        "EC",
+        "CR",
+        "ID",
+        "AU",
+        "MV",
+        "GR",
+        "MX",
+        "MU",
+        "BR"
+      ]
+    },
+    {
+      "id": "snake",
+      "name": {
+        "ru": "змея",
+        "pl": "wąż",
+        "en": "snake"
+      },
+      "livesIn": [
+        "IN",
+        "AU",
+        "BR",
+        "ID",
+        "TH",
+        "MY",
+        "PH",
+        "MX",
+        "ZA",
+        "EG"
+      ]
+    },
+    {
+      "id": "lizard",
+      "name": {
+        "ru": "варан",
+        "pl": "waran",
+        "en": "monitor lizard"
+      },
+      "livesIn": [
+        "ID",
+        "AU",
+        "MY",
+        "TH",
+        "PH",
+        "IN",
+        "LK"
+      ]
+    },
+    {
+      "id": "frog",
+      "name": {
+        "ru": "лягушка",
+        "pl": "żaba",
+        "en": "frog"
+      },
+      "iconOf": "SR",
+      "livesIn": [
+        "SR",
+        "BR",
+        "CO",
+        "EC",
+        "PA",
+        "CR",
+        "MG",
+        "AU",
+        "GY",
+        "VE"
+      ]
+    },
+    {
+      "id": "butterfly",
+      "name": {
+        "ru": "бабочка",
+        "pl": "motyl",
+        "en": "butterfly"
+      },
+      "iconOf": "PY",
+      "livesIn": [
+        "MX",
+        "BR",
+        "PY",
+        "CO",
+        "EC",
+        "PE",
+        "CR",
+        "US",
+        "CA"
+      ]
+    },
+    {
+      "id": "whale",
+      "name": {
+        "ru": "кит",
+        "pl": "wieloryb",
+        "en": "whale"
+      },
+      "iconOf": "TO",
+      "livesIn": [
+        "NO",
+        "IS",
+        "CA",
+        "US",
+        "AU",
+        "NZ",
+        "TO",
+        "AR",
+        "CL",
+        "ZA",
+        "JP",
+        "PT",
+        "DO"
+      ]
+    },
+    {
+      "id": "dolphin",
+      "name": {
+        "ru": "дельфин",
+        "pl": "delfin",
+        "en": "dolphin"
+      },
+      "livesIn": [
+        "GR",
+        "IT",
+        "ES",
+        "PT",
+        "TR",
+        "HR",
+        "AU",
+        "NZ",
+        "US",
+        "MX",
+        "BR",
+        "JP",
+        "IN"
+      ]
+    },
+    {
+      "id": "seal",
+      "name": {
+        "ru": "тюлень",
+        "pl": "foka",
+        "en": "seal"
+      },
+      "livesIn": [
+        "CA",
+        "NO",
+        "IS",
+        "GB",
+        "IE",
+        "RU",
+        "ZA",
+        "AR",
+        "NZ",
+        "AU",
+        "FI",
+        "SE",
+        "EE"
+      ]
+    },
+    {
+      "id": "shark",
+      "name": {
+        "ru": "акула",
+        "pl": "rekin",
+        "en": "shark"
+      },
+      "livesIn": [
+        "AU",
+        "ZA",
+        "US",
+        "MX",
+        "BS",
+        "FJ",
+        "MV",
+        "EG",
+        "ID"
+      ]
+    },
+    {
+      "id": "octopus",
+      "name": {
+        "ru": "осьминог",
+        "pl": "ośmiornica",
+        "en": "octopus"
+      },
+      "livesIn": [
+        "GR",
+        "IT",
+        "ES",
+        "JP",
+        "KR",
+        "PT",
+        "HR",
+        "TR",
+        "MA"
+      ]
+    },
+    {
+      "id": "monkey",
+      "name": {
+        "ru": "обезьяна",
+        "pl": "małpa",
+        "en": "monkey"
+      },
+      "iconOf": "MG",
+      "livesIn": [
+        "MG",
+        "BR",
+        "CR",
+        "ID",
+        "IN",
+        "TH",
+        "LK",
+        "KE",
+        "TZ",
+        "ZA",
+        "JP",
+        "MA"
+      ]
+    },
+    {
+      "id": "jellyfish",
+      "name": {
+        "ru": "медуза",
+        "pl": "meduza",
+        "en": "jellyfish"
+      },
+      "iconOf": "PW",
+      "livesIn": [
+        "PW",
+        "AU",
+        "PH",
+        "ID",
+        "JP",
+        "US",
+        "MX"
+      ]
+    },
+    {
+      "id": "fish",
+      "name": {
+        "ru": "рыба",
+        "pl": "ryba",
+        "en": "tropical fish"
+      },
+      "iconOf": "MV",
+      "livesIn": [
+        "MV",
+        "ID",
+        "PH",
+        "AU",
+        "EG",
+        "FJ",
+        "TH",
+        "BS",
+        "SC",
+        "MU"
+      ]
+    }
+  ]
+}

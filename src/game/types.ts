@@ -1,7 +1,7 @@
 import type { Lang } from '../data'
 
 /** What a round asks for. */
-export type GameMode = 'flag' | 'locate' | 'capital'
+export type GameMode = 'flag' | 'locate' | 'capital' | 'animals'
 
 /** Which child is playing. The two presets differ in almost every setting. */
 export type Level = 'little' | 'expert'
@@ -27,7 +27,7 @@ export const PRESETS: Record<Level, Preset> = {
     questionsPerRound: 8,
     autoSpeak: true,
     showText: false,
-    modes: ['flag', 'locate'],
+    modes: ['flag', 'locate', 'animals'],
     distractors: 'far',
     maxFame: 1,
   },
@@ -36,7 +36,7 @@ export const PRESETS: Record<Level, Preset> = {
     questionsPerRound: 12,
     autoSpeak: false,
     showText: true,
-    modes: ['flag', 'locate', 'capital'],
+    modes: ['flag', 'locate', 'animals', 'capital'],
     distractors: 'near',
     maxFame: 3,
   },
@@ -46,8 +46,12 @@ export interface Question {
   mode: GameMode
   /** ISO code of the country being asked about. */
   target: string
-  /** ISO codes to show as answers, already shuffled. Empty for 'locate'. */
+  /** ISO codes to show as answers, already shuffled. Empty for 'locate'.
+      In the animal round these are animal ids instead, and `answer` says
+      which one is right. */
   options: string[]
+  /** The right option when it is not the country itself: the animal round. */
+  answer?: string
 }
 
 export interface Answer {

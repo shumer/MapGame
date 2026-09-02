@@ -21,6 +21,31 @@ export function ModeIcon({ mode }: { mode: GameMode }) {
       </svg>
     )
   }
+  if (mode === 'animals') {
+    // A paw on a globe. An animal's face would read as one particular animal;
+    // a paw reads as "this is about creatures" at any size.
+    return (
+      <svg viewBox="0 0 48 48" className="mode-icon" role="presentation">
+        <circle cx="24" cy="25" r="18" fill="#a9d9c2" />
+        <path
+          d="M7.2 19.5h9M31.5 19.5h9.3M6.6 31.5h8.4M30.5 31.5h10.2"
+          stroke="#fbfdfc"
+          strokeWidth="2.6"
+          strokeLinecap="round"
+          opacity="0.9"
+        />
+        <path
+          d="M24 23.2c4.6 0 8.4 3.4 8.4 7.3 0 3.1-2.4 4.9-5.4 4.9h-6c-3 0-5.4-1.8-5.4-4.9 0-3.9 3.8-7.3 8.4-7.3z"
+          fill="#8a6a4a"
+        />
+        <ellipse cx="14.6" cy="21.4" rx="3.1" ry="4.1" fill="#8a6a4a" transform="rotate(-22 14.6 21.4)" />
+        <ellipse cx="20.2" cy="16.4" rx="3.2" ry="4.3" fill="#8a6a4a" transform="rotate(-8 20.2 16.4)" />
+        <ellipse cx="27.8" cy="16.4" rx="3.2" ry="4.3" fill="#8a6a4a" transform="rotate(8 27.8 16.4)" />
+        <ellipse cx="33.4" cy="21.4" rx="3.1" ry="4.1" fill="#8a6a4a" transform="rotate(22 33.4 21.4)" />
+      </svg>
+    )
+  }
+
   // Capitals: a flag asking, a star answering.
   return (
     <svg viewBox="0 0 48 48" className="mode-icon" role="presentation">

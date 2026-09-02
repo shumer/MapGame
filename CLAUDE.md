@@ -102,6 +102,19 @@ exactly where that breaks.
 
 `scripts/validate-data.mjs` exits non-zero when a capital falls outside its own country's polygon, a translation is missing, a flag file does not exist, a country references a symbol nobody drew, or two bordering countries got the same map colour. Extend it whenever you add data. A silent data bug is far worse here than a crash — it teaches a child something wrong.
 
+### A wrong answer about animals has to be wrong by continent
+
+`src/data/animals.json` says where an animal lives, and it is a list of places
+an animal is known for, not a census. Hippos and crocodiles are absent from
+Ethiopia's entry while being perfectly real there, so "not listed for this
+country" is not good enough for a wrong answer: a child who knows better would
+be told they are wrong, which is the worst thing this game can do.
+
+A wrong answer must therefore live nowhere on the country's continent, and
+must not be a widespread animal in the first place. Owls, foxes, snakes and
+whales live nearly everywhere, so `animalOptions` keeps anything found on more
+than two continents out of the wrong answers entirely.
+
 ### Two levels, not one difficulty slider
 
 `PRESETS` in `src/game/types.ts` is where the two children are encoded: number of options, round length, whether text is shown, whether capitals are included, how distractors are chosen, and which fame tier of countries is in play. The gap between a 5 and an 11 year old is too wide for one knob. When adding a feature, decide what it does at each level.

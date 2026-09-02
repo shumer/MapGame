@@ -85,11 +85,35 @@ const SYMBOLS = {
 
   // South America.
   llama: '1f999',
-  toucan: '1f9a4',
+  parrot: '1f99c',
+  dodo: '1f9a4',
   sloth: '1f9a5',
   football: '26bd',
   frog: '1f438',
   butterfly: '1f98b',
+
+  // The animal set. Most of these were already here as country symbols; the
+  // rest fill out the zoo enough that a question always has honest wrong
+  // answers to choose from.
+  koala: '1f428',
+  leopard: '1f406',
+  fox: '1f98a',
+  hedgehog: '1f994',
+  otter: '1f9a6',
+  beaver: '1f9ab',
+  seal: '1f9ad',
+  shark: '1f988',
+  octopus: '1f419',
+  dolphin: '1f42c',
+  peacock: '1f99a',
+  snake: '1f40d',
+  lizard: '1f98e',
+  goat: '1f410',
+  boar: '1f417',
+  bactrian: '1f42b',
+  swan: '1f9a2',
+  badger: '1f9a1',
+  rabbit: '1f407',
 }
 
 const DECOR = {

@@ -27,6 +27,9 @@ the artwork itself is unchanged.
   anywhere (lake, bridge, viking ship, amber, lego, dome, towers) are still
   drawn in `src/ui/symbols.tsx`.
 
+  The same files are the animals in the animal round, kept in one place rather
+  than two so a panda is the same panda everywhere.
+
   A symbol must not repeat what is on the country's own flag: in the flag round
   it sits on the answer buttons, so a symbol that echoes the flag hands the
   answer over. That is why Kazakhstan has no eagle, Bhutan no dragon and
