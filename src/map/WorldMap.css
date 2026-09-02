@@ -320,6 +320,36 @@
   fill: var(--land-backdrop);
 }
 
+/* Candidate spots in the "point at the capital" round. Big enough for a finger,
+   and unmistakable once the answer is out. */
+.pin-hit { fill: transparent; }
+.worldmap-svg.is-interactive .pin-hit { cursor: pointer; }
+.pin-halo {
+  fill: #fff;
+  opacity: 0.9;
+  stroke: #3d6b7d;
+  stroke-width: 1.6;
+}
+.pin-dot {
+  fill: #3d6b7d;
+  transition: fill 220ms ease;
+}
+.pin.is-right .pin-dot { fill: var(--right); }
+.pin.is-right .pin-halo { stroke: var(--right-edge); }
+.pin.is-wrong .pin-dot { fill: var(--miss); }
+.pin.is-wrong .pin-halo { stroke: var(--miss); }
+.pin.is-right { animation: pin-pop 460ms cubic-bezier(0.2, 1.4, 0.4, 1); }
+
+@keyframes pin-pop {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.4); }
+  100% { transform: scale(1); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .pin.is-right { animation: none; }
+}
+
 .capital-halo {
   fill: var(--capital);
   opacity: 0.28;
@@ -354,7 +384,37 @@
 @media (prefers-reduced-motion: reduce) {
   .country.is-correct,
   .micro.is-correct .micro-dot,
-  .capital-halo {
+  /* Candidate spots in the "point at the capital" round. Big enough for a finger,
+   and unmistakable once the answer is out. */
+.pin-hit { fill: transparent; }
+.worldmap-svg.is-interactive .pin-hit { cursor: pointer; }
+.pin-halo {
+  fill: #fff;
+  opacity: 0.9;
+  stroke: #3d6b7d;
+  stroke-width: 1.6;
+}
+.pin-dot {
+  fill: #3d6b7d;
+  transition: fill 220ms ease;
+}
+.pin.is-right .pin-dot { fill: var(--right); }
+.pin.is-right .pin-halo { stroke: var(--right-edge); }
+.pin.is-wrong .pin-dot { fill: var(--miss); }
+.pin.is-wrong .pin-halo { stroke: var(--miss); }
+.pin.is-right { animation: pin-pop 460ms cubic-bezier(0.2, 1.4, 0.4, 1); }
+
+@keyframes pin-pop {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.4); }
+  100% { transform: scale(1); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .pin.is-right { animation: none; }
+}
+
+.capital-halo {
     animation: none;
   }
 }

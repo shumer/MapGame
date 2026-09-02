@@ -39,13 +39,40 @@ export function GameScreen({ profile, mode, onExit, onDone }: Props) {
   const ui = profile.uiLang
 
   const target = countryByIso(question.target)!
+
+  /**
+   * The spots offered in the "point at the capital" round: the real capital
+   * plus decoys inside the same country, generated at build time so they always
+   * land on dry land within its borders. Stable per question.
+   */
+  const pins = useMemo(() => {
+    if (question.mode !== 'pinCapital') return []
+    const decoys = derived[target.iso].decoys ?? []
+    const seed = round.answers.length + target.iso.charCodeAt(0)
+    const picked: [number, number][] = []
+    for (let i = 0; i < 3 && i < decoys.length; i++) {
+      picked.push(decoys[(seed + i * 2 + 1) % decoys.length])
+    }
+    const all = [
+      { id: 'real', coords: target.capitalCoords as [number, number], correct: true },
+      ...picked.map((coords, i) => ({ id: `decoy-${i}`, coords, correct: false })),
+    ]
+    // Shuffled by seed so the capital is not always first in the DOM — it stays
+    // stable for a given question, but assistive tech and tab order do not give
+    // the answer away.
+    for (let i = all.length - 1; i > 0; i--) {
+      const j = (seed * (i + 7)) % (i + 1)
+      ;[all[i], all[j]] = [all[j], all[i]]
+    }
+    return all
+  }, [question.mode, target.iso, target.capitalCoords, round.answers.length])
   const speakable = canSpeak(lang)
 
   /** Recorded prompt for each round type; spoken once, at the round's start. */
   const promptKey = (mode: Mode, picturesOnly: boolean) =>
     mode === 'locate'
       ? 'where-is-it'
-      : mode === 'capital'
+      : mode === 'capital' || mode === 'pinCapital'
         ? 'which-capital'
         : picturesOnly
           ? 'find-flag'
@@ -149,10 +176,13 @@ export function GameScreen({ profile, mode, onExit, onDone }: Props) {
       .map((f) => renderFact(f, lang))
       .filter((x): x is string => Boolean(x))
     const fromWiki = renderWikiFacts((wikiFacts[target.iso] ?? {}) as WikiFacts, lang)
-    const all = [...fromWiki, ...fromMap]
+    // Written facts first: they are the interesting ones. The computed ones
+    // fill in for countries that have none.
+    const written = (target.stories ?? []).map((s) => s[lang])
+    const all = [...written, ...fromWiki, ...fromMap]
     if (!all.length) return null
     return all[(round.answers.length + target.iso.charCodeAt(0)) % all.length]
-  }, [preset.showText, target.iso, lang, round.answers.length])
+  }, [preset.showText, target.iso, target.stories, lang, round.answers.length])
 
   /** The traveller stands where the last answer was, revisit or not. */
   const travellerAt = round.answers[round.answers.length - 1]?.question.target ?? null
@@ -164,7 +194,9 @@ export function GameScreen({ profile, mode, onExit, onDone }: Props) {
       ? t('askFlag', ui)
       : question.mode === 'locate'
         ? t('askLocate', ui)
-        : t('askCapital', ui)
+        : question.mode === 'pinCapital'
+          ? t('askPinCapital', ui)
+          : t('askCapital', ui)
 
   const optionLabel = (iso: string) => {
     const c = countryByIso(iso)!
@@ -225,20 +257,33 @@ export function GameScreen({ profile, mode, onExit, onDone }: Props) {
           // In the capitals round the country itself is not the answer, so
           // showing it on the map only helps: the child sees where they are.
           highlight={
-            !revealed && (question.mode === 'capital' || flagsAsAnswers) ? target.iso : null
+            !revealed && (question.mode === 'capital' || question.mode === 'pinCapital' || flagsAsAnswers)
+              ? target.iso
+              : null
           }
           spotlight={hintRegion}
-          focus={revealed || question.mode === 'capital' ? target.iso : null}
+          focus={revealed || question.mode === 'capital' || question.mode === 'pinCapital' ? target.iso : null}
           capital={revealed ? target.iso : null}
           trail={trail}
           travellerAt={travellerAt}
           celebrate={revealed && lastAnswer?.correct ? round.score : 0}
+          pins={pins}
+          pinned={misses}
+          showPinAnswer={revealed}
+          onPickPin={
+            question.mode === 'pinCapital' && phase === 'asking'
+              ? (id) => round.answer(id === 'real' ? target.iso : id)
+              : undefined
+          }
           onPick={question.mode === 'locate' && phase === 'asking' ? round.answer : undefined}
           interactive
         />
       </div>
 
-      <section className={`game-panel ${revealed ? 'is-revealed' : ''}`} key={round.answers.length}>
+      <section
+        className={`game-panel ${revealed ? 'is-revealed' : ''}`}
+        key={round.answers.length}
+      >
         {!revealed && (
           <>
             {question.mode === 'flag' && !flagsAsAnswers ? (
@@ -253,7 +298,9 @@ export function GameScreen({ profile, mode, onExit, onDone }: Props) {
                 {question.mode === 'capital' && <Flag iso={target.iso} size="md" />}
                 <CountrySymbol symbol={target.symbol} size={flagsAsAnswers ? 116 : 84} />
                 <div className="ask-copy">
-                  <p className="ask-text">{target.name[lang]}</p>
+                  <p className="ask-text">
+                    {question.mode === 'pinCapital' ? target.capital[lang] : target.name[lang]}
+                  </p>
                   {!flagsAsAnswers && <p className="ask-sub">{prompt}</p>}
                 </div>
                 {speakable && (
@@ -271,7 +318,7 @@ export function GameScreen({ profile, mode, onExit, onDone }: Props) {
 
             {fact && <p className="fact-line">{fact}</p>}
 
-            {question.mode !== 'locate' && (
+            {question.mode !== 'locate' && question.mode !== 'pinCapital' && (
               <div className={`options options-${question.options.length} ${flagsAsAnswers ? 'is-flags' : ''}`}>
                 {question.options.map((iso) => {
                   const option = countryByIso(iso)!

@@ -21,6 +21,17 @@ export function ModeIcon({ mode }: { mode: GameMode }) {
       </svg>
     )
   }
+  if (mode === 'pinCapital') {
+    return (
+      <svg viewBox="0 0 48 48" className="mode-icon" role="presentation">
+        <path d="M6 14l12-5 12 5 12-5v29l-12 5-12-5-12 5z" fill="#a9d9c2" />
+        <path d="M18 9v29M30 14v29" stroke="#7fbfa4" strokeWidth="2.5" />
+        <circle cx="18" cy="26" r="4" fill="#f2ece0" stroke="#8a9aa4" strokeWidth="2" />
+        <circle cx="34" cy="20" r="4" fill="#f2ece0" stroke="#8a9aa4" strokeWidth="2" />
+        <circle cx="26" cy="32" r="5.5" fill="#e2494a" stroke="#fff" strokeWidth="2.5" />
+      </svg>
+    )
+  }
   return (
     <svg viewBox="0 0 48 48" className="mode-icon" role="presentation">
       <path d="M8 34h32v6H8z" fill="#c9b8e6" />

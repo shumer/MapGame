@@ -1,7 +1,7 @@
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react'
 import { countryByIso } from '../data'
 import { useProfiles } from '../store/profiles'
-import { advance, buildQuestion, nextMode, pickTarget, poolFor } from './questions'
+import { advance, buildQuestion, nextMode, pickTarget, poolFor, poolForMode } from './questions'
 import { PRESETS, type Answer, type GameMode, type Profile, type Question } from './types'
 
 /** Wrong tries on the map before the answer is simply shown. */
@@ -52,7 +52,7 @@ export function useRound(profile: Profile, mode: GameMode | 'mixed'): RoundState
   // need to read the counter.
   const start = useCallback((): Question => {
     const chosen = mode === 'mixed' ? nextMode(preset, null) : mode
-    const target = pickTarget(pool, profile.progress, 0, null)
+    const target = pickTarget(poolForMode(preset, chosen), profile.progress, 0, null)
     return buildQuestion(chosen, target, pool, preset)
   }, [mode, pool, preset, profile.progress])
 
@@ -115,7 +115,10 @@ export function useRound(profile: Profile, mode: GameMode | 'mixed'): RoundState
       return
     }
     const chosen = mode === 'mixed' ? nextMode(preset, question.mode) : mode
-    const target = pickTarget(available(), memory.current, asked.current, question.target)
+    const allowed = available().filter(
+      (c) => chosen !== 'pinCapital' || poolForMode(preset, 'pinCapital').includes(c),
+    )
+    const target = pickTarget(allowed.length ? allowed : available(), memory.current, asked.current, question.target)
     setQuestion(buildQuestion(chosen, target, pool, preset))
     setMisses([])
     setPhase('asking')

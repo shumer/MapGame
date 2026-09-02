@@ -24,6 +24,15 @@ export function poolFor(preset: Preset): Country[] {
   return countries.filter((c) => c.fame <= preset.maxFame)
 }
 
+/** Pointing at the capital needs somewhere else inside the country to point at,
+    which a microstate does not have. */
+export const canPinCapital = (iso: string) => (derived[iso]?.decoys?.length ?? 0) >= 3
+
+export function poolForMode(preset: Preset, mode: GameMode): Country[] {
+  const pool = poolFor(preset)
+  return mode === 'pinCapital' ? pool.filter((c) => canPinCapital(c.iso)) : pool
+}
+
 /**
  * Picks what to ask next. Countries that were missed come back soonest; when
  * nothing is due, an unseen country is introduced, easiest tier first.
@@ -78,7 +87,7 @@ function distractors(target: Country, pool: Country[], count: number, kind: Pres
 }
 
 export function buildQuestion(mode: GameMode, target: Country, pool: Country[], preset: Preset): Question {
-  if (mode === 'locate') {
+  if (mode === 'locate' || mode === 'pinCapital') {
     return { mode, target: target.iso, options: [] }
   }
   const wrong = distractors(target, pool, preset.choices - 1, preset.distractors)

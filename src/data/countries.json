@@ -83,7 +83,34 @@
         "pl": "Prawie całą Austrię pokrywają Alpy, bardzo lubi się tu jeździć na nartach.",
         "en": "Austria is almost fully covered by the Alps, and skiing is a favourite here."
       },
-      "symbol": "violin"
+      "symbol": "violin",
+      "stories": [
+        {
+          "ru": "Моцарт родился в Зальцбурге и начал сочинять музыку в пять лет",
+          "pl": "Mozart urodził się w Salzburgu i zaczął komponować w wieku pięciu lat",
+          "en": "Mozart was born in Salzburg and started composing at the age of five"
+        },
+        {
+          "ru": "Альпы занимают почти две трети страны",
+          "pl": "Alpy zajmują prawie dwie trzecie kraju",
+          "en": "The Alps cover almost two thirds of the country"
+        },
+        {
+          "ru": "Венский вальс придумали здесь, и на балах его танцуют до сих пор",
+          "pl": "Walc wiedeński powstał właśnie tu i wciąż tańczy się go na balach",
+          "en": "The Viennese waltz began here, and is still danced at the city's balls"
+        },
+        {
+          "ru": "Первую в мире официальную почтовую открытку выпустила австрийская почта в 1869 году",
+          "pl": "Pierwszą na świecie oficjalną kartkę pocztową wydała poczta austriacka w 1869 roku",
+          "en": "The world's first official postcard was issued by the Austrian post in 1869"
+        },
+        {
+          "ru": "Венская государственная опера даёт спектакль почти каждый вечер сезона",
+          "pl": "Opera Wiedeńska gra przedstawienie niemal każdego wieczoru sezonu",
+          "en": "The Vienna State Opera stages a performance almost every night of the season"
+        }
+      ]
     },
     {
       "iso": "BY",
@@ -111,7 +138,34 @@
         "pl": "W Puszczy Białowieskiej żyją żubry, największe zwierzęta Europy.",
         "en": "Bison, Europe's largest animals, live in the Bialowieza Forest."
       },
-      "symbol": "bison"
+      "symbol": "bison",
+      "stories": [
+        {
+          "ru": "В Беловежской пуще живут зубры — самые тяжёлые сухопутные звери Европы",
+          "pl": "W Puszczy Białowieskiej żyją żubry, najcięższe lądowe zwierzęta Europy",
+          "en": "Bison, Europe's heaviest land animals, live in the Bialowieza Forest"
+        },
+        {
+          "ru": "Беловежская пуща — один из последних древних лесов Европы",
+          "pl": "Puszcza Białowieska to jeden z ostatnich pierwotnych lasów Europy",
+          "en": "The Bialowieza Forest is one of Europe's last ancient woodlands"
+        },
+        {
+          "ru": "Художник Марк Шагал вырос в Витебске и рисовал его всю жизнь",
+          "pl": "Malarz Marc Chagall wychował się w Witebsku i malował go przez całe życie",
+          "en": "The painter Marc Chagall grew up in Vitebsk and painted it all his life"
+        },
+        {
+          "ru": "Мирский замок стоит с XVI века и охраняется ЮНЕСКО",
+          "pl": "Zamek w Mirze stoi od XVI wieku i jest wpisany na listę UNESCO",
+          "en": "Mir Castle has stood since the 16th century and is a UNESCO site"
+        },
+        {
+          "ru": "Здесь больше десяти тысяч озёр, оставшихся от ледника",
+          "pl": "Jest tu ponad dziesięć tysięcy jezior pozostawionych przez lodowiec",
+          "en": "There are over ten thousand lakes here, left behind by a glacier"
+        }
+      ]
     },
     {
       "iso": "BE",
@@ -139,7 +193,34 @@
         "pl": "Belgia słynie z czekolady, gofrów i komiksów o Tintinie.",
         "en": "Belgium is famous for chocolate, waffles and the Tintin comics."
       },
-      "symbol": "chocolate"
+      "symbol": "chocolate",
+      "stories": [
+        {
+          "ru": "Атомиум в Брюсселе — это кристалл железа, увеличенный в миллиарды раз",
+          "pl": "Atomium w Brukseli to kryształ żelaza powiększony miliardy razy",
+          "en": "The Atomium in Brussels is an iron crystal magnified billions of times"
+        },
+        {
+          "ru": "Отсюда родом Тинтин и смурфы",
+          "pl": "Stąd pochodzą Tintin i smerfy",
+          "en": "Tintin and the Smurfs both come from here"
+        },
+        {
+          "ru": "В Брюсселе работают главные учреждения Европейского союза",
+          "pl": "W Brukseli mieszczą się główne instytucje Unii Europejskiej",
+          "en": "Brussels hosts the main institutions of the European Union"
+        },
+        {
+          "ru": "Бельгийцы варят больше тысячи сортов пива",
+          "pl": "Belgowie warzą ponad tysiąc gatunków piwa",
+          "en": "Belgians brew more than a thousand kinds of beer"
+        },
+        {
+          "ru": "В стране три государственных языка: нидерландский, французский и немецкий",
+          "pl": "Kraj ma trzy języki urzędowe: niderlandzki, francuski i niemiecki",
+          "en": "The country has three official languages: Dutch, French and German"
+        }
+      ]
     },
     {
       "iso": "BA",
@@ -279,7 +360,34 @@
         "pl": "W Pradze na wieży stoi najstarszy działający zegar astronomiczny na świecie.",
         "en": "Prague has the oldest astronomical clock in the world still running."
       },
-      "symbol": "clock"
+      "symbol": "clock",
+      "stories": [
+        {
+          "ru": "Астрономические часы в Праге построили в 1410 году, и они работают до сих пор",
+          "pl": "Zegar astronomiczny w Pradze zbudowano w 1410 roku i działa do dziś",
+          "en": "Prague's astronomical clock was built in 1410 and still works today"
+        },
+        {
+          "ru": "Слово «робот» впервые прозвучало в пьесе Карела Чапека, а придумал его брат Йозеф",
+          "pl": "Słowo „robot” pojawiło się w sztuce Karela Čapka, a wymyślił je jego brat Josef",
+          "en": "The word \"robot\" first appeared in Karel Capek's play; his brother Josef thought it up"
+        },
+        {
+          "ru": "Мягкие контактные линзы изобрёл чешский химик Отто Вихтерле",
+          "pl": "Miękkie soczewki kontaktowe wynalazł czeski chemik Otto Wichterle",
+          "en": "Soft contact lenses were invented by the Czech chemist Otto Wichterle"
+        },
+        {
+          "ru": "Прагу называют городом ста башен",
+          "pl": "Pragę nazywa się miastem stu wież",
+          "en": "Prague is known as the city of a hundred spires"
+        },
+        {
+          "ru": "В стране больше двух тысяч замков и крепостей",
+          "pl": "W kraju jest ponad dwa tysiące zamków i twierdz",
+          "en": "The country has more than two thousand castles and fortresses"
+        }
+      ]
     },
     {
       "iso": "DK",
@@ -307,7 +415,34 @@
         "pl": "Tu wymyślono klocki LEGO i bajki Andersena.",
         "en": "LEGO bricks and Andersen's fairy tales both come from here."
       },
-      "symbol": "lego"
+      "symbol": "lego",
+      "stories": [
+        {
+          "ru": "Название LEGO — от датского «leg godt», что значит «играй хорошо»",
+          "pl": "Nazwa LEGO pochodzi od duńskiego „leg godt”, czyli „baw się dobrze”",
+          "en": "The name LEGO comes from Danish \"leg godt\", meaning \"play well\""
+        },
+        {
+          "ru": "Русалочка в Копенгагене сидит на камне с 1913 года",
+          "pl": "Syrenka w Kopenhadze siedzi na kamieniu od 1913 roku",
+          "en": "The Little Mermaid has sat on her rock in Copenhagen since 1913"
+        },
+        {
+          "ru": "Датский флаг — один из старейших государственных флагов мира",
+          "pl": "Duńska flaga to jedna z najstarszych flag państwowych świata",
+          "en": "The Danish flag is one of the oldest national flags in the world"
+        },
+        {
+          "ru": "В Копенгагене велосипедов больше, чем машин",
+          "pl": "W Kopenhadze jest więcej rowerów niż samochodów",
+          "en": "Copenhagen has more bicycles than cars"
+        },
+        {
+          "ru": "Гренландия, самый большой остров мира, входит в Датское королевство",
+          "pl": "Grenlandia, największa wyspa świata, należy do Królestwa Danii",
+          "en": "Greenland, the world's largest island, is part of the Danish kingdom"
+        }
+      ]
     },
     {
       "iso": "EE",
@@ -363,7 +498,34 @@
         "pl": "Kraj tysiąca jezior, jest ich prawie 188 tysięcy. I mieszka tu Święty Mikołaj.",
         "en": "The land of a thousand lakes has almost 188,000 of them. Santa lives here too."
       },
-      "symbol": "deer"
+      "symbol": "deer",
+      "stories": [
+        {
+          "ru": "Здесь около 188 тысяч озёр — на карте страны воды почти столько же, сколько суши",
+          "pl": "Jest tu około 188 tysięcy jezior — na mapie kraju wody jest niemal tyle co lądu",
+          "en": "There are about 188,000 lakes here: on the map, almost as much water as land"
+        },
+        {
+          "ru": "Саун здесь около трёх миллионов — примерно по одной на каждый дом",
+          "pl": "Saun jest tu około trzech milionów — mniej więcej po jednej na dom",
+          "en": "There are about three million saunas here, roughly one per household"
+        },
+        {
+          "ru": "Официальная резиденция Санта-Клауса находится в Рованиеми",
+          "pl": "Oficjalna rezydencja Świętego Mikołaja mieści się w Rovaniemi",
+          "en": "Santa Claus has his official home in Rovaniemi"
+        },
+        {
+          "ru": "Летом на севере солнце не заходит несколько недель подряд",
+          "pl": "Latem na północy słońce nie zachodzi przez kilka tygodni",
+          "en": "In the north the summer sun does not set for weeks at a time"
+        },
+        {
+          "ru": "Отсюда родом Angry Birds и муми-тролли",
+          "pl": "Stąd pochodzą Angry Birds i Muminki",
+          "en": "Angry Birds and the Moomins both come from here"
+        }
+      ]
     },
     {
       "iso": "FR",
@@ -391,7 +553,34 @@
         "pl": "Wieża Eiffla latem rośnie o 15 centymetrów, bo metal się nagrzewa.",
         "en": "The Eiffel Tower grows about 15 cm taller in summer as the metal heats up."
       },
-      "symbol": "eiffel"
+      "symbol": "eiffel",
+      "stories": [
+        {
+          "ru": "Эйфелеву башню строили как временную — её хотели снести через двадцать лет",
+          "pl": "Wieżę Eiffla zbudowano jako tymczasową, miała zniknąć po dwudziestu latach",
+          "en": "The Eiffel Tower was built as a temporary structure, to be removed after twenty years"
+        },
+        {
+          "ru": "Лувр — самый посещаемый музей мира, там висит «Мона Лиза»",
+          "pl": "Luwr to najczęściej odwiedzane muzeum świata, wisi tam „Mona Lisa”",
+          "en": "The Louvre is the world's most visited museum, and home to the Mona Lisa"
+        },
+        {
+          "ru": "Велогонку «Тур де Франс» впервые провели в 1903 году",
+          "pl": "Wyścig Tour de France po raz pierwszy zorganizowano w 1903 roku",
+          "en": "The Tour de France was first held in 1903"
+        },
+        {
+          "ru": "Метрическую систему, которой мы меряем всё, придумали во Франции",
+          "pl": "System metryczny, którym mierzymy wszystko, powstał we Francji",
+          "en": "The metric system we measure everything with was created in France"
+        },
+        {
+          "ru": "Во Франции делают больше тысячи сортов сыра",
+          "pl": "We Francji wytwarza się ponad tysiąc gatunków sera",
+          "en": "France makes more than a thousand kinds of cheese"
+        }
+      ]
     },
     {
       "iso": "DE",
@@ -419,7 +608,34 @@
         "pl": "Tu zbudowano pierwszy na świecie samochód i wynaleziono druk.",
         "en": "The world's first car was built here, and printing was invented here."
       },
-      "symbol": "pretzel"
+      "symbol": "pretzel",
+      "stories": [
+        {
+          "ru": "Иоганн Гутенберг напечатал здесь первую в Европе книгу подвижными литерами",
+          "pl": "Johannes Gutenberg wydrukował tu pierwszą w Europie książkę ruchomą czcionką",
+          "en": "Johannes Gutenberg printed Europe's first movable-type book here"
+        },
+        {
+          "ru": "Первый автомобиль с бензиновым двигателем построил Карл Бенц в 1886 году",
+          "pl": "Pierwszy samochód z silnikiem benzynowym zbudował Karl Benz w 1886 roku",
+          "en": "The first petrol-engine car was built by Karl Benz in 1886"
+        },
+        {
+          "ru": "Берлинская стена делила город двадцать восемь лет и пала в 1989 году",
+          "pl": "Mur Berliński dzielił miasto dwadzieścia osiem lat i upadł w 1989 roku",
+          "en": "The Berlin Wall divided the city for twenty-eight years and fell in 1989"
+        },
+        {
+          "ru": "Замок Нойшванштайн стал прообразом замка Спящей красавицы в Диснейленде",
+          "pl": "Zamek Neuschwanstein stał się pierwowzorem zamku Śpiącej Królewny w Disneylandzie",
+          "en": "Neuschwanstein Castle inspired Sleeping Beauty Castle at Disneyland"
+        },
+        {
+          "ru": "Здесь придумали рождественскую ёлку в том виде, в каком её ставят сейчас",
+          "pl": "Tu narodził się zwyczaj ubierania choinki w dzisiejszej formie",
+          "en": "The Christmas tree as we decorate it today began here"
+        }
+      ]
     },
     {
       "iso": "GR",
@@ -447,7 +663,34 @@
         "pl": "W Grecji wymyślono igrzyska olimpijskie prawie trzy tysiące lat temu.",
         "en": "The Olympic Games began in Greece almost three thousand years ago."
       },
-      "symbol": "owl"
+      "symbol": "owl",
+      "stories": [
+        {
+          "ru": "Первые Олимпийские игры прошли в Олимпии почти три тысячи лет назад",
+          "pl": "Pierwsze igrzyska olimpijskie odbyły się w Olimpii prawie trzy tysiące lat temu",
+          "en": "The first Olympic Games were held at Olympia almost three thousand years ago"
+        },
+        {
+          "ru": "Парфенон построили за девять лет, а украшали скульптурами ещё шесть",
+          "pl": "Partenon zbudowano w dziewięć lat, a rzeźbami zdobiono jeszcze sześć",
+          "en": "The Parthenon was built in nine years, and its sculptures took six more"
+        },
+        {
+          "ru": "Слова «театр», «музыка» и «школа» пришли из греческого языка",
+          "pl": "Słowa „teatr”, „muzyka” i „szkoła” pochodzą z greki",
+          "en": "The words theatre, music and school all come from Greek"
+        },
+        {
+          "ru": "У Греции около шести тысяч островов, но люди живут меньше чем на трёхстах",
+          "pl": "Grecja ma około sześciu tysięcy wysp, ale zamieszkanych jest mniej niż trzysta",
+          "en": "Greece has about six thousand islands, but fewer than three hundred are inhabited"
+        },
+        {
+          "ru": "Демократия появилась в Афинах: горожане сами решали дела голосованием",
+          "pl": "Demokracja narodziła się w Atenach: mieszkańcy sami decydowali głosowaniem",
+          "en": "Democracy began in Athens, where citizens decided matters by voting"
+        }
+      ]
     },
     {
       "iso": "HU",
@@ -475,7 +718,34 @@
         "pl": "Budapeszt to dwa miasta, Buda i Peszt, połączone mostami na Dunaju.",
         "en": "Budapest is two cities, Buda and Pest, joined by bridges over the Danube."
       },
-      "symbol": "horse"
+      "symbol": "horse",
+      "stories": [
+        {
+          "ru": "Будапешт сложился из трёх городов — Буды, Обуды и Пешта — в 1873 году",
+          "pl": "Budapeszt powstał z trzech miast — Budy, Óbudy i Pesztu — w 1873 roku",
+          "en": "Budapest was formed from three towns, Buda, Obuda and Pest, joined in 1873"
+        },
+        {
+          "ru": "Метро в Будапеште — старейшее в континентальной Европе, открыто в 1896 году",
+          "pl": "Metro w Budapeszcie jest najstarsze w Europie kontynentalnej, otwarte w 1896 roku",
+          "en": "Budapest's metro is the oldest on mainland Europe, opened in 1896"
+        },
+        {
+          "ru": "Кубик Рубика придумал венгерский архитектор Эрнё Рубик",
+          "pl": "Kostkę Rubika wymyślił węgierski architekt Ernő Rubik",
+          "en": "The Rubik's Cube was invented by the Hungarian architect Erno Rubik"
+        },
+        {
+          "ru": "Под Будапештом бьют горячие источники, и в городе десятки купален",
+          "pl": "Pod Budapesztem biją gorące źródła, a w mieście są dziesiątki łaźni",
+          "en": "Hot springs run under Budapest, and the city has dozens of bathhouses"
+        },
+        {
+          "ru": "Венгерский не похож на языки соседей: его дальняя родня — финский и языки Сибири",
+          "pl": "Węgierski nie przypomina języków sąsiadów: jego daleka rodzina to fiński i języki Syberii",
+          "en": "Hungarian is unlike its neighbours' languages: its distant relatives are Finnish and languages of Siberia"
+        }
+      ]
     },
     {
       "iso": "IS",
@@ -503,7 +773,34 @@
         "pl": "Wyspa wulkanów i gejzerów, domy ogrzewa się tu gorącą wodą spod ziemi.",
         "en": "An island of volcanoes and geysers where homes are heated by underground water."
       },
-      "symbol": "volcano"
+      "symbol": "volcano",
+      "stories": [
+        {
+          "ru": "Дома здесь отапливают горячей водой из-под земли",
+          "pl": "Domy ogrzewa się tu gorącą wodą spod ziemi",
+          "en": "Homes here are heated with hot water from underground"
+        },
+        {
+          "ru": "Слово «гейзер» пришло из исландского — от источника по имени Гейсир",
+          "pl": "Słowo „gejzer” pochodzi z islandzkiego, od źródła o nazwie Geysir",
+          "en": "The word geyser comes from Icelandic, from a spring called Geysir"
+        },
+        {
+          "ru": "Исландский парламент альтинг собрался впервые в 930 году",
+          "pl": "Islandzki parlament Althing zebrał się po raz pierwszy w 930 roku",
+          "en": "Iceland's parliament, the Althing, first met in the year 930"
+        },
+        {
+          "ru": "На острове почти нет леса, зато есть ледники и вулканы",
+          "pl": "Na wyspie prawie nie ma lasów, są za to lodowce i wulkany",
+          "en": "The island has almost no forest, but plenty of glaciers and volcanoes"
+        },
+        {
+          "ru": "Исландия была страной без комаров, пока в 2025 году не нашли первых",
+          "pl": "Islandia była krajem bez komarów, aż w 2025 roku znaleziono pierwsze",
+          "en": "Iceland had no mosquitoes at all until the first ones were found in 2025"
+        }
+      ]
     },
     {
       "iso": "IE",
@@ -531,7 +828,34 @@
         "pl": "Szmaragdowa wyspa, pada tu tak często, że trawa jest zielona cały rok.",
         "en": "The Emerald Isle rains so often that the grass stays green all year."
       },
-      "symbol": "clover"
+      "symbol": "clover",
+      "stories": [
+        {
+          "ru": "Символ страны — арфа, она изображена на монетах и гербе",
+          "pl": "Symbolem kraju jest harfa, widnieje na monetach i w herbie",
+          "en": "The country's symbol is the harp, on its coins and its coat of arms"
+        },
+        {
+          "ru": "Остров называют Изумрудным: дожди идут часто, и трава зелёная круглый год",
+          "pl": "Wyspę nazywa się Szmaragdową: deszcz pada często, a trawa jest zielona cały rok",
+          "en": "The island is called the Emerald Isle: it rains often and the grass stays green"
+        },
+        {
+          "ru": "День святого Патрика 17 марта празднуют по всему миру",
+          "pl": "Dzień świętego Patryka 17 marca świętuje się na całym świecie",
+          "en": "Saint Patrick's Day on 17 March is celebrated around the world"
+        },
+        {
+          "ru": "Утёсы Мохер поднимаются над океаном больше чем на двести метров",
+          "pl": "Klify Moher wznoszą się nad oceanem na ponad dwieście metrów",
+          "en": "The Cliffs of Moher rise more than two hundred metres above the ocean"
+        },
+        {
+          "ru": "Змей на острове нет вовсе",
+          "pl": "Na wyspie nie ma żadnych węży",
+          "en": "There are no snakes on the island at all"
+        }
+      ]
     },
     {
       "iso": "IT",
@@ -559,7 +883,34 @@
         "pl": "Kraj wygląda jak but. Tu wymyślono pizzę i lody gelato.",
         "en": "The country is shaped like a boot. Pizza and gelato were invented here."
       },
-      "symbol": "pizza"
+      "symbol": "pizza",
+      "stories": [
+        {
+          "ru": "Колизей вмещал около пятидесяти тысяч зрителей",
+          "pl": "Koloseum mieściło około pięćdziesięciu tysięcy widzów",
+          "en": "The Colosseum held about fifty thousand spectators"
+        },
+        {
+          "ru": "Пизанская башня начала крениться ещё при строительстве, из-за мягкого грунта",
+          "pl": "Krzywa Wieża w Pizie zaczęła się przechylać już podczas budowy, przez miękki grunt",
+          "en": "The Leaning Tower of Pisa began to tilt during construction, because of soft ground"
+        },
+        {
+          "ru": "Венеция стоит на сваях, вбитых в дно лагуны",
+          "pl": "Wenecja stoi na palach wbitych w dno laguny",
+          "en": "Venice stands on wooden piles driven into the lagoon floor"
+        },
+        {
+          "ru": "Везувий засыпал пеплом Помпеи в 79 году, и город сохранился под ним",
+          "pl": "Wezuwiusz zasypał popiołem Pompeje w 79 roku, a miasto zachowało się pod nim",
+          "en": "Vesuvius buried Pompeii in ash in AD 79, preserving the town beneath it"
+        },
+        {
+          "ru": "Фортепиано и очки придумали в Италии, здесь же построили первые термометры",
+          "pl": "Fortepian i okulary wymyślono we Włoszech, tu też zbudowano pierwsze termometry",
+          "en": "The piano and eyeglasses were invented in Italy, and Italians built the first thermometers"
+        }
+      ]
     },
     {
       "iso": "LV",
@@ -811,7 +1162,34 @@
         "pl": "Jedna trzecia kraju leży poniżej poziomu morza, chronią go tamy. Rowerów jest więcej niż ludzi.",
         "en": "A third of the country lies below sea level behind dikes. There are more bikes than people."
       },
-      "symbol": "windmill"
+      "symbol": "windmill",
+      "stories": [
+        {
+          "ru": "Четверть страны лежит ниже уровня моря, а без дамб затопило бы больше половины",
+          "pl": "Ćwierć kraju leży poniżej poziomu morza, a bez tam zalałoby ponad połowę",
+          "en": "A quarter of the country lies below sea level, and without dikes more than half would flood"
+        },
+        {
+          "ru": "Велосипедов в стране больше, чем людей",
+          "pl": "Rowerów jest w kraju więcej niż ludzi",
+          "en": "There are more bicycles in the country than people"
+        },
+        {
+          "ru": "В XVII веке за одну луковицу тюльпана могли отдать дом",
+          "pl": "W XVII wieku za jedną cebulkę tulipana można było oddać dom",
+          "en": "In the 17th century a single tulip bulb could cost as much as a house"
+        },
+        {
+          "ru": "Здесь жили и работали Рембрандт и Ван Гог",
+          "pl": "Tu żyli i tworzyli Rembrandt i Van Gogh",
+          "en": "Rembrandt and Van Gogh both lived and worked here"
+        },
+        {
+          "ru": "Ветряные мельницы веками откачивали воду с отвоёванной у моря земли",
+          "pl": "Wiatraki przez wieki odpompowywały wodę z ziemi odebranej morzu",
+          "en": "Windmills spent centuries pumping water off land reclaimed from the sea"
+        }
+      ]
     },
     {
       "iso": "MK",
@@ -867,7 +1245,34 @@
         "pl": "Latem na północy słońce w ogóle nie zachodzi, to kraj fiordów i wikingów.",
         "en": "In the north the summer sun never sets. This is the land of fjords and Vikings."
       },
-      "symbol": "viking"
+      "symbol": "viking",
+      "stories": [
+        {
+          "ru": "Фьорды — это долины, которые выпилили ледники, а потом залило море",
+          "pl": "Fiordy to doliny wyrzeźbione przez lodowce i zalane później przez morze",
+          "en": "Fjords are valleys carved by glaciers and later flooded by the sea"
+        },
+        {
+          "ru": "Отсюда викинги ушли на Исландию и Гренландию, а оттуда добрались до Америки",
+          "pl": "Stąd wikingowie popłynęli na Islandię i Grenlandię, a stamtąd dotarli do Ameryki",
+          "en": "Vikings sailed from here to Iceland and Greenland, and from there reached America"
+        },
+        {
+          "ru": "На лыжах здесь ходят тысячи лет: одно из древнейших изображений лыжника высечено на скале в Рёдёй",
+          "pl": "Na nartach jeździ się tu od tysięcy lat: jeden z najstarszych wizerunków narciarza wykuto na skale w Rødøy",
+          "en": "People have skied here for thousands of years: one of the oldest pictures of a skier is carved on a rock at Rodoy"
+        },
+        {
+          "ru": "Норвежскую ель на Трафальгарской площади в Лондоне ставят каждый год с 1947 года",
+          "pl": "Norweską choinkę na Trafalgar Square w Londynie stawia się co roku od 1947 roku",
+          "en": "Norway has sent a Christmas tree to London's Trafalgar Square every year since 1947"
+        },
+        {
+          "ru": "Деревянные ставкирки собирали на деревянных шипах, без железных гвоздей",
+          "pl": "Drewniane kościoły słupowe składano na drewnianych kołkach, bez żelaznych gwoździ",
+          "en": "Stave churches were put together with wooden pegs, without iron nails"
+        }
+      ]
     },
     {
       "iso": "PL",
@@ -895,7 +1300,34 @@
         "pl": "W kopalni soli w Wieliczce całe sale i rzeźby są wykute w soli.",
         "en": "In the Wieliczka salt mine whole halls and statues are carved out of salt."
       },
-      "symbol": "stork"
+      "symbol": "stork",
+      "stories": [
+        {
+          "ru": "В соляной шахте в Величке вырезаны из соли целые часовни и статуи",
+          "pl": "W kopalni soli w Wieliczce wykuto w soli całe kaplice i rzeźby",
+          "en": "In the Wieliczka salt mine, whole chapels and statues are carved from salt"
+        },
+        {
+          "ru": "Николай Коперник понял, что Земля вращается вокруг Солнца",
+          "pl": "Mikołaj Kopernik odkrył, że Ziemia krąży wokół Słońca",
+          "en": "Nicolaus Copernicus worked out that the Earth goes around the Sun"
+        },
+        {
+          "ru": "Мария Склодовская-Кюри получила две Нобелевские премии — по физике и по химии",
+          "pl": "Maria Skłodowska-Curie otrzymała dwie Nagrody Nobla: z fizyki i z chemii",
+          "en": "Marie Sklodowska-Curie won two Nobel Prizes, in physics and in chemistry"
+        },
+        {
+          "ru": "Фридерик Шопен родился под Варшавой и написал больше двухсот пьес для рояля",
+          "pl": "Fryderyk Chopin urodził się pod Warszawą i napisał ponad dwieście utworów na fortepian",
+          "en": "Frederic Chopin was born near Warsaw and wrote over two hundred piano pieces"
+        },
+        {
+          "ru": "Старый город Варшавы отстроили после войны по довоенным чертежам, фотографиям и картинам Беллотто",
+          "pl": "Starówkę Warszawy odbudowano po wojnie według przedwojennych rysunków, zdjęć i obrazów Bellotta",
+          "en": "Warsaw's old town was rebuilt after the war from pre-war drawings, photographs and Bellotto's paintings"
+        }
+      ]
     },
     {
       "iso": "PT",
@@ -923,7 +1355,34 @@
         "pl": "Stąd wypływały statki odkrywać nowe lądy. I robi się tu korki do butelek.",
         "en": "Ships sailed from here to discover new lands. Most bottle cork comes from here."
       },
-      "symbol": "boat"
+      "symbol": "boat",
+      "stories": [
+        {
+          "ru": "Отсюда уходили корабли открывать морской путь в Индию",
+          "pl": "Stąd wypływały statki, by odkryć morską drogę do Indii",
+          "en": "Ships sailed from here to find the sea route to India"
+        },
+        {
+          "ru": "Магеллан, чья экспедиция обошла вокруг света, был португальцем",
+          "pl": "Magellan, którego wyprawa opłynęła świat, był Portugalczykiem",
+          "en": "Magellan, whose expedition sailed around the world, was Portuguese"
+        },
+        {
+          "ru": "Около половины всей пробки в мире дают португальские дубы",
+          "pl": "Około połowy korka na świecie pochodzi z portugalskich dębów",
+          "en": "About half the world's cork comes from Portuguese oaks"
+        },
+        {
+          "ru": "Лиссабон почти полностью разрушило землетрясение 1755 года, и город отстроили заново",
+          "pl": "Lizbonę niemal zniszczyło trzęsienie ziemi w 1755 roku i miasto odbudowano",
+          "en": "Lisbon was all but destroyed by an earthquake in 1755 and rebuilt afterwards"
+        },
+        {
+          "ru": "Португальская музыка фаду включена ЮНЕСКО в список наследия человечества",
+          "pl": "Portugalskie fado wpisano na listę dziedzictwa UNESCO",
+          "en": "Portuguese fado music is on the UNESCO heritage list"
+        }
+      ]
     },
     {
       "iso": "RO",
@@ -979,7 +1438,34 @@
         "pl": "Największy kraj świata, leży od razu w Europie i Azji, ma 11 stref czasowych.",
         "en": "The largest country in the world spans Europe and Asia and has 11 time zones."
       },
-      "symbol": "bear"
+      "symbol": "bear",
+      "stories": [
+        {
+          "ru": "Страна лежит сразу в Европе и Азии, в ней одиннадцать часовых поясов",
+          "pl": "Kraj leży jednocześnie w Europie i Azji, ma jedenaście stref czasowych",
+          "en": "The country lies in both Europe and Asia and spans eleven time zones"
+        },
+        {
+          "ru": "Байкал — самое глубокое озеро на Земле, больше километра в глубину",
+          "pl": "Bajkał to najgłębsze jezioro na Ziemi, ponad kilometr głębokości",
+          "en": "Lake Baikal is the deepest lake on Earth, over a kilometre deep"
+        },
+        {
+          "ru": "Транссибирская магистраль тянется больше девяти тысяч километров",
+          "pl": "Kolej transsyberyjska ciągnie się ponad dziewięć tysięcy kilometrów",
+          "en": "The Trans-Siberian Railway runs for more than nine thousand kilometres"
+        },
+        {
+          "ru": "Юрий Гагарин, родившийся здесь, стал первым человеком в космосе в 1961 году",
+          "pl": "Jurij Gagarin, urodzony tutaj, został pierwszym człowiekiem w kosmosie w 1961 roku",
+          "en": "Yuri Gagarin, born here, became the first person in space in 1961"
+        },
+        {
+          "ru": "Собор Василия Блаженного на Красной площади построили в XVI веке",
+          "pl": "Sobór Wasyla Błogosławionego na Placu Czerwonym zbudowano w XVI wieku",
+          "en": "Saint Basil's Cathedral on Red Square was built in the 16th century"
+        }
+      ]
     },
     {
       "iso": "SM",
@@ -1119,7 +1605,34 @@
         "pl": "Katedrę Sagrada Familia w Barcelonie buduje się już ponad 140 lat.",
         "en": "The Sagrada Familia in Barcelona has been under construction for over 140 years."
       },
-      "symbol": "bull"
+      "symbol": "bull",
+      "stories": [
+        {
+          "ru": "Базилику Саграда Фамилия в Барселоне строят больше ста сорока лет",
+          "pl": "Bazylikę Sagrada Familia w Barcelonie buduje się ponad sto czterdzieści lat",
+          "en": "The Sagrada Familia basilica in Barcelona has been under construction for over 140 years"
+        },
+        {
+          "ru": "В пещере Альтамира сохранились рисунки, которым больше четырнадцати тысяч лет",
+          "pl": "W jaskini Altamira zachowały się rysunki sprzed ponad czternastu tysięcy lat",
+          "en": "The Altamira cave holds paintings more than fourteen thousand years old"
+        },
+        {
+          "ru": "Испанский — второй язык в мире по числу тех, для кого он родной",
+          "pl": "Hiszpański jest drugim językiem świata pod względem liczby rodzimych użytkowników",
+          "en": "Spanish has the second most native speakers of any language"
+        },
+        {
+          "ru": "Дворец Альгамбра в Гранаде строили мавры больше семисот лет назад",
+          "pl": "Pałac Alhambra w Granadzie zbudowali Maurowie ponad siedemset lat temu",
+          "en": "The Alhambra palace in Granada was built by the Moors over seven hundred years ago"
+        },
+        {
+          "ru": "Художники Пикассо, Дали, Гойя и Веласкес — все испанцы",
+          "pl": "Malarze Picasso, Dalí, Goya i Velázquez byli Hiszpanami",
+          "en": "Picasso, Dali, Goya and Velazquez were all Spanish painters"
+        }
+      ]
     },
     {
       "iso": "SE",
@@ -1147,7 +1660,34 @@
         "pl": "Sztokholm leży na 14 wyspach. Stąd pochodzi Pippi Pończoszanka i Karlsson.",
         "en": "Stockholm sits on 14 islands. Pippi Longstocking and Karlsson come from here."
       },
-      "symbol": "deer"
+      "symbol": "deer",
+      "stories": [
+        {
+          "ru": "Почти все Нобелевские премии вручают в Стокгольме, а премию мира — в Осло",
+          "pl": "Prawie wszystkie Nagrody Nobla wręcza się w Sztokholmie, a pokojową w Oslo",
+          "en": "Almost all Nobel Prizes are awarded in Stockholm; the Peace Prize is awarded in Oslo"
+        },
+        {
+          "ru": "Пеппи Длинныйчулок и Карлсон придуманы Астрид Линдгрен",
+          "pl": "Pippi Pończoszankę i Karlssona wymyśliła Astrid Lindgren",
+          "en": "Pippi Longstocking and Karlsson were created by Astrid Lindgren"
+        },
+        {
+          "ru": "Стокгольм стоит на четырнадцати островах, соединённых мостами",
+          "pl": "Sztokholm leży na czternastu wyspach połączonych mostami",
+          "en": "Stockholm sits on fourteen islands linked by bridges"
+        },
+        {
+          "ru": "Корабль «Ваза» затонул в 1628 году, и его подняли со дна через 333 года",
+          "pl": "Okręt Vasa zatonął w 1628 roku i wydobyto go po 333 latach",
+          "en": "The warship Vasa sank in 1628 and was raised 333 years later"
+        },
+        {
+          "ru": "Трёхточечный ремень безопасности изобрели здесь, и он спас миллионы жизней",
+          "pl": "Trzypunktowy pas bezpieczeństwa wynaleziono tutaj i uratował miliony ludzi",
+          "en": "The three-point seatbelt was invented here and has saved millions of lives"
+        }
+      ]
     },
     {
       "iso": "CH",
@@ -1175,7 +1715,34 @@
         "pl": "Kraj zegarków, sera i czekolady. Ma kwadratową flagę, takich są tylko dwie na świecie.",
         "en": "Land of watches, cheese and chocolate. Its flag is square, one of only two in the world."
       },
-      "symbol": "cheese"
+      "symbol": "cheese",
+      "stories": [
+        {
+          "ru": "Страна не участвует в чужих войнах с 1815 года",
+          "pl": "Kraj nie bierze udziału w cudzych wojnach od 1815 roku",
+          "en": "The country has stayed out of other countries' wars since 1815"
+        },
+        {
+          "ru": "Молочный шоколад придумали здесь в XIX веке",
+          "pl": "Czekoladę mleczną wynaleziono tu w XIX wieku",
+          "en": "Milk chocolate was invented here in the 19th century"
+        },
+        {
+          "ru": "Флаг Швейцарии квадратный — таких в мире всего два",
+          "pl": "Flaga Szwajcarii jest kwadratowa, takich są na świecie tylko dwie",
+          "en": "The Swiss flag is square, one of only two in the world"
+        },
+        {
+          "ru": "Готардский базисный тоннель прорыт под Альпами на 57 километров",
+          "pl": "Tunel bazowy Gotarda przebito pod Alpami na 57 kilometrów",
+          "en": "The Gotthard Base Tunnel runs 57 kilometres under the Alps"
+        },
+        {
+          "ru": "В стране четыре национальных языка: немецкий, французский, итальянский и ретороманский",
+          "pl": "Kraj ma cztery języki narodowe: niemiecki, francuski, włoski i retoromański",
+          "en": "The country has four national languages: German, French, Italian and Romansh"
+        }
+      ]
     },
     {
       "iso": "UA",
@@ -1203,7 +1770,34 @@
         "pl": "Największy kraj leżący w całości w Europie. Jej flaga to niebo nad polem pszenicy.",
         "en": "The largest country lying entirely in Europe. Its flag is sky above a wheat field."
       },
-      "symbol": "sunflower"
+      "symbol": "sunflower",
+      "stories": [
+        {
+          "ru": "Чернозёмы здесь такие плодородные, что страну называли житницей Европы",
+          "pl": "Czarnoziemy są tu tak żyzne, że kraj nazywano spichlerzem Europy",
+          "en": "The black soil here is so fertile the country was called Europe's breadbasket"
+        },
+        {
+          "ru": "Софийский собор в Киеве стоит с XI века",
+          "pl": "Sobór Mądrości Bożej w Kijowie stoi od XI wieku",
+          "en": "Saint Sophia's Cathedral in Kyiv has stood since the 11th century"
+        },
+        {
+          "ru": "Синий и жёлтый часто читают как небо над пшеницей, но цвета пришли со старинного герба",
+          "pl": "Niebieski i żółty często czyta się jako niebo nad pszenicą, ale barwy pochodzą z dawnego herbu",
+          "en": "The blue and yellow are often read as sky above wheat, but the colours come from an old coat of arms"
+        },
+        {
+          "ru": "Тоннель любви в Клевани — железная дорога, вокруг которой сомкнулись деревья",
+          "pl": "Tunel Miłości w Klewaniu to tory kolejowe, nad którymi zwarły się drzewa",
+          "en": "The Tunnel of Love at Klevan is a railway line overgrown into a green arch"
+        },
+        {
+          "ru": "Это самая большая страна, целиком лежащая в Европе",
+          "pl": "To największy kraj leżący w całości w Europie",
+          "en": "It is the largest country lying entirely within Europe"
+        }
+      ]
     },
     {
       "iso": "GB",
@@ -1231,7 +1825,34 @@
         "pl": "Kraj z czterech części na wyspach. Jeździ się tu lewą stroną drogi.",
         "en": "A country of four parts on islands, where cars drive on the left."
       },
-      "symbol": "bigben"
+      "symbol": "bigben",
+      "stories": [
+        {
+          "ru": "Биг-Бен — это название колокола, а не самой башни",
+          "pl": "Big Ben to nazwa dzwonu, a nie samej wieży",
+          "en": "Big Ben is the name of the bell, not the tower"
+        },
+        {
+          "ru": "Стоунхендж поставили около пяти тысяч лет назад, и как — точно неизвестно",
+          "pl": "Stonehenge postawiono około pięciu tysięcy lat temu, a jak, do dziś nie wiadomo",
+          "en": "Stonehenge was raised about five thousand years ago, and nobody is sure how"
+        },
+        {
+          "ru": "Здесь ездят по левой стороне дороги",
+          "pl": "Jeździ się tu lewą stroną drogi",
+          "en": "Cars here drive on the left"
+        },
+        {
+          "ru": "Лондонское метро — старейшее в мире, открыто в 1863 году",
+          "pl": "Metro w Londynie jest najstarsze na świecie, otwarte w 1863 roku",
+          "en": "The London Underground is the oldest metro in the world, opened in 1863"
+        },
+        {
+          "ru": "Страна состоит из четырёх частей: Англии, Шотландии, Уэльса и Северной Ирландии",
+          "pl": "Kraj składa się z czterech części: Anglii, Szkocji, Walii i Irlandii Północnej",
+          "en": "The country is made of four parts: England, Scotland, Wales and Northern Ireland"
+        }
+      ]
     },
     {
       "iso": "VA",
