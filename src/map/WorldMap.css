@@ -30,11 +30,54 @@
   pointer-events: none;
 }
 
-/* A soft drop shadow under the land reads as the cartoon sticker look while
-   the borders themselves stay accurate. */
+/* A flat offset shadow under the land: the same trick as a paper sticker, and
+   what makes an accurate Natural Earth outline read as a cartoon. */
 .lands {
-  filter: drop-shadow(0 1px 1.5px rgba(20, 45, 60, 0.28));
+  filter: drop-shadow(0 2.5px 0 rgba(86, 132, 150, 0.55));
 }
+
+/* Sea decoration, drawn in map coordinates so it drifts with the map. Inert:
+   a tap here belongs to whatever country is underneath. */
+.sea-decor {
+  pointer-events: none;
+}
+.sea-decor .wave {
+  fill: none;
+  stroke: var(--sea-ink);
+  stroke-width: 1.6;
+  stroke-linecap: round;
+  opacity: 0.55;
+}
+
+.compass-ring,
+.compass-ring-inner {
+  fill: none;
+  stroke: var(--sea-ink);
+  stroke-width: 1.6;
+  opacity: 0.7;
+}
+.compass-ring-inner { stroke-dasharray: 2 4; }
+.compass-needle-n { fill: var(--capital); opacity: 0.8; }
+.compass-needle-s { fill: var(--sea-ink); opacity: 0.6; }
+.compass-pin { fill: var(--coastline); stroke: var(--sea-ink); stroke-width: 1.2; }
+.compass-tick { stroke: var(--sea-ink); stroke-width: 1.6; stroke-linecap: round; opacity: 0.7; }
+
+.boat-hull { fill: #c8534b; }
+.boat-mast { stroke: #8a6a4a; stroke-width: 1.8; stroke-linecap: round; }
+.boat-sail { fill: var(--coastline); stroke: var(--sea-ink); stroke-width: 1; opacity: 0.95; }
+.boat-sail-back { fill: #e6eef2; stroke: var(--sea-ink); stroke-width: 1; opacity: 0.9; }
+
+.whale-body { fill: #5f93ad; }
+.whale-belly { fill: #cfe4ee; }
+.whale-tail { fill: #5f93ad; }
+.whale-spout {
+  fill: none;
+  stroke: var(--coastline);
+  stroke-width: 1.8;
+  stroke-linecap: round;
+  opacity: 0.9;
+}
+.whale-eye { fill: var(--sea-ink); }
 
 .country {
   stroke: var(--coastline);

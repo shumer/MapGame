@@ -78,6 +78,16 @@ An unreadable child cannot pick a country name from a list. When `preset.showTex
 
 There is no score penalty, no red cross, no failure sound. A wrong answer reveals the right one on the map, names it aloud, and schedules it to come back. On the map round only, one wrong tap lights up the neighbourhood as a hint before the answer is shown.
 
+### The map is an atlas for children, not a data visualisation
+
+The borders are real Natural Earth geometry, but everything around them is
+drawn to read as a picture book: a flat offset shadow under the land so the
+countries look like paper stickers, four pastel fills assigned so no two
+neighbours match, and `SeaDecor` — a compass rose, a boat, a whale and wave
+ticks placed at real open-sea coordinates. The decoration lives inside the
+zoom transform so it drifts with the map, is `pointer-events: none` so it can
+never swallow a tap meant for a country, and hides itself past 3x zoom.
+
 ### Microstates are markers, not polygons
 
 Seven countries (AD, LI, LU, MT, MC, SM, VA) are too small to tap at map scale. They are flagged `micro: true` and drawn as fixed-size markers with a 16px hit circle, which disappear once the zoom makes the real shape tappable. The Vatican has no polygon at all at our quantization and exists only as a marker.

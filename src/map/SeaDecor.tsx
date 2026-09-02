@@ -1,5 +1,3 @@
-import { derived } from '../data'
-
 /**
  * Decoration for the empty water, the way a children's atlas fills it: a
  * compass rose, wave ticks, a boat and a whale. Placed in geographic
@@ -11,7 +9,7 @@ import { derived } from '../data'
 const SPOTS = {
   compass: [-19.5, 45.5],
   boat: [-13, 38.5],
-  whale: [-11.5, 57.5],
+  whale: [-15.5, 58.5],
   waves: [
     [-21, 51],
     [-16, 49],
@@ -79,16 +77,14 @@ export function SeaDecor({ project, scale }: { project: Project; scale: number }
       )}
 
       {whale && (
-        <g className="whale" transform={`translate(${whale[0]} ${whale[1]})`}>
-          <path className="whale-body" d="M-12 2q3-7 11-7t10 6q-4 4-11 4t-10-3z" />
-          <path className="whale-tail" d="M11 1l7-5 1 8z" />
-          <path className="whale-spout" d="M-3-6q-1-5 1-7M-1-6q2-4 4-5" />
-          <circle className="whale-eye" cx="-5" cy="-1" r="1.2" />
+        <g className="whale" transform={`translate(${whale[0]} ${whale[1]}) scale(1.5)`}>
+          <path className="whale-body" d="M-12 2q3-8 11-8t11 7q-4 5-12 5t-10-4z" />
+          <path className="whale-belly" d="M-9 3q4 3 10 3t9-2q-4 4-10 4t-9-5z" />
+          <path className="whale-tail" d="M12 0l8-6 1 10z" />
+          <path className="whale-spout" d="M-4-7q-1-6 1-8M-1-7q2-5 5-6" />
+          <circle className="whale-eye" cx="-6" cy="-2" r="1.3" />
         </g>
       )}
     </g>
   )
 }
-
-/** Countries whose colour slot is unused, kept so the palette stays honest. */
-export const PALETTE_SLOTS = new Set(Object.values(derived).map((d) => d.color))

@@ -1,6 +1,7 @@
 import { useEffect, useMemo, useState } from 'react'
 import { countries, countryByUn, derived } from '../data'
 import { buildPaths, createPath, createProjection } from './projection'
+import { SeaDecor } from './SeaDecor'
 import { loadShapes, type CountryShape } from './topology'
 import { useMapView } from './useMapView'
 import { useSize } from './useSize'
@@ -126,6 +127,10 @@ export function WorldMap({
         >
           <rect className="sea" width={width} height={height} />
           <g transform={transform} className="lands">
+            {/* Sea decoration sits under the countries, so a piece that strays
+                onto a coast is covered rather than sitting on top of it. */}
+            {projection && <SeaDecor project={(c) => projection(c) ?? null} scale={map.view.k} />}
+
             {shapes
               .filter((s) => !s.properties.playable)
               .map((s) => (
