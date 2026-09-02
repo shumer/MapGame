@@ -15,6 +15,18 @@ npm run dev
 `npm run build` produces a static site in `dist/` that can be served from any
 static host.
 
+To try it on a tablet or phone on the same Wi-Fi, without deploying anything:
+
+```bash
+npm run dev:lan
+```
+
+Vite then prints a `http://<your-ip>:5173` address to open on the device.
+
+Pushing to `main` deploys to GitHub Pages automatically
+(`.github/workflows/deploy.yml`). The repository needs Pages enabled once, with
+the source set to GitHub Actions.
+
 ## Data
 
 The single hand-written source is `src/data/countries.json`: names, capitals

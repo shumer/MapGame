@@ -12,7 +12,8 @@
     "data:derived": "node scripts/build-derived.mjs",
     "data:check": "node scripts/validate-data.mjs",
     "data": "npm run data:map && npm run data:derived && npm run data:flags && npm run data:check",
-    "data:flags": "node scripts/build-flags.mjs"
+    "data:flags": "node scripts/build-flags.mjs",
+    "dev:lan": "vite --host"
   },
   "dependencies": {
     "d3-geo": "^3.1.1",
