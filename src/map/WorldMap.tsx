@@ -3,6 +3,7 @@ import { Confetti } from '../ui/Confetti'
 import { countries, countryByUn, derived } from '../data'
 import { buildPaths, createPath, createProjection } from './projection'
 import { SeaDecor } from './SeaDecor'
+import walkerUrl from '../assets/art/decor/walker.svg?url'
 import { loadShapes, type CountryShape } from './topology'
 import { useMapView } from './useMapView'
 import { useSize } from './useSize'
@@ -160,7 +161,24 @@ export function WorldMap({
             })
             .filter((p): p is number[] => p !== null)
 
-          const d = pts.map((p, i) => `${i ? 'L' : 'M'}${p[0]} ${p[1]}`).join(' ')
+          // Curved rather than straight, and alternating which way it bows, so
+          // the route wanders like the dotted path on a children's map instead
+          // of looking like a flight plan.
+          let d = ''
+          pts.forEach((p, i) => {
+            if (i === 0) {
+              d = `M${p[0]} ${p[1]}`
+              return
+            }
+            const prev = pts[i - 1]
+            const dx = p[0] - prev[0]
+            const dy = p[1] - prev[1]
+            const len = Math.hypot(dx, dy) || 1
+            const bend = (i % 2 ? 1 : -1) * len * 0.16
+            const cx = (prev[0] + p[0]) / 2 - (dy / len) * bend
+            const cy = (prev[1] + p[1]) / 2 + (dx / len) * bend
+            d += ` Q${cx} ${cy} ${p[0]} ${p[1]}`
+          })
           route.querySelectorAll('.trail-line').forEach((el) => el.setAttribute('d', d))
 
           const stops = route.querySelectorAll('.trail-stop')
@@ -169,12 +187,13 @@ export function WorldMap({
             if (p) el.setAttribute('transform', `translate(${p[0]} ${p[1]})`)
           })
 
-          const plane = route.querySelector('.trail-plane') as SVGGElement | null
+          // No rotation and no CSS transition: the traveller stands upright,
+          // and a transition here would make him lag behind the map on every
+          // pan and pinch rather than only when he moves on.
+          const walker = route.querySelector('.trail-walker') as SVGGElement | null
           const head = pts[pts.length - 1]
-          if (plane && head) {
-            const prev = pts[pts.length - 2] ?? [head[0] - 40, head[1]]
-            const angle = (Math.atan2(head[1] - prev[1], head[0] - prev[0]) * 180) / Math.PI
-            plane.setAttribute('transform', `translate(${head[0]} ${head[1]}) rotate(${angle})`)
+          if (walker && head) {
+            walker.setAttribute('transform', `translate(${head[0]} ${head[1]})`)
           }
         }
 
@@ -297,9 +316,11 @@ export function WorldMap({
                   <path className="trail-flag" d="M1-16h11l-3 4.2L12-7.6H1z" />
                 </g>
               ))}
-              <g className="trail-plane">
-                <circle className="trail-plane-halo" r="11" />
-                <path d="M15 0l-15-6 2.5 6-2.5 6z" />
+              {/* The traveller at the head of the route, standing on the last
+                  country reached. Noto Emoji art, see src/assets/art/NOTICE.md. */}
+              <g className="trail-walker">
+                <ellipse className="walker-shadow" cx="0" cy="1" rx="10" ry="3.5" />
+                <image href={walkerUrl} x={-16} y={-32} width={32} height={32} />
               </g>
             </g>
           )}

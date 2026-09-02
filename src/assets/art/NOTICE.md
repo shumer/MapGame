@@ -21,7 +21,8 @@ the artwork itself is unchanged.
 ## What is used where
 
 - `plane.svg` — the plane on the start screen.
-- `decor/` — compass, whale and boat, drawn in the open sea on the map.
+- `decor/` — compass, whale and boat in the open sea, and the traveller who
+  stands at the head of the route on the map.
 - `symbols/` — the per-country hints. Seven symbols with no free equivalent
   anywhere (lake, bridge, viking ship, amber, lego, dome, towers) are still
   drawn in `src/ui/symbols.tsx`.

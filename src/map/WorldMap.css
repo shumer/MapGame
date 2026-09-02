@@ -23,15 +23,18 @@
   fill: none;
   stroke-linecap: round;
 }
+/* Round dots rather than a hairline dash: the footprint trail of a picture
+   book, not a route on a flight map. */
 .trail-line-under {
   stroke: #fff;
-  stroke-width: 6;
-  opacity: 0.85;
+  stroke-width: 9;
+  stroke-dasharray: 0.1 13;
+  opacity: 0.9;
 }
 .trail-line-over {
   stroke: #3d6b7d;
-  stroke-width: 2.6;
-  stroke-dasharray: 2 10;
+  stroke-width: 4.5;
+  stroke-dasharray: 0.1 13;
 }
 .trail-base {
   fill: #fff;
@@ -53,19 +56,20 @@
 .trail-stop {
   animation: stop-in 380ms cubic-bezier(0.2, 1.4, 0.4, 1) backwards;
 }
-.trail-plane path {
-  fill: var(--accent);
-  stroke: #fff;
-  stroke-width: 2.2;
-  stroke-linejoin: round;
-  paint-order: stroke fill;
+/* The traveller at the head of the route. A soft white halo keeps him legible
+   on top of any country colour. */
+.walker-shadow { fill: #2c4a52; opacity: 0.2; }
+.trail-walker image {
+  filter: drop-shadow(0 0 2px #fff) drop-shadow(0 0 4px rgba(255, 255, 255, 0.9));
 }
-.trail-plane-halo {
-  fill: #fff;
-  opacity: 0.75;
+
+.trail-walker {
+  animation: walker-in 320ms ease-out backwards;
 }
-.trail-plane {
-  transition: transform 460ms ease-in-out;
+
+@keyframes walker-in {
+  from { opacity: 0; }
+  to { opacity: 1; }
 }
 
 @keyframes stop-in {
@@ -74,8 +78,8 @@
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .trail-stop { animation: none; }
-  .trail-plane { transition: none; }
+  .trail-stop,
+  .trail-walker { animation: none; }
 }
 
 .micro-hit {
@@ -204,15 +208,18 @@
   fill: none;
   stroke-linecap: round;
 }
+/* Round dots rather than a hairline dash: the footprint trail of a picture
+   book, not a route on a flight map. */
 .trail-line-under {
   stroke: #fff;
-  stroke-width: 6;
-  opacity: 0.85;
+  stroke-width: 9;
+  stroke-dasharray: 0.1 13;
+  opacity: 0.9;
 }
 .trail-line-over {
   stroke: #3d6b7d;
-  stroke-width: 2.6;
-  stroke-dasharray: 2 10;
+  stroke-width: 4.5;
+  stroke-dasharray: 0.1 13;
 }
 .trail-base {
   fill: #fff;
@@ -234,19 +241,46 @@
 .trail-stop {
   animation: stop-in 380ms cubic-bezier(0.2, 1.4, 0.4, 1) backwards;
 }
-.trail-plane path {
-  fill: var(--accent);
+/* The traveller at the head of the route. White outlines everywhere so he
+   holds together on top of any country colour. */
+.walker-shadow { fill: #2c4a52; opacity: 0.18; }
+.walker-body {
+  fill: #3f9ad0;
   stroke: #fff;
-  stroke-width: 2.2;
-  stroke-linejoin: round;
+  stroke-width: 1.6;
   paint-order: stroke fill;
 }
-.trail-plane-halo {
-  fill: #fff;
-  opacity: 0.75;
+.walker-pack {
+  fill: #f0a93f;
+  stroke: #fff;
+  stroke-width: 1.4;
+  paint-order: stroke fill;
 }
-.trail-plane {
-  transition: transform 460ms ease-in-out;
+.walker-leg {
+  stroke: #3f4a7a;
+  stroke-width: 2.4;
+  stroke-linecap: round;
+}
+.walker-head {
+  fill: #f0cba4;
+  stroke: #fff;
+  stroke-width: 1.4;
+  paint-order: stroke fill;
+}
+.walker-cap,
+.walker-peak {
+  fill: #4f9f76;
+  stroke: #fff;
+  stroke-width: 1.2;
+  paint-order: stroke fill;
+}
+.trail-walker {
+  animation: walker-in 320ms ease-out backwards;
+}
+
+@keyframes walker-in {
+  from { opacity: 0; }
+  to { opacity: 1; }
 }
 
 @keyframes stop-in {
@@ -255,8 +289,8 @@
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .trail-stop { animation: none; }
-  .trail-plane { transition: none; }
+  .trail-stop,
+  .trail-walker { animation: none; }
 }
 
 .micro-hit {

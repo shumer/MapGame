@@ -39,6 +39,8 @@ const DECOR = {
   compass: '1f9ed',
   whale: '1f40b',
   boat: '26f5',
+  // The traveller at the head of the route on the map.
+  walker: '1f6b6',
 }
 
 /** Strips the Illustrator preamble and editor-only attributes. */
