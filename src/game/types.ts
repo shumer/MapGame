@@ -1,7 +1,7 @@
 import type { Lang } from '../data'
 
 /** What a round asks for. */
-export type GameMode = 'flag' | 'locate' | 'capital' | 'pinCapital'
+export type GameMode = 'flag' | 'locate' | 'capital' | 'flagCapital'
 
 /** Which child is playing. The two presets differ in almost every setting. */
 export type Level = 'little' | 'expert'
@@ -36,7 +36,7 @@ export const PRESETS: Record<Level, Preset> = {
     questionsPerRound: 12,
     autoSpeak: false,
     showText: true,
-    modes: ['flag', 'locate', 'capital', 'pinCapital'],
+    modes: ['flag', 'locate', 'capital', 'flagCapital'],
     distractors: 'near',
     maxFame: 3,
   },

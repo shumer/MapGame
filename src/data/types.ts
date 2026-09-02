@@ -44,9 +44,6 @@ export interface Derived {
   borders: string[]
   /** Palette slot, picked so that no two bordering countries share one. */
   color: number
-  /** Points inside the country that are not its capital, for the round that
-      asks the child to point at the capital. Empty for microstates. */
-  decoys: [number, number][]
   /** Facts computed from the map; rendered by src/i18n/facts.ts. */
   facts: { kind: string; count?: number; rank?: number; km2?: number }[]
 }

@@ -22,13 +22,6 @@ export interface WorldMapProps {
   focus?: string | null
   /** Draws a dot on this country's capital. */
   capital?: string | null
-  /** Candidate spots for the "point at the capital" round. The child taps one;
-      `pinned` marks what has already been tried. */
-  pins?: { id: string; coords: [number, number]; correct: boolean }[]
-  pinned?: string[]
-  /** Reveals which pin was the capital, after an answer. */
-  showPinAnswer?: boolean
-  onPickPin?: (id: string) => void
   /** Countries already answered this round, in order, each appearing once.
       Drawn as a dotted route with a flag on every stop — the journey the game
       is named after, which the map was otherwise not showing at all. */
@@ -60,10 +53,6 @@ export function WorldMap({
   capital = null,
   trail = [],
   travellerAt = null,
-  pins = [],
-  pinned = [],
-  showPinAnswer = false,
-  onPickPin,
   celebrate = 0,
   onPick,
   interactive = true,
@@ -127,12 +116,6 @@ export function WorldMap({
   const markersRef = useRef(new Map<string, SVGGElement>())
   const decorRef = useRef<SVGGElement>(null)
   const capitalRef = useRef<SVGGElement>(null)
-  const pinRefs = useRef(new Map<string, SVGGElement>())
-
-  const setPin = useCallback((id: string, el: SVGGElement | null) => {
-    if (el) pinRefs.current.set(id, el)
-    else pinRefs.current.delete(id)
-  }, [])
   const trailRef = useRef<SVGGElement>(null)
 
   // Screen box per country, for placing the route without searching an array.
@@ -221,13 +204,6 @@ export function WorldMap({
           }
         }
 
-        for (const pin of pins) {
-          const el = pinRefs.current.get(pin.id)
-          const p = projection?.(pin.coords)
-          if (!el || !p) continue
-          el.setAttribute('transform', `translate(${p[0] * v.k + v.x} ${p[1] * v.k + v.y})`)
-        }
-
         const cap = capital ? capitals.get(capital) : null
         if (cap && capitalRef.current) {
           capitalRef.current.setAttribute(
@@ -252,7 +228,7 @@ export function WorldMap({
           )
         }
       }),
-    [subscribe, capitals, microBoxes, trailBoxes, trail, travellerAt, capital, pins, projection, width, height],
+    [subscribe, capitals, microBoxes, trailBoxes, trail, travellerAt, capital, width, height],
   )
 
   useEffect(() => {
@@ -371,32 +347,6 @@ export function WorldMap({
                   <circle className={`micro-dot tone-${derived[c.iso].color}`} r={5.5} />
                 </g>
               ))}
-
-            {pins.map((pin) => {
-              const state = showPinAnswer
-                ? pin.correct
-                  ? 'right'
-                  : pinned.includes(pin.id)
-                    ? 'wrong'
-                    : 'plain'
-                : pinned.includes(pin.id)
-                  ? 'wrong'
-                  : 'plain'
-              return (
-                <g
-                  key={pin.id}
-                  className={`pin is-${state}`}
-                  ref={(el) => setPin(pin.id, el)}
-                  onPointerUp={() => {
-                    if (map.wasTap()) onPickPin?.(pin.id)
-                  }}
-                >
-                  <circle className="pin-hit" r={20} />
-                  <circle className="pin-halo" r={11} />
-                  <circle className="pin-dot" r={6} />
-                </g>
-              )
-            })}
 
             {capitalPoint && (
               <g

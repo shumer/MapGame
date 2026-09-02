@@ -2,7 +2,7 @@
 // nearby countries used to pick believable wrong answers.
 import fs from 'node:fs'
 import { feature, neighbors } from 'topojson-client'
-import { geoBounds, geoCentroid, geoContains, geoDistance } from 'd3-geo'
+import { geoBounds, geoCentroid, geoDistance } from 'd3-geo'
 
 // Everything outside this window is an overseas territory as far as the Europe
 // set is concerned: it should not drag the zoom frame across the Atlantic.
@@ -95,47 +95,6 @@ for (const c of data.countries) {
   derived[c.iso].borders = land
 }
 
-/**
- * Decoy points for the "point at the capital" round: places inside the country
- * that are not its capital. Generated here rather than at play time because it
- * needs the geometry, and because a decoy that lands in the sea or in a
- * neighbour would make the question unfair.
- */
-const DECOYS_WANTED = 6
-
-for (const c of data.countries) {
-  const f = byId.get(c.un)
-  const decoys = []
-  if (f) {
-    // The mainland frame, not the raw bounds: for Russia the latter reaches
-    // Kamchatka and the sweep lands almost entirely outside Europe.
-    const [x0, y0, x1, y1] = derived[c.iso].focus
-    const span = Math.max(x1 - x0, y1 - y0)
-    // Far enough from the capital to be a real choice, far enough from each
-    // other not to overlap on screen. Scaled to the country's own size.
-    const minFromCapital = Math.max(0.25, span * 0.16)
-    const minApart = Math.max(0.2, span * 0.13)
-
-    // A fixed sweep rather than random sampling, so the set is stable between
-    // builds and the same question always looks the same.
-    const steps = 26
-    for (let i = 0; i < steps && decoys.length < DECOYS_WANTED; i++) {
-      for (let j = 0; j < steps && decoys.length < DECOYS_WANTED; j++) {
-        const lon = x0 + ((x1 - x0) * (i + 0.5)) / steps
-        const lat = y0 + ((y1 - y0) * (j + 0.5)) / steps
-        const point = [lon, lat]
-        if (!geoContains(f, point)) continue
-        if (geoDistance(point, c.capitalCoords) * 57.3 < minFromCapital) continue
-        if (decoys.some((d) => geoDistance(point, d) * 57.3 < minApart)) continue
-        decoys.push([+lon.toFixed(3), +lat.toFixed(3)])
-      }
-    }
-  }
-  derived[c.iso].decoys = decoys
-}
-
-const tooFew = data.countries.filter((c) => derived[c.iso].decoys.length < 3)
-
 // Map colouring: give every country one of a few palette slots so that no two
 // countries sharing a border get the same one. Greedy over the most-connected
 // countries first, which is what keeps it down to a handful of colours.
@@ -161,7 +120,6 @@ fs.writeFileSync('src/data/derived.json', JSON.stringify(derived, null, 2) + '\n
 
 const wide = Object.entries(derived).filter(([, d]) => d.focus[2] - d.focus[0] > 30)
 console.log(`derived entries: ${Object.keys(derived).length}`)
-console.log(`decoy capitals: countries with fewer than 3: ${tooFew.map((c) => `${c.iso}(${derived[c.iso].decoys.length})`).join(', ') || 'none'}`)
 console.log(`colour slots used: ${new Set(Object.values(derived).map((d) => d.color)).size}, neighbours sharing a colour: ${clashes.length ? clashes.join(', ') : 'none'}`)
 console.log(`landlocked-by-data (no land borders): ${Object.entries(derived).filter(([, d]) => !d.borders.length).map(([iso]) => iso).join(', ')}`)
 console.log(`focus wider than 30 deg: ${wide.map(([iso, d]) => `${iso} ${d.focus.join(',')}`).join(' | ') || 'none'}`)

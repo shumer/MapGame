@@ -115,10 +115,7 @@ export function useRound(profile: Profile, mode: GameMode | 'mixed'): RoundState
       return
     }
     const chosen = mode === 'mixed' ? nextMode(preset, question.mode) : mode
-    const allowed = available().filter(
-      (c) => chosen !== 'pinCapital' || poolForMode(preset, 'pinCapital').includes(c),
-    )
-    const target = pickTarget(allowed.length ? allowed : available(), memory.current, asked.current, question.target)
+    const target = pickTarget(available(), memory.current, asked.current, question.target)
     setQuestion(buildQuestion(chosen, target, pool, preset))
     setMisses([])
     setPhase('asking')

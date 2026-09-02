@@ -12,13 +12,13 @@ const MODE_LABEL: Record<GameMode, UiKey> = {
   flag: 'modeFlag',
   locate: 'modeLocate',
   capital: 'modeCapital',
-  pinCapital: 'modePinCapital',
+  flagCapital: 'modeFlagCapital',
 }
 const MODE_HINT: Record<GameMode, UiKey> = {
   flag: 'modeFlagHint',
   locate: 'modeLocateHint',
   capital: 'modeCapitalHint',
-  pinCapital: 'modePinCapitalHint',
+  flagCapital: 'modeFlagCapitalHint',
 }
 const LANGS: Lang[] = ['ru', 'pl', 'en']
 
